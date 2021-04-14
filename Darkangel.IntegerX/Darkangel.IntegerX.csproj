@@ -11,4 +11,9 @@
     <DefineConstants>TRACE;CHECK_ARGS</DefineConstants>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;CHECK_ARGS</DefineConstants>
+    <DocumentationFile>C:\Users\Александр\OneDrive\Development\Hobby\Darkangel.Libs\Darkangel.IntegerX\Darkangel.IntegerX.xml</DocumentationFile>
+  </PropertyGroup>
+
 </Project>

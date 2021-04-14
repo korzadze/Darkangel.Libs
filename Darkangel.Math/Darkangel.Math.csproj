@@ -11,6 +11,11 @@
     <DefineConstants>TRACE;CHECK_ARGS</DefineConstants>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;CHECK_ARGS</DefineConstants>
+    <DocumentationFile>C:\Users\Александр\OneDrive\Development\Hobby\Darkangel.Libs\Darkangel.Math\Darkangel.Math.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\Darkangel.Compare\Darkangel.Compare.csproj" />
   </ItemGroup>

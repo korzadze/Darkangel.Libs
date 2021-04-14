@@ -11,4 +11,9 @@
     <DocumentationFile>C:\Users\Александр\OneDrive\Development\Hobby\Darkangel.Libs\Darkangel.IO\Darkangel.IO.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;CHECK_ARGS</DefineConstants>
+    <DocumentationFile>C:\Users\Александр\OneDrive\Development\Hobby\Darkangel.Libs\Darkangel.IO\Darkangel.IO.xml</DocumentationFile>
+  </PropertyGroup>
+
 </Project>

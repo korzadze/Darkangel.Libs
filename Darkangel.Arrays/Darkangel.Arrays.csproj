@@ -11,4 +11,9 @@
     <DocumentationFile>C:\Users\Александр\OneDrive\Development\Hobby\Darkangel.Libs\Darkangel.Arrays\Darkangel.Arrays.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\Александр\OneDrive\Development\Hobby\Darkangel.Libs\Darkangel.Arrays\Darkangel.Arrays.xml</DocumentationFile>
+    <DefineConstants>TRACE;CHECK_ARGS</DefineConstants>
+  </PropertyGroup>
+
 </Project>
