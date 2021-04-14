@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Darkangel.CommandLine</name>
+    </assembly>
+    <members>
+        <member name="F:Darkangel.CommandLineSwitch.ShortName">
+            <summary>
+            <para>Короткое имя опции</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.CommandLineSwitch.LongName">
+            <summary>
+            <para>Длинное имя опции</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.CommandLineSwitch.Flags">
+            <summary>
+            <para>Флаги опции</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.CommandLineSwitch.Tag">
+            <summary>
+            <para>Тэг опции (для упрощения выбора через switch)</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.CommandLineSwitch.Help">
+            <summary>
+            <para>Подсказка для опции</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.CommandLineSwitch.#ctor(System.Char,Darkangel.OptionFlags,System.Object,System.String)">
+            <summary>
+            <para>Конструктор экземпляра класса</para>
+            </summary>
+            <param name="ShortName">Короткое имя опции</param>
+            <param name="Flags">Флаги опции</param>
+            <param name="Tag">Тэг опции</param>
+            <param name="Help">Подсказка для опции</param>
+        </member>
+        <member name="M:Darkangel.CommandLineSwitch.#ctor(System.String,Darkangel.OptionFlags,System.Object,System.String)">
+            <summary>
+            <para>Конструктор экземпляра класса</para>
+            </summary>
+            <param name="LongName">Длинное имя опции</param>
+            <param name="Flags">Флаги опции</param>
+            <param name="Tag">Тэг опции</param>
+            <param name="Help">Подсказка для опции</param>
+        </member>
+        <member name="M:Darkangel.CommandLineSwitch.#ctor(System.Char,System.String,Darkangel.OptionFlags,System.Object,System.String)">
+            <summary>
+            <para>Конструктор экземпляра класса</para>
+            </summary>
+            <param name="ShortName">Короткое имя опции</param>
+            <param name="LongName">Длинное имя опции</param>
+            <param name="Flags">Флаги опции</param>
+            <param name="Tag">Тэг опции</param>
+            <param name="Help">Подсказка для опции</param>
+        </member>
+        <member name="T:Darkangel.OptionFlags">
+            <summary>
+            <para>Допустимость наличия значения для опции</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.OptionFlags.NonOption">
+            <summary>
+            <para>Параметр командной строки не является опцией</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.OptionFlags.ValueDenied">
+            <summary>
+            <para>Значение не допустимо</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.OptionFlags.ValueRequired">
+            <summary>
+            <para>Значение обязательно</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.OptionFlags.ValueOptional">
+            <summary>
+            <para>Значение допустимо</para>
+            </summary>
+        </member>
+    </members>
+</doc>

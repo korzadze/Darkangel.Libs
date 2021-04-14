@@ -27,6 +27,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Darkangel.IO", "Darkangel.I
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Darkangel.Reflection", "Darkangel.Reflection\Darkangel.Reflection.csproj", "{CED9E9C6-F178-4C31-9945-0029043E25BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darkangel.CommandLine", "Darkangel.CommandLine\Darkangel.CommandLine.csproj", "{633039AD-2E06-42E7-AB92-D74AD93713B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{CED9E9C6-F178-4C31-9945-0029043E25BB}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{CED9E9C6-F178-4C31-9945-0029043E25BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CED9E9C6-F178-4C31-9945-0029043E25BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{633039AD-2E06-42E7-AB92-D74AD93713B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{633039AD-2E06-42E7-AB92-D74AD93713B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{633039AD-2E06-42E7-AB92-D74AD93713B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{633039AD-2E06-42E7-AB92-D74AD93713B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
