@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Darkangel.Math</name>
+    </assembly>
+    <members>
+        <member name="T:Darkangel.MathEx">
+            <summary>
+            <para>Дополнительные математические утилиты</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.MathEx.Max``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            <para>Максимальное значение из списка</para>
+            </summary>
+            <typeparam name="T">Тип значения, поддерживающий <see cref="T:System.IComparable`1"/></typeparam>
+            <param name="values">Список значений</param>
+            <returns>Масимальное значение из списка</returns>
+            <exception cref="T:System.ArgumentNullException"/>
+        </member>
+        <member name="M:Darkangel.MathEx.Min``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            <para>Миниимальное значение из списка</para>
+            </summary>
+            <typeparam name="T">Тип значения, поддерживающий <see cref="T:System.IComparable`1"/></typeparam>
+            <param name="values">Список значений</param>
+            <returns>Минимальное значение из списка</returns>
+            <exception cref="T:System.ArgumentNullException"/>
+        </member>
+        <member name="M:Darkangel.MathEx.Max``1(``0[])">
+            <summary>
+            <para>Максимальное значение из списка</para>
+            </summary>
+            <typeparam name="T">Тип значения, поддерживающий <see cref="T:System.IComparable`1"/></typeparam>
+            <param name="values">Список значений</param>
+            <returns>Масимальное значение из списка</returns>
+            <exception cref="T:System.ArgumentNullException"/>
+        </member>
+        <member name="M:Darkangel.MathEx.Min``1(``0[])">
+            <summary>
+            <para>Миниимальное значение из списка</para>
+            </summary>
+            <typeparam name="T">Тип значения, поддерживающий <see cref="T:System.IComparable`1"/></typeparam>
+            <param name="values">Список значений</param>
+            <returns>Минимальное значение из списка</returns>
+            <exception cref="T:System.ArgumentNullException"/>
+        </member>
+    </members>
+</doc>

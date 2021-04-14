@@ -1,0 +1,589 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Darkangel.IntegerX</name>
+    </assembly>
+    <members>
+        <member name="T:Darkangel.IntegerX.IntegerXHelpers">
+            <summary>
+            <para>Утилиты для работы с целочисленными значениями</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetBytes(System.SByte,System.Boolean)">
+            <summary>
+            <para>Преобразовать значение <see cref="T:System.SByte"/> в поток байт</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <param name="isLittleEndian">Порядок байт значения в потоке</param>
+            <returns>Результирующий поток байт</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetInt8(System.Byte[],System.Int64,System.Boolean)">
+            <summary>
+            <para>Прочитать значение <see cref="T:System.SByte"/> из потока байт</para>
+            </summary>
+            <param name="data">Исходный поток байт</param>
+            <param name="start">Первый байт значения в потоке</param>
+            <param name="isLittleEndian">Порядок байтов значейния в потоке</param>
+            <returns>Считанное значение</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetBytes(System.Byte,System.Boolean)">
+            <summary>
+            <para>Преобразовать значение <see cref="T:System.Byte"/> в поток байт</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <param name="isLittleEndian">Порядок байт значения в потоке</param>
+            <returns>Результирующий поток байт</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetUInt8(System.Byte[],System.Int64,System.Boolean)">
+            <summary>
+            <para>Прочитать значение <see cref="T:System.Byte"/> из потока байт</para>
+            </summary>
+            <param name="data">Исходный поток байт</param>
+            <param name="start">Первый байт значения в потоке</param>
+            <param name="isLittleEndian">Порядок байтов значейния в потоке</param>
+            <returns>Считанное значение</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetBytes(System.Int16,System.Boolean)">
+            <summary>
+            <para>Преобразовать значение <see cref="T:System.Int16"/> в поток байт</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <param name="isLittleEndian">Порядок байт значения в потоке</param>
+            <returns>Результирующий поток байт</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetInt16(System.Byte[],System.Int64,System.Boolean)">
+            <summary>
+            <para>Прочитать значение <see cref="T:System.Int16"/> из потока байт</para>
+            </summary>
+            <param name="data">Исходный поток байт</param>
+            <param name="start">Первый байт значения в потоке</param>
+            <param name="isLittleEndian">Порядок байтов значейния в потоке</param>
+            <returns>Считанное значение</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetBytes(System.UInt16,System.Boolean)">
+            <summary>
+            <para>Преобразовать значение <see cref="T:System.Int16"/> в поток байт</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <param name="isLittleEndian">Порядок байт значения в потоке</param>
+            <returns>Результирующий поток байт</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetUInt16(System.Byte[],System.Int64,System.Boolean)">
+            <summary>
+            <para>Прочитать значение <see cref="T:System.UInt16"/> из потока байт</para>
+            </summary>
+            <param name="data">Исходный поток байт</param>
+            <param name="start">Первый байт значения в потоке</param>
+            <param name="isLittleEndian">Порядок байтов значейния в потоке</param>
+            <returns>Считанное значение</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetBytes(Darkangel.IntegerX.UInt24,System.Boolean)">
+            <summary>
+            <para>Преобразовать значение <see cref="T:Darkangel.IntegerX.UInt24"/> в поток байт</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <param name="isLittleEndian">Порядок байт значения в потоке</param>
+            <returns>Результирующий поток байт</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetUInt24(System.Byte[],System.Int64,System.Boolean)">
+            <summary>
+            <para>Прочитать значение <see cref="T:Darkangel.IntegerX.UInt24"/> из потока байт</para>
+            </summary>
+            <param name="data">Исходный поток байт</param>
+            <param name="start">Первый байт значения в потоке</param>
+            <param name="isLittleEndian">Порядок байтов значейния в потоке</param>
+            <returns>Считанное значение</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetBytes(System.Int32,System.Boolean)">
+            <summary>
+            <para>Преобразовать значение <see cref="T:System.Int32"/> в поток байт</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <param name="isLittleEndian">Порядок байт значения в потоке</param>
+            <returns>Результирующий поток байт</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetInt32(System.Byte[],System.Int64,System.Boolean)">
+            <summary>
+            <para>Прочитать значение <see cref="T:System.Int32"/> из потока байт</para>
+            </summary>
+            <param name="data">Исходный поток байт</param>
+            <param name="start">Первый байт значения в потоке</param>
+            <param name="isLittleEndian">Порядок байтов значейния в потоке</param>
+            <returns>Считанное значение</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetBytes(System.UInt32,System.Boolean)">
+            <summary>
+            <para>Преобразовать значение <see cref="T:System.UInt32"/> в поток байт</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <param name="isLittleEndian">Порядок байт значения в потоке</param>
+            <returns>Результирующий поток байт</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetUInt32(System.Byte[],System.Int64,System.Boolean)">
+            <summary>
+            <para>Прочитать значение <see cref="T:System.UInt32"/> из потока байт</para>
+            </summary>
+            <param name="data">Исходный поток байт</param>
+            <param name="start">Первый байт значения в потоке</param>
+            <param name="isLittleEndian">Порядок байтов значейния в потоке</param>
+            <returns>Считанное значение</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetBytes(Darkangel.IntegerX.UInt48,System.Boolean)">
+            <summary>
+            <para>Преобразовать значение <see cref="T:Darkangel.IntegerX.UInt48"/> в поток байт</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <param name="isLittleEndian">Порядок байт значения в потоке</param>
+            <returns>Результирующий поток байт</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetUInt48(System.Byte[],System.Int64,System.Boolean)">
+            <summary>
+            <para>Прочитать значение <see cref="T:Darkangel.IntegerX.UInt48"/> из потока байт</para>
+            </summary>
+            <param name="data">Исходный поток байт</param>
+            <param name="start">Первый байт значения в потоке</param>
+            <param name="isLittleEndian">Порядок байтов значейния в потоке</param>
+            <returns>Считанное значение</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetBytes(System.Int64,System.Boolean)">
+            <summary>
+            <para>Преобразовать значение <see cref="T:System.Int64"/> в поток байт</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <param name="isLittleEndian">Порядок байт значения в потоке</param>
+            <returns>Результирующий поток байт</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetInt64(System.Byte[],System.Int64,System.Boolean)">
+            <summary>
+            <para>Прочитать значение <see cref="T:System.Int64"/> из потока байт</para>
+            </summary>
+            <param name="data">Исходный поток байт</param>
+            <param name="start">Первый байт значения в потоке</param>
+            <param name="isLittleEndian">Порядок байтов значейния в потоке</param>
+            <returns>Считанное значение</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetBytes(System.UInt64,System.Boolean)">
+            <summary>
+            <para>Преобразовать значение <see cref="T:System.UInt64"/> в поток байт</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <param name="isLittleEndian">Порядок байт значения в потоке</param>
+            <returns>Результирующий поток байт</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetUInt64(System.Byte[],System.Int64,System.Boolean)">
+            <summary>
+            <para>Прочитать значение <see cref="T:System.UInt64"/> из потока байт</para>
+            </summary>
+            <param name="data">Исходный поток байт</param>
+            <param name="start">Первый байт значения в потоке</param>
+            <param name="isLittleEndian">Порядок байтов значейния в потоке</param>
+            <returns>Считанное значение</returns>
+        </member>
+        <member name="T:Darkangel.IntegerX.UInt24">
+            <summary>
+            3-байтное беззнаковое целое
+            </summary>
+        </member>
+        <member name="F:Darkangel.IntegerX.UInt24.Size">
+            <summary>
+            <para>Размер значения <see cref="T:Darkangel.IntegerX.UInt24"/> в байтах</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.FromBytes(System.Byte[],System.Int64,System.Boolean)">
+            <summary>
+            <para>Прочитать значение <see cref="T:Darkangel.IntegerX.UInt24"/> из потока байт</para>
+            </summary>
+            <param name="data">Исходный поток байт</param>
+            <param name="start">Начало значения в потоке</param>
+            <param name="isLittleEndian">Порядок байт значения в потоке</param>
+            <returns>Считанное значение</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.GetBytes(System.Boolean)">
+            <summary>
+            <para>Преобразовать значение <see cref="T:Darkangel.IntegerX.UInt24"/> в поток байт</para>
+            </summary>
+            <param name="isLittleEndian">Порядок байтов значения в потоке</param>
+            <returns>Результирующий поток</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.op_Implicit(System.Byte)~Darkangel.IntegerX.UInt24">
+            <summary>
+            Преобразовать <see cref="T:System.Byte"/> в <see cref="T:Darkangel.IntegerX.UInt24"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.op_Implicit(System.SByte)~Darkangel.IntegerX.UInt24">
+            <summary>
+            Преобразовать <see cref="T:System.SByte"/> в <see cref="T:Darkangel.IntegerX.UInt24"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.op_Implicit(System.UInt16)~Darkangel.IntegerX.UInt24">
+            <summary>
+            Преобразовать <see cref="T:System.UInt16"/> в <see cref="T:Darkangel.IntegerX.UInt24"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.op_Implicit(System.Int16)~Darkangel.IntegerX.UInt24">
+            <summary>
+            Преобразовать <see cref="T:System.Int16"/> в <see cref="T:Darkangel.IntegerX.UInt24"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.op_Explicit(System.UInt32)~Darkangel.IntegerX.UInt24">
+            <summary>
+            Преобразовать <see cref="T:System.UInt32"/> в <see cref="T:Darkangel.IntegerX.UInt24"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.op_Explicit(System.Int32)~Darkangel.IntegerX.UInt24">
+            <summary>
+            Преобразовать <see cref="T:System.Int32"/> в <see cref="T:Darkangel.IntegerX.UInt24"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.op_Explicit(Darkangel.IntegerX.UInt48)~Darkangel.IntegerX.UInt24">
+            <summary>
+            Преобразовать <see cref="T:Darkangel.IntegerX.UInt48"/> в <see cref="T:Darkangel.IntegerX.UInt24"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.op_Explicit(System.UInt64)~Darkangel.IntegerX.UInt24">
+            <summary>
+            Преобразовать <see cref="T:System.UInt64"/> в <see cref="T:Darkangel.IntegerX.UInt24"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.op_Explicit(System.Int64)~Darkangel.IntegerX.UInt24">
+            <summary>
+            Преобразовать <see cref="T:System.Int64"/> в <see cref="T:Darkangel.IntegerX.UInt24"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.op_Explicit(Darkangel.IntegerX.UInt24)~System.Byte">
+            <summary>
+            Преобразовать <see cref="T:Darkangel.IntegerX.UInt24"/> в <see cref="T:System.Byte"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.op_Explicit(Darkangel.IntegerX.UInt24)~System.SByte">
+            <summary>
+            Преобразовать <see cref="T:Darkangel.IntegerX.UInt24"/> в <see cref="T:System.SByte"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.op_Explicit(Darkangel.IntegerX.UInt24)~System.UInt16">
+            <summary>
+            Преобразовать <see cref="T:Darkangel.IntegerX.UInt24"/> в <see cref="T:System.UInt16"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.op_Implicit(Darkangel.IntegerX.UInt24)~System.UInt32">
+            <summary>
+            Преобразовать <see cref="T:Darkangel.IntegerX.UInt24"/> в <see cref="T:System.UInt32"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.op_Implicit(Darkangel.IntegerX.UInt24)~System.UInt64">
+            <summary>
+            Преобразовать <see cref="T:Darkangel.IntegerX.UInt24"/> в <see cref="T:System.UInt64"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.CompareTo(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.CompareTo(Darkangel.IntegerX.UInt24)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.Equals(Darkangel.IntegerX.UInt24)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.ToString(System.String,System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.GetTypeCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.ToBoolean(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.ToByte(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.ToChar(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.ToDateTime(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.ToDecimal(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.ToDouble(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.ToInt16(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.ToInt32(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.ToInt64(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.ToSByte(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.ToSingle(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.ToString(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.ToType(System.Type,System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.ToUInt16(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.ToUInt32(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.ToUInt64(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.op_Equality(Darkangel.IntegerX.UInt24,Darkangel.IntegerX.UInt24)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.op_Inequality(Darkangel.IntegerX.UInt24,Darkangel.IntegerX.UInt24)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.op_GreaterThan(Darkangel.IntegerX.UInt24,Darkangel.IntegerX.UInt24)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.op_GreaterThanOrEqual(Darkangel.IntegerX.UInt24,Darkangel.IntegerX.UInt24)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.op_LessThan(Darkangel.IntegerX.UInt24,Darkangel.IntegerX.UInt24)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.op_LessThanOrEqual(Darkangel.IntegerX.UInt24,Darkangel.IntegerX.UInt24)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.IntegerX.UInt48">
+            <summary>
+            6-байтное беззнаковое целое
+            </summary>
+        </member>
+        <member name="F:Darkangel.IntegerX.UInt48.Size">
+            <summary>
+            <para>Размер значения <see cref="T:Darkangel.IntegerX.UInt48"/> в байтах</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.FromBytes(System.Byte[],System.Int64,System.Boolean)">
+            <summary>
+            <para>Прочитать значение <see cref="T:Darkangel.IntegerX.UInt48"/> из потока байт</para>
+            </summary>
+            <param name="data">Исходный поток байт</param>
+            <param name="start">Начало значения в потоке</param>
+            <param name="isLittleEndian">Порядок байт значения в потоке</param>
+            <returns>Считанное значение</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.GetBytes(System.Boolean)">
+            <summary>
+            <para>Преобразовать значение <see cref="T:Darkangel.IntegerX.UInt48"/> в поток байт</para>
+            </summary>
+            <param name="isLittleEndian">Порядок байтов значения в потоке</param>
+            <returns>Результирующий поток</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.op_Implicit(System.Byte)~Darkangel.IntegerX.UInt48">
+            <summary>
+            Преобразовать <see cref="T:System.Byte"/> в <see cref="T:Darkangel.IntegerX.UInt48"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.op_Implicit(System.SByte)~Darkangel.IntegerX.UInt48">
+            <summary>
+            Преобразовать <see cref="T:System.SByte"/> в <see cref="T:Darkangel.IntegerX.UInt48"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.op_Implicit(System.UInt16)~Darkangel.IntegerX.UInt48">
+            <summary>
+            Преобразовать <see cref="T:System.UInt16"/> в <see cref="T:Darkangel.IntegerX.UInt48"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.op_Implicit(System.Int16)~Darkangel.IntegerX.UInt48">
+            <summary>
+            Преобразовать <see cref="T:System.Int16"/> в <see cref="T:Darkangel.IntegerX.UInt48"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.op_Implicit(Darkangel.IntegerX.UInt24)~Darkangel.IntegerX.UInt48">
+            <summary>
+            Преобразовать <see cref="T:Darkangel.IntegerX.UInt24"/> в <see cref="T:Darkangel.IntegerX.UInt48"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.op_Implicit(System.UInt32)~Darkangel.IntegerX.UInt48">
+            <summary>
+            Преобразовать <see cref="T:System.UInt32"/> в <see cref="T:Darkangel.IntegerX.UInt48"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.op_Implicit(System.Int32)~Darkangel.IntegerX.UInt48">
+            <summary>
+            Преобразовать <see cref="T:System.Int32"/> в <see cref="T:Darkangel.IntegerX.UInt48"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.op_Explicit(System.UInt64)~Darkangel.IntegerX.UInt48">
+            <summary>
+            Преобразовать <see cref="T:System.UInt64"/> в <see cref="T:Darkangel.IntegerX.UInt48"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.op_Explicit(Darkangel.IntegerX.UInt48)~System.Byte">
+            <summary>
+            Преобразовать <see cref="T:Darkangel.IntegerX.UInt48"/> в <see cref="T:System.Byte"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.op_Explicit(Darkangel.IntegerX.UInt48)~System.SByte">
+            <summary>
+            Преобразовать <see cref="T:Darkangel.IntegerX.UInt48"/> в <see cref="T:System.SByte"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.op_Explicit(Darkangel.IntegerX.UInt48)~System.UInt16">
+            <summary>
+            Преобразовать <see cref="T:Darkangel.IntegerX.UInt48"/> в <see cref="T:System.UInt16"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.op_Explicit(Darkangel.IntegerX.UInt48)~System.Int16">
+            <summary>
+            Преобразовать <see cref="T:Darkangel.IntegerX.UInt48"/> в <see cref="T:System.Int16"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.op_Explicit(Darkangel.IntegerX.UInt48)~System.UInt32">
+            <summary>
+            Преобразовать <see cref="T:Darkangel.IntegerX.UInt48"/> в <see cref="T:System.UInt32"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.op_Explicit(Darkangel.IntegerX.UInt48)~System.Int32">
+            <summary>
+            Преобразовать <see cref="T:Darkangel.IntegerX.UInt48"/> в <see cref="T:System.Int32"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.op_Implicit(Darkangel.IntegerX.UInt48)~System.UInt64">
+            <summary>
+            Преобразовать <see cref="T:Darkangel.IntegerX.UInt48"/> в <see cref="T:System.UInt64"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.op_Implicit(Darkangel.IntegerX.UInt48)~System.Int64">
+            <summary>
+            Преобразовать <see cref="T:Darkangel.IntegerX.UInt48"/> в <see cref="T:System.UInt64"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.CompareTo(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.CompareTo(Darkangel.IntegerX.UInt48)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.Equals(Darkangel.IntegerX.UInt48)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.ToString(System.String,System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.GetTypeCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.ToBoolean(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.ToByte(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.ToChar(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.ToDateTime(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.ToDecimal(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.ToDouble(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.ToInt16(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.ToInt32(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.ToInt64(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.ToSByte(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.ToSingle(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.ToString(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.ToType(System.Type,System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.ToUInt16(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.ToUInt32(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.ToUInt64(System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.op_Equality(Darkangel.IntegerX.UInt48,Darkangel.IntegerX.UInt48)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.op_Inequality(Darkangel.IntegerX.UInt48,Darkangel.IntegerX.UInt48)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.op_GreaterThan(Darkangel.IntegerX.UInt48,Darkangel.IntegerX.UInt48)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.op_GreaterThanOrEqual(Darkangel.IntegerX.UInt48,Darkangel.IntegerX.UInt48)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.op_LessThan(Darkangel.IntegerX.UInt48,Darkangel.IntegerX.UInt48)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt48.op_LessThanOrEqual(Darkangel.IntegerX.UInt48,Darkangel.IntegerX.UInt48)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Darkangel.IO</name>
+    </assembly>
+    <members>
+        <member name="T:Darkangel.IO.StreamHelpers">
+            <summary>
+            <para>Утилиты для чтения/записи двоичных данных из потока</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.IO.StreamHelpers.WriteBytes(System.IO.Stream,System.Byte[])">
+            <summary>
+            <para>Записать вектор байт в поток</para>
+            </summary>
+            <param name="stream">Целевой поток</param>
+            <param name="data">Исходный вектор</param>
+            <returns>Количество записанных байт</returns>
+        </member>
+        <member name="F:Darkangel.IO.StreamHelpers.CHUNK_SIZE">
+            <summary>
+            <para>К сожалению, базовая библиотека не умеет читать кусками больше, чем <see cref="F:System.Int32.MaxValue"/></para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.IO.StreamHelpers.ReadBytes(System.IO.Stream,System.Int64)">
+            <summary>
+            <para>Считать цепочку байт из потока</para>
+            <para>К сожалению, базовая библиотека не умеет читать кусками больше, чем <see cref="F:System.Int32.MaxValue"/></para>
+            </summary>
+            <param name="stream">Входной поток</param>
+            <param name="length">Количество байт, считываемых из потока</param>
+            <returns>Цепочка байт, считанных из потока</returns>
+        </member>
+        <member name="M:Darkangel.IO.StreamHelpers.ReadStruct``1(System.IO.Stream)">
+            <summary>
+            <para>Прочитать структуру из двоичного потока</para>
+            </summary>
+            <typeparam name="T">Тип структуры</typeparam>
+            <param name="rd">Двоичный поток</param>
+            <returns>Экземпляр структуры</returns>
+        </member>
+        <member name="M:Darkangel.IO.StreamHelpers.WriteStruct``1(System.IO.Stream,``0)">
+            <summary>
+            <para>Записать структуру в двоичных поток</para>
+            </summary>
+            <typeparam name="T">Тип структуры</typeparam>
+            <param name="wr">Двоичный поток</param>
+            <param name="data">Экземпляр структуры</param>
+        </member>
+    </members>
+</doc>

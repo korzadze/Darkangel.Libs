@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Darkangel.Enums</name>
+    </assembly>
+    <members>
+        <member name="T:Darkangel.Enums.EnumHelper">
+            <summary>
+            <para>Утилиты для работы с перечислениями</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Enums.EnumHelper.IsSet``1(``0,``0)">
+            <summary>
+            <para>Проверить установку всех указанных флагов в значении</para>
+            </summary>
+            <typeparam name="T">Тип значения <see cref="T:System.Enum"/></typeparam>
+            <param name="value">Проверяемое значение</param>
+            <param name="flags">Флаги</param>
+            <returns>Результат проверки</returns>
+        </member>
+        <member name="M:Darkangel.Enums.EnumHelper.IsSetAny``1(``0,``0)">
+            <summary>
+            <para>Проверить установку любого из указанных флагов в значении</para>
+            </summary>
+            <typeparam name="T">Тип значения <see cref="T:System.Enum"/></typeparam>
+            <param name="value">Проверяемое битовое значение</param>
+            <param name="flags">Флаги</param>
+            <returns>Результат проверки</returns>
+        </member>
+        <member name="M:Darkangel.Enums.EnumHelper.Set``1(``0,``0)">
+            <summary>
+            <para>Установить флаги в значении</para>
+            </summary>
+            <typeparam name="T">Тип значения <see cref="T:System.Enum"/></typeparam>
+            <param name="value">Исходное битовое значение</param>
+            <param name="flags">Флаги</param>
+            <returns>Новое значение битовой маски</returns>
+        </member>
+        <member name="M:Darkangel.Enums.EnumHelper.Unset``1(``0,``0)">
+            <summary>
+            <para>Сбросить флаги в значении</para>
+            </summary>
+            <typeparam name="T">Тип значения <see cref="T:System.Enum"/></typeparam>
+            <param name="value">Исходное значение</param>
+            <param name="flags">Флаги</param>
+            <returns>Новое значение битовой маски</returns>
+        </member>
+        <member name="M:Darkangel.Enums.EnumHelper.GetAllEnumValues``1">
+            <summary>
+            <para>Получить все элементы перечисления</para>
+            </summary>
+            <typeparam name="T">Тип элемента перечисления</typeparam>
+            <returns>Массив значений перечисления</returns>
+        </member>
+        <member name="T:Darkangel.Enums.StringResources">
+            <summary>
+              Класс ресурса со строгой типизацией для поиска локализованных строк и т.д.
+            </summary>
+        </member>
+        <member name="P:Darkangel.Enums.StringResources.ResourceManager">
+            <summary>
+              Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
+            </summary>
+        </member>
+        <member name="P:Darkangel.Enums.StringResources.Culture">
+            <summary>
+              Перезаписывает свойство CurrentUICulture текущего потока для всех
+              обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
+            </summary>
+        </member>
+        <member name="P:Darkangel.Enums.StringResources.IsNotBitsetError">
+            <summary>
+              Ищет локализованную строку, похожую на The value cannot be interpreted as a bit mask.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>darkangel2021.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\Александр\OneDrive\Development\Hobby\Darkangel.Libs\Darkangel.Math\Darkangel.Math.xml</DocumentationFile>
+    <DefineConstants>TRACE;CHECK_ARGS</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Darkangel.Compare\Darkangel.Compare.csproj" />
+  </ItemGroup>
+
+</Project>

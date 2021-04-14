@@ -1,0 +1,400 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Darkangel.Collections</name>
+    </assembly>
+    <members>
+        <member name="T:Darkangel.Collections.CollectionHelper">
+            <summary>
+            <para>Утилиты для работы с коллекциями</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Collections.CollectionHelper.Contains``1(System.Collections.Generic.IEnumerable{``0},``0)">
+            <summary>
+            <para>Проверка на наличие значения в списке</para>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list">Список значений</param>
+            <param name="value">Искомое значение</param>
+            <returns>Результат проверки</returns>
+        </member>
+        <member name="M:Darkangel.Collections.CollectionHelper.Search``1(System.Collections.Generic.IList{``0},``0,System.Boolean)">
+            <summary>
+            Поиск item в сортированом списке sortedList.
+            Если эквивалентное значение не найдено, то index содержит позицию,
+            где оно должно быть (или, куда можно его вставить).
+            В противном случае index содержит позицию в списке искомого значения
+            </summary>
+            <typeparam name="T">Тип значения элемента списка</typeparam>
+            <param name="sortedList">Список значений, отсортированных по возростанию
+            (в противном случае результат неопределен)</param>
+            <param name="item">Искомое значение</param>
+            <param name="hasDuplicate">Содержит ли список дублирующиеся значения</param>
+            <returns>Результат поиска значения.</returns>
+        </member>
+        <member name="M:Darkangel.Collections.CollectionHelper.Search``2(System.Collections.Generic.IList{``0},``1,System.Boolean)">
+            <summary>
+            Поиск item по ключу key в сортированом по ключу списке sortedList.
+            Если ключ не найден, то index содержит позицию, где объект с таким ключем должен быть.
+            В противном случае index содержит позицию в списке искомого объекта
+            </summary>
+            <typeparam name="T">Тип значения элемента списка</typeparam>
+            <typeparam name="TKey">Тип ключа поиска</typeparam>
+            <param name="sortedList">Список значений, сортированных по ключу в возростающем порядке
+            (в противном случае результат неопределен)</param>
+            <param name="key">Ключ поиска</param>
+            <param name="hasDuplicate">Содержит ли список дублирующиеся значения</param>
+            <returns>Результат поиска значения.
+            Если true, то index содержит индекс ключа в списке.
+            Если false, то index содержит индекс возможного расположения ключа в списке</returns>
+        </member>
+        <member name="T:Darkangel.Collections.SearchResult">
+            <summary>
+            <para>Результат поиска в сортированном списке</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Collections.SearchResult.IsFound">
+            <summary>
+            <para>Поиск прошел удачно.</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Collections.SearchResult.IsNotFound">
+            <summary>
+            <para>Поиск прошел неудачно.</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Collections.SearchResult.Index">
+            <summary>
+            <para>Индекс искомого элемента, если поиск удачен. SearchResult.IsFound</para>
+            <para>Предполагаемый индекс элемента, если поиск неудачен. !SearchResult.IsFound</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Collections.SearchResult.op_Implicit(Darkangel.Collections.SearchResult)~System.Boolean">
+            <summary>
+            <para>Преобразовать значение в bool.</para>
+            </summary>
+            <param name="sr">Исходный результат поиска</param>
+        </member>
+        <member name="T:Darkangel.Collections.SetOfE`1">
+            <summary>
+            <para>Набор элементов (аналог паскалевского 'set of ...')</para>
+            </summary>
+            <typeparam name="T">Тип значений перечисления унаследованный от <see cref="T:System.Enum"/></typeparam>
+        </member>
+        <member name="M:Darkangel.Collections.SetOfE`1.GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Collections.SetOfE`1.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="P:Darkangel.Collections.SetOfE`1.Item(`0)">
+            <summary>
+            <para>Проверить наличие элемента в наборе</para>
+            </summary>
+            <param name="item">Искомый элемент</param>
+            <returns>Результат поиска</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOfE`1.#ctor">
+            <summary>
+            <para>Конструктор пустого набора</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Collections.SetOfE`1.#ctor(`0)">
+            <summary>
+            <para>Создать набор из одного элемента</para>
+            </summary>
+            <param name="elem">Элемент набора</param>
+        </member>
+        <member name="M:Darkangel.Collections.SetOfE`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            <para>Конструктор набора из списка элементов</para>
+            </summary>
+            <param name="items">Список элементов</param>
+        </member>
+        <member name="M:Darkangel.Collections.SetOfE`1.#ctor(`0[])">
+            <summary>
+            <para>Конструктор экземпляра из списка элементов</para>
+            </summary>
+            <param name="items">Список элементов</param>
+        </member>
+        <member name="M:Darkangel.Collections.SetOfE`1.Contains(`0)">
+            <summary>
+            <para>Проверка на наличие элемента в наборе</para>
+            </summary>
+            <param name="item">Искомый элемент</param>
+            <returns>Результат проверки</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOfE`1.ToArray">
+            <summary>
+            <para>Преобразовать набор в массив</para>
+            </summary>
+            <returns>Результирующий массив</returns>
+        </member>
+        <member name="P:Darkangel.Collections.SetOfE`1.IsEmpty">
+            <summary>
+            <para>Истина, если набор не содержит ни одного элемента</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Collections.SetOfE`1.Intersect(Darkangel.Collections.SetOfE{`0})">
+            <summary>
+            <para>Пересечение двух наборов</para>
+            </summary>
+            <param name="other">Второй набор</param>
+            <returns>Новый набор, образованный из общих, для обоих наборов элементов</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOfE`1.Union(Darkangel.Collections.SetOfE{`0})">
+            <summary>
+            <para>Объединение двух наборов</para>
+            </summary>
+            <param name="other">Второй набор</param>
+            <returns>Новый набор, содержащий элементы обоих наборов</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOfE`1.Union(`0)">
+            <summary>
+            <para>Добавить элемент в набор</para>
+            </summary>
+            <param name="other"></param>
+            <returns>Новый набор, содержащий добавленный элемент</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOfE`1.Difference(Darkangel.Collections.SetOfE{`0})">
+            <summary>
+            Разность наборов
+            </summary>
+            <param name="other">Второй набор</param>
+            <returns>Новый набор, образованный из элементов исходного набора,
+            отсутствующих во втором наборе</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOfE`1.Difference(`0)">
+            <summary>
+            <para>Создать набор, не содержащий указанный элемент</para>
+            </summary>
+            <param name="other">Удаляемый элемент</param>
+            <returns>Новый набор</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOfE`1.SymmentricalDifference(Darkangel.Collections.SetOfE{`0})">
+            <summary>
+            <para>Симметричная разность</para>
+            </summary>
+            <param name="other">Второй набор</param>
+            <returns>Новый набор, состоящий из элементов уникальных,
+            для каждого из исходных наборов</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOfE`1.op_Addition(Darkangel.Collections.SetOfE{`0},Darkangel.Collections.SetOfE{`0})">
+            <summary>
+            <para>Сумма наборов</para>
+            </summary>
+            <param name="set1">Исходный набор</param>
+            <param name="set2">Добавляемый набор</param>
+            <returns>Новый набор, образованный из элементов обеих наборов</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOfE`1.op_Addition(Darkangel.Collections.SetOfE{`0},`0)">
+            <summary>
+            <para>Добавить элемент в набор</para>
+            </summary>
+            <param name="set1">Исходный набор</param>
+            <param name="elem">Добавляемый набор</param>
+            <returns>Новый набор, образованный из элементов обеих наборов</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOfE`1.op_Subtraction(Darkangel.Collections.SetOfE{`0},Darkangel.Collections.SetOfE{`0})">
+            <summary>
+            <para>Разность наборов</para>
+            </summary>
+            <param name="set1">Первый набор</param>
+            <param name="set2">Второй набор</param>
+            <returns>Новый набор, образованный из элементов исходного набора,
+            отсутствующих во втором наборе</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOfE`1.op_Subtraction(Darkangel.Collections.SetOfE{`0},`0)">
+            <summary>
+            <para>Разность наборов</para>
+            </summary>
+            <param name="set1">Первый набор</param>
+            <param name="val">Единичный набор(одиночное значение)</param>
+            <returns>Новый набор, образованный из элементов исходного набора,
+            отсутствующих во втором наборе</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOfE`1.op_Multiply(Darkangel.Collections.SetOfE{`0},Darkangel.Collections.SetOfE{`0})">
+            <summary>
+            <para>Пересечение наборов</para>
+            </summary>
+            <param name="set1">Первый набор</param>
+            <param name="set2">Второй набор</param>
+            <returns>Новый набор, образованный из общих, для обоих наборов элементов</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOfE`1.ToString">
+            <summary>
+            <para>Преобразование набора в строку, разделенную ListSeparator-ом.</para>
+            </summary>
+            <example>[element1,element2,...,elementN]</example>
+            <returns>Строковое представление набора</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOfE`1.ToString(System.String)">
+            <summary>
+            <para>Преобразование набора в строку, разделенную ListSeparator-ом.</para>
+            </summary>
+            <example>[element1,element2,...,elementN]</example>
+            <returns>Строковое представление набора</returns>
+        </member>
+        <member name="T:Darkangel.Collections.SetOf`1">
+            <summary>
+            <para>Набор элементов (аналог паскалевского 'set of ...')</para>
+            <para>Для перечислений следует использовать класс <see cref="T:Darkangel.Collections.SetOfE`1"/>, т.к. перечисления не реализуют интерфейс <see cref="T:System.IComparable`1"/></para>
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Darkangel.Collections.SetOf`1.GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Collections.SetOf`1.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="P:Darkangel.Collections.SetOf`1.Item(`0)">
+            <summary>
+            <para>Проверить наличие элемента в наборе</para>
+            </summary>
+            <param name="item">Искомый элемент</param>
+            <returns>Результат поиска</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOf`1.#ctor">
+            <summary>
+            <para>Конструктор пустого набора</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Collections.SetOf`1.#ctor(`0)">
+            <summary>
+            <para>Создать набор из одного элемента</para>
+            </summary>
+            <param name="elem">Элемент набора</param>
+        </member>
+        <member name="M:Darkangel.Collections.SetOf`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            <para>Конструктор набора из списка элементов</para>
+            </summary>
+            <param name="items">Список элементов</param>
+        </member>
+        <member name="M:Darkangel.Collections.SetOf`1.#ctor(`0[])">
+            <summary>
+            <para>Конструктор экземпляра из списка элементов</para>
+            </summary>
+            <param name="items">Список элементов</param>
+        </member>
+        <member name="M:Darkangel.Collections.SetOf`1.Contains(`0)">
+            <summary>
+            <para>Проверка на наличие элемента в наборе</para>
+            </summary>
+            <param name="item">Искомый элемент</param>
+            <returns>Результат проверки</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOf`1.ToArray">
+            <summary>
+            <para>Преобразовать набор в массив</para>
+            </summary>
+            <returns>Результирующий массив</returns>
+        </member>
+        <member name="P:Darkangel.Collections.SetOf`1.IsEmpty">
+            <summary>
+            <para>Истина, если набор не содержит ни одного элемента</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Collections.SetOf`1.Intersect(Darkangel.Collections.SetOf{`0})">
+            <summary>
+            <para>Пересечение двух наборов</para>
+            </summary>
+            <param name="other">Второй набор</param>
+            <returns>Новый набор, образованный из общих, для обоих наборов элементов</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOf`1.Union(Darkangel.Collections.SetOf{`0})">
+            <summary>
+            <para>Объединение двух наборов</para>
+            </summary>
+            <param name="other">Второй набор</param>
+            <returns>Новый набор, содержащий элементы обоих наборов</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOf`1.Union(`0)">
+            <summary>
+            <para>Добавить элемент в набор</para>
+            </summary>
+            <param name="other"></param>
+            <returns>Новый набор, содержащий добавленный элемент</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOf`1.Difference(Darkangel.Collections.SetOf{`0})">
+            <summary>
+            Разность наборов
+            </summary>
+            <param name="other">Второй набор</param>
+            <returns>Новый набор, образованный из элементов исходного набора,
+            отсутствующих во втором наборе</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOf`1.Difference(`0)">
+            <summary>
+            <para>Создать набор, не содержащий указанный элемент</para>
+            </summary>
+            <param name="other">Удаляемый элемент</param>
+            <returns>Новый набор</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOf`1.SymmentricalDifference(Darkangel.Collections.SetOf{`0})">
+            <summary>
+            <para>Симметричная разность</para>
+            </summary>
+            <param name="other">Второй набор</param>
+            <returns>Новый набор, состоящий из элементов уникальных,
+            для каждого из исходных наборов</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOf`1.op_Addition(Darkangel.Collections.SetOf{`0},Darkangel.Collections.SetOf{`0})">
+            <summary>
+            <para>Сумма наборов</para>
+            </summary>
+            <param name="set1">Исходный набор</param>
+            <param name="set2">Добавляемый набор</param>
+            <returns>Новый набор, образованный из элементов обеих наборов</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOf`1.op_Addition(Darkangel.Collections.SetOf{`0},`0)">
+            <summary>
+            <para>Добавить элемент в набор</para>
+            </summary>
+            <param name="set1">Исходный набор</param>
+            <param name="elem">Добавляемый набор</param>
+            <returns>Новый набор, образованный из элементов обеих наборов</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOf`1.op_Subtraction(Darkangel.Collections.SetOf{`0},Darkangel.Collections.SetOf{`0})">
+            <summary>
+            <para>Разность наборов</para>
+            </summary>
+            <param name="set1">Первый набор</param>
+            <param name="set2">Второй набор</param>
+            <returns>Новый набор, образованный из элементов исходного набора,
+            отсутствующих во втором наборе</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOf`1.op_Subtraction(Darkangel.Collections.SetOf{`0},`0)">
+            <summary>
+            <para>Разность наборов</para>
+            </summary>
+            <param name="set1">Первый набор</param>
+            <param name="val">Единичный набор(одиночное значение)</param>
+            <returns>Новый набор, образованный из элементов исходного набора,
+            отсутствующих во втором наборе</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOf`1.op_Multiply(Darkangel.Collections.SetOf{`0},Darkangel.Collections.SetOf{`0})">
+            <summary>
+            <para>Пересечение наборов</para>
+            </summary>
+            <param name="set1">Первый набор</param>
+            <param name="set2">Второй набор</param>
+            <returns>Новый набор, образованный из общих, для обоих наборов элементов</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOf`1.ToString">
+            <summary>
+            <para>Преобразование набора в строку, разделенную ListSeparator-ом.</para>
+            </summary>
+            <example>[element1,element2,...,elementN]</example>
+            <returns>Строковое представление набора</returns>
+        </member>
+        <member name="M:Darkangel.Collections.SetOf`1.ToString(System.String)">
+            <summary>
+            <para>Преобразование набора в строку, разделенную ListSeparator-ом.</para>
+            </summary>
+            <example>[element1,element2,...,elementN]</example>
+            <returns>Строковое представление набора</returns>
+        </member>
+    </members>
+</doc>

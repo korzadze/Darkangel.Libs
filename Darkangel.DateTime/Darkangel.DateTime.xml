@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Darkangel.DateTime</name>
+    </assembly>
+    <members>
+        <member name="T:Darkangel.DateTime.MsDos">
+            <summary>
+            Утилиты для работы с форматами MS-DOS
+            </summary>
+        </member>
+        <member name="M:Darkangel.DateTime.MsDos.FromDosDateTime(System.UInt16,System.UInt16)">
+            <summary>
+            <para>Преобразовать дату и время из формата MS-DOS в DateTime</para>
+            <para>date: YYYYYYYmmmmDDDDD<br/>
+            time: HHHHHmmmmmmSSSSS</para>
+            </summary>
+            <param name="date">Дата в формате MS-DOS</param>
+            <param name="time">Время в формате MS-DOS</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

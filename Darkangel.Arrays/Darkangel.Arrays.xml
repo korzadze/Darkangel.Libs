@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Darkangel.Arrays</name>
+    </assembly>
+    <members>
+        <member name="T:Darkangel.Arrays.ArrayHelper">
+            <summary>
+            <para>Утилиты для работы с массивами</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Arrays.ArrayHelper.CompareWith``1(``0[],``0[],System.Boolean)">
+            <summary>
+            <para>Сравнение двух одномерных массивов</para>
+            </summary>
+            <typeparam name="T">Тип элементов массивов</typeparam>
+            <param name="left">Первый сравниваемый массив</param>
+            <param name="right">Второй сравниваемый массив</param>
+            <param name="fullCompare">Сравнивать массивы полностью или только минимальную область [0..Min(left.Length, right.Length)].
+            При совпадении минимальной области и полном сравнении, больше тот массив, который имет больший размер.</param>
+            <returns>Результат сравнения</returns>
+            <exception cref="T:System.ArgumentNullException">Один из массивов не определен</exception>
+        </member>
+        <member name="M:Darkangel.Arrays.ArrayHelper.CompareWith``1(``0[],``0[],System.Int64)">
+            <summary>
+            <para>Частичное сравнение двух одномерных массивов</para>
+            </summary>
+            <typeparam name="T">Тип элементов массивов</typeparam>
+            <param name="left"></param>
+            <param name="right"></param>
+            <param name="length"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">Один из массивов не определен</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">length выходит за пределы одного из массивов</exception>
+        </member>
+        <member name="M:Darkangel.Arrays.ArrayHelper.CompareWith``1(``0[],System.Int64,``0[],System.Int64,System.Int64,System.Boolean)">
+            <summary>
+            <para>Частичное сравнение двух одномерных массивов</para>
+            </summary>
+            <typeparam name="T">Тип элементов массивов</typeparam>
+            <param name="left">Первый сравниваемый массив</param>
+            <param name="start1">Начало области сравнения в первом массиве</param>
+            <param name="right">Второй сравниваемый массив</param>
+            <param name="start2">Начало области сравнения во втором массиве</param>
+            <param name="length">Размер сравниваемой области</param>
+            <param name="fullCompare">Сравнивать области массивов полностью или только минимальную область [0..Min(length, left.Length - start1, right.Length - start2)]. При совпадении минимальной части и полном сравнении, большим считается тот массив, размер части которого больше.</param>
+            <returns>Результат сравнения</returns>
+            <exception cref="T:System.ArgumentNullException">Один из массивов не определен</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Одно из значений start1, start2, (start1+length) или (start2+length) выходит за пределы массивов</exception>
+        </member>
+        <member name="M:Darkangel.Arrays.ArrayHelper.Fill``1(``0[],``0,System.Int64,System.Int64)">
+            <summary>
+            <para>Заполнить массив значением</para>
+            </summary>
+            <typeparam name="T">Тип элементов массива</typeparam>
+            <param name="array">Заполняемый массив</param>
+            <param name="value">Значение для заполнения</param>
+            <param name="start">Первый элемент массива, с которого начинается заполнение</param>
+            <param name="count">Количество элементов массива, заменяемых новым значением</param>
+        </member>
+        <member name="M:Darkangel.Arrays.ArrayHelper.Fill``1(``0[],Darkangel.Arrays.ValueGenerator{``0},System.Int64,System.Int64)">
+            <summary>
+            <para>Заполнить массив значениями</para>
+            </summary>
+            <typeparam name="T">Тип элементов массива</typeparam>
+            <param name="array">Заполняемый массив</param>
+            <param name="generator">Функция-генератор значений</param>
+            <param name="start">Первый элемент массива, с которого начинается заполнение</param>
+            <param name="count">Количество элементов массива, заменяемых новым значением</param>
+        </member>
+        <member name="M:Darkangel.Arrays.ArrayHelper.Fill``1(``0[],Darkangel.Arrays.IValueGenerator{``0},System.Int64,System.Int64)">
+            <summary>
+            <para>Заполнить массив значениями</para>
+            </summary>
+            <typeparam name="T">Тип элементов массива</typeparam>
+            <param name="array">Заполняемый массив</param>
+            <param name="generator">Генератор значений</param>
+            <param name="start">Первый элемент массива, с которого начинается заполнение</param>
+            <param name="count">Количество элементов массива, заменяемых новым значением</param>
+        </member>
+        <member name="M:Darkangel.Arrays.ArrayHelper.JoinWith``1(``0[],``0[])">
+            <summary>
+            <para>Объединить два массива</para>
+            </summary>
+            <typeparam name="T">Тип элементов массивов</typeparam>
+            <param name="array">Исходный массив</param>
+            <param name="newElements">Добавляемый массив</param>
+            <returns>Результируюший массив</returns>
+        </member>
+        <member name="M:Darkangel.Arrays.ArrayHelper.SignatureCheck(System.Byte[],System.Byte[],System.Int64)">
+            <summary>
+            <para>Проверить правильность сигнатуры</para>
+            </summary>
+            <param name="data">Исходные данные</param>
+            <param name="signature">Сигнатура данных</param>
+            <param name="start">Первый байт сигнатуры в данных</param>
+            <returns></returns>
+        </member>
+        <member name="M:Darkangel.Arrays.ArrayHelper.Splice``1(``0[],System.Int64,System.Int64)">
+            <summary>
+            <para>Создать копию части одномерного массива</para>
+            </summary>
+            <typeparam name="T">Тип элементов массива</typeparam>
+            <param name="array">Исходный массив</param>
+            <param name="start">Первый копируемый элемент массива</param>
+            <param name="length">Количество копируемых элементов массива</param>
+            <returns>Вырезанный субвектор</returns>
+        </member>
+        <member name="M:Darkangel.Arrays.ArrayHelper.Splice``1(``0[],System.Int64)">
+            <summary>
+            <para>Создать копию части одномерного массива</para>
+            </summary>
+            <typeparam name="T">Тип элементов массива</typeparam>
+            <param name="array">Исходный массив</param>
+            <param name="start">Первый копируемый элемент массива</param>
+            <returns>Вырезанный субвектор</returns>
+        </member>
+        <member name="T:Darkangel.Arrays.ValueGenerator`1">
+            <summary>
+            <para>Функция-делегат, генерирующая значения</para>
+            </summary>
+            <typeparam name="T">Тип значения</typeparam>
+            <param name="index">Порядковый номер значения</param>
+            <returns>Сгенерированное значение</returns>
+        </member>
+        <member name="T:Darkangel.Arrays.IValueGenerator`1">
+            <summary>
+            <para>Интерфейс генератора значений</para>
+            </summary>
+            <typeparam name="T">Тип значения</typeparam>
+        </member>
+        <member name="M:Darkangel.Arrays.IValueGenerator`1.Generate(System.Int64)">
+            <summary>
+            <para>Генератор значений</para>
+            </summary>
+            <param name="index">Порядковый номер значения</param>
+            <returns>Сгенерированное значение</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Darkangel.Strings</name>
+    </assembly>
+    <members>
+        <member name="T:Darkangel.Strings.StringHelper">
+            <summary>
+            <para>Утилиты для работы со строками</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Strings.StringHelper.ReadMBCSZ(System.Byte[],System.Int64,System.Text.Encoding)">
+            <summary>
+            <para>Прочитать из потока мультибайтную строку из потока байт</para>
+            <para>NOTE: не стоит использовать <see cref="P:System.Text.Encoding.Unicode"/> и аналогичные декодеры, т.к. в Unicode-строках, символ может начинаться с нулевого байта.</para>
+            </summary>
+            <param name="buf">Поток байт</param>
+            <param name="start">Начало строки в потоке</param>
+            <param name="encoding">Кодировка строки</param>
+            <returns></returns>
+        </member>
+        <member name="M:Darkangel.Strings.StringHelper.AsString``1(``0[],System.String)">
+            <summary>
+            <para>Преобразовать вектор в строку списка значений</para>
+            </summary>
+            <typeparam name="T">Тип элементов вектора</typeparam>
+            <param name="arr">Вектор значений</param>
+            <param name="delimiter">Разделитель элементов в списке</param>
+            <returns></returns>
+        </member>
+        <member name="M:Darkangel.Strings.StringHelper.AsHexString(System.Byte[],System.String)">
+            <summary>
+            <para>Представить вектор значений, как список шестнадцатиричных значений в исходном коде C#</para>
+            </summary>
+            <param name="arr">Вектор значений</param>
+            <param name="delimiter">Разделитель значений в списке</param>
+            <returns>Список значений вектора</returns>
+        </member>
+        <member name="M:Darkangel.Strings.StringHelper.AsHexString(System.UInt16[],System.String)">
+            <summary>
+            <para>Представить вектор значений, как список шестнадцатиричных значений в исходном коде C#</para>
+            </summary>
+            <param name="arr">Вектор значений</param>
+            <param name="delimiter">Разделитель значений в списке</param>
+            <returns>Список значений вектора</returns>
+        </member>
+        <member name="M:Darkangel.Strings.StringHelper.AsHexString(System.UInt32[],System.String)">
+            <summary>
+            <para>Представить вектор значений, как список шестнадцатиричных значений в исходном коде C#</para>
+            </summary>
+            <param name="arr">Вектор значений</param>
+            <param name="delimiter">Разделитель значений в списке</param>
+            <returns>Список значений вектора</returns>
+        </member>
+        <member name="M:Darkangel.Strings.StringHelper.AsHexString(System.UInt64[],System.String)">
+            <summary>
+            <para>Представить вектор значений, как список шестнадцатиричных значений в исходном коде C#</para>
+            </summary>
+            <param name="arr">Вектор значений</param>
+            <param name="delimiter">Разделитель значений в списке</param>
+            <returns>Список значений вектора</returns>
+        </member>
+    </members>
+</doc>

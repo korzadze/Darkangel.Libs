@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Darkangel.Assembler</name>
+    </assembly>
+    <members>
+        <member name="T:Darkangel.Assembler.AsmHelper">
+            <summary>
+            <para>Реализация низкоуровневых операций</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Assembler.AsmHelper.RotateBits(System.Byte,System.Int32)">
+            <summary>
+            <para>Реализация ассемблерной команды ROL/ROR: вращение битов значения.</para>
+            <para>Биты, уходящие из числа с одной стороны, добавляются с другой</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <param name="bits">Количество бит. Если значение больше нуля, то биты вращаются влево, иначе - вправо</param>
+            <returns>Результат операции</returns>
+        </member>
+        <member name="M:Darkangel.Assembler.AsmHelper.RotateBits(System.UInt16,System.Int32)">
+            <summary>
+            <para>Реализация ассемблерной команды ROL/ROR: вращение битов значения.</para>
+            <para>Биты, уходящие из числа с одной стороны, добавляются с другой</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <param name="bits">Количество бит. Если значение больше нуля, то биты вращаются влево, иначе - вправо</param>
+            <returns>Результат операции</returns>
+        </member>
+        <member name="M:Darkangel.Assembler.AsmHelper.RotateBits(System.UInt32,System.Int32)">
+            <summary>
+            <para>Реализация ассемблерной команды ROL/ROR: вращение битов значения.</para>
+            <para>Биты, уходящие из числа с одной стороны, добавляются с другой</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <param name="bits">Количество бит. Если значение больше нуля, то биты вращаются влево, иначе - вправо</param>
+            <returns>Результат операции</returns>
+        </member>
+        <member name="M:Darkangel.Assembler.AsmHelper.RotateBits(System.UInt64,System.Int32)">
+            <summary>
+            <para>Реализация ассемблерной команды ROL/ROR: вращение битов значения.</para>
+            <para>Биты, уходыщие из числа с одной стороны, добавляются с другой</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <param name="bits">Количество бит. Если значение больше нуля, то биты вращаются влево, иначе - вправо</param>
+            <returns>Результат операции</returns>
+        </member>
+    </members>
+</doc>
