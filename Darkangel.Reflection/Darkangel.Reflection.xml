@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Darkangel.Reflection</name>
+    </assembly>
+    <members>
+        <member name="T:Darkangel.Reflection.ReflectionHelper">
+            <summary>
+            <para>Утилиты для работы с отражениями</para>
+            </summary>
+        </member>
+    </members>
+</doc>

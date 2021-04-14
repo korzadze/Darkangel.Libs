@@ -9,6 +9,20 @@
             <para>Утилиты для работы с перечислениями</para>
             </summary>
         </member>
+        <member name="M:Darkangel.Enums.EnumHelper.IsBitsetEnum(System.Type)">
+            <summary>
+            Является ли тип значения битовым перечислением
+            </summary>
+            <param name="type">Проверяемый тип</param>
+            <returns>Результат проверки</returns>
+        </member>
+        <member name="M:Darkangel.Enums.EnumHelper.IsBitsetEnum(System.Enum)">
+            <summary>
+            Является ли тип значения битовым перечислением
+            </summary>
+            <param name="val">Значение типа</param>
+            <returns>Результат проверки</returns>
+        </member>
         <member name="M:Darkangel.Enums.EnumHelper.IsSet``1(``0,``0)">
             <summary>
             <para>Проверить установку всех указанных флагов в значении</para>

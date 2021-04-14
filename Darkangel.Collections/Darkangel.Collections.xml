@@ -223,15 +223,16 @@
         </member>
         <member name="M:Darkangel.Collections.SetOfE`1.ToString">
             <summary>
-            <para>Преобразование набора в строку, разделенную ListSeparator-ом.</para>
+            <para>Преобразование набора в строку, разделенную CurrentCulture.TextInfo.ListSeparator.</para>
             </summary>
             <example>[element1,element2,...,elementN]</example>
             <returns>Строковое представление набора</returns>
         </member>
         <member name="M:Darkangel.Collections.SetOfE`1.ToString(System.String)">
             <summary>
-            <para>Преобразование набора в строку, разделенную ListSeparator-ом.</para>
+            <para>Преобразование набора в строку, разделенную последовательностью символов "sep".</para>
             </summary>
+            <param name="sep"><para>Последовательность символов, разделяющая элементы набора.</para><para>По-умолчанию: ',' (запятая)</para></param>
             <example>[element1,element2,...,elementN]</example>
             <returns>Строковое представление набора</returns>
         </member>
@@ -384,15 +385,16 @@
         </member>
         <member name="M:Darkangel.Collections.SetOf`1.ToString">
             <summary>
-            <para>Преобразование набора в строку, разделенную ListSeparator-ом.</para>
+            <para>Преобразование набора в строку, разделенную CurrentCulture.TextInfo.ListSeparator.</para>
             </summary>
             <example>[element1,element2,...,elementN]</example>
             <returns>Строковое представление набора</returns>
         </member>
         <member name="M:Darkangel.Collections.SetOf`1.ToString(System.String)">
             <summary>
-            <para>Преобразование набора в строку, разделенную ListSeparator-ом.</para>
+            <para>Преобразование набора в строку, разделенную последовательностью символов "sep".</para>
             </summary>
+            <param name="sep"><para>Последовательность символов, разделяющая элементы набора.</para><para>По-умолчанию: ',' (запятая)</para></param>
             <example>[element1,element2,...,elementN]</example>
             <returns>Строковое представление набора</returns>
         </member>

@@ -4,6 +4,42 @@
         <name>Darkangel.Compare</name>
     </assembly>
     <members>
+        <member name="T:Darkangel.Compare.CompareHelpers">
+            <summary>
+            <para>Утилиты сравнения</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Compare.CompareHelpers.Between``1(``0,``0,``0,System.Boolean)">
+            <summary>
+            <para>Проверка, что значение находится между границами</para>
+            </summary>
+            <typeparam name="T">Тип значения</typeparam>
+            <param name="value">Проверяемое значение</param>
+            <param name="min">Нижняя граница</param>
+            <param name="max">Верхняя граница</param>
+            <param name="inclusive">Включать границы в сравнение или нет</param>
+            <returns>Результат проверки</returns>
+        </member>
+        <member name="M:Darkangel.Compare.CompareHelpers.BetweenEx``1(``0,``0,``0)">
+            <summary>
+            <para>Проверка, что значение находится между границами (исключая границы)</para>
+            </summary>
+            <typeparam name="T">Тип значения</typeparam>
+            <param name="value">Проверяемое значение</param>
+            <param name="min">Нижняя граница</param>
+            <param name="max">Верхняя граница</param>
+            <returns>Результат проверки</returns>
+        </member>
+        <member name="M:Darkangel.Compare.CompareHelpers.BetweenInc``1(``0,``0,``0)">
+            <summary>
+            <para>Проверка, что значение находится между границами (включая границы)</para>
+            </summary>
+            <typeparam name="T">Тип значения</typeparam>
+            <param name="value">Проверяемое значение</param>
+            <param name="min">Нижняя граница</param>
+            <param name="max">Верхняя граница</param>
+            <returns>Результат проверки</returns>
+        </member>
         <member name="T:Darkangel.Compare.IComparator`1">
             <summary>
             <para>Итерфейс сравнения значений</para>
@@ -33,6 +69,20 @@
             <param name="key">Ключ для сравниения</param>
             <returns>Результат сравнения</returns>
         </member>
+        <member name="T:Darkangel.Compare.IComparatorOf`1">
+            <summary>
+            <para>Итерфейс сравнения значений</para>
+            </summary>
+            <typeparam name="T">Тип значения</typeparam>
+        </member>
+        <member name="M:Darkangel.Compare.IComparatorOf`1.CompareValues(`0,`0)">
+            <summary>
+            <para>Сравнить два значения</para>
+            </summary>
+            <param name="val1">Первое значение</param>
+            <param name="val2">Второе значение</param>
+            <returns>Результат сравнения</returns>
+        </member>
         <member name="T:Darkangel.Compare.SafeComparator`1">
             <summary>
             <para>Безопасный (с проверкой "пустых" значений) класс для сравниения двух значений</para>
@@ -52,6 +102,15 @@
         <member name="M:Darkangel.Compare.SafeComparator`2.CompareValues(`0,`1)">
             <inheritdoc/>
         </member>
+        <member name="T:Darkangel.Compare.SafeComparatorOf`1">
+            <summary>
+            <para>Безопасный (с проверкой "пустых" значений) класс для сравниения двух значений</para>
+            </summary>
+            <typeparam name="T">Тип значений</typeparam>
+        </member>
+        <member name="M:Darkangel.Compare.SafeComparatorOf`1.CompareValues(`0,`0)">
+            <inheritdoc/>
+        </member>
         <member name="T:Darkangel.Compare.UnsafeComparator`1">
             <summary>
             <para>Небезопасный (без проверки "пустых" значений) класс для сравниения двух значений</para>
@@ -69,6 +128,15 @@
             <typeparam name="TKey">Тип ключа</typeparam>
         </member>
         <member name="M:Darkangel.Compare.UnsafeComparator`2.CompareValues(`0,`1)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Compare.UnsafeComparatorOf`1">
+            <summary>
+            <para>Небезопасный (без проверки "пустых" значений) класс для сравниения двух значений</para>
+            </summary>
+            <typeparam name="T">Тип значений</typeparam>
+        </member>
+        <member name="M:Darkangel.Compare.UnsafeComparatorOf`1.CompareValues(`0,`0)">
             <inheritdoc/>
         </member>
     </members>

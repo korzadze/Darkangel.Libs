@@ -13,7 +13,7 @@
             <summary>
             <para>Максимальное значение из списка</para>
             </summary>
-            <typeparam name="T">Тип значения, поддерживающий <see cref="T:System.IComparable`1"/></typeparam>
+            <typeparam name="T">Тип значения, поддерживающий <see cref="T:System.IComparable"/></typeparam>
             <param name="values">Список значений</param>
             <returns>Масимальное значение из списка</returns>
             <exception cref="T:System.ArgumentNullException"/>
@@ -22,7 +22,7 @@
             <summary>
             <para>Миниимальное значение из списка</para>
             </summary>
-            <typeparam name="T">Тип значения, поддерживающий <see cref="T:System.IComparable`1"/></typeparam>
+            <typeparam name="T">Тип значения, поддерживающий <see cref="T:System.IComparable"/></typeparam>
             <param name="values">Список значений</param>
             <returns>Минимальное значение из списка</returns>
             <exception cref="T:System.ArgumentNullException"/>
@@ -31,7 +31,7 @@
             <summary>
             <para>Максимальное значение из списка</para>
             </summary>
-            <typeparam name="T">Тип значения, поддерживающий <see cref="T:System.IComparable`1"/></typeparam>
+            <typeparam name="T">Тип значения, поддерживающий <see cref="T:System.IComparable"/></typeparam>
             <param name="values">Список значений</param>
             <returns>Масимальное значение из списка</returns>
             <exception cref="T:System.ArgumentNullException"/>
@@ -40,7 +40,7 @@
             <summary>
             <para>Миниимальное значение из списка</para>
             </summary>
-            <typeparam name="T">Тип значения, поддерживающий <see cref="T:System.IComparable`1"/></typeparam>
+            <typeparam name="T">Тип значения, поддерживающий <see cref="T:System.IComparable"/></typeparam>
             <param name="values">Список значений</param>
             <returns>Минимальное значение из списка</returns>
             <exception cref="T:System.ArgumentNullException"/>
