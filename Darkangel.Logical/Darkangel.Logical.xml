@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Darkangel.Logical</name>
+    </assembly>
+    <members>
+        <member name="T:Darkangel.Logical.And`1">
+            <summary>
+            Логический AND, применяемый к списку значений
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Darkangel.Logical.And`1.ProceedOp(System.Boolean,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Logical.ConditionsList`1">
+            <summary>
+            <para>Список объектов, поддерживающих логические состояния</para>
+            </summary>
+            <typeparam name="T">тип объекта списка</typeparam>
+        </member>
+        <member name="F:Darkangel.Logical.ConditionsList`1._List">
+            <summary>
+            <para>Список объектов</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Logical.ConditionsList`1.IsEmpty">
+            <summary>
+            <para>Проверка списка на наличие объектов</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Logical.ConditionsList`1.IsTrueIn(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Logical.ConditionsList`1.ProceedOp(System.Boolean,System.Boolean)">
+            <summary>
+            <para>Логический оператор, применяемый к объектам списка</para>
+            </summary>
+            <param name="val1">Первый объект</param>
+            <param name="val2">Второй объект</param>
+            <returns>Результат логической операции</returns>
+        </member>
+        <member name="M:Darkangel.Logical.ConditionsList`1.GetEnumerator">
+            <summary>
+            <para>Перечисление объектов в списке</para>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Darkangel.Logical.ConditionsList`1.#ctor">
+            <summary>
+            <para>Конструктор по-умолчанию</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Logical.ConditionsList`1.#ctor(`0[])">
+            <summary>
+            <para>Конструктор из списка объектов</para>
+            </summary>
+            <param name="objs">Список элементов</param>
+        </member>
+        <member name="M:Darkangel.Logical.ConditionsList`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            <para>Конструктор из списка объектов</para>
+            </summary>
+            <param name="objs">Список элементов</param>
+        </member>
+        <member name="M:Darkangel.Logical.ConditionsList`1.Add(`0)">
+            <summary>
+            <para>Добавление объекта к списку</para>
+            </summary>
+            <param name="obj">Добавляемый объект</param>
+        </member>
+        <member name="M:Darkangel.Logical.ConditionsList`1.AddRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            <para>Добавить список объектов к текущему списку</para>
+            </summary>
+            <param name="objs">Добавляемая коллекция объектов</param>
+        </member>
+        <member name="M:Darkangel.Logical.ConditionsList`1.RemoveAt(System.Int32)">
+            <summary>
+            <para>Удалить объект по его индексу из списка</para>
+            </summary>
+            <param name="index">Индекс удаляемого объекта</param>
+        </member>
+        <member name="P:Darkangel.Logical.ConditionsList`1.Count">
+            <summary>
+            <para>Количество объектов в списке</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Logical.ConditionsList`1.Item(System.Int32)">
+            <summary>
+            <para>Предоставляет доступ к объектам списка по индексу</para>
+            </summary>
+            <param name="index">Индекс объекта в списке</param>
+            <returns>Элемент списка</returns>
+        </member>
+        <member name="M:Darkangel.Logical.ConditionsList`1.Clear">
+            <summary>
+            <para>Очистка списка</para>
+            </summary>
+        </member>
+        <member name="T:Darkangel.Logical.IConditionalObject">
+            <summary>
+            Интерфейс объекта, имеющего состояние истина/ложь
+            </summary>
+        </member>
+        <member name="M:Darkangel.Logical.IConditionalObject.IsTrueIn(System.Object)">
+            <summary>
+            Переходит ли объект в состоянии Истина при статусе state
+            </summary>
+            <param name="state">Статус объекта</param>
+        </member>
+        <member name="T:Darkangel.Logical.Or`1">
+            <summary>
+            Логический OR, применяемый к списку значений
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Darkangel.Logical.Or`1.ProceedOp(System.Boolean,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Logical.Xor`1">
+            <summary>
+            Логический XOR, применяемый к списку значений
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Darkangel.Logical.Xor`1.ProceedOp(System.Boolean,System.Boolean)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>
