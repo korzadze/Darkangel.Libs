@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Darkangel.Logical
+﻿namespace Darkangel.Logical
 {
     /// <summary>
     /// Интерфейс объекта, имеющего состояние истина/ложь
