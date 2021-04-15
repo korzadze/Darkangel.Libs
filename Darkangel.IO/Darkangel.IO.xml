@@ -109,10 +109,10 @@
         </member>
         <member name="M:Darkangel.IO.TemporaryStream.Create(System.String)">
             <summary>
-            <para>Создать временный файл</para>
+            <para>Создать временный поток</para>
             </summary>
-            <param name="suffix">Суффикс временного файла</param>
-            <returns>Поток, удаляемый после закрытия (если дело происходит в Windows)</returns>
+            <param name="suffix">Суффикс имени временного потока</param>
+            <returns>Поток, удаляемый после закрытия (если дело происходит в Windows :) )</returns>
         </member>
     </members>
 </doc>

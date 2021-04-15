@@ -8,11 +8,11 @@ namespace Darkangel.Strings
     /// </summary>
     internal class IntegerRadixDetector
     {
-        public readonly int Radix;
-        public readonly Regex Expression;
-        public readonly string Sign;
-        public readonly string Value;
-        public readonly string Format;
+        public readonly int? Radix;
+        public readonly Regex? Expression;
+        public readonly string? Sign;
+        public readonly string? Value;
+        public readonly string? Format;
         internal IntegerRadixDetector(int radix, Regex expr)
         {
             Radix = radix;
@@ -40,7 +40,7 @@ namespace Darkangel.Strings
             Value = text;
         }
 
-        public static IntegerRadixDetector DetectRadixByFormat(string text)
+        public static IntegerRadixDetector? DetectRadixByFormat(string text)
         {
             #region Проверка аргументов
 #if CHECK_ARGS
@@ -49,8 +49,8 @@ namespace Darkangel.Strings
             #endregion Проверка аргументов
             foreach (var md in _Detectors)
             {
-                Match m = md.Expression.Match(text);
-                if (m.Success)
+                Match? m = md.Expression?.Match(text) ?? null;
+                if (m?.Success ?? false)
                 {
                     return new IntegerRadixDetector(md, m);
                 }
@@ -58,7 +58,7 @@ namespace Darkangel.Strings
             return null;
         }
 
-        public static IntegerRadixDetector DetectRadixByContent(string text)
+        public static IntegerRadixDetector? DetectRadixByContent(string text)
         {
             #region Проверка аргументов
 #if CHECK_ARGS
@@ -109,7 +109,7 @@ namespace Darkangel.Strings
             new IntegerRadixDetector(10, new Regex(sDecimal, RegexOptions.Compiled | RegexOptions.Singleline)),
         };
 
-        public static IntegerRadixDetector DetectIntegerRadix(string text)
+        public static IntegerRadixDetector? DetectIntegerRadix(string text)
         {
             var m = DetectRadixByFormat(text);
             if (m != null)

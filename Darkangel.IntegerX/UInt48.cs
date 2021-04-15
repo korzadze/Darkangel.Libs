@@ -50,8 +50,8 @@ namespace Darkangel.IntegerX
             return (isLittleEndian) ?
                 new UInt48((UInt64)
                     (
-                    (data[start + 0] << 0) |
-                    (data[start + 1] << 8) |
+                    (data[start + 0] <<  0) |
+                    (data[start + 1] <<  8) |
                     (data[start + 2] << 16) |
                     (data[start + 3] << 24) |
                     (data[start + 4] << 32) |
@@ -59,8 +59,8 @@ namespace Darkangel.IntegerX
                     )) :
                 new UInt48((UInt32)
                     (
-                    (data[start + 5] << 0) |
-                    (data[start + 4] << 8) |
+                    (data[start + 5] <<  0) |
+                    (data[start + 4] <<  8) |
                     (data[start + 3] << 16) |
                     (data[start + 2] << 24) |
                     (data[start + 1] << 32) |
@@ -78,8 +78,8 @@ namespace Darkangel.IntegerX
 
             if (isLittleEndian)
             {
-                res[0] = (byte)((_Value >> 0) & 0xff);
-                res[1] = (byte)((_Value >> 8) & 0xff);
+                res[0] = (byte)((_Value >>  0) & 0xff);
+                res[1] = (byte)((_Value >>  8) & 0xff);
                 res[2] = (byte)((_Value >> 16) & 0xff);
                 res[3] = (byte)((_Value >> 24) & 0xff);
                 res[4] = (byte)((_Value >> 32) & 0xff);
@@ -87,8 +87,8 @@ namespace Darkangel.IntegerX
             }
             else
             {
-                res[5] = (byte)((_Value >> 0) & 0xff);
-                res[4] = (byte)((_Value >> 8) & 0xff);
+                res[5] = (byte)((_Value >>  0) & 0xff);
+                res[4] = (byte)((_Value >>  8) & 0xff);
                 res[3] = (byte)((_Value >> 16) & 0xff);
                 res[2] = (byte)((_Value >> 24) & 0xff);
                 res[1] = (byte)((_Value >> 32) & 0xff);

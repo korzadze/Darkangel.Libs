@@ -179,6 +179,62 @@
             <param name="isLittleEndian">Порядок байтов значейния в потоке</param>
             <returns>Считанное значение</returns>
         </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Swap(System.UInt16)">
+            <summary>
+            <para>Поменять порядок байт в значении</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <returns>Результат перестановки</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Swap(Darkangel.IntegerX.UInt24)">
+            <summary>
+            <para>Поменять порядок байт в значении</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <returns>Результат перестановки</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Swap(System.UInt32)">
+            <summary>
+            <para>Поменять порядок байт в значении</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <returns>Результат перестановки</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Swap(Darkangel.IntegerX.UInt48)">
+            <summary>
+            <para>Поменять порядок байт в значении</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <returns>Результат перестановки</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Swap(System.UInt64)">
+            <summary>
+            <para>Поменять порядок байт в значении</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <returns>Результат перестановки</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Swap(System.Int16)">
+            <summary>
+            <para>Поменять порядок байт в значении</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <returns>Результат перестановки</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Swap(System.Int32)">
+            <summary>
+            <para>Поменять порядок байт в значении</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <returns>Результат перестановки</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Swap(System.Int64)">
+            <summary>
+            <para>Поменять порядок байт в значении</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <returns>Результат перестановки</returns>
+        </member>
         <member name="T:Darkangel.IntegerX.UInt24">
             <summary>
             3-байтное беззнаковое целое

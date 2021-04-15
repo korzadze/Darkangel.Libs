@@ -4,14 +4,19 @@
         <name>Darkangel.CommandLine</name>
     </assembly>
     <members>
+        <member name="T:Darkangel.CommandLineSwitch">
+            <summary>
+            <para>Опция коммандной строки</para>
+            </summary>
+        </member>
         <member name="F:Darkangel.CommandLineSwitch.ShortName">
             <summary>
-            <para>Короткое имя опции</para>
+            <para>Короткое имя опции (-o [value])</para>
             </summary>
         </member>
         <member name="F:Darkangel.CommandLineSwitch.LongName">
             <summary>
-            <para>Длинное имя опции</para>
+            <para>Длинное имя опции (--opt[=value])</para>
             </summary>
         </member>
         <member name="F:Darkangel.CommandLineSwitch.Flags">

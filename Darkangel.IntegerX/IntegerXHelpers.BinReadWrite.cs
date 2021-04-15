@@ -144,15 +144,15 @@ namespace Darkangel.IntegerX
             if (isLittleEndian)
             {
                 return (UInt16)(
-                    ((data[start + 0] << 0) & 0xff) |
-                    ((data[start + 1] << 8) & 0xff)
+                    (data[start + 0] << 0) |
+                    (data[start + 1] << 8)
                     );
             }
             else
             {
                 return (UInt16)(
-                    ((data[start + 1] << 0) & 0xff) |
-                    ((data[start + 0] << 8) & 0xff)
+                    (data[start + 1] << 0) |
+                    (data[start + 0] << 8)
                     );
             }
         }
@@ -251,19 +251,19 @@ namespace Darkangel.IntegerX
             if (isLittleEndian)
             {
                 return (UInt32)(
-                    ((data[start + 0] <<  0) & 0xff) |
-                    ((data[start + 1] <<  8) & 0xff) |
-                    ((data[start + 2] << 16) & 0xff) |
-                    ((data[start + 3] << 24) & 0xff)
+                    (data[start + 0] <<  0) |
+                    (data[start + 1] <<  8) |
+                    (data[start + 2] << 16) |
+                    (data[start + 3] << 24)
                     );
             }
             else
             {
                 return (UInt32)(
-                    ((data[start + 3] <<  0) & 0xff) |
-                    ((data[start + 2] <<  8) & 0xff) |
-                    ((data[start + 1] << 16) & 0xff) |
-                    ((data[start + 0] << 24) & 0xff)
+                    (data[start + 3] <<  0) |
+                    (data[start + 2] <<  8) |
+                    (data[start + 1] << 16) |
+                    (data[start + 0] << 24)
                     );
             }
         }
@@ -370,27 +370,27 @@ namespace Darkangel.IntegerX
             if (isLittleEndian)
             {
                 return (UInt64)(
-                    ((data[start + 0] << 0) & 0xff) |
-                    ((data[start + 1] << 8) & 0xff) |
-                    ((data[start + 2] << 16) & 0xff) |
-                    ((data[start + 3] << 24) & 0xff) |
-                    ((data[start + 4] << 32) & 0xff) |
-                    ((data[start + 5] << 40) & 0xff) |
-                    ((data[start + 6] << 48) & 0xff) |
-                    ((data[start + 7] << 56) & 0xff)
+                    (data[start + 0] <<  0) |
+                    (data[start + 1] <<  8) |
+                    (data[start + 2] << 16) |
+                    (data[start + 3] << 24) |
+                    (data[start + 4] << 32) |
+                    (data[start + 5] << 40) |
+                    (data[start + 6] << 48) |
+                    (data[start + 7] << 56)
                     );
             }
             else
             {
                 return (UInt64)(
-                    ((data[start + 7] << 0) & 0xff) |
-                    ((data[start + 6] << 8) & 0xff) |
-                    ((data[start + 5] << 16) & 0xff) |
-                    ((data[start + 4] << 24) & 0xff) |
-                    ((data[start + 3] << 32) & 0xff) |
-                    ((data[start + 2] << 40) & 0xff) |
-                    ((data[start + 1] << 48) & 0xff) |
-                    ((data[start + 0] << 56) & 0xff)
+                    (data[start + 7] <<  0) |
+                    (data[start + 6] <<  8) |
+                    (data[start + 5] << 16) |
+                    (data[start + 4] << 24) |
+                    (data[start + 3] << 32) |
+                    (data[start + 2] << 40) |
+                    (data[start + 1] << 48) |
+                    (data[start + 0] << 56)
                     );
             }
         }
