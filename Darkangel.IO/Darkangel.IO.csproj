@@ -12,7 +12,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>TRACE;CHECK_ARGS</DefineConstants>
+    <DefineConstants>TRACE;CHECK_ARGS WINDOWS</DefineConstants>
     <DocumentationFile>C:\Users\Александр\OneDrive\Development\Hobby\Darkangel.Libs\Darkangel.IO\Darkangel.IO.xml</DocumentationFile>
   </PropertyGroup>
 

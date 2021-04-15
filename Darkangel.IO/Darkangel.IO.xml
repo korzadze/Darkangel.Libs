@@ -47,5 +47,72 @@
             <param name="wr">Двоичный поток</param>
             <param name="data">Экземпляр структуры</param>
         </member>
+        <member name="T:Darkangel.IO.TemporaryStream">
+            <summary>
+            <para>Утилита для создания временного файла</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.IO.TemporaryStream.EFileShare.None">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Darkangel.IO.TemporaryStream.EFileShare.Read">
+            <summary>
+            Enables subsequent open operations on an object to request read access. 
+            Otherwise, other processes cannot open the object if they request read access. 
+            If this flag is not specified, but the object has been opened for read access, the function fails.
+            </summary>
+        </member>
+        <member name="F:Darkangel.IO.TemporaryStream.EFileShare.Write">
+            <summary>
+            Enables subsequent open operations on an object to request write access. 
+            Otherwise, other processes cannot open the object if they request write access. 
+            If this flag is not specified, but the object has been opened for write access, the function fails.
+            </summary>
+        </member>
+        <member name="F:Darkangel.IO.TemporaryStream.EFileShare.Delete">
+            <summary>
+            Enables subsequent open operations on an object to request delete access. 
+            Otherwise, other processes cannot open the object if they request delete access.
+            If this flag is not specified, but the object has been opened for delete access, the function fails.
+            </summary>
+        </member>
+        <member name="F:Darkangel.IO.TemporaryStream.ECreationDisposition.New">
+            <summary>
+            Creates a new file. The function fails if a specified file exists.
+            </summary>
+        </member>
+        <member name="F:Darkangel.IO.TemporaryStream.ECreationDisposition.CreateAlways">
+            <summary>
+            Creates a new file, always. 
+            If a file exists, the function overwrites the file, clears the existing attributes, combines the specified file attributes, 
+            and flags with FILE_ATTRIBUTE_ARCHIVE, but does not set the security descriptor that the SECURITY_ATTRIBUTES structure specifies.
+            </summary>
+        </member>
+        <member name="F:Darkangel.IO.TemporaryStream.ECreationDisposition.OpenExisting">
+            <summary>
+            Opens a file. The function fails if the file does not exist. 
+            </summary>
+        </member>
+        <member name="F:Darkangel.IO.TemporaryStream.ECreationDisposition.OpenAlways">
+            <summary>
+            Opens a file, always. 
+            If a file does not exist, the function creates a file as if dwCreationDisposition is CREATE_NEW.
+            </summary>
+        </member>
+        <member name="F:Darkangel.IO.TemporaryStream.ECreationDisposition.TruncateExisting">
+            <summary>
+            Opens a file and truncates it so that its size is 0 (zero) bytes. The function fails if the file does not exist.
+            The calling process must open the file with the GENERIC_WRITE access right. 
+            </summary>
+        </member>
+        <member name="M:Darkangel.IO.TemporaryStream.Create(System.String)">
+            <summary>
+            <para>Создать временный файл</para>
+            </summary>
+            <param name="suffix">Суффикс временного файла</param>
+            <returns>Поток, удаляемый после закрытия (если дело происходит в Windows)</returns>
+        </member>
     </members>
 </doc>
