@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Darkangel.Arrays\Darkangel.Arrays.csproj" />
+    <ProjectReference Include="..\Darkangel.Assembler\Darkangel.Assembler.csproj" />
     <ProjectReference Include="..\Darkangel.IntegerX\Darkangel.IntegerX.csproj" />
   </ItemGroup>
 

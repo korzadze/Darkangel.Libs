@@ -15,7 +15,7 @@
             <para>Биты, уходящие из числа с одной стороны, добавляются с другой</para>
             </summary>
             <param name="value">Исходное значение</param>
-            <param name="bits">Количество бит. Если значение больше нуля, то биты вращаются влево, иначе - вправо</param>
+            <param name="bits"><para>Количество бит.</para><para>Если значение больше нуля, то биты вращаются влево, иначе - вправо</para></param>
             <returns>Результат операции</returns>
         </member>
         <member name="M:Darkangel.Assembler.AsmHelper.RotateBits(System.UInt16,System.Int32)">
@@ -24,7 +24,7 @@
             <para>Биты, уходящие из числа с одной стороны, добавляются с другой</para>
             </summary>
             <param name="value">Исходное значение</param>
-            <param name="bits">Количество бит. Если значение больше нуля, то биты вращаются влево, иначе - вправо</param>
+            <param name="bits"><para>Количество бит.</para><para>Если значение больше нуля, то биты вращаются влево, иначе - вправо</para></param>
             <returns>Результат операции</returns>
         </member>
         <member name="M:Darkangel.Assembler.AsmHelper.RotateBits(System.UInt32,System.Int32)">
@@ -33,7 +33,7 @@
             <para>Биты, уходящие из числа с одной стороны, добавляются с другой</para>
             </summary>
             <param name="value">Исходное значение</param>
-            <param name="bits">Количество бит. Если значение больше нуля, то биты вращаются влево, иначе - вправо</param>
+            <param name="bits"><para>Количество бит.</para><para>Если значение больше нуля, то биты вращаются влево, иначе - вправо</para></param>
             <returns>Результат операции</returns>
         </member>
         <member name="M:Darkangel.Assembler.AsmHelper.RotateBits(System.UInt64,System.Int32)">
@@ -42,7 +42,7 @@
             <para>Биты, уходыщие из числа с одной стороны, добавляются с другой</para>
             </summary>
             <param name="value">Исходное значение</param>
-            <param name="bits">Количество бит. Если значение больше нуля, то биты вращаются влево, иначе - вправо</param>
+            <param name="bits"><para>Количество бит.</para><para>Если значение больше нуля, то биты вращаются влево, иначе - вправо</para></param>
             <returns>Результат операции</returns>
         </member>
     </members>

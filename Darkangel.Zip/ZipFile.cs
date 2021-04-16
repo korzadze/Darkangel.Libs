@@ -16,7 +16,7 @@ namespace Darkangel.Zip
         }
         public IEnumerable<ZipRecord> ReadArchive(Stream input)
         {
-
+            throw new NotImplementedException();
         }
     }
 }

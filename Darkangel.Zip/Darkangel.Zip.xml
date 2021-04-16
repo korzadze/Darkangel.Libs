@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Darkangel.Zip</name>
+    </assembly>
+    <members>
+        <member name="T:Darkangel.Zip.ZipRecord">
+            <summary>
+            <para>Базовый класс для записей ZIP-архива</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.ZipRecord.Id">
+            <summary>
+            <para>Идентификатор записи (подпись, сигнатура)</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.ZipRecord.StartOffset">
+            <summary>
+            <para>Смещение начала записи в архиве</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.ZipRecord.FixedPartSize">
+            <summary>
+            <para>Размер фиксированной части записи</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.ZipRecord.VariablePartSize">
+            <summary>
+            <para>Размер переменной части записи</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Zip.ZipRecord.GetString(System.Byte[],System.Int32,System.Int32,System.Text.Encoding)">
+            <summary>
+            <para>Считать строку из буфера</para>
+            </summary>
+            <param name="buf">Исходный буфер</param>
+            <param name="offset">Смещение первого байта строки в буфере</param>
+            <param name="length">Размер строки в байтах</param>
+            <param name="encoding">Кодировка строки</param>
+            <returns>Считанная строка</returns>
+        </member>
+        <member name="M:Darkangel.Zip.ZipRecord.Load(System.IO.Stream)">
+            <summary>
+            <para>Загрузить запись из потока</para>
+            </summary>
+            <param name="stream">Исходный поток</param>
+        </member>
+        <member name="T:Darkangel.Zip.ZipRecordSignature">
+            <summary>
+            <para>Подпись записи ZIP-архива</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.ZipRecordSignature.FixedPartSize">
+            <inheritdoc/>
+        </member>
+        <member name="P:Darkangel.Zip.ZipRecordSignature.VariablePartSize">
+            <inheritdoc/>
+        </member>
+        <member name="P:Darkangel.Zip.ZipRecordSignature.Id">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.ZipRecordSignature.Load(System.IO.Stream)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

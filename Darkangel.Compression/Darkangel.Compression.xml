@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Darkangel.Compression</name>
+    </assembly>
+    <members>
+        <member name="T:Darkangel.Compression.ICompressor">
+            <summary>
+            <para></para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Compression.ICompressor.Compress(System.Byte[])">
+            <summary>
+            <para></para>
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Darkangel.Compression.ICompressor.Decompress(System.Byte[])">
+            <summary>
+            <para></para>
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Darkangel.Compression.ICompressor.Compress(System.IO.Stream,System.IO.Stream)">
+            <summary>
+            <para></para>
+            </summary>
+            <param name="inStream"></param>
+            <param name="outStream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Darkangel.Compression.ICompressor.Decompress(System.IO.Stream,System.IO.Stream)">
+            <summary>
+            <para></para>
+            </summary>
+            <param name="inStream"></param>
+            <param name="outStream"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

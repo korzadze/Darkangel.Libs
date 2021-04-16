@@ -65,7 +65,7 @@ namespace Darkangel.Zip
         {
             #region Проверка аргументов
 #if CHECK_ARGS
-            _ = owner ?? throw new ArgumentNullException(nameof(owner));
+            _ = stream ?? throw new ArgumentNullException(nameof(stream));
 #endif
             #endregion Проверка аргументов
             StartOffset = stream.Position;
