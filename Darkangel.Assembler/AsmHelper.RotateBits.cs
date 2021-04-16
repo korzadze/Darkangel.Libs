@@ -12,16 +12,15 @@ namespace Darkangel.Assembler
         /// <para>Биты, уходящие из числа с одной стороны, добавляются с другой</para>
         /// </summary>
         /// <param name="value">Исходное значение</param>
-        /// <param name="bits">Количество бит. Если значение больше нуля, то биты вращаются влево, иначе - вправо</param>
+        /// <param name="bits"><para>Количество бит.</para><para>Если значение больше нуля, то биты вращаются влево, иначе - вправо</para></param>
         /// <returns>Результат операции</returns>
         public static Byte RotateBits(this Byte value, int bits)
         {
             const int ValueBits = 8;
 
-            var direction = bits >= 0;
-            var count = ((direction) ? (bits) : (-bits)) % ValueBits;
+            var count = Math.Abs(bits) % ValueBits;
             if (count == 0) return value;
-            if (direction) // ROL
+            if (bits > 0) // ROL
             {
                 return (byte)((value << count) | (value >> (ValueBits - count)));
             }
@@ -35,22 +34,21 @@ namespace Darkangel.Assembler
         /// <para>Биты, уходящие из числа с одной стороны, добавляются с другой</para>
         /// </summary>
         /// <param name="value">Исходное значение</param>
-        /// <param name="bits">Количество бит. Если значение больше нуля, то биты вращаются влево, иначе - вправо</param>
+        /// <param name="bits"><para>Количество бит.</para><para>Если значение больше нуля, то биты вращаются влево, иначе - вправо</para></param>
         /// <returns>Результат операции</returns>
         public static UInt16 RotateBits(this UInt16 value, int bits)
         {
             const int ValueBits = 16;
 
-            var direction = bits >= 0;
-            var count = ((direction) ? (bits) : (-bits)) % ValueBits;
+            var count = Math.Abs(bits) % ValueBits;
             if (count == 0) return value;
-            if (direction) // ROL
+            if (bits > 0) // ROL
             {
-                return (UInt16)((value << count) | (value >> (ValueBits - count)));
+                return (byte)((value << count) | (value >> (ValueBits - count)));
             }
             else // ROR
             {
-                return (UInt16)((value << (ValueBits - count)) | (value >> count));
+                return (byte)((value << (ValueBits - count)) | (value >> count));
             }
         }
         /// <summary>
@@ -58,22 +56,21 @@ namespace Darkangel.Assembler
         /// <para>Биты, уходящие из числа с одной стороны, добавляются с другой</para>
         /// </summary>
         /// <param name="value">Исходное значение</param>
-        /// <param name="bits">Количество бит. Если значение больше нуля, то биты вращаются влево, иначе - вправо</param>
+        /// <param name="bits"><para>Количество бит.</para><para>Если значение больше нуля, то биты вращаются влево, иначе - вправо</para></param>
         /// <returns>Результат операции</returns>
         public static UInt32 RotateBits(this UInt32 value, int bits)
         {
             const int ValueBits = 32;
 
-            var direction = bits >= 0;
-            var count = ((direction) ? (bits) : (-bits)) % ValueBits;
+            var count = Math.Abs(bits) % ValueBits;
             if (count == 0) return value;
-            if (direction) // ROL
+            if (bits > 0) // ROL
             {
-                return ((value << count) | (value >> (ValueBits - count)));
+                return (byte)((value << count) | (value >> (ValueBits - count)));
             }
             else // ROR
             {
-                return ((value << (ValueBits - count)) | (value >> count));
+                return (byte)((value << (ValueBits - count)) | (value >> count));
             }
         }
         /// <summary>
@@ -81,22 +78,21 @@ namespace Darkangel.Assembler
         /// <para>Биты, уходыщие из числа с одной стороны, добавляются с другой</para>
         /// </summary>
         /// <param name="value">Исходное значение</param>
-        /// <param name="bits">Количество бит. Если значение больше нуля, то биты вращаются влево, иначе - вправо</param>
+        /// <param name="bits"><para>Количество бит.</para><para>Если значение больше нуля, то биты вращаются влево, иначе - вправо</para></param>
         /// <returns>Результат операции</returns>
         public static UInt64 RotateBits(this UInt64 value, int bits)
         {
             const int ValueBits = 64;
 
-            var direction = bits >= 0;
-            var count = ((direction) ? (bits) : (-bits)) % ValueBits;
+            var count = Math.Abs(bits) % ValueBits;
             if (count == 0) return value;
-            if (direction) // ROL
+            if (bits > 0) // ROL
             {
-                return ((value << count) | (value >> (ValueBits - count)));
+                return (byte)((value << count) | (value >> (ValueBits - count)));
             }
             else // ROR
             {
-                return ((value << (ValueBits - count)) | (value >> count));
+                return (byte)((value << (ValueBits - count)) | (value >> count));
             }
         }
     }
