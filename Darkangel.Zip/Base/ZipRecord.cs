@@ -16,15 +16,7 @@ namespace Darkangel.Zip
         /// <summary>
         /// <para>Смещение начала записи в архиве</para>
         /// </summary>
-        public long StartOffset { get; private set; }
-        /// <summary>
-        /// <para>Размер фиксированной части записи</para>
-        /// </summary>
-        public abstract long FixedPartSize { get; }
-        /// <summary>
-        /// <para>Размер переменной части записи</para>
-        /// </summary>
-        public abstract long VariablePartSize { get; }
+        protected long StartOffset { get; private set; }
         /// <summary>
         /// <para>Считать строку из буфера</para>
         /// </summary>
