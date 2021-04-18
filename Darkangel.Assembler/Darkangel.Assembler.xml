@@ -17,6 +17,7 @@
             <param name="value">Исходное значение</param>
             <param name="bits"><para>Количество бит.</para><para>Если значение больше нуля, то биты вращаются влево, иначе - вправо</para></param>
             <returns>Результат операции</returns>
+            <remarks>v.2021.04.18</remarks>
         </member>
         <member name="M:Darkangel.Assembler.AsmHelper.RotateBits(System.UInt16,System.Int32)">
             <summary>
@@ -26,7 +27,7 @@
             <param name="value">Исходное значение</param>
             <param name="bits"><para>Количество бит.</para><para>Если значение больше нуля, то биты вращаются влево, иначе - вправо</para></param>
             <returns>Результат операции</returns>
-            <remarks>release</remarks>
+            <remarks>v.2021.04.18</remarks>
         </member>
         <member name="M:Darkangel.Assembler.AsmHelper.RotateBits(System.UInt32,System.Int32)">
             <summary>
@@ -36,7 +37,7 @@
             <param name="value">Исходное значение</param>
             <param name="bits"><para>Количество бит.</para><para>Если значение больше нуля, то биты вращаются влево, иначе - вправо</para></param>
             <returns>Результат операции</returns>
-            <remarks>release</remarks>
+            <remarks>v.2021.04.18</remarks>
         </member>
         <member name="M:Darkangel.Assembler.AsmHelper.RotateBits(System.UInt64,System.Int32)">
             <summary>
@@ -46,7 +47,7 @@
             <param name="value">Исходное значение</param>
             <param name="bits"><para>Количество бит.</para><para>Если значение больше нуля, то биты вращаются влево, иначе - вправо</para></param>
             <returns>Результат операции</returns>
-            <remarks>release</remarks>
+            <remarks>v.2021.04.18</remarks>
         </member>
     </members>
 </doc>

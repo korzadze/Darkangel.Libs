@@ -2,10 +2,7 @@
 
 namespace Darkangel.Assembler
 {
-    /// <summary>
-    /// <para>Реализация низкоуровневых операций</para>
-    /// </summary>
-    public static class AsmHelper
+    public static partial class AsmHelper
     {
         /// <summary>
         /// <para>Реализация ассемблерной команды ROL/ROR: вращение битов значения.</para>
@@ -14,6 +11,7 @@ namespace Darkangel.Assembler
         /// <param name="value">Исходное значение</param>
         /// <param name="bits"><para>Количество бит.</para><para>Если значение больше нуля, то биты вращаются влево, иначе - вправо</para></param>
         /// <returns>Результат операции</returns>
+        /// <remarks>v.2021.04.18</remarks>
         public static Byte RotateBits(this Byte value, int bits)
         {
             const int ValueBits = 8;
@@ -36,7 +34,7 @@ namespace Darkangel.Assembler
         /// <param name="value">Исходное значение</param>
         /// <param name="bits"><para>Количество бит.</para><para>Если значение больше нуля, то биты вращаются влево, иначе - вправо</para></param>
         /// <returns>Результат операции</returns>
-        /// <remarks>release</remarks>
+        /// <remarks>v.2021.04.18</remarks>
         public static UInt16 RotateBits(this UInt16 value, int bits)
         {
             const int ValueBits = 16;
@@ -59,7 +57,7 @@ namespace Darkangel.Assembler
         /// <param name="value">Исходное значение</param>
         /// <param name="bits"><para>Количество бит.</para><para>Если значение больше нуля, то биты вращаются влево, иначе - вправо</para></param>
         /// <returns>Результат операции</returns>
-        /// <remarks>release</remarks>
+        /// <remarks>v.2021.04.18</remarks>
         public static UInt32 RotateBits(this UInt32 value, int bits)
         {
             const int ValueBits = 32;
@@ -82,7 +80,7 @@ namespace Darkangel.Assembler
         /// <param name="value">Исходное значение</param>
         /// <param name="bits"><para>Количество бит.</para><para>Если значение больше нуля, то биты вращаются влево, иначе - вправо</para></param>
         /// <returns>Результат операции</returns>
-        /// <remarks>release</remarks>
+        /// <remarks>v.2021.04.18</remarks>
         public static UInt64 RotateBits(this UInt64 value, int bits)
         {
             const int ValueBits = 64;
