@@ -34,6 +34,7 @@ namespace Darkangel.Zip
         {
             _Fields.Clear();
             var readed = 0;
+            var startPos = file.Stream.Position;
             while (readed < dataSize)
             {
                 var chunkSize = 0;
@@ -46,6 +47,7 @@ namespace Darkangel.Zip
                 file.Stream.Position = pos + chunkSize;
                 readed += chunkSize;
             }
+            file.Stream.Position = startPos + dataSize;
         }
     }
 }

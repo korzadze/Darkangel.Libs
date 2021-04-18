@@ -97,7 +97,9 @@ namespace Darkangel.Zip
             {
                 throw new InvalidZipRecordIdException(id);
             }
-            return (ZipRecord)_RecordsFactory[id].Invoke(null);
+            var rec = (ZipRecord)_RecordsFactory[id].Invoke(null);
+            rec.Owner = this;
+            return rec;
         }
         /// <summary>
         /// <para>Зарегистрировать новый тип дополнительных данных</para>

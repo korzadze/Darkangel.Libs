@@ -79,7 +79,7 @@ namespace Darkangel.Zip {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Invalid extra data size: block:{0} vs record:{1}.
+        ///   Ищет локализованную строку, похожую на Invalid extra data size: read:{0}, need:{1}.
         /// </summary>
         internal static string InvalidZipRecordSizeMessageFormat {
             get {

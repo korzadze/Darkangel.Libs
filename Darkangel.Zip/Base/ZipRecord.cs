@@ -14,6 +14,10 @@ namespace Darkangel.Zip
         /// </summary>
         public abstract long Id { get; }
         /// <summary>
+        /// <para>Файл архива, содержащий данную запись</para>
+        /// </summary>
+        public ZipFile Owner { get; internal set; }
+        /// <summary>
         /// <para>Смещение начала записи в архиве</para>
         /// </summary>
         protected long StartOffset { get; private set; }
@@ -52,15 +56,18 @@ namespace Darkangel.Zip
         /// <summary>
         /// <para>Загрузить запись из потока</para>
         /// </summary>
-        /// <param name="stream">Исходный поток</param>
-        public virtual void Load(Stream stream)
+        /// <param name="file">Файл архива</param>
+        /// <exception cref="ArgumentNullException"/>
+        /// <exception cref="FileLoadException"/>
+        public virtual void Load(ZipFile file)
         {
             #region Проверка аргументов
 #if CHECK_ARGS
-            _ = stream ?? throw new ArgumentNullException(nameof(stream));
+            _ = file ?? throw new ArgumentNullException(nameof(file));
+            _ = file.Stream ?? throw new FileLoadException(nameof(file));
 #endif
             #endregion Проверка аргументов
-            StartOffset = stream.Position;
+            StartOffset = file.Stream.Position;
         }
     }
 }

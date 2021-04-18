@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Darkangel.Xml</name>
+    </assembly>
+    <members>
+        <member name="T:Darkangel.Xml.XmlHelpers">
+            <summary>
+            <para>Утилиты для работы с XML</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Xml.XmlHelpers.AddAttribute(System.Xml.XmlElement,System.String,System.String)">
+            <summary>
+            <para>Добавить элементу атрибут</para>
+            </summary>
+            <param name="element"><para>Родительский элемент</para></param>
+            <param name="name"><para>Полное имя атрибута.</para><para>Если имя содержит двоеточие, свойство Prefix отражает часть имени, предшествующую ему, а свойство LocalName — ту часть, которая следует за первым двоеточием. Свойство NamespaceURI остается пустым, если префикс не является распознаваемым встроенным префиксом, например xmlns. В этом случае NamespaceURI имеет значение http://www.w3.org/2000/xmlns/.</para></param>
+            <param name="value"><para>Значение атрибута (если имеется).</para></param>
+            <returns><para>Родительский элемент</para></returns>
+        </member>
+        <member name="M:Darkangel.Xml.XmlHelpers.AddAttribute(System.Xml.XmlElement,System.String,System.String,System.String)">
+            <summary>
+            <para>Добавить элементу атрибут</para>
+            </summary>
+            <param name="element"><para>Родительский элемент</para></param>
+            <param name="qualifiedName"><para>Полное имя атрибута.<para></para>Если имя содержит двоеточие, свойство Prefix отражает часть имени, предшествующую ему, а свойство LocalName — ту часть, которая следует за двоеточием.</para></param>
+            <param name="namespaceUri"><para>URI пространства имен атрибута. Если полное имя содержит префикс xmlns, то этот параметр должен иметь значение http://www.w3.org/2000/xmlns/.</para></param>
+            <param name="value"><para>Значение атрибута (если имеется).</para></param>
+            <returns><para>Родительский элемент</para></returns>
+        </member>
+        <member name="M:Darkangel.Xml.XmlHelpers.AddAttribute(System.Xml.XmlElement,System.String,System.String,System.String,System.String)">
+            <summary>
+            <para>Добавить элементу атрибут</para>
+            </summary>
+            <param name="element"><para>Родительский элемент</para></param>
+            <param name="prefix"><para>Префикс атрибута (если имеется).</para><para>String.Empty равносильно значению null.</para></param>
+            <param name="localName"><para>Локальное имя атрибута.</para></param>
+            <param name="namespaceUri"><para>URI пространства имен атрибута (если имеется).</para><para>String.Empty равносильно значению null.</para><para>Если значение параметра prefix равно xmlns, этот параметр должен иметь значение http://www.w3.org/2000/xmlns/. В противном случае возникает исключение.</para></param>
+            <param name="value"><para>Значение атрибута (если имеется).</para></param>
+            <returns><para>Родительский элемент</para></returns>
+        </member>
+        <member name="M:Darkangel.Xml.XmlHelpers.AddChild(System.Xml.XmlElement,System.String)">
+            <summary>
+            <para>Добавить дочерний элемент к корневому</para>
+            </summary>
+            <param name="root"><para>Корневой элемент</para></param>
+            <param name="childName"><para>Имя дочернего элемента</para></param>
+            <returns><para>Добавленый дочерний элемент</para></returns>
+        </member>
+        <member name="M:Darkangel.Xml.XmlHelpers.AddChild(System.Xml.XmlElement,System.String,System.String)">
+            <summary>
+            <para>Добавить дочерний элемент к корневому</para>
+            </summary>
+            <param name="root"><para>Корневой элемент</para></param>
+            <param name="qualifiedName"><para>Полное имя элемента.</para><para>Если имя содержит двоеточие, свойство Prefix отражает часть имени, предшествующую ему, а свойство LocalName — ту часть, которая следует за двоеточием. Полное имя не может содержать префикс "xmlns".</para></param>
+            <param name="namespaceUri"><para>Универсальный код ресурса (URI) пространства имен элемента.</para></param>
+            <returns><para>Добавленый дочерний элемент</para></returns>
+        </member>
+        <member name="M:Darkangel.Xml.XmlHelpers.AddChild(System.Xml.XmlElement,System.String,System.String,System.String)">
+            <summary>
+            <para>Добавить дочерний элемент к корневому</para>
+            </summary>
+            <param name="root"><para>Корневой элемент</para></param>
+            <param name="prefix">Префикс нового элемента (если имеется). String.Empty равнозначно значению null.</param>
+            <param name="localName">Локальное имя дочернего элемента.</param>
+            <param name="namespaceUri"><para>Универсальный код ресурса (URI) пространства имен элемента.</para></param>
+            <returns><para>Добавленый дочерний элемент</para></returns>
+        </member>
+        <member name="M:Darkangel.Xml.XmlHelpers.AddText(System.Xml.XmlElement,System.String)">
+            <summary>
+            <para>Добавить текстовый элемент к родительскому</para>
+            </summary>
+            <param name="element"><para>Родительский элемент</para></param>
+            <param name="text"><para>Текст</para></param>
+            <returns><para>Родительский элемент</para></returns>
+        </member>
+    </members>
+</doc>

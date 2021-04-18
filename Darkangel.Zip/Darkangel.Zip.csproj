@@ -12,6 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Darkangel.DateTime\Darkangel.DateTime.csproj" />
     <ProjectReference Include="..\Darkangel.IntegerX\Darkangel.IntegerX.csproj" />
     <ProjectReference Include="..\Darkangel.IO\Darkangel.IO.csproj" />
   </ItemGroup>
