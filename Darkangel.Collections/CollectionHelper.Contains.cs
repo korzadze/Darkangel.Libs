@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-//Готово
 namespace Darkangel.Collections
 {
     /// <summary>
@@ -16,6 +15,7 @@ namespace Darkangel.Collections
         /// <param name="list">Список значений</param>
         /// <param name="value">Искомое значение</param>
         /// <returns>Результат проверки</returns>
+        /// <remarks>release</remarks>
         public static bool Contains<T>(this IEnumerable<T> list, T value)
             where T : IEquatable<T>
         {

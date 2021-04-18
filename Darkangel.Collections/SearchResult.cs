@@ -1,10 +1,11 @@
 ﻿//Готово
 namespace Darkangel.Collections
 {
-    /// <summary>
-    /// <para>Результат поиска в сортированном списке</para>
-    /// </summary>
-    public class SearchResult
+	/// <summary>
+	/// <para>Результат поиска в сортированном списке</para>
+	/// </summary>
+	/// <remarks>release</remarks>
+	public class SearchResult
 	{
 		/// <summary>
 		/// <para>Поиск прошел удачно.</para>

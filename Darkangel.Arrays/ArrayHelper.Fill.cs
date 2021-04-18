@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Darkangel.Arrays
 {
-    //Готово
     /// <summary>
     /// <para>Функция-делегат, генерирующая значения</para>
     /// </summary>
@@ -39,6 +34,7 @@ namespace Darkangel.Arrays
         /// <param name="value">Значение для заполнения</param>
         /// <param name="start">Первый элемент массива, с которого начинается заполнение</param>
         /// <param name="count">Количество элементов массива, заменяемых новым значением</param>
+        /// <remarks>release</remarks>
         public static void Fill<T>(this T[] array, T value, long start = 0, long count = 0)
         {
             #region Check arguments
@@ -68,6 +64,7 @@ namespace Darkangel.Arrays
         /// <param name="generator">Функция-генератор значений</param>
         /// <param name="start">Первый элемент массива, с которого начинается заполнение</param>
         /// <param name="count">Количество элементов массива, заменяемых новым значением</param>
+        /// <remarks>release</remarks>
         public static void Fill<T>(this T[] array, ValueGenerator<T> generator, long start = 0, long count = 0)
         {
             #region Check arguments
@@ -98,6 +95,7 @@ namespace Darkangel.Arrays
         /// <param name="generator">Генератор значений</param>
         /// <param name="start">Первый элемент массива, с которого начинается заполнение</param>
         /// <param name="count">Количество элементов массива, заменяемых новым значением</param>
+        /// <remarks>release</remarks>
         public static void Fill<T>(this T[] array, IValueGenerator<T> generator, long start = 0, long count = 0)
         {
             #region Check arguments

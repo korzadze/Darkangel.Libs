@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Darkangel.Arrays
 {
-    //Готово
     public static partial class ArrayHelper
     {
         /// <summary>
@@ -15,7 +10,8 @@ namespace Darkangel.Arrays
         /// <param name="data">Исходные данные</param>
         /// <param name="signature">Сигнатура данных</param>
         /// <param name="start">Первый байт сигнатуры в данных</param>
-        /// <returns></returns>
+        /// <returns>Результат проверки подписи</returns>
+        /// <remarks>release</remarks>
         public static bool SignatureCheck(this byte[] data, byte[] signature, long start = 0)
         {
             #region Check arguments

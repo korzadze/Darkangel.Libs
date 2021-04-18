@@ -5,24 +5,20 @@ namespace Darkangel
     /// <summary>
     /// <para>Допустимость наличия значения для опции</para>
     /// </summary>
-    [Flags]
-    public enum OptionFlags
+    /// <remarks>release</remarks>
+    public enum OptionValueMode
     {
-        /// <summary>
-        /// <para>Параметр командной строки не является опцией</para>
-        /// </summary>
-        NonOption = 1 << 0,
         /// <summary>
         /// <para>Значение не допустимо</para>
         /// </summary>
-        ValueDenied = 1 << 1,
+        ValueDenied,
         /// <summary>
         /// <para>Значение обязательно</para>
         /// </summary>
-        ValueRequired = 1 << 2,
+        ValueRequired,
         /// <summary>
         /// <para>Значение допустимо</para>
         /// </summary>
-        ValueOptional = ValueRequired | ValueDenied,
+        ValueOptional,
     }
 }

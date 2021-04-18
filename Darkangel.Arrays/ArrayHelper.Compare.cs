@@ -2,7 +2,6 @@
 
 namespace Darkangel.Arrays
 {
-    //Готово
     /// <summary>
     /// <para>Утилиты для работы с массивами</para>
     /// </summary>
@@ -14,10 +13,11 @@ namespace Darkangel.Arrays
         /// <typeparam name="T">Тип элементов массивов</typeparam>
         /// <param name="left">Первый сравниваемый массив</param>
         /// <param name="right">Второй сравниваемый массив</param>
-        /// <param name="fullCompare">Сравнивать массивы полностью или только минимальную область [0..Min(left.Length, right.Length)].
-        /// При совпадении минимальной области и полном сравнении, больше тот массив, который имет больший размер.</param>
+        /// <param name="fullCompare"><para>Сравнивать массивы полностью или только минимальную область [0..Min(left.Length, right.Length)].</para>
+        /// <para>При совпадении минимальной области и полном сравнении, больше тот массив, который имет больший размер.</para></param>
         /// <returns>Результат сравнения</returns>
         /// <exception cref="ArgumentNullException">Один из массивов не определен</exception>
+        /// <remarks>release</remarks>
         public static int CompareWith<T>(this T[] left, T[] right, bool fullCompare = true)
             where T : IComparable<T>
             =>
@@ -29,9 +29,10 @@ namespace Darkangel.Arrays
         /// <param name="left"></param>
         /// <param name="right"></param>
         /// <param name="length"></param>
-        /// <returns></returns>
+        /// <returns>Результат сравнения</returns>
         /// <exception cref="ArgumentNullException">Один из массивов не определен</exception>
         /// <exception cref="ArgumentOutOfRangeException">length выходит за пределы одного из массивов</exception>
+        /// <remarks>release</remarks>
         public static int CompareWith<T>(this T[] left, T[] right, long length)
             where T : IComparable<T>
             =>
@@ -49,6 +50,7 @@ namespace Darkangel.Arrays
         /// <returns>Результат сравнения</returns>
         /// <exception cref="ArgumentNullException">Один из массивов не определен</exception>
         /// <exception cref="ArgumentOutOfRangeException">Одно из значений start1, start2, (start1+length) или (start2+length) выходит за пределы массивов</exception>
+        /// <remarks>release</remarks>
         public static int CompareWith<T>(this T[] left, long start1, T[] right, long start2 = 0, long length = -1, bool fullCompare = true)
             where T : IComparable<T>
         {

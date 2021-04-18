@@ -2,7 +2,6 @@
 
 namespace Darkangel.Arrays
 {
-    //Готово
     public static partial class ArrayHelper
     {
         /// <summary>
@@ -13,6 +12,7 @@ namespace Darkangel.Arrays
         /// <param name="start">Первый копируемый элемент массива</param>
         /// <param name="length">Количество копируемых элементов массива</param>
         /// <returns>Вырезанный субвектор</returns>
+        /// <remarks>release</remarks>
         public static T[] Splice<T>(this T[] array, long start, long length)
         {
             #region Check arguments
@@ -46,6 +46,7 @@ namespace Darkangel.Arrays
         /// <param name="array">Исходный массив</param>
         /// <param name="start">Первый копируемый элемент массива</param>
         /// <returns>Вырезанный субвектор</returns>
+        /// <remarks>release</remarks>
         public static T[] Splice<T>(this T[] array, long start)
         {
 #if CHECK_ARGS

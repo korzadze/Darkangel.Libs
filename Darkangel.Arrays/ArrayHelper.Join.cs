@@ -2,7 +2,6 @@
 
 namespace Darkangel.Arrays
 {
-    //Готово
     public static partial class ArrayHelper
     {
         /// <summary>
@@ -12,6 +11,7 @@ namespace Darkangel.Arrays
         /// <param name="array">Исходный массив</param>
         /// <param name="newElements">Добавляемый массив</param>
         /// <returns>Результируюший массив</returns>
+        /// <remarks>release</remarks>
         public static T[] JoinWith<T>(this T[] array, T[] newElements)
         {
             return array.Union(newElements).ToArray();
