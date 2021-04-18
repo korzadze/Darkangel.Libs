@@ -4,7 +4,6 @@ namespace Darkangel.Collections
 	/// <summary>
 	/// <para>Результат поиска в сортированном списке</para>
 	/// </summary>
-	/// <remarks>release</remarks>
 	public class SearchResult
 	{
 		/// <summary>

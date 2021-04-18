@@ -14,7 +14,6 @@ namespace Darkangel.Assembler
         /// <param name="value">Исходное значение</param>
         /// <param name="bits"><para>Количество бит.</para><para>Если значение больше нуля, то биты вращаются влево, иначе - вправо</para></param>
         /// <returns>Результат операции</returns>
-        /// <remarks>release</remarks>
         public static Byte RotateBits(this Byte value, int bits)
         {
             const int ValueBits = 8;

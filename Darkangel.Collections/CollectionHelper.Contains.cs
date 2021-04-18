@@ -3,9 +3,6 @@ using System.Collections.Generic;
 
 namespace Darkangel.Collections
 {
-    /// <summary>
-    /// <para>Утилиты для работы с коллекциями</para>
-    /// </summary>
     public static partial class CollectionHelper
     {
         /// <summary>
@@ -15,7 +12,6 @@ namespace Darkangel.Collections
         /// <param name="list">Список значений</param>
         /// <param name="value">Искомое значение</param>
         /// <returns>Результат проверки</returns>
-        /// <remarks>release</remarks>
         public static bool Contains<T>(this IEnumerable<T> list, T value)
             where T : IEquatable<T>
         {

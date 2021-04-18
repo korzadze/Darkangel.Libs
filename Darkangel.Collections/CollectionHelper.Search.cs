@@ -20,7 +20,6 @@ namespace Darkangel.Collections
 		/// <returns><para>Результат поиска значения.</para>
 		/// <para>Если true, то index содержит индекс ключа в списке.</para>
 		/// <para>Если false, то index содержит индекс возможного расположения ключа в списке</para></returns>
-		/// <remarks>release</remarks>
 		public static SearchResult Search<T>(this IList<T> sortedList, T item, bool hasDuplicate = false)
 			where T : IComparable
 		{
@@ -71,7 +70,6 @@ namespace Darkangel.Collections
 		/// <returns><para>Результат поиска значения.</para>
 		/// <para>Если true, то index содержит индекс ключа в списке.</para>
 		/// <para>Если false, то index содержит индекс возможного расположения ключа в списке</para></returns>
-		/// <remarks>release</remarks>
 		public static SearchResult Search<T, TKey>(this IList<T> sortedList, TKey key, bool hasDuplicate = false)
 			where T : IComparable<TKey>
 		{

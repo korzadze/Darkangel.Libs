@@ -5,6 +5,7 @@ namespace Darkangel.Arrays
     /// <summary>
     /// <para>Утилиты для работы с массивами</para>
     /// </summary>
+    /// <remarks>release</remarks>
     public static partial class ArrayHelper
     {
         /// <summary>

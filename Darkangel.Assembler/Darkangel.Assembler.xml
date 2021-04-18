@@ -17,7 +17,6 @@
             <param name="value">Исходное значение</param>
             <param name="bits"><para>Количество бит.</para><para>Если значение больше нуля, то биты вращаются влево, иначе - вправо</para></param>
             <returns>Результат операции</returns>
-            <remarks>release</remarks>
         </member>
         <member name="M:Darkangel.Assembler.AsmHelper.RotateBits(System.UInt16,System.Int32)">
             <summary>

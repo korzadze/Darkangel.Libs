@@ -8,6 +8,7 @@
             <summary>
             <para>Утилиты для работы с массивами</para>
             </summary>
+            <remarks>release</remarks>
         </member>
         <member name="M:Darkangel.Arrays.ArrayHelper.CompareWith``1(``0[],``0[],System.Boolean)">
             <summary>
@@ -60,7 +61,6 @@
             <param name="value">Значение для заполнения</param>
             <param name="start">Первый элемент массива, с которого начинается заполнение</param>
             <param name="count">Количество элементов массива, заменяемых новым значением</param>
-            <remarks>release</remarks>
         </member>
         <member name="M:Darkangel.Arrays.ArrayHelper.Fill``1(``0[],Darkangel.Arrays.ValueGenerator{``0},System.Int64,System.Int64)">
             <summary>
@@ -71,7 +71,6 @@
             <param name="generator">Функция-генератор значений</param>
             <param name="start">Первый элемент массива, с которого начинается заполнение</param>
             <param name="count">Количество элементов массива, заменяемых новым значением</param>
-            <remarks>release</remarks>
         </member>
         <member name="M:Darkangel.Arrays.ArrayHelper.Fill``1(``0[],Darkangel.Arrays.IValueGenerator{``0},System.Int64,System.Int64)">
             <summary>
@@ -82,7 +81,6 @@
             <param name="generator">Генератор значений</param>
             <param name="start">Первый элемент массива, с которого начинается заполнение</param>
             <param name="count">Количество элементов массива, заменяемых новым значением</param>
-            <remarks>release</remarks>
         </member>
         <member name="M:Darkangel.Arrays.ArrayHelper.JoinWith``1(``0[],``0[])">
             <summary>
@@ -92,7 +90,6 @@
             <param name="array">Исходный массив</param>
             <param name="newElements">Добавляемый массив</param>
             <returns>Результируюший массив</returns>
-            <remarks>release</remarks>
         </member>
         <member name="M:Darkangel.Arrays.ArrayHelper.SignatureCheck(System.Byte[],System.Byte[],System.Int64)">
             <summary>
@@ -102,7 +99,6 @@
             <param name="signature">Сигнатура данных</param>
             <param name="start">Первый байт сигнатуры в данных</param>
             <returns>Результат проверки подписи</returns>
-            <remarks>release</remarks>
         </member>
         <member name="M:Darkangel.Arrays.ArrayHelper.Splice``1(``0[],System.Int64,System.Int64)">
             <summary>
@@ -113,7 +109,6 @@
             <param name="start">Первый копируемый элемент массива</param>
             <param name="length">Количество копируемых элементов массива</param>
             <returns>Вырезанный субвектор</returns>
-            <remarks>release</remarks>
         </member>
         <member name="M:Darkangel.Arrays.ArrayHelper.Splice``1(``0[],System.Int64)">
             <summary>
@@ -123,7 +118,6 @@
             <param name="array">Исходный массив</param>
             <param name="start">Первый копируемый элемент массива</param>
             <returns>Вырезанный субвектор</returns>
-            <remarks>release</remarks>
         </member>
         <member name="T:Darkangel.Arrays.ValueGenerator`1">
             <summary>

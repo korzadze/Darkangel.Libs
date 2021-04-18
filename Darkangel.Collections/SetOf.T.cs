@@ -12,7 +12,6 @@ namespace Darkangel.Collections
 	/// <para>Для перечислений следует использовать класс <see cref="SetOfE{T}"/>, т.к. перечисления не реализуют интерфейс <see cref="IComparable{T}"/></para>
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
-	/// <remarks>release</remarks>
 	public class SetOf<T> : IEnumerable<T>
         where T : IComparable<T>
     {

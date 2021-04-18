@@ -11,7 +11,6 @@ namespace Darkangel.Collections
 	/// <para>Набор элементов (аналог паскалевского 'set of ...')</para>
 	/// </summary>
 	/// <typeparam name="T">Тип значений перечисления унаследованный от <see cref="Enum"/></typeparam>
-	/// <remarks>release</remarks>
 	public class SetOfE<T> : IEnumerable<T>
 		where T : Enum
 	{

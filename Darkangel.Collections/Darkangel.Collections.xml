@@ -17,7 +17,6 @@
             <param name="list">Список значений</param>
             <param name="value">Искомое значение</param>
             <returns>Результат проверки</returns>
-            <remarks>release</remarks>
         </member>
         <member name="M:Darkangel.Collections.CollectionHelper.Search``1(System.Collections.Generic.IList{``0},``0,System.Boolean)">
             <summary>
@@ -34,7 +33,6 @@
             <returns><para>Результат поиска значения.</para>
             <para>Если true, то index содержит индекс ключа в списке.</para>
             <para>Если false, то index содержит индекс возможного расположения ключа в списке</para></returns>
-            <remarks>release</remarks>
         </member>
         <member name="M:Darkangel.Collections.CollectionHelper.Search``2(System.Collections.Generic.IList{``0},``1,System.Boolean)">
             <summary>
@@ -51,13 +49,11 @@
             <returns><para>Результат поиска значения.</para>
             <para>Если true, то index содержит индекс ключа в списке.</para>
             <para>Если false, то index содержит индекс возможного расположения ключа в списке</para></returns>
-            <remarks>release</remarks>
         </member>
         <member name="T:Darkangel.Collections.SearchResult">
             <summary>
             <para>Результат поиска в сортированном списке</para>
             </summary>
-            <remarks>release</remarks>
         </member>
         <member name="P:Darkangel.Collections.SearchResult.IsFound">
             <summary>
@@ -86,7 +82,6 @@
             <para>Набор элементов (аналог паскалевского 'set of ...')</para>
             </summary>
             <typeparam name="T">Тип значений перечисления унаследованный от <see cref="T:System.Enum"/></typeparam>
-            <remarks>release</remarks>
         </member>
         <member name="M:Darkangel.Collections.SetOfE`1.GetEnumerator">
             <inheritdoc/>
@@ -249,7 +244,6 @@
             <para>Для перечислений следует использовать класс <see cref="T:Darkangel.Collections.SetOfE`1"/>, т.к. перечисления не реализуют интерфейс <see cref="T:System.IComparable`1"/></para>
             </summary>
             <typeparam name="T"></typeparam>
-            <remarks>release</remarks>
         </member>
         <member name="M:Darkangel.Collections.SetOf`1.GetEnumerator">
             <inheritdoc/>
