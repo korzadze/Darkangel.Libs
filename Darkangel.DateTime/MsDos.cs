@@ -21,13 +21,14 @@
             YearsShift = 9;
 
         /// <summary>
-        /// <para>Преобразовать дату и время из формата MS-DOS в DateTime</para>
+        /// <para>Преобразовать дату и время из формата MS-DOS в <see cref="System.DateTime"/></para>
         /// <para>date: YYYYYYYmmmmDDDDD<br/>
         /// time: HHHHHmmmmmmSSSSS</para>
         /// </summary>
         /// <param name="date">Дата в формате MS-DOS</param>
         /// <param name="time">Время в формате MS-DOS</param>
-        /// <returns></returns>
+        /// <returns>Дата и время в формате <see cref="System.DateTime"/></returns>
+        /// <remarks>2021-04-18</remarks>
         public static System.DateTime ToDateTime(ushort date, ushort time) =>
             new (
                     ((date >> YearsShift) & YearsMask) + 1980,
