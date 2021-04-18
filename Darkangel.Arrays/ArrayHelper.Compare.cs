@@ -5,7 +5,6 @@ namespace Darkangel.Arrays
     /// <summary>
     /// <para>Утилиты для работы с массивами</para>
     /// </summary>
-    /// <remarks>release</remarks>
     public static partial class ArrayHelper
     {
         /// <summary>
@@ -18,7 +17,7 @@ namespace Darkangel.Arrays
         /// <para>При совпадении минимальной области и полном сравнении, больше тот массив, который имет больший размер.</para></param>
         /// <returns>Результат сравнения</returns>
         /// <exception cref="ArgumentNullException">Один из массивов не определен</exception>
-        /// <remarks>release</remarks>
+        /// <remarks>v.2021.04.18</remarks>
         public static int CompareWith<T>(this T[] left, T[] right, bool fullCompare = true)
             where T : IComparable<T>
             =>
@@ -33,7 +32,7 @@ namespace Darkangel.Arrays
         /// <returns>Результат сравнения</returns>
         /// <exception cref="ArgumentNullException">Один из массивов не определен</exception>
         /// <exception cref="ArgumentOutOfRangeException">length выходит за пределы одного из массивов</exception>
-        /// <remarks>release</remarks>
+        /// <remarks>v.2021.04.18</remarks>
         public static int CompareWith<T>(this T[] left, T[] right, long length)
             where T : IComparable<T>
             =>
@@ -51,7 +50,7 @@ namespace Darkangel.Arrays
         /// <returns>Результат сравнения</returns>
         /// <exception cref="ArgumentNullException">Один из массивов не определен</exception>
         /// <exception cref="ArgumentOutOfRangeException">Одно из значений start1, start2, (start1+length) или (start2+length) выходит за пределы массивов</exception>
-        /// <remarks>release</remarks>
+        /// <remarks>v.2021.04.18</remarks>
         public static int CompareWith<T>(this T[] left, long start1, T[] right, long start2 = 0, long length = -1, bool fullCompare = true)
             where T : IComparable<T>
         {

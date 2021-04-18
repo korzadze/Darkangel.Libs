@@ -11,6 +11,7 @@ namespace Darkangel.Arrays
         /// <param name="signature">Сигнатура данных</param>
         /// <param name="start">Первый байт сигнатуры в данных</param>
         /// <returns>Результат проверки подписи</returns>
+        /// <remarks>v.2021.04.18</remarks>
         public static bool SignatureCheck(this byte[] data, byte[] signature, long start = 0)
         {
             #region Check arguments
