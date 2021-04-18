@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 
+//Готово
 namespace Darkangel.Collections
 {
     public static partial class CollectionHelper

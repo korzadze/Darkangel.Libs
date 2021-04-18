@@ -1,5 +1,6 @@
 ﻿using System;
 
+//Готово
 namespace Darkangel.Assembler
 {
     /// <summary>

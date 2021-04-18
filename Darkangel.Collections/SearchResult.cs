@@ -1,4 +1,5 @@
-﻿namespace Darkangel.Collections
+﻿//Готово
+namespace Darkangel.Collections
 {
     /// <summary>
     /// <para>Результат поиска в сортированном списке</para>

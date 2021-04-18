@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
+//Готово
 namespace Darkangel.Collections
 {
     /// <summary>
