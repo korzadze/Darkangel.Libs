@@ -13,6 +13,7 @@ namespace Darkangel.Compare
         /// <param name="max">Верхняя граница</param>
         /// <param name="inclusive">Включать границы в сравнение или нет</param>
         /// <returns>Результат проверки</returns>
+        /// <remarks>2021-04-18</remarks>
         public static bool Between<T>(this T value, T min, T max, bool inclusive = true)
             where T: IComparable =>
             (inclusive)?
@@ -26,6 +27,7 @@ namespace Darkangel.Compare
         /// <param name="min">Нижняя граница</param>
         /// <param name="max">Верхняя граница</param>
         /// <returns>Результат проверки</returns>
+        /// <remarks>2021-04-18</remarks>
         public static bool BetweenEx<T>(this T value, T min, T max)
             where T : IComparable =>
             Between(value, min, max, true);
@@ -37,6 +39,7 @@ namespace Darkangel.Compare
         /// <param name="min">Нижняя граница</param>
         /// <param name="max">Верхняя граница</param>
         /// <returns>Результат проверки</returns>
+        /// <remarks>2021-04-18</remarks>
         public static bool BetweenInc<T>(this T value, T min, T max)
             where T : IComparable =>
             Between(value, min, max, true);

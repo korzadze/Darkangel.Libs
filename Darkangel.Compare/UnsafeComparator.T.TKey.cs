@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 
 namespace Darkangel.Compare
 {
@@ -8,6 +7,7 @@ namespace Darkangel.Compare
     /// </summary>
     /// <typeparam name="T">Тип значения</typeparam>
     /// <typeparam name="TKey">Тип ключа</typeparam>
+	/// <remarks>2021-04-18</remarks>
     public class UnsafeComparator<T, TKey> : IComparator<T, TKey>
         where T : IComparable<TKey>
     {

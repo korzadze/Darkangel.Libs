@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 
 namespace Darkangel.Compare
 {
@@ -7,6 +6,7 @@ namespace Darkangel.Compare
     /// <para>Безопасный (с проверкой "пустых" значений) класс для сравниения двух значений</para>
     /// </summary>
     /// <typeparam name="T">Тип значений</typeparam>
+    /// <remarks>2021-04-18</remarks>
     public class SafeComparator<T> : IComparator<T>
 		where T : IComparable
 	{

@@ -1,14 +1,14 @@
 ﻿using System;
-using System.Collections;
 
 namespace Darkangel.Compare
 {
-	/// <summary>
-	/// <para>Безопасный (с проверкой "пустых" значений) класс для сравниения значения с ключем</para>
-	/// </summary>
-	/// <typeparam name="T">Тип значения</typeparam>
-	/// <typeparam name="TKey">Тип ключа</typeparam>
-	public class SafeComparator<T, TKey>: IComparator<T, TKey>
+    /// <summary>
+    /// <para>Безопасный (с проверкой "пустых" значений) класс для сравниения значения с ключем</para>
+    /// </summary>
+    /// <typeparam name="T">Тип значения</typeparam>
+    /// <typeparam name="TKey">Тип ключа</typeparam>
+    /// <remarks>2021-04-18</remarks>
+    public class SafeComparator<T, TKey>: IComparator<T, TKey>
 		where T : IComparable<TKey>
     {
 		/// <inheritdoc/>

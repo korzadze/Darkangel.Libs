@@ -6,6 +6,7 @@ namespace Darkangel.Compare
     /// <para>Итерфейс сравнения значений</para>
     /// </summary>
     /// <typeparam name="T">Тип значения</typeparam>
+	/// <remarks>2021-04-18</remarks>
     public interface IComparator<T>
         where T : IComparable
     {

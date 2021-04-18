@@ -1,13 +1,13 @@
 ﻿using System;
-using System.Collections;
 
 namespace Darkangel.Compare
 {
-    /// <summary>
-    /// <para>Безопасный (с проверкой "пустых" значений) класс для сравниения двух значений</para>
-    /// </summary>
-    /// <typeparam name="T">Тип значений</typeparam>
-    public class SafeComparatorOf<T> : IComparatorOf<T>
+	/// <summary>
+	/// <para>Безопасный (с проверкой "пустых" значений) класс для сравниения двух значений</para>
+	/// </summary>
+	/// <typeparam name="T">Тип значений</typeparam>
+	/// <remarks>2021-04-18</remarks>
+	public class SafeComparatorOf<T> : IComparatorOf<T>
 		where T : IComparable<T>
 	{
 		/// <inheritdoc/>
