@@ -4,6 +4,7 @@
     /// Логический AND, применяемый к списку значений
     /// </summary>
     /// <typeparam name="T"></typeparam>
+    /// <remarks>2021-04-18</remarks>
     public class And<T> : ConditionsList<T>
             where T : IConditionalObject
     {

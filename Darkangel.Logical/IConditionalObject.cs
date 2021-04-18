@@ -3,6 +3,7 @@
     /// <summary>
     /// Интерфейс объекта, имеющего состояние истина/ложь
     /// </summary>
+    /// <remarks>2021-04-18</remarks>
     public interface IConditionalObject
     {
         /// <summary>

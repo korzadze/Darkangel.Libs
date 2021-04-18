@@ -4,6 +4,7 @@
     /// Логический OR, применяемый к списку значений
     /// </summary>
     /// <typeparam name="T"></typeparam>
+    /// <remarks>2021-04-18</remarks>
     public class Or<T> : ConditionsList<T>
         where T : IConditionalObject
     {

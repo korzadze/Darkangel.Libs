@@ -8,6 +8,7 @@ namespace Darkangel.Logical
     /// <para>Список объектов, поддерживающих логические состояния</para>
     /// </summary>
     /// <typeparam name="T">тип объекта списка</typeparam>
+    /// <remarks>2021-04-18</remarks>
     public abstract class ConditionsList<T> : IConditionalObject, IEnumerable<T>
         where T : IConditionalObject
     {
