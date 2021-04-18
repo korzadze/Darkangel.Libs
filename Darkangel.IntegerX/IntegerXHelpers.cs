@@ -3,6 +3,7 @@
     /// <summary>
     /// <para>Утилиты для работы с целочисленными значениями</para>
     /// </summary>
+    /// <remarks>2021-04-18</remarks>
     public static partial class IntegerXHelpers
     {
         private const int Int8_ByteSize = 1;

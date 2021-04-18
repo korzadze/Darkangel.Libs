@@ -11,12 +11,10 @@ namespace Darkangel.IntegerX
         /// <param name="value">Исходное значение</param>
         /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
         /// <returns>Результирующий поток байт</returns>
-#pragma warning disable IDE0060 // Удалите неиспользуемый параметр
-        public static byte[] GetBytes(this SByte value, bool isLittleEndian = true)
-#pragma warning restore IDE0060 // Удалите неиспользуемый параметр
-        {
-            return new byte[] { (byte)value };
-        }
+        /// <remarks>2021-04-18</remarks>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0060:Удалите неиспользуемый параметр", Justification = "<Ожидание>")]
+        public static byte[] GetBytes(this SByte value, bool isLittleEndian = true) =>
+            new byte[] { (byte)value };
         /// <summary>
         /// <para>Прочитать значение <see cref="SByte"/> из потока байт</para>
         /// </summary>
@@ -24,6 +22,7 @@ namespace Darkangel.IntegerX
         /// <param name="start">Первый байт значения в потоке</param>
         /// <param name="isLittleEndian">Порядок байтов значейния в потоке</param>
         /// <returns>Считанное значение</returns>
+        /// <remarks>2021-04-18</remarks>
         public static SByte GetInt8(this byte[] data, long start = 0, bool isLittleEndian = true)
         {
             #region Check arguments
@@ -46,12 +45,10 @@ namespace Darkangel.IntegerX
         /// <param name="value">Исходное значение</param>
         /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
         /// <returns>Результирующий поток байт</returns>
-#pragma warning disable IDE0060 // Удалите неиспользуемый параметр
-        public static byte[] GetBytes(this Byte value, bool isLittleEndian = true)
-#pragma warning restore IDE0060 // Удалите неиспользуемый параметр
-        {
-            return new byte[] { value };
-        }
+        /// <remarks>2021-04-18</remarks>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0060:Удалите неиспользуемый параметр", Justification = "<Ожидание>")]
+        public static byte[] GetBytes(this Byte value, bool isLittleEndian = true) =>
+            new byte[] { value };
         /// <summary>
         /// <para>Прочитать значение <see cref="Byte"/> из потока байт</para>
         /// </summary>
@@ -59,6 +56,7 @@ namespace Darkangel.IntegerX
         /// <param name="start">Первый байт значения в потоке</param>
         /// <param name="isLittleEndian">Порядок байтов значейния в потоке</param>
         /// <returns>Считанное значение</returns>
+        /// <remarks>2021-04-18</remarks>
         public static Byte GetUInt8(this byte[] data, long start = 0, bool isLittleEndian = true)
         {
             #region Check arguments
@@ -81,10 +79,9 @@ namespace Darkangel.IntegerX
         /// <param name="value">Исходное значение</param>
         /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
         /// <returns>Результирующий поток байт</returns>
-        public static byte[] GetBytes(this Int16 value, bool isLittleEndian = true)
-        {
-            return GetBytes(unchecked((UInt16)value), isLittleEndian);
-        }
+        /// <remarks>2021-04-18</remarks>
+        public static byte[] GetBytes(this Int16 value, bool isLittleEndian = true) =>
+            GetBytes(unchecked((UInt16)value), isLittleEndian);
         /// <summary>
         /// <para>Прочитать значение <see cref="Int16"/> из потока байт</para>
         /// </summary>
@@ -92,10 +89,9 @@ namespace Darkangel.IntegerX
         /// <param name="start">Первый байт значения в потоке</param>
         /// <param name="isLittleEndian">Порядок байтов значейния в потоке</param>
         /// <returns>Считанное значение</returns>
-        public static Int16 GetInt16(this byte[] data, long start = 0, bool isLittleEndian = true)
-        {
-            return unchecked((Int16)GetUInt16(data, start, isLittleEndian));
-        }
+        /// <remarks>2021-04-18</remarks>
+        public static Int16 GetInt16(this byte[] data, long start = 0, bool isLittleEndian = true) =>
+            unchecked((Int16)GetUInt16(data, start, isLittleEndian));
         #endregion Int16
         #region UInt16
         /// <summary>
@@ -104,6 +100,7 @@ namespace Darkangel.IntegerX
         /// <param name="value">Исходное значение</param>
         /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
         /// <returns>Результирующий поток байт</returns>
+        /// <remarks>2021-04-18</remarks>
         public static byte[] GetBytes(this UInt16 value, bool isLittleEndian = true)
         {
             var buf = new byte[UInt16_ByteSize];
@@ -126,6 +123,7 @@ namespace Darkangel.IntegerX
         /// <param name="start">Первый байт значения в потоке</param>
         /// <param name="isLittleEndian">Порядок байтов значейния в потоке</param>
         /// <returns>Считанное значение</returns>
+        /// <remarks>2021-04-18</remarks>
         public static UInt16 GetUInt16(this byte[] data, long start = 0, bool isLittleEndian = true)
         {
             #region Check arguments
@@ -161,10 +159,9 @@ namespace Darkangel.IntegerX
         /// <param name="value">Исходное значение</param>
         /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
         /// <returns>Результирующий поток байт</returns>
-        public static byte[] GetBytes(this UInt24 value, bool isLittleEndian = true)
-        {
-            return value.GetBytes(isLittleEndian);
-        }
+        /// <remarks>2021-04-18</remarks>
+        public static byte[] GetBytes(this UInt24 value, bool isLittleEndian = true) =>
+            value.GetBytes(isLittleEndian);
         /// <summary>
         /// <para>Прочитать значение <see cref="UInt24"/> из потока байт</para>
         /// </summary>
@@ -172,10 +169,9 @@ namespace Darkangel.IntegerX
         /// <param name="start">Первый байт значения в потоке</param>
         /// <param name="isLittleEndian">Порядок байтов значейния в потоке</param>
         /// <returns>Считанное значение</returns>
-        public static UInt24 GetUInt24(this byte[] data, long start = 0, bool isLittleEndian = true)
-        {
-            return UInt24.FromBytes(data, start, isLittleEndian);
-        }
+        /// <remarks>2021-04-18</remarks>
+        public static UInt24 GetUInt24(this byte[] data, long start = 0, bool isLittleEndian = true) =>
+            UInt24.FromBytes(data, start, isLittleEndian);
         #endregion UInt24
         #region Int32
         /// <summary>
@@ -184,10 +180,9 @@ namespace Darkangel.IntegerX
         /// <param name="value">Исходное значение</param>
         /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
         /// <returns>Результирующий поток байт</returns>
-        public static byte[] GetBytes(this Int32 value, bool isLittleEndian = true)
-        {
-            return GetBytes(unchecked((UInt32)value), isLittleEndian);
-        }
+        /// <remarks>2021-04-18</remarks>
+        public static byte[] GetBytes(this Int32 value, bool isLittleEndian = true) =>
+            GetBytes(unchecked((UInt32)value), isLittleEndian);
         /// <summary>
         /// <para>Прочитать значение <see cref="Int32"/> из потока байт</para>
         /// </summary>
@@ -195,10 +190,9 @@ namespace Darkangel.IntegerX
         /// <param name="start">Первый байт значения в потоке</param>
         /// <param name="isLittleEndian">Порядок байтов значейния в потоке</param>
         /// <returns>Считанное значение</returns>
-        public static Int32 GetInt32(this byte[] data, long start = 0, bool isLittleEndian = true)
-        {
-            return unchecked((Int32)GetUInt32(data, start, isLittleEndian));
-        }
+        /// <remarks>2021-04-18</remarks>
+        public static Int32 GetInt32(this byte[] data, long start = 0, bool isLittleEndian = true) =>
+            unchecked((Int32)GetUInt32(data, start, isLittleEndian));
         #endregion Int32
         #region UInt32
         /// <summary>
@@ -207,6 +201,7 @@ namespace Darkangel.IntegerX
         /// <param name="value">Исходное значение</param>
         /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
         /// <returns>Результирующий поток байт</returns>
+        /// <remarks>2021-04-18</remarks>
         public static byte[] GetBytes(this UInt32 value, bool isLittleEndian = true)
         {
             var buf = new byte[UInt32_ByteSize];
@@ -233,6 +228,7 @@ namespace Darkangel.IntegerX
         /// <param name="start">Первый байт значения в потоке</param>
         /// <param name="isLittleEndian">Порядок байтов значейния в потоке</param>
         /// <returns>Считанное значение</returns>
+        /// <remarks>2021-04-18</remarks>
         public static UInt32 GetUInt32(this byte[] data, long start = 0, bool isLittleEndian = true)
         {
             #region Check arguments
@@ -272,10 +268,9 @@ namespace Darkangel.IntegerX
         /// <param name="value">Исходное значение</param>
         /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
         /// <returns>Результирующий поток байт</returns>
-        public static byte[] GetBytes(this UInt48 value, bool isLittleEndian = true)
-        {
-            return value.GetBytes(isLittleEndian);
-        }
+        /// <remarks>2021-04-18</remarks>
+        public static byte[] GetBytes(this UInt48 value, bool isLittleEndian = true) =>
+            value.GetBytes(isLittleEndian);
         /// <summary>
         /// <para>Прочитать значение <see cref="UInt48"/> из потока байт</para>
         /// </summary>
@@ -283,10 +278,9 @@ namespace Darkangel.IntegerX
         /// <param name="start">Первый байт значения в потоке</param>
         /// <param name="isLittleEndian">Порядок байтов значейния в потоке</param>
         /// <returns>Считанное значение</returns>
-        public static UInt48 GetUInt48(this byte[] data, long start = 0, bool isLittleEndian = true)
-        {
-            return UInt48.FromBytes(data, start, isLittleEndian);
-        }
+        /// <remarks>2021-04-18</remarks>
+        public static UInt48 GetUInt48(this byte[] data, long start = 0, bool isLittleEndian = true) =>
+            UInt48.FromBytes(data, start, isLittleEndian);
         #endregion UInt48
         #region Int64
         /// <summary>
@@ -295,10 +289,9 @@ namespace Darkangel.IntegerX
         /// <param name="value">Исходное значение</param>
         /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
         /// <returns>Результирующий поток байт</returns>
-        public static byte[] GetBytes(this Int64 value, bool isLittleEndian = true)
-        {
-            return GetBytes(unchecked((UInt64)value), isLittleEndian);
-        }
+        /// <remarks>2021-04-18</remarks>
+        public static byte[] GetBytes(this Int64 value, bool isLittleEndian = true) =>
+            GetBytes(unchecked((UInt64)value), isLittleEndian);
         /// <summary>
         /// <para>Прочитать значение <see cref="Int64"/> из потока байт</para>
         /// </summary>
@@ -306,10 +299,9 @@ namespace Darkangel.IntegerX
         /// <param name="start">Первый байт значения в потоке</param>
         /// <param name="isLittleEndian">Порядок байтов значейния в потоке</param>
         /// <returns>Считанное значение</returns>
-        public static Int64 GetInt64(this byte[] data, long start = 0, bool isLittleEndian = true)
-        {
-            return unchecked((Int64)GetUInt64(data, start, isLittleEndian));
-        }
+        /// <remarks>2021-04-18</remarks>
+        public static Int64 GetInt64(this byte[] data, long start = 0, bool isLittleEndian = true) =>
+            unchecked((Int64)GetUInt64(data, start, isLittleEndian));
         #endregion Int64
         #region UInt64
         /// <summary>
@@ -318,6 +310,7 @@ namespace Darkangel.IntegerX
         /// <param name="value">Исходное значение</param>
         /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
         /// <returns>Результирующий поток байт</returns>
+        /// <remarks>2021-04-18</remarks>
         public static byte[] GetBytes(this UInt64 value, bool isLittleEndian = true)
         {
             var buf = new byte[UInt64_ByteSize];
@@ -352,6 +345,7 @@ namespace Darkangel.IntegerX
         /// <param name="start">Первый байт значения в потоке</param>
         /// <param name="isLittleEndian">Порядок байтов значейния в потоке</param>
         /// <returns>Считанное значение</returns>
+        /// <remarks>2021-04-18</remarks>
         public static UInt64 GetUInt64(this byte[] data, long start = 0, bool isLittleEndian = true)
         {
             #region Check arguments

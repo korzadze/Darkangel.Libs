@@ -9,6 +9,7 @@ namespace Darkangel.IntegerX
         /// </summary>
         /// <param name="value">Исходное значение</param>
         /// <returns>Результат перестановки</returns>
+        /// <remarks>2021-04-18</remarks>
         public static UInt16 Swap(this UInt16 value) =>
             (UInt16)
             (
@@ -20,6 +21,7 @@ namespace Darkangel.IntegerX
         /// </summary>
         /// <param name="value">Исходное значение</param>
         /// <returns>Результат перестановки</returns>
+        /// <remarks>2021-04-18</remarks>
         public static UInt24 Swap(this UInt24 value)
         {
             UInt32 res = value;
@@ -35,6 +37,7 @@ namespace Darkangel.IntegerX
         /// </summary>
         /// <param name="value">Исходное значение</param>
         /// <returns>Результат перестановки</returns>
+        /// <remarks>2021-04-18</remarks>
         public static UInt32 Swap(this UInt32 value) =>
             (UInt32)
             (
@@ -48,6 +51,7 @@ namespace Darkangel.IntegerX
         /// </summary>
         /// <param name="value">Исходное значение</param>
         /// <returns>Результат перестановки</returns>
+        /// <remarks>2021-04-18</remarks>
         public static UInt48 Swap(this UInt48 value)
         {
             UInt64 res = value;
@@ -66,6 +70,7 @@ namespace Darkangel.IntegerX
         /// </summary>
         /// <param name="value">Исходное значение</param>
         /// <returns>Результат перестановки</returns>
+        /// <remarks>2021-04-18</remarks>
         public static UInt64 Swap(this UInt64 value) =>
             (UInt64)
             (
@@ -84,6 +89,7 @@ namespace Darkangel.IntegerX
         /// </summary>
         /// <param name="value">Исходное значение</param>
         /// <returns>Результат перестановки</returns>
+        /// <remarks>2021-04-18</remarks>
         public static Int16 Swap(this Int16 value) =>
             unchecked((Int16)Swap(unchecked((UInt16)value)));
         /// <summary>
@@ -91,6 +97,7 @@ namespace Darkangel.IntegerX
         /// </summary>
         /// <param name="value">Исходное значение</param>
         /// <returns>Результат перестановки</returns>
+        /// <remarks>2021-04-18</remarks>
         public static Int32 Swap(this Int32 value) =>
             unchecked((Int32)Swap(unchecked((UInt32)value)));
         /// <summary>
@@ -98,6 +105,7 @@ namespace Darkangel.IntegerX
         /// </summary>
         /// <param name="value">Исходное значение</param>
         /// <returns>Результат перестановки</returns>
+        /// <remarks>2021-04-18</remarks>
         public static Int64 Swap(this Int64 value) =>
             unchecked((Int64)Swap(unchecked((UInt64)value)));
     }

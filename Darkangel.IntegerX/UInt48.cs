@@ -6,6 +6,7 @@ namespace Darkangel.IntegerX
     /// <summary>
     /// 6-байтное беззнаковое целое
     /// </summary>
+    /// <remarks>2021-04-18</remarks>
     [Serializable]
     [ComVisible(false)]
     public struct UInt48 : IComparable, IComparable<UInt48>, IEquatable<UInt48>, IFormattable, IConvertible

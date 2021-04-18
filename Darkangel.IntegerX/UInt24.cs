@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Darkangel.IntegerX
 {
     /// <summary>
     /// 3-байтное беззнаковое целое
     /// </summary>
+    /// <remarks>2021-04-18</remarks>
     [Serializable]
     [ComVisible(false)]
     public struct UInt24 : IComparable, IComparable<UInt24>, IEquatable<UInt24>, IFormattable, IConvertible
