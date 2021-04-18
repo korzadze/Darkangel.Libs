@@ -134,8 +134,12 @@ namespace Darkangel.Zip
         protected virtual void RegisterRecords()
         {
             RegisterRecordType<LocalFileHeader>();
-
-            throw new NotImplementedException();
+            RegisterRecordType<CentralDirectoryFileHeader>();
+            RegisterRecordType<DigitalSignature>();
+            RegisterRecordType<EndOfCentralDirectory>();
+            RegisterRecordType<Zip64EndOfCentralDirectory>();
+            RegisterRecordType<Zip64EndOfCentralDirectoryLocator>();
+            RegisterRecordType<ArchiveDecryption>();
         }
         /// <summary>
         /// <para>Зарегистрировать все известные типы дополнительной информации</para>
@@ -173,6 +177,10 @@ namespace Darkangel.Zip
             CleanData();
 
             _Stream = input;
+            if(!input.CanSeek)
+            {
+                throw new FileLoadException("Can't read unseekable stream");
+            }
 
             throw new NotImplementedException();
         }

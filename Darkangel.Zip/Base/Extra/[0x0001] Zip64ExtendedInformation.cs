@@ -21,36 +21,26 @@ namespace Darkangel.Zip
             {
                 throw new InvalidZipExtraDataSizeException(size, _DataSize);
             }
-            _OriginalSize = stream.ReadUInt64(isLittleEndian: true);
-            _CompressedSize = stream.ReadUInt64(isLittleEndian: true); ;
-            _RelativeHeaderOffset = stream.ReadUInt64(isLittleEndian: true); ;
-            _DiskStartNumber = stream.ReadUInt32(isLittleEndian: true); ;
+            OriginalSize = stream.ReadUInt64(isLittleEndian: true);
+            CompressedSize = stream.ReadUInt64(isLittleEndian: true);
+            RelativeHeaderOffset = stream.ReadUInt64(isLittleEndian: true);
+            DiskStartNumber = stream.ReadUInt32(isLittleEndian: true);
         }
-        /*
-        Original Size            8 bytes    Original uncompressed file size
-        Compressed Size          8 bytes    Size of compressed data
-        Relative Header Offset   8 bytes    Offset of local header record 
-        Disk Start Number        4 bytes    Number of the disk on which this file starts 
-         */
-        private UInt64 _OriginalSize;
-        private UInt64 _CompressedSize;
-        private UInt64 _RelativeHeaderOffset;
-        private UInt32 _DiskStartNumber;
         /// <summary>
         /// Original uncompressed file size
         /// </summary>
-        public UInt64 OriginalSize => _OriginalSize;
+        public UInt64 OriginalSize { get; private set; }
         /// <summary>
         /// Size of compressed data
         /// </summary>
-        public UInt64 CompressedSize => _CompressedSize;
+        public UInt64 CompressedSize { get; private set; }
         /// <summary>
         /// Offset of local header record
         /// </summary>
-        public UInt64 RelativeHeaderOffset => _RelativeHeaderOffset;
+        public UInt64 RelativeHeaderOffset { get; private set; }
         /// <summary>
         /// Number of the disk on which this file starts
         /// </summary>
-        public UInt32 DiskStartNumber => _DiskStartNumber;
+        public UInt32 DiskStartNumber { get; private set; }
     }
 }

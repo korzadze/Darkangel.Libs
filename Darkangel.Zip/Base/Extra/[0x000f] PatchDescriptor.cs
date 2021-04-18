@@ -1,22 +1,12 @@
-﻿using System;
-using System.IO;
-
-namespace Darkangel.Zip
+﻿namespace Darkangel.Zip
 {
     /// <summary>
     /// <para>Patch Descriptor</para>
     /// </summary>
-    public class PatchDescriptor : ZipExtraField
+    public class PatchDescriptor : BytestreamExtraField
     {
         /// <inheritdoc/>
         public override int Id => 0x000f;
-        /// <inheritdoc/>
-        public override int DataSize => throw new NotImplementedException();
-        /// <inheritdoc/>
-        public override void Load(Stream stream, int size)
-        {
-            throw new NotImplementedException();
-        }
         /*
         Version   2 bytes  Version of the descriptor
         Flags     4 bytes  Actions and reactions (see below) 

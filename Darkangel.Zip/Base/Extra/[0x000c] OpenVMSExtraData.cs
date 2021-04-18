@@ -1,22 +1,12 @@
-﻿using System;
-using System.IO;
-
-namespace Darkangel.Zip
+﻿namespace Darkangel.Zip
 {
     /// <summary>
     /// <para>OpenVMS extra data</para>
     /// </summary>
-    public class OpenVMSExtraData : ZipExtraField
+    public class OpenVMSExtraData : BytestreamExtraField
     {
         /// <inheritdoc/>
         public override int Id => 0x000c;
-        /// <inheritdoc/>
-        public override int DataSize => throw new NotImplementedException();
-        /// <inheritdoc/>
-        public override void Load(Stream stream, int size)
-        {
-            throw new NotImplementedException();
-        }
         /*
                   CRC        4 bytes    32-bit CRC for remainder of the block
          Tag1       2 bytes    OpenVMS attribute tag value #1

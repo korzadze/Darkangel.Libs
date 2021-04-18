@@ -1,11 +1,5 @@
 ﻿using Darkangel.IntegerX;
-using Darkangel.IO;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Darkangel.Zip
 {
@@ -16,12 +10,12 @@ namespace Darkangel.Zip
     {
         private UInt32 _Signature = 0;
         /// <inheritdoc/>
-        public override long Id => _Signature;
+        public override UInt32 Id => _Signature;
         /// <inheritdoc/>
-        public override void Load(Stream stream)
+        public override void Load(ZipFile file)
         {
-            base.Load(stream);
-            _Signature = stream.ReadUInt32(isLittleEndian: true);
+            base.Load(file);
+            _Signature = file.Stream.ReadUInt32(isLittleEndian: true);
         }
     }
 }

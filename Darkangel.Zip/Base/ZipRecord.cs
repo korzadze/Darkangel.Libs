@@ -12,7 +12,7 @@ namespace Darkangel.Zip
         /// <summary>
         /// <para>Идентификатор записи (подпись, сигнатура)</para>
         /// </summary>
-        public abstract long Id { get; }
+        public abstract UInt32 Id { get; }
         /// <summary>
         /// <para>Файл архива, содержащий данную запись</para>
         /// </summary>

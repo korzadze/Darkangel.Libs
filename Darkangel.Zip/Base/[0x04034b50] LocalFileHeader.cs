@@ -1,11 +1,7 @@
 ﻿using Darkangel.IntegerX;
 using Darkangel.IO;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Darkangel.Zip
 {
@@ -16,7 +12,7 @@ namespace Darkangel.Zip
     {
         private static readonly UInt32 SignatureValue = 0x04034b50;
         /// <inheritdoc/>
-        public override long Id => SignatureValue;
+        public override UInt32 Id => SignatureValue;
         /// <summary>
         /// <para>Минимальная версия API, необходимая для распаковки данных</para>
         /// </summary>
@@ -75,18 +71,18 @@ namespace Darkangel.Zip
         {
             base.Load(file);
             #region Фикисрованная часть
-            VersionNeededToExtract = file.Stream.ReadUInt16();
-            var _GeneralPurposeBitFlag = file.Stream.ReadUInt16();
-            CompressionMethod = (CompressionMethod)file.Stream.ReadUInt16();
+            VersionNeededToExtract = file.Stream.ReadUInt16(isLittleEndian: true);
+            var _GeneralPurposeBitFlag = file.Stream.ReadUInt16(isLittleEndian: true);
+            CompressionMethod = (CompressionMethod)file.Stream.ReadUInt16(isLittleEndian: true);
             GeneralPurposeBitFlag = new(_GeneralPurposeBitFlag, CompressionMethod);
-            var _LastModFileTime = file.Stream.ReadUInt16();
-            var _LastModFileDate = file.Stream.ReadUInt16();
+            var _LastModFileTime = file.Stream.ReadUInt16(isLittleEndian: true);
+            var _LastModFileDate = file.Stream.ReadUInt16(isLittleEndian: true);
             LastModFile = Darkangel.DateTime.MsDos.ToDateTime(_LastModFileDate, _LastModFileTime);
-            Сrc32 = file.Stream.ReadUInt32();
-            CompressedSize = file.Stream.ReadUInt32();
-            UncompressedSize = file.Stream.ReadUInt32();
-            var _FileNameLength = file.Stream.ReadUInt16();
-            var _ExtraFieldLength = file.Stream.ReadUInt16();
+            Сrc32 = file.Stream.ReadUInt32(isLittleEndian: true);
+            CompressedSize = file.Stream.ReadUInt32(isLittleEndian: true);
+            UncompressedSize = file.Stream.ReadUInt32(isLittleEndian: true);
+            var _FileNameLength = file.Stream.ReadUInt16(isLittleEndian: true);
+            var _ExtraFieldLength = file.Stream.ReadUInt16(isLittleEndian: true);
             #endregion Фикисрованная часть
             #region Переменная часть
             var nameBuf = file.Stream.ReadBytes(_FileNameLength);

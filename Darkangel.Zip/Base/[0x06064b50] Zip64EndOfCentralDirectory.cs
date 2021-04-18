@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 
 namespace Darkangel.Zip
 {
@@ -9,11 +8,11 @@ namespace Darkangel.Zip
     public class Zip64EndOfCentralDirectory : ZipRecord
     {
         /// <inheritdoc/>
-        public override long Id => 0x06064b50;
+        public override UInt32 Id => 0x06064b50;
         /// <inheritdoc/>
-        public override void Load(Stream stream)
+        public override void Load(ZipFile file)
         {
-            base.Load(stream);
+            base.Load(file);
             throw new NotImplementedException();
         }
         /*

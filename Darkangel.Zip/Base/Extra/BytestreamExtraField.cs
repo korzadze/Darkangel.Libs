@@ -4,13 +4,11 @@ using System.IO;
 namespace Darkangel.Zip
 {
     /// <summary>
-    /// <para>AV Info</para>
+    /// <para>Заглушка для необработанных данных</para>
     /// </summary>
-    public class AVInfo : ZipExtraField
+    public abstract class BytestreamExtraField : ZipExtraField
     {
         private byte[] _Data;
-        /// <inheritdoc/>
-        public override int Id => 0x0007;
         /// <inheritdoc/>
         public override int DataSize => _Data?.Length ?? 0;
         /// <inheritdoc/>

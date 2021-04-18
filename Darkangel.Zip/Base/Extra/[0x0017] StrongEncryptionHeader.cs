@@ -5,17 +5,10 @@ namespace Darkangel.Zip
     /// <summary>
     /// <para>Strong Encryption Header</para>
     /// </summary>
-    public class StrongEncryptionHeader : ZipExtraField
+    public class StrongEncryptionHeader : BytestreamExtraField
     {
         /// <inheritdoc/>
         public override int Id => 0x0017;
-        /// <inheritdoc/>
-        public override int DataSize => throw new System.NotImplementedException();
-        /// <inheritdoc/>
-        public override void Load(Stream stream, int size)
-        {
-            throw new System.NotImplementedException();
-        }
         /*
         Format    2 bytes  Format definition for this record
         AlgID     2 bytes  Encryption algorithm identifier

@@ -1,21 +1,12 @@
-﻿using System.IO;
-
-namespace Darkangel.Zip
+﻿namespace Darkangel.Zip
 {
     /// <summary>
     /// <para>Record Management Controls</para>
     /// </summary>
-    public class RecordManagementControls : ZipExtraField
+    public class RecordManagementControls : BytestreamExtraField
     {
         /// <inheritdoc/>
         public override int Id => 0x0018;
-        /// <inheritdoc/>
-        public override int DataSize => throw new System.NotImplementedException();
-        /// <inheritdoc/>
-        public override void Load(Stream stream, int size)
-        {
-            throw new System.NotImplementedException();
-        }
         /*
           Tag1      2 bytes  Record control attribute 1
           Size1     2 bytes  Size of attribute 1, in bytes

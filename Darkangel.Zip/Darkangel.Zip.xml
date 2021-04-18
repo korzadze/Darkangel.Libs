@@ -4,6 +4,307 @@
         <name>Darkangel.Zip</name>
     </assembly>
     <members>
+        <member name="T:Darkangel.Zip.BytestreamExtraField">
+            <summary>
+            <para>Заглушка для необработанных данных</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.BytestreamExtraField.DataSize">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.BytestreamExtraField.Load(System.IO.Stream,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.BytestreamExtraField.GetData">
+            <summary>
+            <para>Получить данные неизвестного поля в сыром виде</para>
+            </summary>
+            <returns>Данные поля</returns>
+        </member>
+        <member name="T:Darkangel.Zip.UnknownZipExtraField">
+            <summary>
+            <para>Объект, для хранения информации о нереализованном типе дополнительных данных</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Zip.UnknownZipExtraField.#ctor(System.Int32)">
+            <summary>
+            <para>Конструктор экземляра <see cref="T:Darkangel.Zip.UnknownZipExtraField"/></para>
+            </summary>
+            <param name="id">Идентификатор неизвестных данных</param>
+        </member>
+        <member name="P:Darkangel.Zip.UnknownZipExtraField.Id">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.ZipExtraField">
+            <summary>
+            <para>Базовый класс для объектов дополнительной информации</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.ZipExtraField.Id">
+            <summary>
+            <para>Идентификатор поля</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Zip.ZipExtraField.Load(System.IO.Stream,System.Int32)">
+            <summary>
+            <para>Загрузить данные объекта из потока</para>
+            </summary>
+            <param name="stream">Исходный поток</param>
+            <param name="size">Размер данных, как он указан в архиве</param>
+        </member>
+        <member name="P:Darkangel.Zip.ZipExtraField.DataSize">
+            <summary>
+            <para>Размер данных объекта</para>
+            </summary>
+        </member>
+        <member name="T:Darkangel.Zip.ZipExtraFieldCollection">
+            <summary>
+            <para>Коллекция объектов с дополнительной информацией о записи архива</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Zip.ZipExtraFieldCollection.GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="P:Darkangel.Zip.ZipExtraFieldCollection.Count">
+            <summary>
+            <para>Количество объектов в коллекции</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.ZipExtraFieldCollection.Item(System.Int32)">
+            <summary>
+            <para>Получить объект коллекции по индексу</para>
+            </summary>
+            <param name="index">Индекс объекта</param>
+            <returns></returns>
+        </member>
+        <member name="M:Darkangel.Zip.ZipExtraFieldCollection.Load(Darkangel.Zip.ZipFile,System.Int32)">
+            <summary>
+            <para>Загрузить данные объекта из потока</para>
+            </summary>
+            <param name="file">Исходный файл архива</param>
+            <param name="dataSize">Размер дополнительных данных</param>
+        </member>
+        <member name="T:Darkangel.Zip.Zip64ExtendedInformation">
+            <summary>
+            <para>Zip64 extended information</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.Zip64ExtendedInformation.Id">
+            <inheritdoc/>
+        </member>
+        <member name="P:Darkangel.Zip.Zip64ExtendedInformation.DataSize">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.Zip64ExtendedInformation.Load(System.IO.Stream,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="P:Darkangel.Zip.Zip64ExtendedInformation.OriginalSize">
+            <summary>
+            Original uncompressed file size
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.Zip64ExtendedInformation.CompressedSize">
+            <summary>
+            Size of compressed data
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.Zip64ExtendedInformation.RelativeHeaderOffset">
+            <summary>
+            Offset of local header record
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.Zip64ExtendedInformation.DiskStartNumber">
+            <summary>
+            Number of the disk on which this file starts
+            </summary>
+        </member>
+        <member name="T:Darkangel.Zip.AVInfo">
+            <summary>
+            <para>AV Info</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.AVInfo.Id">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.ExtendedLanguageEncoding">
+            <summary>
+            <para>Extended language encoding data</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.ExtendedLanguageEncoding.Id">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.OS2ExtraData">
+            <summary>
+            <para>OS/2 extra data</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.OS2ExtraData.Id">
+            <inheritdoc/>
+        </member>
+        <member name="P:Darkangel.Zip.OS2ExtraData.DataSize">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.OS2ExtraData.GetData">
+            <summary>
+            <para>Compressed data</para>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Darkangel.Zip.OS2ExtraData.Load(System.IO.Stream,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="P:Darkangel.Zip.OS2ExtraData.BSize">
+            <summary>
+            <para>Uncompressed Block Size</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.OS2ExtraData.CType">
+            <summary>
+            <para>Compression type</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.OS2ExtraData.EACRC">
+            <summary>
+            <para>CRC value for uncompress block</para>
+            </summary>
+        </member>
+        <member name="T:Darkangel.Zip.NTFSExtraData">
+            <summary>
+            <para>NTFS extra data</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.NTFSExtraData.Id">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.OpenVMSExtraData">
+            <summary>
+            <para>OpenVMS extra data</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.OpenVMSExtraData.Id">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.UNIXExtraData">
+            <summary>
+            <para>UNIX extra data</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.UNIXExtraData.Id">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.PatchDescriptor">
+            <summary>
+            <para>Patch Descriptor</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.PatchDescriptor.Id">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.PKCS7CertificatesStore">
+            <summary>
+            <para>PKCS#7 Store for X.509 Certificates</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.PKCS7CertificatesStore.Id">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.IndividualX509Certificate">
+            <summary>
+            <para>X509 Certificate ID and Signature for individual file</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.IndividualX509Certificate.Id">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.CentralDirectoryX509Certificate">
+            <summary>
+            <para>X.509 Certificate ID for Central Directory</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.CentralDirectoryX509Certificate.Id">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.StrongEncryptionHeader">
+            <summary>
+            <para>Strong Encryption Header</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.StrongEncryptionHeader.Id">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.RecordManagementControls">
+            <summary>
+            <para>Record Management Controls</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.RecordManagementControls.Id">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.PKCS7RecipientCertificateList">
+            <summary>
+            <para>PKCS#7 Encryption Recipient Certificate List</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.PKCS7RecipientCertificateList.Id">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.TimestampRecord">
+            <summary>
+            <para>Timestamp record</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.TimestampRecord.Id">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.PolicyDecryptionKey">
+            <summary>
+            <para>Policy Decryption Key Record</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.PolicyDecryptionKey.Id">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.SmartcryptKeyProvider">
+            <summary>
+            <para>Smartcrypt Key Provider Record</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.SmartcryptKeyProvider.Id">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.SmartcryptPolicyKey">
+            <summary>
+            <para>Smartcrypt Policy Key Data Record</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.SmartcryptPolicyKey.Id">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.AS400UncompressedAttributes">
+            <summary>
+            <para>IBM S/390 (Z390), AS/400 (I400) uncompressed attributes</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.AS400UncompressedAttributes.Id">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.AS400СompressedAttributes">
+            <summary>
+            <para>IBM S/390 (Z390), AS/400 (I400) compressed attributes</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.AS400СompressedAttributes.Id">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.POSZIP4690">
+            <summary>
+            <para>POSZIP 4690</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.POSZIP4690.Id">
+            <inheritdoc/>
+        </member>
         <member name="T:Darkangel.Zip.ZipRecord">
             <summary>
             <para>Базовый класс для записей ZIP-архива</para>
@@ -14,19 +315,14 @@
             <para>Идентификатор записи (подпись, сигнатура)</para>
             </summary>
         </member>
+        <member name="P:Darkangel.Zip.ZipRecord.Owner">
+            <summary>
+            <para>Файл архива, содержащий данную запись</para>
+            </summary>
+        </member>
         <member name="P:Darkangel.Zip.ZipRecord.StartOffset">
             <summary>
             <para>Смещение начала записи в архиве</para>
-            </summary>
-        </member>
-        <member name="P:Darkangel.Zip.ZipRecord.FixedPartSize">
-            <summary>
-            <para>Размер фиксированной части записи</para>
-            </summary>
-        </member>
-        <member name="P:Darkangel.Zip.ZipRecord.VariablePartSize">
-            <summary>
-            <para>Размер переменной части записи</para>
             </summary>
         </member>
         <member name="M:Darkangel.Zip.ZipRecord.GetString(System.Byte[],System.Int32,System.Int32,System.Text.Encoding)">
@@ -39,27 +335,780 @@
             <param name="encoding">Кодировка строки</param>
             <returns>Считанная строка</returns>
         </member>
-        <member name="M:Darkangel.Zip.ZipRecord.Load(System.IO.Stream)">
+        <member name="M:Darkangel.Zip.ZipRecord.Load(Darkangel.Zip.ZipFile)">
             <summary>
             <para>Загрузить запись из потока</para>
             </summary>
-            <param name="stream">Исходный поток</param>
+            <param name="file">Файл архива</param>
+            <exception cref="T:System.ArgumentNullException"/>
+            <exception cref="T:System.IO.FileLoadException"/>
+        </member>
+        <member name="T:Darkangel.Zip.CentralDirectoryFileHeader">
+            <summary>
+            <para>Central directory file header</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.CentralDirectoryFileHeader.Id">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.CentralDirectoryFileHeader.Load(Darkangel.Zip.ZipFile)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.LocalFileHeader">
+            <summary>
+            <para>Локальный заголовок файла</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.LocalFileHeader.Id">
+            <inheritdoc/>
+        </member>
+        <member name="P:Darkangel.Zip.LocalFileHeader.VersionNeededToExtract">
+            <summary>
+            <para>Минимальная версия API, необходимая для распаковки данных</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.LocalFileHeader.GeneralPurposeBitFlag">
+            <summary>
+            <para>Флаги общего назначения</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.LocalFileHeader.CompressionMethod">
+            <summary>
+            <para>Метод упаковки</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.LocalFileHeader.LastModFile">
+            <summary>s
+            <para>Дата и время последнего изменения файла</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.LocalFileHeader.Сrc32">
+            <summary>
+            <para>Контрольная сумма</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.LocalFileHeader.CompressedSize">
+            <summary>
+            <para>Размер упакованных данных</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.LocalFileHeader.UncompressedSize">
+            <summary>
+            <para>Размер распакованных данных</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.LocalFileHeader.FileName">
+            <summary>
+            <para>Имя файла</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.LocalFileHeader.ExtraFields">
+            <summary>
+            <para>Дополнительная информация о файле</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Zip.LocalFileHeader.Load(Darkangel.Zip.ZipFile)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.DigitalSignature">
+            <summary>
+            <para>Digital signature</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.DigitalSignature.Id">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.DigitalSignature.Load(Darkangel.Zip.ZipFile)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.EndOfCentralDirectory">
+            <summary>
+            <para>End of central directory record</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.EndOfCentralDirectory.Id">
+            <inheritdoc/>
+        </member>
+        <member name="P:Darkangel.Zip.EndOfCentralDirectory.DiskNumber">
+            <summary>
+            <para>Number of this disk</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.EndOfCentralDirectory.CDRStartDiskNumber">
+            <summary>
+            <para>Number of the disk with the start of the central directory</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.EndOfCentralDirectory.CDREntriesCountOnDisk">
+            <summary>
+            <para>Total number of entries in the central directory on this disk</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.EndOfCentralDirectory.CDREntriesTotalCount">
+            <summary>
+            <para>Total number of entries in the central directory</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.EndOfCentralDirectory.CDRSize">
+            <summary>
+            <para>Size of the central directory</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.EndOfCentralDirectory.CDROffsetRelativeToFirstDisk">
+            <summary>
+            <para>Offset of start of central directory with respect to the starting disk number</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.EndOfCentralDirectory.Comment">
+            <summary>
+            <para>.ZIP file comment</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Zip.EndOfCentralDirectory.Load(Darkangel.Zip.ZipFile)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.Zip64EndOfCentralDirectory">
+            <summary>
+            <para>Zip64 end of central directory record</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.Zip64EndOfCentralDirectory.Id">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.Zip64EndOfCentralDirectory.Load(Darkangel.Zip.ZipFile)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.Zip64EndOfCentralDirectoryLocator">
+            <summary>
+            <para>Zip64 end of central directory locator</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.Zip64EndOfCentralDirectoryLocator.Id">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.Zip64EndOfCentralDirectoryLocator.Load(Darkangel.Zip.ZipFile)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.ArchiveDecryption">
+            <summary>
+            <para>Archive extra data record</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.ArchiveDecryption.Id">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.ArchiveDecryption.Load(Darkangel.Zip.ZipFile)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.DataDescriptor">
+            <summary>
+            <para>Особая запись, без идентификатора, но с определенным местоположением</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.DataDescriptor.Id">
+            <summary>
+            <para>Не используется</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.DataDescriptor.Crc32">
+            <summary>
+            <para>crc-32</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.DataDescriptor.CompressedSize">
+            <summary>
+            <para>compressed size</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.DataDescriptor.UncompressedSize">
+            <summary>
+            <para>uncompressed size</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Zip.DataDescriptor.Load(Darkangel.Zip.ZipFile)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.DataDescriptor64">
+            <summary>
+            <para>Особая запись, без идентификатора, но с определенным местоположением</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.DataDescriptor64.Id">
+            <summary>
+            <para>Не используется</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.DataDescriptor64.Crc32">
+            <summary>
+            <para>crc-32</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.DataDescriptor64.CompressedSize">
+            <summary>
+            <para>compressed size</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.DataDescriptor64.UncompressedSize">
+            <summary>
+            <para>uncompressed size</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Zip.DataDescriptor64.Load(Darkangel.Zip.ZipFile)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.CompressionMethod">
+            <summary>
+            <para>ZIP Compression method</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.CompressionMethod.NoCompression">
+            <summary>
+            <para>The file is stored (no compression)</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.CompressionMethod.Shrunk">
+            <summary>
+            <para>The file is Shrunk</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.CompressionMethod.Reduce1">
+            <summary>
+            <para>The file is Reduced with compression factor 1</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.CompressionMethod.Reduce2">
+            <summary>
+            <para>The file is Reduced with compression factor 2</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.CompressionMethod.Reduce3">
+            <summary>
+            <para>The file is Reduced with compression factor 3</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.CompressionMethod.Reduce4">
+            <summary>
+            <para>The file is Reduced with compression factor 4</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.CompressionMethod.Implode">
+            <summary>
+            <para>The file is Imploded</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.CompressionMethod.Tokenize">
+            <summary>
+            <para>Reserved for Tokenizing compression algorithm</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.CompressionMethod.Deflate">
+            <summary>
+            <para>The file is Deflated</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.CompressionMethod.Deflate64">
+            <summary>
+            <para>Enhanced Deflating using Deflate64(tm)</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.CompressionMethod.OldIBMTerse">
+            <summary>
+            <para>PKWARE Data Compression Library Imploding (old IBM TERSE)</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.CompressionMethod.BZip2">
+            <summary>
+            <para>File is compressed using BZIP2 algorithm</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.CompressionMethod.LZMA">
+            <summary>
+            <para>LZMA</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.CompressionMethod.IBMCMPSCCompression">
+            <summary>
+            <para>IBM z/OS CMPSC Compression</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.CompressionMethod.IBMTerse">
+            <summary>
+            <para>File is compressed using IBM TERSE (new)</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.CompressionMethod.IBM_LZ77">
+            <summary>
+            <para>IBM LZ77 z Architecture (PFS)</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.CompressionMethod.JpegVariant">
+            <summary>
+            <para>JPEG variant</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.CompressionMethod.WavPack">
+            <summary>
+            <para>WavPack compressed data</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.CompressionMethod.PPMd_v1r1">
+            <summary>
+            <para>PPMd version I, Rev 1</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.CompressionMethod.AEx">
+            <summary>
+            <para>AE-x encryption marker (see APPENDIX E)</para>
+            </summary>
+        </member>
+        <member name="T:Darkangel.Zip.DeflatingOption">
+            <summary>
+            <para>Deflating compression option</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.DeflatingOption.Normal">
+            <summary>
+            <para>Normal (-en) compression option was used.</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.DeflatingOption.Maximum">
+            <summary>
+            <para>Maximum (-exx/-ex) compression option was used.</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.DeflatingOption.Fast">
+            <summary>
+            <para>Fast (-ef) compression option was used.</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.DeflatingOption.SuperFast">
+            <summary>
+            <para>Super Fast (-es) compression option was used.</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.DeflatingOption.Unknown">
+            <summary>
+            <para>Unknown</para>
+            </summary>
+        </member>
+        <member name="T:Darkangel.Zip.VersionMadeBy">
+            <summary>
+            <para>Version made by ...</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.VersionMadeBy.MSDOS">
+            <summary>
+            <para>MS-DOS</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.VersionMadeBy.OS2FAT">
+            <summary>
+            <para>OS/2 (FAT / VFAT / FAT32 file systems)</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.VersionMadeBy.Amiga">
+            <summary>
+            <para>Amiga</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.VersionMadeBy.OpenVMS">
+            <summary>
+            <para>OpenVMS</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.VersionMadeBy.UNIX">
+            <summary>
+            <para>UNIX</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.VersionMadeBy.VMCMS">
+            <summary>
+            <para>VM/CMS</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.VersionMadeBy.AtariST">
+            <summary>
+            <para>Atari ST</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.VersionMadeBy.OS2HPFS">
+            <summary>
+            <para>OS/2 H.P.F.S.</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.VersionMadeBy.Macintosh">
+            <summary>
+            <para>Macintosh</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.VersionMadeBy.ZSystem">
+            <summary>
+            <para>Z-System</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.VersionMadeBy.CPM">
+            <summary>
+            <para>CP/M</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.VersionMadeBy.WindowsNTFS">
+            <summary>
+            <para>Windows NTFS</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.VersionMadeBy.MVS">
+            <summary>
+            <para>MVS (OS/390 - Z/OS)</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.VersionMadeBy.VSE">
+            <summary>
+            <para>VSE</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.VersionMadeBy.AcornRisc">
+            <summary>
+            <para>Acorn Risc</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.VersionMadeBy.VFAT">
+            <summary>
+            <para>VFAT</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.VersionMadeBy.AlternateMVS">
+            <summary>
+            <para>alternate MVS</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.VersionMadeBy.BeOS">
+            <summary>
+            <para>BeOS</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.VersionMadeBy.Tandem">
+            <summary>
+            <para>Tandem</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.VersionMadeBy.OS400">
+            <summary>
+            <para>OS/400</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.VersionMadeBy.OSX">
+            <summary>
+            <para>OS X (Darwin)</para>
+            </summary>
+        </member>
+        <member name="T:Darkangel.Zip.InvalidZipExtraDataIdException">
+            <summary>
+            <para>Неизвестный идентификатор дополнительных данных</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Zip.InvalidZipExtraDataIdException.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.InvalidZipExtraDataIdException.#ctor(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.InvalidZipExtraDataIdException.#ctor(System.String,System.Exception)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.InvalidZipExtraDataIdException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.InvalidZipExtraDataIdException.#ctor(System.Int32)">
+            <summary>
+            <para>Создать экземляр <see cref="T:Darkangel.Zip.InvalidZipExtraDataIdException"/> с указанием ошибочного идентификатора</para>
+            </summary>
+            <param name="id">Идентификатор, вызвавший ошибку</param>
+        </member>
+        <member name="T:Darkangel.Zip.InvalidZipExtraDataSizeException">
+            <summary>
+            <para>Неверный размер дополнительных данных</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Zip.InvalidZipExtraDataSizeException.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.InvalidZipExtraDataSizeException.#ctor(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.InvalidZipExtraDataSizeException.#ctor(System.String,System.Exception)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.InvalidZipExtraDataSizeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.InvalidZipExtraDataSizeException.#ctor(System.Int32,System.Int32)">
+            <summary>
+            <para>Создать экземляр <see cref="T:Darkangel.Zip.InvalidZipExtraDataSizeException"/> с указанием размеровы</para>
+            </summary>
+            <param name="blockSize">Размер блока в архиве</param>
+            <param name="recordSize">Размер записи</param>
+        </member>
+        <member name="T:Darkangel.Zip.InvalidZipRecordIdException">
+            <summary>
+            <para>Неизвестный идентификатор записи</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Zip.InvalidZipRecordIdException.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.InvalidZipRecordIdException.#ctor(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.InvalidZipRecordIdException.#ctor(System.String,System.Exception)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.InvalidZipRecordIdException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.InvalidZipRecordIdException.#ctor(System.Int64)">
+            <summary>
+            <para>Создать экземляр <see cref="T:Darkangel.Zip.InvalidZipRecordIdException"/> с указанием ошибочного идентификатора</para>
+            </summary>
+            <param name="id">Идентификатор записи, вызвавший ошибку</param>
+        </member>
+        <member name="T:Darkangel.Zip.ZipRecordCtorException">
+            <summary>
+            <para>Тип записи должен иметь конструктор без параметров</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Zip.ZipRecordCtorException.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.ZipRecordCtorException.#ctor(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.ZipRecordCtorException.#ctor(System.String,System.Exception)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.ZipRecordCtorException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.ExtraFieldCtorException">
+            <summary>
+            <para>Тип дополнительных данных должен иметь конструктор без параметров</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Zip.ExtraFieldCtorException.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.ExtraFieldCtorException.#ctor(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.ExtraFieldCtorException.#ctor(System.String,System.Exception)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Zip.ExtraFieldCtorException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Zip.GeneralPurposeBitFlags">
+            <summary>
+            <para>Флаги общего назначения</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.GeneralPurposeBitFlags.FLags">
+            <summary>
+            <para>Raw value</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.GeneralPurposeBitFlags.IsEncrypted">
+            <summary>
+            <para>File is encrypted.</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.GeneralPurposeBitFlags.Is8KSlidingDictionaryUsed">
+            <summary>
+            <para>[Implode]</para>
+            <para>if set, indicates an 8K sliding dictionary was used.</para>
+            <para>If clear, then a 4K sliding dictionary was used.</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.GeneralPurposeBitFlags.IsShannonFano3Used">
+            <summary>
+            <para>[Implode]</para>
+            <para>If set, indicates 3 Shannon-Fano trees were used to encode the sliding dictionary output.</para>
+            <para>If clear, then 2 Shannon-Fano trees were used.</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.GeneralPurposeBitFlags.DeflatingOption">
+            <summary>
+            <para>Deflating compression option</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.GeneralPurposeBitFlags.IsEosMarkerUsed">
+            <summary>
+            <para>[LZMA]</para>
+            <para>If set, indicates an end-of-stream (EOS) marker is used to mark the end of the compressed data stream.</para>
+            <para>If clear, then an EOS marker is not present and the compressed data size must be known to extract.</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.GeneralPurposeBitFlags.IsCorrectValuesAtDataDescriptor">
+            <summary>
+            <para>If set, the fields crc-32, compressed size and uncompressed size are set to zero in the local header.</para><para>The correct values are put in the data descriptor immediately following the compressed data.</para><para>(Note: PKZIP version 2.04g for DOS only recognizes this bit for method 8(<see cref="F:Darkangel.Zip.CompressionMethod.Deflate"/>) compression, newer versions of PKZIP recognize this bit for any compression method.)</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.GeneralPurposeBitFlags.IsCompressedPatch">
+            <summary>
+            <para>If set, this indicates that the file is compressed patched data.</para>
+            <para>(Note: Requires PKZIP version 2.70 or greater)</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.GeneralPurposeBitFlags.IsStrongEncryption">
+            <summary>
+            <para>If set, you MUST set the version needed to extract value to at least
+            50 and you MUST also set bit 0.</para><para>If AES encryption 
+            is used, the version needed to extract value MUST
+            be at least 51.</para><para>See the section describing the Strong
+            Encryption Specification for details.Refer to the
+            section in this document entitled "Incorporating PKWARE 
+            Proprietary Technology into Your Product" for more 
+            information.</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.GeneralPurposeBitFlags.IsUTF8Encoding">
+            <summary>
+            <para>Language encoding (EFS).</para>
+            <para>If set, the filename and comment fields for this file MUST be encoded using UTF-8. (see APPENDIX D)</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.GeneralPurposeBitFlags.IsCDREncrypted">
+            <summary>
+            <para>Indicate selected data values in the Local Header are masked to hide their actual values.</para>
+            <para>See the section describing the Strong Encryption Specification for details.</para>
+            <para>Refer to the section entitled "Incorporating PKWARE Proprietary Technology into Your Product" for more information.</para>
+            </summary>
+        </member>
+        <member name="T:Darkangel.Zip.StringResources">
+            <summary>
+              Класс ресурса со строгой типизацией для поиска локализованных строк и т.д.
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.StringResources.ResourceManager">
+            <summary>
+              Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.StringResources.Culture">
+            <summary>
+              Перезаписывает свойство CurrentUICulture текущего потока для всех
+              обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.StringResources.InvalidExtraDataIdMessageFormat">
+            <summary>
+              Ищет локализованную строку, похожую на Invalid extra data ID {0:X04}.
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.StringResources.InvalidZipRecordIdMessageFormat">
+            <summary>
+              Ищет локализованную строку, похожую на Invalid record ID {0:X08}.
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.StringResources.InvalidZipRecordSizeMessageFormat">
+            <summary>
+              Ищет локализованную строку, похожую на Invalid extra data size: read:{0}, need:{1}.
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.StringResources.ZipRecordCtorMessageFormat">
+            <summary>
+              Ищет локализованную строку, похожую на Type {0} MUST have constructor without parameters.
+            </summary>
+        </member>
+        <member name="T:Darkangel.Zip.ZipFile">
+            <summary>
+            <para>Файл ZIP-архива</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.ZipFile.Stream">
+            <summary>
+            <para>Поток исходных данных</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.ZipFile.FileName">
+            <summary>
+            <para>Имя файла архива, если загрузка прошла из файла</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Zip.ZipFile.Load(System.String)">
+            <summary>
+            <para>Загрузить объект из файла</para>
+            </summary>
+            <param name="fileName">Имя файла архива</param>
+        </member>
+        <member name="M:Darkangel.Zip.ZipFile.#ctor">
+            <summary>
+            <para>Конструктор объекта по-умолчанию</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Zip.ZipFile.#ctor(System.IO.Stream)">
+            <summary>
+            <para>Создать объект и загрузить данные из потока</para>
+            </summary>
+            <param name="input">Входной поток</param>
+        </member>
+        <member name="M:Darkangel.Zip.ZipFile.#ctor(System.String)">
+            <summary>
+            <para>Создать объект и загрузить данные из файла</para>
+            </summary>
+            <param name="fileName">Имя файла архива</param>
+        </member>
+        <member name="M:Darkangel.Zip.ZipFile.RegisterRecordType``1">
+            <summary>
+            <para>Зарегистрировать новый тип записи</para>
+            </summary>
+            <typeparam name="T">Тип записи</typeparam>
+        </member>
+        <member name="M:Darkangel.Zip.ZipFile.CreateRecordById(System.Int64)">
+            <summary>
+            <para>Создать объект записи архива по его идентификатору</para>
+            </summary>
+            <param name="id">Идентификатор записи</param>
+            <returns>Объект записи</returns>
+            <exception cref="T:Darkangel.Zip.InvalidZipRecordIdException"/>
+        </member>
+        <member name="M:Darkangel.Zip.ZipFile.RegisterExtraFieldType``1">
+            <summary>
+            <para>Зарегистрировать новый тип дополнительных данных</para>
+            </summary>
+            <typeparam name="T">Тип дополнительных данных</typeparam>
+        </member>
+        <member name="M:Darkangel.Zip.ZipFile.CreateExtraDataById(System.Int32)">
+            <summary>
+            <para>Создать объект дополнительной информации по его идентификатору</para>
+            </summary>
+            <param name="id"></param>
+            <returns>Объект дополнительной информации</returns>
+            <exception cref="T:Darkangel.Zip.InvalidZipExtraDataIdException"/>
+        </member>
+        <member name="M:Darkangel.Zip.ZipFile.RegisterRecords">
+            <summary>
+            <para>Зарегистрировать все известные типы записей</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Zip.ZipFile.RegisterExtra">
+            <summary>
+            <para>Зарегистрировать все известные типы дополнительной информации</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Zip.ZipFile.Load(System.IO.Stream)">
+            <summary>
+            <para>Загрузить объект из потока</para>
+            </summary>
+            <param name="input">Входной поток</param>
         </member>
         <member name="T:Darkangel.Zip.ZipRecordSignature">
             <summary>
             <para>Подпись записи ZIP-архива</para>
             </summary>
         </member>
-        <member name="P:Darkangel.Zip.ZipRecordSignature.FixedPartSize">
-            <inheritdoc/>
-        </member>
-        <member name="P:Darkangel.Zip.ZipRecordSignature.VariablePartSize">
-            <inheritdoc/>
-        </member>
         <member name="P:Darkangel.Zip.ZipRecordSignature.Id">
             <inheritdoc/>
         </member>
-        <member name="M:Darkangel.Zip.ZipRecordSignature.Load(System.IO.Stream)">
+        <member name="M:Darkangel.Zip.ZipRecordSignature.Load(Darkangel.Zip.ZipFile)">
             <inheritdoc/>
         </member>
     </members>
