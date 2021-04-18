@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace Darkangel.IO
 {
-    /// <summary>
-    /// <para>Утилиты для чтения/записи двоичных данных из потока</para>
-    /// </summary>
     public static partial class StreamHelpers
     {
         /// <summary>
@@ -15,6 +12,7 @@ namespace Darkangel.IO
         /// <typeparam name="T">Тип структуры</typeparam>
         /// <param name="rd">Двоичный поток</param>
         /// <returns>Экземпляр структуры</returns>
+        /// <remarks>2021-04-18</remarks>
         public static T ReadStruct<T>(this Stream rd)
             where T : struct
         {
@@ -38,6 +36,7 @@ namespace Darkangel.IO
         /// <typeparam name="T">Тип структуры</typeparam>
         /// <param name="wr">Двоичный поток</param>
         /// <param name="data">Экземпляр структуры</param>
+        /// <remarks>2021-04-18</remarks>
         public static void WriteStruct<T>(this Stream wr, T data)
         {
             byte[] bytes;

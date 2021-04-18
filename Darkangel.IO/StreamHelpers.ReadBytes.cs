@@ -6,17 +6,13 @@ namespace Darkangel.IO
     public static partial class StreamHelpers
     {
         /// <summary>
-        /// <para>К сожалению, базовая библиотека не умеет читать кусками больше, чем <see cref="Int32.MaxValue"/></para>
-        /// </summary>
-        private const int CHUNK_SIZE = 0x10000;
-
-        /// <summary>
         /// <para>Считать цепочку байт из потока</para>
         /// <para>К сожалению, базовая библиотека не умеет читать кусками больше, чем <see cref="Int32.MaxValue"/></para>
         /// </summary>
         /// <param name="stream">Входной поток</param>
         /// <param name="length">Количество байт, считываемых из потока</param>
         /// <returns>Цепочка байт, считанных из потока</returns>
+        /// <remarks>2021-04-18</remarks>
         public static byte[] ReadBytes(this Stream stream, long length)
         {
             #region Check arguments

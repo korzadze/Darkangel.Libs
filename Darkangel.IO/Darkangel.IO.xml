@@ -9,14 +9,6 @@
             <para>Утилиты для чтения/записи двоичных данных из потока</para>
             </summary>
         </member>
-        <member name="M:Darkangel.IO.StreamHelpers.WriteBytes(System.IO.Stream,System.Byte[])">
-            <summary>
-            <para>Записать вектор байт в поток</para>
-            </summary>
-            <param name="stream">Целевой поток</param>
-            <param name="data">Исходный вектор</param>
-            <returns>Количество записанных байт</returns>
-        </member>
         <member name="F:Darkangel.IO.StreamHelpers.CHUNK_SIZE">
             <summary>
             <para>К сожалению, базовая библиотека не умеет читать кусками больше, чем <see cref="F:System.Int32.MaxValue"/></para>
@@ -30,6 +22,7 @@
             <param name="stream">Входной поток</param>
             <param name="length">Количество байт, считываемых из потока</param>
             <returns>Цепочка байт, считанных из потока</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.IO.StreamHelpers.ReadStruct``1(System.IO.Stream)">
             <summary>
@@ -38,6 +31,7 @@
             <typeparam name="T">Тип структуры</typeparam>
             <param name="rd">Двоичный поток</param>
             <returns>Экземпляр структуры</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.IO.StreamHelpers.WriteStruct``1(System.IO.Stream,``0)">
             <summary>
@@ -46,11 +40,43 @@
             <typeparam name="T">Тип структуры</typeparam>
             <param name="wr">Двоичный поток</param>
             <param name="data">Экземпляр структуры</param>
+            <remarks>2021-04-18</remarks>
+        </member>
+        <member name="M:Darkangel.IO.StreamHelpers.WriteBytes(System.IO.Stream,System.Byte[])">
+            <summary>
+            <para>Записать вектор байт в поток</para>
+            </summary>
+            <param name="stream">Целевой поток</param>
+            <param name="data">Исходный вектор</param>
+            <returns>Количество записанных байт</returns>
+            <remarks>2021-04-18</remarks>
+        </member>
+        <member name="T:Darkangel.IO.StringResources">
+            <summary>
+              Класс ресурса со строгой типизацией для поиска локализованных строк и т.д.
+            </summary>
+        </member>
+        <member name="P:Darkangel.IO.StringResources.ResourceManager">
+            <summary>
+              Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
+            </summary>
+        </member>
+        <member name="P:Darkangel.IO.StringResources.Culture">
+            <summary>
+              Перезаписывает свойство CurrentUICulture текущего потока для всех
+              обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
+            </summary>
+        </member>
+        <member name="P:Darkangel.IO.StringResources.CantCreateTemporaryStreamMessageFormat">
+            <summary>
+              Ищет локализованную строку, похожую на Can&apos;t create temporary stream: Win32Error={0}.
+            </summary>
         </member>
         <member name="T:Darkangel.IO.TemporaryStream">
             <summary>
             <para>Утилита для создания временного файла</para>
             </summary>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="F:Darkangel.IO.TemporaryStream.EFileShare.None">
             <summary>
@@ -113,6 +139,7 @@
             </summary>
             <param name="suffix">Суффикс имени временного потока</param>
             <returns>Поток, удаляемый после закрытия (если дело происходит в Windows :) )</returns>
+            <remarks>2021-04-18</remarks>
         </member>
     </members>
 </doc>

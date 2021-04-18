@@ -11,6 +11,7 @@ namespace Darkangel.IO
         /// <param name="stream">Целевой поток</param>
         /// <param name="data">Исходный вектор</param>
         /// <returns>Количество записанных байт</returns>
+        /// <remarks>2021-04-18</remarks>
         public static long WriteBytes(this Stream stream, byte[] data)
         {
             #region Check arguments

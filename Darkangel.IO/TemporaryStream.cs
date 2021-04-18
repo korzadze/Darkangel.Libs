@@ -11,6 +11,7 @@ namespace Darkangel.IO
     /// <summary>
     /// <para>Утилита для создания временного файла</para>
     /// </summary>
+    /// <remarks>2021-04-18</remarks>
     public static class TemporaryStream
     {
 #if WINDOWS
@@ -35,19 +36,19 @@ namespace Darkangel.IO
             StandardRightsWrite = ReadControl,
             StandardRightsExecute = ReadControl,
             StandardRightsAll = 0x1F0000,
-            SpecificRightsAll = 0xFFFF,
+            SpecificRightsAll = SPECIFIC_RIGHTS_ALL,
 
             FILE_READ_DATA = 0x0001,        // file & pipe
-            FILE_LIST_DIRECTORY = 0x0001,       // directory
+            FILE_LIST_DIRECTORY = FILE_READ_DATA,       // directory
             FILE_WRITE_DATA = 0x0002,       // file & pipe
-            FILE_ADD_FILE = 0x0002,         // directory
+            FILE_ADD_FILE = FILE_WRITE_DATA,         // directory
             FILE_APPEND_DATA = 0x0004,      // file
-            FILE_ADD_SUBDIRECTORY = 0x0004,     // directory
-            FILE_CREATE_PIPE_INSTANCE = 0x0004, // named pipe
+            FILE_ADD_SUBDIRECTORY = FILE_APPEND_DATA,     // directory
+            FILE_CREATE_PIPE_INSTANCE = FILE_APPEND_DATA, // named pipe
             FILE_READ_EA = 0x0008,          // file & directory
             FILE_WRITE_EA = 0x0010,         // file & directory
             FILE_EXECUTE = 0x0020,          // file
-            FILE_TRAVERSE = 0x0020,         // directory
+            FILE_TRAVERSE = FILE_EXECUTE,         // directory
             FILE_DELETE_CHILD = 0x0040,     // directory
             FILE_READ_ATTRIBUTES = 0x0080,      // all
             FILE_WRITE_ATTRIBUTES = 0x0100,     // all
@@ -154,12 +155,18 @@ namespace Darkangel.IO
             FirstPipeInstance = 0x00080000
         }
 
-        [DllImport("kernel32.dll", SetLastError = true, EntryPoint = "GetTempPathW", CharSet = CharSet.Unicode)]
-        private static extern uint GetTempPath(uint nBufferLength, [Out] StringBuilder lpBuffer);
-        [DllImport("kernel32.dll", SetLastError = true, EntryPoint = "GetTempFileNameW", CharSet = CharSet.Unicode)]
-        private static extern uint GetTempFileName(string lpPathName, string lpPrefixString, uint uUnique, [Out] StringBuilder lpTempFileName);
+        private const string Kernel32Dll = "kernel32.dll";
+        private const string GetTempPathW = "GetTempPathW";
+        private const string GetTempFileNameW = "GetTempFileNameW";
+        private const string CreateFileW = "CreateFileW";
+        private const int MAX_PATH = 260;
+        private const string DefaultTempPreffix = "temp";
 
-        [DllImport("kernel32.dll", SetLastError = true, EntryPoint = "CreateFileW", CharSet = CharSet.Unicode)]
+        [DllImport(Kernel32Dll, SetLastError = true, EntryPoint = GetTempPathW, CharSet = CharSet.Unicode)]
+        private static extern uint GetTempPath(uint nBufferLength, [Out] StringBuilder lpBuffer);
+        [DllImport(Kernel32Dll, SetLastError = true, EntryPoint = GetTempFileNameW, CharSet = CharSet.Unicode)]
+        private static extern uint GetTempFileName(string lpPathName, string lpPrefixString, uint uUnique, [Out] StringBuilder lpTempFileName);
+        [DllImport(Kernel32Dll, SetLastError = true, EntryPoint = CreateFileW, CharSet = CharSet.Unicode)]
         private static extern IntPtr CreateFile(
            string lpFileName,
            EFileAccess dwDesiredAccess,
@@ -169,13 +176,13 @@ namespace Darkangel.IO
            EFileAttributes dwFlagsAndAttributes,
            IntPtr hTemplateFile);
 
-        private const int MAX_PATH = 260;
 #endif
         /// <summary>
         /// <para>Создать временный поток</para>
         /// </summary>
         /// <param name="suffix">Суффикс имени временного потока</param>
         /// <returns>Поток, удаляемый после закрытия (если дело происходит в Windows :) )</returns>
+        /// <remarks>2021-04-18</remarks>
         public static Stream Create(string suffix)
         {
 #if WINDOWS
@@ -185,7 +192,7 @@ namespace Darkangel.IO
             {
                 var pathTmp = sb.ToString();
                 sb.Clear();
-                suffix ??= "temp";
+                suffix ??= DefaultTempPreffix;
                 if (GetTempFileName(pathTmp, suffix, 0, sb) != 0)
                 {
                     SafeFileHandle hFile = new(CreateFile(sb.ToString(), EFileAccess.GenericRead | EFileAccess.GenericWrite, EFileShare.None, IntPtr.Zero, ECreationDisposition.CreateAlways, EFileAttributes.DeleteOnClose, IntPtr.Zero), true);
@@ -195,7 +202,10 @@ namespace Darkangel.IO
                     }
                 }
             }
-            throw new IOException(string.Format("Can't create temporary stream: Win32Error={0}", Marshal.GetLastWin32Error()));
+            throw new IOException(
+                string.Format(
+                    StringResources.CantCreateTemporaryStreamMessageFormat,
+                    Marshal.GetLastWin32Error()));
 #else
             return File.Open(Path.GetTempFileName(), FileMode.Create, FileAccess.ReadWrite, FileShare.None);
 #endif
