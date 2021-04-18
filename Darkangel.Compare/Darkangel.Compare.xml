@@ -19,6 +19,7 @@
             <param name="max">Верхняя граница</param>
             <param name="inclusive">Включать границы в сравнение или нет</param>
             <returns>Результат проверки</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Compare.CompareHelpers.BetweenEx``1(``0,``0,``0)">
             <summary>
@@ -29,6 +30,7 @@
             <param name="min">Нижняя граница</param>
             <param name="max">Верхняя граница</param>
             <returns>Результат проверки</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Compare.CompareHelpers.BetweenInc``1(``0,``0,``0)">
             <summary>
@@ -39,12 +41,14 @@
             <param name="min">Нижняя граница</param>
             <param name="max">Верхняя граница</param>
             <returns>Результат проверки</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="T:Darkangel.Compare.IComparator`1">
             <summary>
             <para>Итерфейс сравнения значений</para>
             </summary>
             <typeparam name="T">Тип значения</typeparam>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Compare.IComparator`1.CompareValues(`0,`0)">
             <summary>
@@ -60,6 +64,7 @@
             </summary>
             <typeparam name="T">Тип значения</typeparam>
             <typeparam name="TKey">Тип ключа</typeparam>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Compare.IComparator`2.CompareValues(`0,`1)">
             <summary>
@@ -74,6 +79,7 @@
             <para>Итерфейс сравнения значений</para>
             </summary>
             <typeparam name="T">Тип значения</typeparam>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Compare.IComparatorOf`1.CompareValues(`0,`0)">
             <summary>
@@ -88,6 +94,7 @@
             <para>Безопасный (с проверкой "пустых" значений) класс для сравниения двух значений</para>
             </summary>
             <typeparam name="T">Тип значений</typeparam>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Compare.SafeComparator`1.CompareValues(`0,`0)">
             <inheritdoc/>
@@ -98,6 +105,7 @@
             </summary>
             <typeparam name="T">Тип значения</typeparam>
             <typeparam name="TKey">Тип ключа</typeparam>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Compare.SafeComparator`2.CompareValues(`0,`1)">
             <inheritdoc/>
@@ -107,6 +115,7 @@
             <para>Безопасный (с проверкой "пустых" значений) класс для сравниения двух значений</para>
             </summary>
             <typeparam name="T">Тип значений</typeparam>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Compare.SafeComparatorOf`1.CompareValues(`0,`0)">
             <inheritdoc/>
@@ -116,6 +125,7 @@
             <para>Небезопасный (без проверки "пустых" значений) класс для сравниения двух значений</para>
             </summary>
             <typeparam name="T">Тип значений</typeparam>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Compare.UnsafeComparator`1.CompareValues(`0,`0)">
             <inheritdoc/>
@@ -126,6 +136,7 @@
             </summary>
             <typeparam name="T">Тип значения</typeparam>
             <typeparam name="TKey">Тип ключа</typeparam>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Compare.UnsafeComparator`2.CompareValues(`0,`1)">
             <inheritdoc/>
@@ -135,6 +146,7 @@
             <para>Небезопасный (без проверки "пустых" значений) класс для сравниения двух значений</para>
             </summary>
             <typeparam name="T">Тип значений</typeparam>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Compare.UnsafeComparatorOf`1.CompareValues(`0,`0)">
             <inheritdoc/>

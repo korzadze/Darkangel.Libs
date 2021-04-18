@@ -17,6 +17,7 @@
             <param name="values">Список значений</param>
             <returns>Масимальное значение из списка</returns>
             <exception cref="T:System.ArgumentNullException"/>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.MathEx.Min``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
@@ -26,6 +27,7 @@
             <param name="values">Список значений</param>
             <returns>Минимальное значение из списка</returns>
             <exception cref="T:System.ArgumentNullException"/>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.MathEx.Max``1(``0[])">
             <summary>
@@ -35,6 +37,7 @@
             <param name="values">Список значений</param>
             <returns>Масимальное значение из списка</returns>
             <exception cref="T:System.ArgumentNullException"/>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.MathEx.Min``1(``0[])">
             <summary>
@@ -44,6 +47,7 @@
             <param name="values">Список значений</param>
             <returns>Минимальное значение из списка</returns>
             <exception cref="T:System.ArgumentNullException"/>
+            <remarks>2021-04-18</remarks>
         </member>
     </members>
 </doc>

@@ -17,6 +17,7 @@ namespace Darkangel
 		/// <param name="values">Список значений</param>
 		/// <returns>Масимальное значение из списка</returns>
 		/// <exception cref="ArgumentNullException"/>
+		/// <remarks>2021-04-18</remarks>
 		public static T Max<T>(this IEnumerable<T> values)
 			where T : IComparable
 			=> Max(values.ToArray());
@@ -27,6 +28,7 @@ namespace Darkangel
 		/// <param name="values">Список значений</param>
 		/// <returns>Минимальное значение из списка</returns>
 		/// <exception cref="ArgumentNullException"/>
+		/// <remarks>2021-04-18</remarks>
 		public static T Min<T>(this IEnumerable<T> values)
 			where T : IComparable
 			=> Min(values.ToArray());
@@ -37,6 +39,7 @@ namespace Darkangel
 		/// <param name="values">Список значений</param>
 		/// <returns>Масимальное значение из списка</returns>
 		/// <exception cref="ArgumentNullException"/>
+		/// <remarks>2021-04-18</remarks>
 		public static T Max<T>(params T[] values)
 			where T: IComparable
         {
@@ -72,6 +75,7 @@ namespace Darkangel
 		/// <param name="values">Список значений</param>
 		/// <returns>Минимальное значение из списка</returns>
 		/// <exception cref="ArgumentNullException"/>
+		/// <remarks>2021-04-18</remarks>
 		public static T Min<T>(params T[] values)
 			where T : IComparable
 		{
