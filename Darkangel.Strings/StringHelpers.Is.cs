@@ -9,6 +9,7 @@ namespace Darkangel.Strings
         /// </summary>
         /// <param name="ch">Исходный символ</param>
         /// <returns>Результат проверки</returns>
+        /// <remarks>2021-04-18</remarks>
         public static bool IsBinaryDigit(this char ch) =>
             Digits.IndexOf(ch).Between(MinDigit, MaxBinaryDigit);
         /// <summary>
@@ -16,6 +17,7 @@ namespace Darkangel.Strings
         /// </summary>
         /// <param name="ch">Исходный символ</param>
         /// <returns>Результат проверки</returns>
+        /// <remarks>2021-04-18</remarks>
         public static bool IsOctalDigit(this char ch) =>
             Digits.IndexOf(ch).Between(MinDigit, MaxOctalDigit);
         /// <summary>
@@ -23,6 +25,7 @@ namespace Darkangel.Strings
         /// </summary>
         /// <param name="ch">Исходный символ</param>
         /// <returns>Результат проверки</returns>
+        /// <remarks>2021-04-18</remarks>
         public static bool IsDecimalDigit(this char ch) =>
             Digits.IndexOf(ch).Between(MinDigit, MaxDecimalDigit);
         /// <summary>
@@ -30,6 +33,7 @@ namespace Darkangel.Strings
         /// </summary>
         /// <param name="ch">Исходный символ</param>
         /// <returns>Результат проверки</returns>
+        /// <remarks>2021-04-18</remarks>
         public static bool IsHexadecimalDigit(this char ch)
         {
             var pos = Digits.IndexOf(ch);

@@ -11,7 +11,8 @@ namespace Darkangel.Strings
         /// <typeparam name="T">Тип элементов вектора</typeparam>
         /// <param name="arr">Вектор значений</param>
         /// <param name="delimiter">Разделитель элементов в списке</param>
-        /// <returns></returns>
+        /// <returns>Список значений ввиде строки</returns>
+        /// <remarks>2021-04-18</remarks>
         public static string AsString<T>(this T[] arr, string delimiter = DefaultListDelimiter)
         {
             #region Check arguments
@@ -28,6 +29,7 @@ namespace Darkangel.Strings
         /// <param name="arr">Вектор значений</param>
         /// <param name="delimiter">Разделитель значений в списке</param>
         /// <returns>Список значений вектора</returns>
+        /// <remarks>2021-04-18</remarks>
         public static string AsHexString(this Byte[] arr, string delimiter = DefaultListDelimiter)
         {
             #region Check arguments
@@ -49,6 +51,7 @@ namespace Darkangel.Strings
         /// <param name="arr">Вектор значений</param>
         /// <param name="delimiter">Разделитель значений в списке</param>
         /// <returns>Список значений вектора</returns>
+        /// <remarks>2021-04-18</remarks>
         public static string AsHexString(this UInt16[] arr, string delimiter = DefaultListDelimiter)
         {
             #region Check arguments
@@ -70,6 +73,7 @@ namespace Darkangel.Strings
         /// <param name="arr">Вектор значений</param>
         /// <param name="delimiter">Разделитель значений в списке</param>
         /// <returns>Список значений вектора</returns>
+        /// <remarks>2021-04-18</remarks>
         public static string AsHexString(this UInt32[] arr, string delimiter = DefaultListDelimiter)
         {
             #region Check arguments
@@ -91,6 +95,7 @@ namespace Darkangel.Strings
         /// <param name="arr">Вектор значений</param>
         /// <param name="delimiter">Разделитель значений в списке</param>
         /// <returns>Список значений вектора</returns>
+        /// <remarks>2021-04-18</remarks>
         public static string AsHexString(this UInt64[] arr, string delimiter = DefaultListDelimiter)
         {
             #region Check arguments

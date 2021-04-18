@@ -3,6 +3,7 @@
     /// <summary>
     /// <para>Утилиты для работы со строками</para>
     /// </summary>
+    /// <remarks>2021-04-18</remarks>
     public static partial class StringHelpers
     {
         /// <summary>
@@ -15,6 +16,7 @@
         /// <summary>
         /// <para>Строка 'чисел', используемиых в преобразованиях</para>
         /// </summary>
+        /// <remarks>2021-04-18</remarks>
 #if ONLY_HI_DIGITS
         public static string Digits => "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 #else

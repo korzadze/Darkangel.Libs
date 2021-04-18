@@ -15,6 +15,7 @@ namespace Darkangel.Strings
         /// <returns>Результирующее число</returns>
         /// <exception cref="ArgumentNullException"/>
         /// <exception cref="InvalidOperationException"/>
+        /// <remarks>2021-04-18</remarks>
         public static Int64 StrToInt64(this string text, int radix)
         {
             #region Проверка аргументов
@@ -52,6 +53,7 @@ namespace Darkangel.Strings
         /// <returns>Результирующее число</returns>
         /// <exception cref="ArgumentNullException"/>
         /// <exception cref="InvalidOperationException"/>
+        /// <remarks>2021-04-18</remarks>
         public static Int32 StrToInt32(this string text, int radix)
         {
             var res = StrToInt64(text, radix);
@@ -72,6 +74,7 @@ namespace Darkangel.Strings
         /// <returns>Результирующее число</returns>
         /// <exception cref="ArgumentNullException"/>
         /// <exception cref="InvalidOperationException"/>
+        /// <remarks>2021-04-18</remarks>
         public static Int16 StrToInt16(this string text, int radix)
         {
             var res = StrToInt64(text, radix);
@@ -92,6 +95,7 @@ namespace Darkangel.Strings
         /// <returns>Результирующее число</returns>
         /// <exception cref="ArgumentNullException"/>
         /// <exception cref="InvalidOperationException"/>
+        /// <remarks>2021-04-18</remarks>
         public static SByte StrToInt8(this string text, int radix)
         {
             var res = StrToInt64(text, radix);
@@ -113,6 +117,7 @@ namespace Darkangel.Strings
         /// <returns>Результирующее число</returns>
         /// <exception cref="ArgumentNullException"/>
         /// <exception cref="InvalidOperationException"/>
+        /// <remarks>2021-04-18</remarks>
         public static UInt64 StrToUInt64(this string text, int radix)
         {
             #region Проверка аргументов
@@ -155,6 +160,7 @@ namespace Darkangel.Strings
         /// <returns>Результирующее число</returns>
         /// <exception cref="ArgumentNullException"/>
         /// <exception cref="InvalidOperationException"/>
+        /// <remarks>2021-04-18</remarks>
         public static UInt32 StrToUInt32(this string text, int radix)
         {
             var res = StrToUInt64(text, radix);
@@ -175,6 +181,7 @@ namespace Darkangel.Strings
         /// <returns>Результирующее число</returns>
         /// <exception cref="ArgumentNullException"/>
         /// <exception cref="InvalidOperationException"/>
+        /// <remarks>2021-04-18</remarks>
         public static UInt16 StrToUInt16(this string text, int radix)
         {
             var res = StrToUInt64(text, radix);
@@ -195,6 +202,7 @@ namespace Darkangel.Strings
         /// <returns>Результирующее число</returns>
         /// <exception cref="ArgumentNullException"/>
         /// <exception cref="InvalidOperationException"/>
+        /// <remarks>2021-04-18</remarks>
         public static Byte StrToUInt8(this string text, int radix)
         {
             var res = StrToUInt64(text, radix);

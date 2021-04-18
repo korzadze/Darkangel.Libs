@@ -12,6 +12,7 @@ namespace Darkangel.Xml
         /// <param name="name"><para>Полное имя атрибута.</para><para>Если имя содержит двоеточие, свойство Prefix отражает часть имени, предшествующую ему, а свойство LocalName — ту часть, которая следует за первым двоеточием. Свойство NamespaceURI остается пустым, если префикс не является распознаваемым встроенным префиксом, например xmlns. В этом случае NamespaceURI имеет значение http://www.w3.org/2000/xmlns/.</para></param>
         /// <param name="value"><para>Значение атрибута (если имеется).</para></param>
         /// <returns><para>Родительский элемент</para></returns>
+        /// <remarks>2021-04-18</remarks>
         public static XmlElement AddAttribute(this XmlElement element, string name, string value = null)
         {
             #region Проверка аргументов
@@ -36,6 +37,7 @@ namespace Darkangel.Xml
         /// <param name="namespaceUri"><para>URI пространства имен атрибута. Если полное имя содержит префикс xmlns, то этот параметр должен иметь значение http://www.w3.org/2000/xmlns/.</para></param>
         /// <param name="value"><para>Значение атрибута (если имеется).</para></param>
         /// <returns><para>Родительский элемент</para></returns>
+        /// <remarks>2021-04-18</remarks>
         public static XmlElement AddAttribute(this XmlElement element, string qualifiedName, string namespaceUri, string value = null)
         {
             #region Проверка аргументов
@@ -61,6 +63,7 @@ namespace Darkangel.Xml
         /// <param name="namespaceUri"><para>URI пространства имен атрибута (если имеется).</para><para>String.Empty равносильно значению null.</para><para>Если значение параметра prefix равно xmlns, этот параметр должен иметь значение http://www.w3.org/2000/xmlns/. В противном случае возникает исключение.</para></param>
         /// <param name="value"><para>Значение атрибута (если имеется).</para></param>
         /// <returns><para>Родительский элемент</para></returns>
+        /// <remarks>2021-04-18</remarks>
         public static XmlElement AddAttribute(this XmlElement element, string prefix, string localName, string namespaceUri, string value = null)
         {
             #region Проверка аргументов

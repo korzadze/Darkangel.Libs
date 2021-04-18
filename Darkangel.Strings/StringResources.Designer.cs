@@ -61,7 +61,7 @@ namespace Darkangel.Strings {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Invalid symbol &apos;{0}&apos; in &apos;{1}&apos; for radix {2}.
+        ///   Ищет локализованную строку, похожую на Invalid symbol &apos;{0}&apos; in &apos;{1}&apos; for radix {2}..
         /// </summary>
         internal static string InvalidSymbolMessageFormat {
             get {

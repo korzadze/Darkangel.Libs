@@ -11,6 +11,7 @@ namespace Darkangel.Xml
         /// <param name="root"><para>Корневой элемент</para></param>
         /// <param name="childName"><para>Имя дочернего элемента</para></param>
         /// <returns><para>Добавленый дочерний элемент</para></returns>
+        /// <remarks>2021-04-18</remarks>
         public static XmlElement AddChild(this XmlElement root, string childName)
         {
             #region Проверка аргументов
@@ -30,6 +31,7 @@ namespace Darkangel.Xml
         /// <param name="qualifiedName"><para>Полное имя элемента.</para><para>Если имя содержит двоеточие, свойство Prefix отражает часть имени, предшествующую ему, а свойство LocalName — ту часть, которая следует за двоеточием. Полное имя не может содержать префикс "xmlns".</para></param>
         /// <param name="namespaceUri"><para>Универсальный код ресурса (URI) пространства имен элемента.</para></param>
         /// <returns><para>Добавленый дочерний элемент</para></returns>
+        /// <remarks>2021-04-18</remarks>
         public static XmlElement AddChild(this XmlElement root, string qualifiedName, string namespaceUri)
         {
             #region Проверка аргументов
@@ -50,6 +52,7 @@ namespace Darkangel.Xml
         /// <param name="localName">Локальное имя дочернего элемента.</param>
         /// <param name="namespaceUri"><para>Универсальный код ресурса (URI) пространства имен элемента.</para></param>
         /// <returns><para>Добавленый дочерний элемент</para></returns>
+        /// <remarks>2021-04-18</remarks>
         public static XmlElement AddChild(this XmlElement root, string prefix, string localName, string namespaceUri)
         {
             #region Проверка аргументов

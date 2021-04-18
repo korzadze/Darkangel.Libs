@@ -12,7 +12,8 @@ namespace Darkangel.Strings
         /// <param name="buf">Поток байт</param>
         /// <param name="start">Начало строки в потоке</param>
         /// <param name="encoding">Кодировка строки</param>
-        /// <returns></returns>
+        /// <returns>Считанная строка</returns>
+        /// <remarks>2021-04-18</remarks>
         public static string GetMBCSZ(this byte[] buf, long start, Encoding? encoding = null)
         {
             #region Check arguments

@@ -12,6 +12,7 @@ namespace Darkangel.Strings
         /// <param name="radix">Система счисления</param>
         /// <param name="delimiter">Разделитель значений</param>
         /// <returns>Список элементов вектора, в виде текста</returns>
+        /// <remarks>2021-04-18</remarks>
         public static string AsString(this SByte[] vector, int radix, string delimiter = DefaultListDelimiter)
         {
             #region Check arguments
@@ -34,6 +35,7 @@ namespace Darkangel.Strings
         /// <param name="radix">Система счисления</param>
         /// <param name="delimiter">Разделитель значений</param>
         /// <returns>Список элементов вектора, в виде текста</returns>
+        /// <remarks>2021-04-18</remarks>
         public static string AsString(this Byte[] vector, int radix, string delimiter = DefaultListDelimiter)
         {
             #region Check arguments
@@ -55,6 +57,7 @@ namespace Darkangel.Strings
         /// <param name="radix">Система счисления</param>
         /// <param name="delimiter">Разделитель значений</param>
         /// <returns>Список элементов вектора, в виде текста</returns>
+        /// <remarks>2021-04-18</remarks>
         public static string AsString(this Int16[] vector, int radix, string delimiter = DefaultListDelimiter)
         {
             #region Check arguments
@@ -76,6 +79,7 @@ namespace Darkangel.Strings
         /// <param name="radix">Система счисления</param>
         /// <param name="delimiter">Разделитель значений</param>
         /// <returns>Список элементов вектора, в виде текста</returns>
+        /// <remarks>2021-04-18</remarks>
         public static string AsString(this UInt16[] vector, int radix, string delimiter = DefaultListDelimiter)
         {
             #region Check arguments
@@ -97,6 +101,7 @@ namespace Darkangel.Strings
         /// <param name="radix">Система счисления</param>
         /// <param name="delimiter">Разделитель значений</param>
         /// <returns>Список элементов вектора, в виде текста</returns>
+        /// <remarks>2021-04-18</remarks>
         public static string AsString(this Int32[] vector, int radix, string delimiter = DefaultListDelimiter)
         {
             #region Check arguments
@@ -118,6 +123,7 @@ namespace Darkangel.Strings
         /// <param name="radix">Система счисления</param>
         /// <param name="delimiter">Разделитель значений</param>
         /// <returns>Список элементов вектора, в виде текста</returns>
+        /// <remarks>2021-04-18</remarks>
         public static string AsString(this UInt32[] vector, int radix, string delimiter = DefaultListDelimiter)
         {
             #region Check arguments
@@ -139,6 +145,7 @@ namespace Darkangel.Strings
         /// <param name="radix">Система счисления</param>
         /// <param name="delimiter">Разделитель значений</param>
         /// <returns>Список элементов вектора, в виде текста</returns>
+        /// <remarks>2021-04-18</remarks>
         public static string AsString(this Int64[] vector, int radix, string delimiter = DefaultListDelimiter)
         {
             #region Check arguments
@@ -160,6 +167,7 @@ namespace Darkangel.Strings
         /// <param name="radix">Система счисления</param>
         /// <param name="delimiter">Разделитель значений</param>
         /// <returns>Список элементов вектора, в виде текста</returns>
+        /// <remarks>2021-04-18</remarks>
         public static string AsString(this UInt64[] vector, int radix, string delimiter = DefaultListDelimiter)
         {
             #region Check arguments

@@ -8,6 +8,7 @@
             <summary>
             <para>Утилиты для работы со строками</para>
             </summary>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.AsString``1(``0[],System.String)">
             <summary>
@@ -16,7 +17,8 @@
             <typeparam name="T">Тип элементов вектора</typeparam>
             <param name="arr">Вектор значений</param>
             <param name="delimiter">Разделитель элементов в списке</param>
-            <returns></returns>
+            <returns>Список значений ввиде строки</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.AsHexString(System.Byte[],System.String)">
             <summary>
@@ -25,6 +27,7 @@
             <param name="arr">Вектор значений</param>
             <param name="delimiter">Разделитель значений в списке</param>
             <returns>Список значений вектора</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.AsHexString(System.UInt16[],System.String)">
             <summary>
@@ -33,6 +36,7 @@
             <param name="arr">Вектор значений</param>
             <param name="delimiter">Разделитель значений в списке</param>
             <returns>Список значений вектора</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.AsHexString(System.UInt32[],System.String)">
             <summary>
@@ -41,6 +45,7 @@
             <param name="arr">Вектор значений</param>
             <param name="delimiter">Разделитель значений в списке</param>
             <returns>Список значений вектора</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.AsHexString(System.UInt64[],System.String)">
             <summary>
@@ -49,6 +54,7 @@
             <param name="arr">Вектор значений</param>
             <param name="delimiter">Разделитель значений в списке</param>
             <returns>Список значений вектора</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.AsString(System.SByte[],System.Int32,System.String)">
             <summary>
@@ -58,6 +64,7 @@
             <param name="radix">Система счисления</param>
             <param name="delimiter">Разделитель значений</param>
             <returns>Список элементов вектора, в виде текста</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.AsString(System.Byte[],System.Int32,System.String)">
             <summary>
@@ -67,6 +74,7 @@
             <param name="radix">Система счисления</param>
             <param name="delimiter">Разделитель значений</param>
             <returns>Список элементов вектора, в виде текста</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.AsString(System.Int16[],System.Int32,System.String)">
             <summary>
@@ -76,6 +84,7 @@
             <param name="radix">Система счисления</param>
             <param name="delimiter">Разделитель значений</param>
             <returns>Список элементов вектора, в виде текста</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.AsString(System.UInt16[],System.Int32,System.String)">
             <summary>
@@ -85,6 +94,7 @@
             <param name="radix">Система счисления</param>
             <param name="delimiter">Разделитель значений</param>
             <returns>Список элементов вектора, в виде текста</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.AsString(System.Int32[],System.Int32,System.String)">
             <summary>
@@ -94,6 +104,7 @@
             <param name="radix">Система счисления</param>
             <param name="delimiter">Разделитель значений</param>
             <returns>Список элементов вектора, в виде текста</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.AsString(System.UInt32[],System.Int32,System.String)">
             <summary>
@@ -103,6 +114,7 @@
             <param name="radix">Система счисления</param>
             <param name="delimiter">Разделитель значений</param>
             <returns>Список элементов вектора, в виде текста</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.AsString(System.Int64[],System.Int32,System.String)">
             <summary>
@@ -112,6 +124,7 @@
             <param name="radix">Система счисления</param>
             <param name="delimiter">Разделитель значений</param>
             <returns>Список элементов вектора, в виде текста</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.AsString(System.UInt64[],System.Int32,System.String)">
             <summary>
@@ -121,6 +134,7 @@
             <param name="radix">Система счисления</param>
             <param name="delimiter">Разделитель значений</param>
             <returns>Список элементов вектора, в виде текста</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="F:Darkangel.Strings.StringHelpers.DefaultListDelimiter">
             <summary>
@@ -131,6 +145,7 @@
             <summary>
             <para>Строка 'чисел', используемиых в преобразованиях</para>
             </summary>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="P:Darkangel.Strings.StringHelpers.MinRadix">
             <summary>
@@ -150,7 +165,8 @@
             <param name="buf">Поток байт</param>
             <param name="start">Начало строки в потоке</param>
             <param name="encoding">Кодировка строки</param>
-            <returns></returns>
+            <returns>Считанная строка</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.IsBinaryDigit(System.Char)">
             <summary>
@@ -158,6 +174,7 @@
             </summary>
             <param name="ch">Исходный символ</param>
             <returns>Результат проверки</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.IsOctalDigit(System.Char)">
             <summary>
@@ -165,6 +182,7 @@
             </summary>
             <param name="ch">Исходный символ</param>
             <returns>Результат проверки</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.IsDecimalDigit(System.Char)">
             <summary>
@@ -172,6 +190,7 @@
             </summary>
             <param name="ch">Исходный символ</param>
             <returns>Результат проверки</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.IsHexadecimalDigit(System.Char)">
             <summary>
@@ -179,6 +198,7 @@
             </summary>
             <param name="ch">Исходный символ</param>
             <returns>Результат проверки</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.StrToInt64(System.String,System.Int32)">
             <summary>
@@ -189,6 +209,7 @@
             <returns>Результирующее число</returns>
             <exception cref="T:System.ArgumentNullException"/>
             <exception cref="T:System.InvalidOperationException"/>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.StrToInt32(System.String,System.Int32)">
             <summary>
@@ -199,6 +220,7 @@
             <returns>Результирующее число</returns>
             <exception cref="T:System.ArgumentNullException"/>
             <exception cref="T:System.InvalidOperationException"/>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.StrToInt16(System.String,System.Int32)">
             <summary>
@@ -209,6 +231,7 @@
             <returns>Результирующее число</returns>
             <exception cref="T:System.ArgumentNullException"/>
             <exception cref="T:System.InvalidOperationException"/>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.StrToInt8(System.String,System.Int32)">
             <summary>
@@ -219,6 +242,7 @@
             <returns>Результирующее число</returns>
             <exception cref="T:System.ArgumentNullException"/>
             <exception cref="T:System.InvalidOperationException"/>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.StrToUInt64(System.String,System.Int32)">
             <summary>
@@ -229,6 +253,7 @@
             <returns>Результирующее число</returns>
             <exception cref="T:System.ArgumentNullException"/>
             <exception cref="T:System.InvalidOperationException"/>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.StrToUInt32(System.String,System.Int32)">
             <summary>
@@ -239,6 +264,7 @@
             <returns>Результирующее число</returns>
             <exception cref="T:System.ArgumentNullException"/>
             <exception cref="T:System.InvalidOperationException"/>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.StrToUInt16(System.String,System.Int32)">
             <summary>
@@ -249,6 +275,7 @@
             <returns>Результирующее число</returns>
             <exception cref="T:System.ArgumentNullException"/>
             <exception cref="T:System.InvalidOperationException"/>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.StrToUInt8(System.String,System.Int32)">
             <summary>
@@ -259,6 +286,7 @@
             <returns>Результирующее число</returns>
             <exception cref="T:System.ArgumentNullException"/>
             <exception cref="T:System.InvalidOperationException"/>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.IntToStr(System.Byte,System.Int32)">
             <summary>
@@ -267,6 +295,7 @@
             <param name="value">Исходное значение</param>
             <param name="radix">Система счисления</param>
             <returns>Текстовое представление значения в указанной системе счисления</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.IntToStr(System.SByte,System.Int32)">
             <summary>
@@ -275,6 +304,7 @@
             <param name="value">Исходное значение</param>
             <param name="radix">Система счисления</param>
             <returns>Текстовое представление значения в указанной системе счисления</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.IntToStr(System.UInt16,System.Int32)">
             <summary>
@@ -283,6 +313,7 @@
             <param name="value">Исходное значение</param>
             <param name="radix">Система счисления</param>
             <returns>Текстовое представление значения в указанной системе счисления</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.IntToStr(System.Int16,System.Int32)">
             <summary>
@@ -291,6 +322,7 @@
             <param name="value">Исходное значение</param>
             <param name="radix">Система счисления</param>
             <returns>Текстовое представление значения в указанной системе счисления</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.IntToStr(System.UInt32,System.Int32)">
             <summary>
@@ -299,6 +331,7 @@
             <param name="value">Исходное значение</param>
             <param name="radix">Система счисления</param>
             <returns>Текстовое представление значения в указанной системе счисления</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.IntToStr(System.Int32,System.Int32)">
             <summary>
@@ -307,6 +340,7 @@
             <param name="value">Исходное значение</param>
             <param name="radix">Система счисления</param>
             <returns>Текстовое представление значения в указанной системе счисления</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.IntToStr(System.UInt64,System.Int32)">
             <summary>
@@ -315,6 +349,7 @@
             <param name="value">Исходное значение</param>
             <param name="radix">Система счисления</param>
             <returns>Текстовое представление значения в указанной системе счисления</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Strings.StringHelpers.IntToStr(System.Int64,System.Int32)">
             <summary>
@@ -323,11 +358,13 @@
             <param name="value">Исходное значение</param>
             <param name="radix">Система счисления</param>
             <returns>Текстовое представление значения в указанной системе счисления</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="T:Darkangel.Strings.IntegerRadixDetector">
             <summary>
             <para>Вспомогательный класс для определения системы счисления</para>
             </summary>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="T:Darkangel.Strings.StringResources">
             <summary>
@@ -347,7 +384,7 @@
         </member>
         <member name="P:Darkangel.Strings.StringResources.InvalidSymbolMessageFormat">
             <summary>
-              Ищет локализованную строку, похожую на Invalid symbol &apos;{0}&apos; in &apos;{1}&apos; for radix {2}.
+              Ищет локализованную строку, похожую на Invalid symbol &apos;{0}&apos; in &apos;{1}&apos; for radix {2}..
             </summary>
         </member>
     </members>

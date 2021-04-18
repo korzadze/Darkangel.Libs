@@ -59,6 +59,7 @@ namespace Darkangel.Strings
         /// <param name="value">Исходное значение</param>
         /// <param name="radix">Система счисления</param>
         /// <returns>Текстовое представление значения в указанной системе счисления</returns>
+        /// <remarks>2021-04-18</remarks>
         public static string IntToStr(this Byte value, int radix) =>
             UInt2Str_Int(value, radix);
         /// <summary>
@@ -67,6 +68,7 @@ namespace Darkangel.Strings
         /// <param name="value">Исходное значение</param>
         /// <param name="radix">Система счисления</param>
         /// <returns>Текстовое представление значения в указанной системе счисления</returns>
+        /// <remarks>2021-04-18</remarks>
         public static string IntToStr(this SByte value, int radix) =>
             Int2Str_Int(value, radix);
         /// <summary>
@@ -75,6 +77,7 @@ namespace Darkangel.Strings
         /// <param name="value">Исходное значение</param>
         /// <param name="radix">Система счисления</param>
         /// <returns>Текстовое представление значения в указанной системе счисления</returns>
+        /// <remarks>2021-04-18</remarks>
         public static string IntToStr(this UInt16 value, int radix) =>
             UInt2Str_Int(value, radix);
         /// <summary>
@@ -83,6 +86,7 @@ namespace Darkangel.Strings
         /// <param name="value">Исходное значение</param>
         /// <param name="radix">Система счисления</param>
         /// <returns>Текстовое представление значения в указанной системе счисления</returns>
+        /// <remarks>2021-04-18</remarks>
         public static string IntToStr(this Int16 value, int radix) =>
             Int2Str_Int(value, radix);
         /// <summary>
@@ -91,6 +95,7 @@ namespace Darkangel.Strings
         /// <param name="value">Исходное значение</param>
         /// <param name="radix">Система счисления</param>
         /// <returns>Текстовое представление значения в указанной системе счисления</returns>
+        /// <remarks>2021-04-18</remarks>
         public static string IntToStr(this UInt32 value, int radix) =>
             UInt2Str_Int(value, radix);
         /// <summary>
@@ -99,6 +104,7 @@ namespace Darkangel.Strings
         /// <param name="value">Исходное значение</param>
         /// <param name="radix">Система счисления</param>
         /// <returns>Текстовое представление значения в указанной системе счисления</returns>
+        /// <remarks>2021-04-18</remarks>
         public static string IntToStr(this Int32 value, int radix) =>
             Int2Str_Int(value, radix);
         /// <summary>
@@ -107,6 +113,7 @@ namespace Darkangel.Strings
         /// <param name="value">Исходное значение</param>
         /// <param name="radix">Система счисления</param>
         /// <returns>Текстовое представление значения в указанной системе счисления</returns>
+        /// <remarks>2021-04-18</remarks>
         public static string IntToStr(this UInt64 value, int radix) =>
             UInt2Str_Int(value, radix);
         /// <summary>
@@ -115,6 +122,7 @@ namespace Darkangel.Strings
         /// <param name="value">Исходное значение</param>
         /// <param name="radix">Система счисления</param>
         /// <returns>Текстовое представление значения в указанной системе счисления</returns>
+        /// <remarks>2021-04-18</remarks>
         public static string IntToStr(this Int64 value, int radix) =>
             Int2Str_Int(value, radix);
     }

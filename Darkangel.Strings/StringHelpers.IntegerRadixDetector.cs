@@ -6,6 +6,7 @@ namespace Darkangel.Strings
     /// <summary>
     /// <para>Вспомогательный класс для определения системы счисления</para>
     /// </summary>
+    /// <remarks>2021-04-18</remarks>
     internal class IntegerRadixDetector
     {
         public readonly int? Radix;
