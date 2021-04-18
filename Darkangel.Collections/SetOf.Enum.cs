@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
-//Готово
 namespace Darkangel.Collections
 {
 	/// <summary>
 	/// <para>Набор элементов (аналог паскалевского 'set of ...')</para>
 	/// </summary>
 	/// <typeparam name="T">Тип значений перечисления унаследованный от <see cref="Enum"/></typeparam>
+	/// <remarks>2021-04-18</remarks>
 	public class SetOfE<T> : IEnumerable<T>
 		where T : Enum
 	{
@@ -71,12 +71,10 @@ namespace Darkangel.Collections
 		/// </summary>
 		/// <returns>Результирующий массив</returns>
 		public T[] ToArray() => _List.ToArray();
-
 		/// <summary>
 		/// <para>Истина, если набор не содержит ни одного элемента</para>
 		/// </summary>
 		public bool IsEmpty => (_List.Count == 0);
-
 		/// <summary>
 		/// <para>Пересечение двух наборов</para>
 		/// </summary>
@@ -141,7 +139,6 @@ namespace Darkangel.Collections
             };
             return res;
 		}
-
 		/// <summary>
 		/// Разность наборов
 		/// </summary>
@@ -170,6 +167,7 @@ namespace Darkangel.Collections
 		/// </summary>
 		/// <param name="other">Удаляемый элемент</param>
 		/// <returns>Новый набор</returns>
+		/// <remarks>2021-04-18</remarks>
 		public SetOfE<T> Difference(T other) // op -
 		{
 			#region Check arguments

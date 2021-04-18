@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
-//Готово
 namespace Darkangel.Collections
 {
 	/// <summary>
@@ -12,6 +11,7 @@ namespace Darkangel.Collections
 	/// <para>Для перечислений следует использовать класс <see cref="SetOfE{T}"/>, т.к. перечисления не реализуют интерфейс <see cref="IComparable{T}"/></para>
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
+	/// <remarks>2021-04-18</remarks>
 	public class SetOf<T> : IEnumerable<T>
         where T : IComparable<T>
     {
@@ -67,12 +67,10 @@ namespace Darkangel.Collections
 		/// </summary>
 		/// <returns>Результирующий массив</returns>
 		public T[] ToArray() => _List.ToArray();
-
 		/// <summary>
 		/// <para>Истина, если набор не содержит ни одного элемента</para>
 		/// </summary>
 		public bool IsEmpty => (_List.Count == 0);
-
 		/// <summary>
 		/// <para>Пересечение двух наборов</para>
 		/// </summary>
@@ -135,7 +133,6 @@ namespace Darkangel.Collections
 				other
 			};
 		}
-
 		/// <summary>
 		/// Разность наборов
 		/// </summary>

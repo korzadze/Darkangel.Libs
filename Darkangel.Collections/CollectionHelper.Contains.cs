@@ -12,6 +12,7 @@ namespace Darkangel.Collections
         /// <param name="list">Список значений</param>
         /// <param name="value">Искомое значение</param>
         /// <returns>Результат проверки</returns>
+        /// <remarks>2021-04-18</remarks>
         public static bool Contains<T>(this IEnumerable<T> list, T value)
             where T : IEquatable<T>
         {

@@ -1,9 +1,9 @@
-﻿//Готово
-namespace Darkangel.Collections
+﻿namespace Darkangel.Collections
 {
 	/// <summary>
 	/// <para>Результат поиска в сортированном списке</para>
 	/// </summary>
+	/// <remarks>2021-04-18</remarks>
 	public class SearchResult
 	{
 		/// <summary>
