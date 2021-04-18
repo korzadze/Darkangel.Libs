@@ -2,6 +2,7 @@
 
 namespace Darkangel.Arrays
 {
+    //Готово
     /// <summary>
     /// <para>Утилиты для работы с массивами</para>
     /// </summary>

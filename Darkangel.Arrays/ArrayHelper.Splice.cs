@@ -2,6 +2,7 @@
 
 namespace Darkangel.Arrays
 {
+    //Готово
     public static partial class ArrayHelper
     {
         /// <summary>

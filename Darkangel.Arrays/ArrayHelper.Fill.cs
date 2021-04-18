@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Darkangel.Arrays
 {
+    //Готово
     /// <summary>
     /// <para>Функция-делегат, генерирующая значения</para>
     /// </summary>
