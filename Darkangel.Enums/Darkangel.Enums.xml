@@ -15,6 +15,15 @@
             </summary>
             <param name="type">Проверяемый тип</param>
             <returns>Результат проверки</returns>
+            <remarks>2021-04-18</remarks>
+        </member>
+        <member name="M:Darkangel.Enums.EnumHelper.IsBitsetEnum``1">
+            <summary>
+            Является ли тип значения битовым перечислением
+            </summary>
+            <typeparam name="T">Тип перечисления</typeparam>
+            <returns>Результат проверки</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Enums.EnumHelper.IsBitsetEnum(System.Enum)">
             <summary>
@@ -22,42 +31,51 @@
             </summary>
             <param name="val">Значение типа</param>
             <returns>Результат проверки</returns>
+            <remarks>2021-04-18</remarks>
         </member>
-        <member name="M:Darkangel.Enums.EnumHelper.IsSet``1(``0,``0)">
+        <member name="M:Darkangel.Enums.EnumHelper.IsSet``2(``0,``1)">
             <summary>
             <para>Проверить установку всех указанных флагов в значении</para>
             </summary>
             <typeparam name="T">Тип значения <see cref="T:System.Enum"/></typeparam>
+            <typeparam name="TFlag">Тип значения флага</typeparam>
             <param name="value">Проверяемое значение</param>
             <param name="flags">Флаги</param>
             <returns>Результат проверки</returns>
+            <remarks>2021-04-18</remarks>
         </member>
-        <member name="M:Darkangel.Enums.EnumHelper.IsSetAny``1(``0,``0)">
+        <member name="M:Darkangel.Enums.EnumHelper.IsSetAny``2(``0,``1)">
             <summary>
             <para>Проверить установку любого из указанных флагов в значении</para>
             </summary>
             <typeparam name="T">Тип значения <see cref="T:System.Enum"/></typeparam>
+            <typeparam name="TFlag">Тип значения флага</typeparam>
             <param name="value">Проверяемое битовое значение</param>
             <param name="flags">Флаги</param>
             <returns>Результат проверки</returns>
+            <remarks>2021-04-18</remarks>
         </member>
-        <member name="M:Darkangel.Enums.EnumHelper.Set``1(``0,``0)">
+        <member name="M:Darkangel.Enums.EnumHelper.Set``2(``0,``1)">
             <summary>
             <para>Установить флаги в значении</para>
             </summary>
             <typeparam name="T">Тип значения <see cref="T:System.Enum"/></typeparam>
+            <typeparam name="TFlag">Тип значения флага</typeparam>
             <param name="value">Исходное битовое значение</param>
             <param name="flags">Флаги</param>
             <returns>Новое значение битовой маски</returns>
+            <remarks>2021-04-18</remarks>
         </member>
-        <member name="M:Darkangel.Enums.EnumHelper.Unset``1(``0,``0)">
+        <member name="M:Darkangel.Enums.EnumHelper.Unset``2(``0,``1)">
             <summary>
             <para>Сбросить флаги в значении</para>
             </summary>
             <typeparam name="T">Тип значения <see cref="T:System.Enum"/></typeparam>
+            <typeparam name="TFlag">Тип значения флага</typeparam>
             <param name="value">Исходное значение</param>
             <param name="flags">Флаги</param>
             <returns>Новое значение битовой маски</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="M:Darkangel.Enums.EnumHelper.GetAllEnumValues``1">
             <summary>
@@ -65,6 +83,7 @@
             </summary>
             <typeparam name="T">Тип элемента перечисления</typeparam>
             <returns>Массив значений перечисления</returns>
+            <remarks>2021-04-18</remarks>
         </member>
         <member name="T:Darkangel.Enums.StringResources">
             <summary>
@@ -84,7 +103,7 @@
         </member>
         <member name="P:Darkangel.Enums.StringResources.IsNotBitsetError">
             <summary>
-              Ищет локализованную строку, похожую на The value cannot be interpreted as a bit mask.
+              Ищет локализованную строку, похожую на The value cannot be interpreted as a bit mask..
             </summary>
         </member>
     </members>

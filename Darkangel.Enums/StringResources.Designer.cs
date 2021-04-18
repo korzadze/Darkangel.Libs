@@ -61,7 +61,7 @@ namespace Darkangel.Enums {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на The value cannot be interpreted as a bit mask.
+        ///   Ищет локализованную строку, похожую на The value cannot be interpreted as a bit mask..
         /// </summary>
         internal static string IsNotBitsetError {
             get {
