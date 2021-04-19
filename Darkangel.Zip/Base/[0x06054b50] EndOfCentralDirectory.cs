@@ -11,6 +11,8 @@ namespace Darkangel.Zip
     public class EndOfCentralDirectory : ZipRecord
     {
         /// <inheritdoc/>
+        public override long DataSize => throw new NotImplementedException();
+        /// <inheritdoc/>
         public override UInt32 Id => 0x06054b50;
         /// <summary>
         /// <para>Number of this disk</para>
@@ -43,6 +45,7 @@ namespace Darkangel.Zip
         /// <para>.ZIP file comment</para>
         /// </summary>
         public string Comment { get; private set; }
+
         /// <inheritdoc/>
         public override void Load(ZipFile file)
         {

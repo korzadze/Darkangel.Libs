@@ -12,7 +12,7 @@ namespace Darkangel.Zip
         /// <inheritdoc/>
         public override int Id => 0x0009;
         /// <inheritdoc/>
-        public override int DataSize => 10 + (_Data?.Length ?? 0);
+        public override long DataSize => 10 + (_Data?.LongLength ?? 0);
         private byte[] _Data;
         /// <summary>
         /// <para>Compressed data</para>

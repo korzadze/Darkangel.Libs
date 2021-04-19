@@ -11,6 +11,9 @@ namespace Darkangel.Zip
     /// </summary>
     public class LocalFileHeader : ZipRecord
     {
+        /// <inheritdoc/>
+        public override long DataSize => throw new NotImplementedException();
+
         private static readonly UInt32 SignatureValue = 0x04034b50;
         /// <inheritdoc/>
         public override UInt32 Id => SignatureValue;

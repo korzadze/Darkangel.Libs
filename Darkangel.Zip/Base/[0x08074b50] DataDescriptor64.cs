@@ -8,6 +8,8 @@ namespace Darkangel.Zip
     /// </summary>
     public class DataDescriptor64 : ZipRecord
     {
+        /// <inheritdoc/>
+        public override long DataSize => throw new NotImplementedException();
         /// <summary>
         /// <para>Не используется</para>
         /// </summary>

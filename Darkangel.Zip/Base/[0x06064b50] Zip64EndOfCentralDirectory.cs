@@ -8,6 +8,8 @@ namespace Darkangel.Zip
     public class Zip64EndOfCentralDirectory : ZipRecord
     {
         /// <inheritdoc/>
+        public override long DataSize => throw new NotImplementedException();
+        /// <inheritdoc/>
         public override UInt32 Id => 0x06064b50;
         /// <inheritdoc/>
         public override void Load(ZipFile file)

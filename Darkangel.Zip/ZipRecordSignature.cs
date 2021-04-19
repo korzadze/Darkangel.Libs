@@ -12,6 +12,8 @@ namespace Darkangel.Zip
         /// <inheritdoc/>
         public override UInt32 Id => _Signature;
         /// <inheritdoc/>
+        public override long DataSize => 4;
+        /// <inheritdoc/>
         public override void Load(ZipFile file)
         {
             base.Load(file);

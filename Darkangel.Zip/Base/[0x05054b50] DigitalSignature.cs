@@ -10,6 +10,9 @@ namespace Darkangel.Zip
         /// <inheritdoc/>
         public override UInt32 Id => 0x05054b50;
         /// <inheritdoc/>
+        public override long DataSize => throw new NotImplementedException();
+
+        /// <inheritdoc/>
         public override void Load(ZipFile file)
         {
             base.Load(file);

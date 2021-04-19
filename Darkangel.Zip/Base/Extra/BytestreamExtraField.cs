@@ -10,7 +10,7 @@ namespace Darkangel.Zip
     {
         private byte[] _Data;
         /// <inheritdoc/>
-        public override int DataSize => _Data?.Length ?? 0;
+        public override long DataSize => _Data?.Length ?? 0;
         /// <inheritdoc/>
         public override void Load(Stream stream, int size)
         {

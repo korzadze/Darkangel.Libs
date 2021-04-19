@@ -25,6 +25,9 @@ namespace Darkangel.Zip
         /// </summary>
         public UInt32 UncompressedSize { get; private set; }
         /// <inheritdoc/>
+        public override long DataSize => 12;
+
+        /// <inheritdoc/>
         public override void Load(ZipFile file)
         {
             base.Load(file);
