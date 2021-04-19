@@ -20,6 +20,6 @@ namespace Darkangel.Zip
         /// <summary>
         /// <para>Размер данных объекта</para>
         /// </summary>
-        public abstract int DataSize { get; }
+        public abstract long DataSize { get; }
     }
 }

@@ -12,7 +12,7 @@ namespace Darkangel.Zip
         /// <inheritdoc/>
         public override int Id => 0x0001;
         /// <inheritdoc/>
-        public override int DataSize => _DataSize;
+        public override long DataSize => _DataSize;
         private const int _DataSize = 36;
         /// <inheritdoc/>
         public override void Load(Stream stream, int size)
@@ -24,7 +24,7 @@ namespace Darkangel.Zip
             OriginalSize = stream.ReadUInt64(isLittleEndian: true);
             CompressedSize = stream.ReadUInt64(isLittleEndian: true);
             RelativeHeaderOffset = stream.ReadUInt64(isLittleEndian: true);
-            DiskStartNumber = stream.ReadUInt32(isLittleEndian: true);
+            StartDiskNumber = stream.ReadUInt32(isLittleEndian: true);
         }
         /// <summary>
         /// Original uncompressed file size
@@ -41,6 +41,6 @@ namespace Darkangel.Zip
         /// <summary>
         /// Number of the disk on which this file starts
         /// </summary>
-        public UInt32 DiskStartNumber { get; private set; }
+        public UInt32 StartDiskNumber { get; private set; }
     }
 }

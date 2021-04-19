@@ -26,10 +26,14 @@ namespace Darkangel.Zip
         /// <para>Метод упаковки</para>
         /// </summary>
         public CompressionMethod CompressionMethod { get; protected set; }
-        /// <summary>s
-        /// <para>Дата и время последнего изменения файла</para>
+        /// <summary>
+        /// <para>Время последнего изменения файла (см. <seealso cref="Darkangel.DateTimeX.MsDos.ToDateTime"/>)</para>
         /// </summary>
-        public DateTime LastModFile { get; protected set; }
+        public UInt16 LastModFileTime { get; private set; }
+        /// <summary>
+        /// <para>Дата последнего изменения файла (см. <seealso cref="Darkangel.DateTimeX.MsDos.ToDateTime"/>)</para>
+        /// </summary>
+        public UInt16 LastModFileDate { get; private set; }
         /// <summary>
         /// <para>Контрольная сумма</para>
         /// </summary>
@@ -75,9 +79,8 @@ namespace Darkangel.Zip
             VersionNeededToExtract = file.Stream.ReadUInt16(isLittleEndian: true);
             GeneralPurposeBitFlags = file.Stream.ReadUInt16(isLittleEndian: true);
             CompressionMethod = (CompressionMethod)file.Stream.ReadUInt16(isLittleEndian: true);
-            var _LastModFileTime = file.Stream.ReadUInt16(isLittleEndian: true);
-            var _LastModFileDate = file.Stream.ReadUInt16(isLittleEndian: true);
-            LastModFile = MsDos.ToDateTime(_LastModFileDate, _LastModFileTime);
+            LastModFileTime = file.Stream.ReadUInt16(isLittleEndian: true);
+            LastModFileDate = file.Stream.ReadUInt16(isLittleEndian: true);
             Сrc32 = file.Stream.ReadUInt32(isLittleEndian: true);
             CompressedSize = file.Stream.ReadUInt32(isLittleEndian: true);
             UncompressedSize = file.Stream.ReadUInt32(isLittleEndian: true);

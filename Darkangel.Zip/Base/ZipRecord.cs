@@ -10,6 +10,10 @@ namespace Darkangel.Zip
     public abstract class ZipRecord
     {
         /// <summary>
+        /// <para>Размер записи в байтах (без сигнатуры)</para>
+        /// </summary>
+        public abstract long DataSize { get; }
+        /// <summary>
         /// <para>Идентификатор записи (подпись, сигнатура)</para>
         /// </summary>
         public abstract UInt32 Id { get; }
