@@ -15,6 +15,7 @@
     <ProjectReference Include="..\Darkangel.DateTime\Darkangel.DateTime.csproj" />
     <ProjectReference Include="..\Darkangel.IntegerX\Darkangel.IntegerX.csproj" />
     <ProjectReference Include="..\Darkangel.IO\Darkangel.IO.csproj" />
+    <ProjectReference Include="..\Darkangel.Math\Darkangel.Math.csproj" />
   </ItemGroup>
 
   <ItemGroup>

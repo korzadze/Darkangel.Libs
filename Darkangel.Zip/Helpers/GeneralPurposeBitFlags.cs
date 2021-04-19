@@ -36,7 +36,12 @@ namespace Darkangel.Zip
         /// <para>Raw value</para>
         /// </summary>
         public int FLags => _FLags;
-        internal GeneralPurposeBitFlags(UInt16 flags, CompressionMethod method)
+        /// <summary>
+        /// <para>Создать экземпляр класса</para>
+        /// </summary>
+        /// <param name="flags">Флаги</param>
+        /// <param name="method">Используемый метод сжатия</param>
+        public GeneralPurposeBitFlags(UInt16 flags, CompressionMethod method)
         {
             _Method = method;
             _FLags = flags;

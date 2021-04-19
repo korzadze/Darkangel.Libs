@@ -354,6 +354,16 @@
         <member name="M:Darkangel.Zip.CentralDirectoryFileHeader.Load(Darkangel.Zip.ZipFile)">
             <inheritdoc/>
         </member>
+        <member name="P:Darkangel.Zip.CentralDirectoryFileHeader.VersionMadeBy">
+            <summary>
+            <para>Version made by (see <see cref="T:Darkangel.Zip.VersionMadeBy"/>)</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Zip.CentralDirectoryFileHeader.VersionNeededToExtract">
+            <summary>
+            <para>Minimal version needed to extract file (see <see cref="T:Darkangel.Zip.VersionNeededToExtract"/>)</para>
+            </summary>
+        </member>
         <member name="T:Darkangel.Zip.LocalFileHeader">
             <summary>
             <para>Локальный заголовок файла</para>
@@ -367,7 +377,7 @@
             <para>Минимальная версия API, необходимая для распаковки данных</para>
             </summary>
         </member>
-        <member name="P:Darkangel.Zip.LocalFileHeader.GeneralPurposeBitFlag">
+        <member name="P:Darkangel.Zip.LocalFileHeader.GeneralPurposeBitFlags">
             <summary>
             <para>Флаги общего назначения</para>
             </summary>
@@ -556,6 +566,81 @@
         <member name="M:Darkangel.Zip.DataDescriptor64.Load(Darkangel.Zip.ZipFile)">
             <inheritdoc/>
         </member>
+        <member name="T:Darkangel.Zip.ApiVersion">
+            <summary>
+            <para>ZIP API versions</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.ApiVersion.Version10">
+            <summary>
+            <para>Version 1.0</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.ApiVersion.Version11">
+            <summary>
+            <para>Version 1.1</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.ApiVersion.Version20">
+            <summary>
+            <para>Version 2.0</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.ApiVersion.Version21">
+            <summary>
+            <para>Version 2.1</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.ApiVersion.Version25">
+            <summary>
+            <para>Version 2.5</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.ApiVersion.Version27">
+            <summary>
+            <para>Version 2.7</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.ApiVersion.Version45">
+            <summary>
+            <para>Version 4.5</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.ApiVersion.Version46">
+            <summary>
+            <para>Version 4.6</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.ApiVersion.Version50">
+            <summary>
+            <para>Version 5.0</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.ApiVersion.Version51">
+            <summary>
+            <para>Version 5.1</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.ApiVersion.Version52">
+            <summary>
+            <para>Version 5.2</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.ApiVersion.Version61">
+            <summary>
+            <para>Version 6.1</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.ApiVersion.Version62">
+            <summary>
+            <para>Version 6.2</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.ApiVersion.Version63">
+            <summary>
+            <para>Version 6.3</para>
+            </summary>
+        </member>
         <member name="T:Darkangel.Zip.CompressionMethod">
             <summary>
             <para>ZIP Compression method</para>
@@ -689,6 +774,141 @@
         <member name="F:Darkangel.Zip.DeflatingOption.Unknown">
             <summary>
             <para>Unknown</para>
+            </summary>
+        </member>
+        <member name="T:Darkangel.Zip.Feature">
+            <summary>
+            <para>ZIP archive features</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.Feature.Default">
+            <summary>
+            <para>Default value</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.Feature.FileIsAVolumeLabel">
+            <summary>
+            <para>File is a volume label</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.Feature.FileIsAFolder">
+            <summary>
+            <para>File is a folder (directory)</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.Feature.CompressionDeflate">
+            <summary>
+            <para>File is compressed using Deflate compression</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.Feature.TraditionalEncryption">
+            <summary>
+            <para>File is encrypted using traditional PKWARE encryption</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.Feature.CompressionDeflate64">
+            <summary>
+            <para>File is compressed using Deflate64(tm)</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.Feature.CompressionDCLImplode">
+            <summary>
+            <para>File is compressed using PKWARE DCL Implode</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.Feature.UsePatchDataSet">
+            <summary>
+            <para>File is a patch data set</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.Feature.ZIP64FormatExtensions">
+            <summary>
+            <para>File uses ZIP64 format extensions</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.Feature.CompressionBZIP2">
+            <summary>
+            <para>File is compressed using BZIP2 compression</para>
+            </summary>
+            <remarks>
+            <para>Early 7.x (pre-7.2) versions of PKZIP incorrectly set the version needed to extract for BZIP2 compression to be 5.0 when it SHOULD have been 4.6.</para>
+            </remarks>
+        </member>
+        <member name="F:Darkangel.Zip.Feature.EncryptionDES">
+            <summary>
+            <para>File is encrypted using DES</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.Feature.Encryption3DES">
+            <summary>
+            <para>File is encrypted using 3DES</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.Feature.EncryptionOriginalRC2">
+            <summary>
+            <para>File is encrypted using original RC2 encryption</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.Feature.EncryptionRC4">
+            <summary>
+            <para>File is encrypted using RC4 encryption</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.Feature.EncryptionAES">
+            <summary>
+            <para>File is encrypted using AES encryption</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.Feature.EncryptionCorrectedRC2">
+            <summary>
+            <para>File is encrypted using corrected RC2 encryption</para>
+            </summary>
+            <remarks>
+            <para>Refer to the section on Strong Encryption Specification for additional information regarding RC2 corrections.</para>
+            </remarks>
+        </member>
+        <member name="F:Darkangel.Zip.Feature.EncryptionCorrectedRC2_64">
+            <summary>
+            <para>File is encrypted using corrected RC2-64 encryption</para>
+            </summary>
+            <remarks>
+            <para>Refer to the section on Strong Encryption Specification for additional information regarding RC2 corrections.</para>
+            </remarks>
+        </member>
+        <member name="F:Darkangel.Zip.Feature.EncryptionNonOAEPKeyWrapping">
+            <summary>
+            <para>File is encrypted using non-OAEP key wrapping</para>
+            </summary>
+            <remarks>
+            <para>Certificate encryption using non-OAEP key wrapping is the intended
+            mode of operation for all versions beginning with 6.1. Support for OAEP
+            key wrapping MUST only be used for backward compatibility when sending
+            ZIP files to be opened by versions of PKZIP older than 6.1 (5.0 or 6.0).</para>
+            </remarks>
+        </member>
+        <member name="F:Darkangel.Zip.Feature.CentralDirectoryEncryption">
+            <summary>
+            <para>Central directory encryption</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.Feature.CompressionLZMA">
+            <summary>
+            <para>File is compressed using LZMA</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.Feature.CompressionPPMd">
+            <summary>
+            <para>File is compressed using PPMd+</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.Feature.EncryptionBlowfish">
+            <summary>
+            <para>File is encrypted using Blowfish</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Zip.Feature.EncryptionTwofish">
+            <summary>
+            <para>File is encrypted using Twofish</para>
             </summary>
         </member>
         <member name="T:Darkangel.Zip.VersionMadeBy">
@@ -915,6 +1135,13 @@
             <para>Raw value</para>
             </summary>
         </member>
+        <member name="M:Darkangel.Zip.GeneralPurposeBitFlags.#ctor(System.UInt16,Darkangel.Zip.CompressionMethod)">
+            <summary>
+            <para>Создать экземпляр класса</para>
+            </summary>
+            <param name="flags">Флаги</param>
+            <param name="method">Используемый метод сжатия</param>
+        </member>
         <member name="P:Darkangel.Zip.GeneralPurposeBitFlags.IsEncrypted">
             <summary>
             <para>File is encrypted.</para>
@@ -981,6 +1208,52 @@
             <para>See the section describing the Strong Encryption Specification for details.</para>
             <para>Refer to the section entitled "Incorporating PKWARE Proprietary Technology into Your Product" for more information.</para>
             </summary>
+        </member>
+        <member name="T:Darkangel.Zip.VersionNeededToExtract">
+            <summary>
+            <para>Minimal feature versions needed to extract</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Zip.VersionNeededToExtract.Set(Darkangel.Zip.Feature)">
+            <summary>
+            <para>Задать версию по функционалу</para>
+            </summary>
+            <param name="feature"></param>
+        </member>
+        <member name="M:Darkangel.Zip.VersionNeededToExtract.IsSet(Darkangel.Zip.Feature)">
+            <summary>
+            <para>Проверка, поддерживается функционал в текущей версии</para>
+            </summary>
+            <param name="feature">Функционал</param>
+            <returns>Результат проверки</returns>
+        </member>
+        <member name="M:Darkangel.Zip.VersionNeededToExtract.Unset(Darkangel.Zip.Feature)">
+            <summary>
+            <para>Отменить поддержку функционала</para>
+            </summary>
+            <remarks>Отмена может и не произойти, если включена поддержка другого функционала той же версии или выше</remarks>
+            <param name="feature"></param>
+        </member>
+        <member name="P:Darkangel.Zip.VersionNeededToExtract.Value">
+            <summary>
+            <para>Version for selected feature</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Zip.VersionNeededToExtract.Reset">
+            <summary>
+            <para>Reset features to default</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Zip.VersionNeededToExtract.#ctor">
+            <summary>
+            <para>Создать экземпляр класса по-умолчанию</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Zip.VersionNeededToExtract.#ctor(System.UInt16)">
+            <summary>
+            <para>Создать экземпляр класса с указанием минимальной версии API</para>
+            </summary>
+            <param name="version">Минимальная версия API</param>
         </member>
         <member name="T:Darkangel.Zip.StringResources">
             <summary>

@@ -16,11 +16,11 @@ namespace Darkangel.Zip
         /// <summary>
         /// <para>Минимальная версия API, необходимая для распаковки данных</para>
         /// </summary>
-        public int VersionNeededToExtract { get; protected set; }
+        public UInt16 VersionNeededToExtract { get; protected set; }
         /// <summary>
         /// <para>Флаги общего назначения</para>
         /// </summary>
-        public GeneralPurposeBitFlags GeneralPurposeBitFlag { get; protected set; }
+        public UInt16 GeneralPurposeBitFlags { get; protected set; }
         /// <summary>
         /// <para>Метод упаковки</para>
         /// </summary>
@@ -72,12 +72,11 @@ namespace Darkangel.Zip
             base.Load(file);
             #region Фикисрованная часть
             VersionNeededToExtract = file.Stream.ReadUInt16(isLittleEndian: true);
-            var _GeneralPurposeBitFlag = file.Stream.ReadUInt16(isLittleEndian: true);
+            GeneralPurposeBitFlags = file.Stream.ReadUInt16(isLittleEndian: true);
             CompressionMethod = (CompressionMethod)file.Stream.ReadUInt16(isLittleEndian: true);
-            GeneralPurposeBitFlag = new(_GeneralPurposeBitFlag, CompressionMethod);
             var _LastModFileTime = file.Stream.ReadUInt16(isLittleEndian: true);
             var _LastModFileDate = file.Stream.ReadUInt16(isLittleEndian: true);
-            LastModFile = Darkangel.DateTime.MsDos.ToDateTime(_LastModFileDate, _LastModFileTime);
+            LastModFile = DateTime.MsDos.ToDateTime(_LastModFileDate, _LastModFileTime);
             Сrc32 = file.Stream.ReadUInt32(isLittleEndian: true);
             CompressedSize = file.Stream.ReadUInt32(isLittleEndian: true);
             UncompressedSize = file.Stream.ReadUInt32(isLittleEndian: true);
@@ -86,13 +85,14 @@ namespace Darkangel.Zip
             #endregion Фикисрованная часть
             #region Переменная часть
             var nameBuf = file.Stream.ReadBytes(_FileNameLength);
-            if (GeneralPurposeBitFlag.IsUTF8Encoding)
+            var f = new GeneralPurposeBitFlags(GeneralPurposeBitFlags, CompressionMethod);
+            if (f.IsUTF8Encoding)
             {
-                FileName = ZipRecord.GetString(nameBuf, encoding: Encoding.UTF8);
+                FileName = GetString(nameBuf, encoding: Encoding.UTF8);
             }
             else
             {
-                FileName = ZipRecord.GetString(nameBuf, encoding: Encoding.ASCII);
+                FileName = GetString(nameBuf, encoding: Encoding.ASCII);
             }
             ExtraFields.Load(file, _ExtraFieldLength);
             #endregion Переменная часть
