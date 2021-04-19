@@ -1,7 +1,7 @@
 ﻿namespace Darkangel.Zip
 {
     /// <summary>
-    /// <para>PKCS#7 Store for X.509 Certificates</para>
+    /// <para>Хранилище PKCS#7 для сертификатов X.509</para>
     /// </summary>
     public class PKCS7CertificatesStore : BytestreamExtraField
     {

@@ -1,7 +1,7 @@
 ﻿namespace Darkangel.Zip
 {
     /// <summary>
-    /// <para>Extended language encoding data</para>
+    /// <para>Дополнительная информация о кодировке текста</para>
     /// </summary>
     public class ExtendedLanguageEncoding : BytestreamExtraField
     {

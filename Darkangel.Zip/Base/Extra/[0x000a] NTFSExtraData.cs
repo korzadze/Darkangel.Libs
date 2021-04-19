@@ -1,7 +1,7 @@
 ﻿namespace Darkangel.Zip
 {
     /// <summary>
-    /// <para>NTFS extra data</para>
+    /// <para>Дополнительные данные NTFS</para>
     /// </summary>
     public class NTFSExtraData : BytestreamExtraField
     {

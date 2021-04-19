@@ -11,7 +11,7 @@ namespace Darkangel.Zip
     /// <summary>
     /// <para>Файл ZIP-архива</para>
     /// </summary>
-    public class ZipFile
+    public class ZipFile: IDisposable
     {
         private readonly Dictionary<long, ConstructorInfo> _RecordsFactory = new();
         private readonly Dictionary<int, ConstructorInfo> _ExtraDataFactory = new();
@@ -29,11 +29,8 @@ namespace Darkangel.Zip
         /// <para>Загрузить объект из файла</para>
         /// </summary>
         /// <param name="fileName">Имя файла архива</param>
-        public void Load(string fileName)
-        {
-            Load(File.OpenRead(fileName));
-            FileName = fileName;
-        }
+        public void Load(string fileName) =>
+            Load(File.OpenRead(FileName = fileName));
         /// <summary>
         /// <para>Конструктор объекта по-умолчанию</para>
         /// </summary>
@@ -41,23 +38,6 @@ namespace Darkangel.Zip
         {
             RegisterRecords();
             RegisterExtra();
-        }
-        /// <summary>
-        /// <para>Создать объект и загрузить данные из потока</para>
-        /// </summary>
-        /// <param name="input">Входной поток</param>
-        public ZipFile(Stream input) : this()
-        {
-            Load(input);
-        }
-
-        /// <summary>
-        /// <para>Создать объект и загрузить данные из файла</para>
-        /// </summary>
-        /// <param name="fileName">Имя файла архива</param>
-        public ZipFile(string fileName)
-        {
-            Load(fileName);
         }
         private void CleanData()
         {

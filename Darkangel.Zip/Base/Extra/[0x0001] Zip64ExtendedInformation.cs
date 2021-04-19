@@ -5,7 +5,7 @@ using System.IO;
 namespace Darkangel.Zip
 {
     /// <summary>
-    /// <para>Zip64 extended information</para>
+    /// <para>Расширенная информация режима ZIP64</para>
     /// </summary>
     public class Zip64ExtendedInformation : ZipExtraField
     {
@@ -27,19 +27,19 @@ namespace Darkangel.Zip
             StartDiskNumber = stream.ReadUInt32(isLittleEndian: true);
         }
         /// <summary>
-        /// Original uncompressed file size
+        /// <para>Размер неупакованных данных.</para>
         /// </summary>
         public UInt64 OriginalSize { get; private set; }
         /// <summary>
-        /// Size of compressed data
+        /// <para>Размер упакованных данных</para>
         /// </summary>
         public UInt64 CompressedSize { get; private set; }
         /// <summary>
-        /// Offset of local header record
+        /// <para>Смещение локального заголовка файла</para>
         /// </summary>
         public UInt64 RelativeHeaderOffset { get; private set; }
         /// <summary>
-        /// Number of the disk on which this file starts
+        /// <para>Номер диска, на котором начинаются данные файла</para>
         /// </summary>
         public UInt32 StartDiskNumber { get; private set; }
     }

@@ -1,10 +1,7 @@
-﻿using System;
-using System.IO;
-
-namespace Darkangel.Zip
+﻿namespace Darkangel.Zip
 {
     /// <summary>
-    /// <para>UNIX extra data</para>
+    /// <para>Дополнительные данные UNIX</para>
     /// </summary>
     public class UNIXExtraData : BytestreamExtraField
     {
@@ -16,6 +13,6 @@ namespace Darkangel.Zip
         Uid         2 bytes       File user ID
         Gid         2 bytes       File group ID
         (var)       variable      Variable length data field
-         */
+        */
     }
 }

@@ -1,7 +1,7 @@
 ﻿namespace Darkangel.Zip
 {
     /// <summary>
-    /// <para>X509 Certificate ID and Signature for individual file</para>
+    /// <para>Идентификатор сертификата X.509 и подпись для индивидуального файла</para>
     /// </summary>
     public class IndividualX509Certificate : BytestreamExtraField
     {

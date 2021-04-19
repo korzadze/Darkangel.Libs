@@ -3,6 +3,7 @@ using Darkangel.IO;
 using Darkangel.DateTimeX;
 using System;
 using System.Text;
+using System.IO;
 
 namespace Darkangel.Zip
 {
@@ -17,6 +18,7 @@ namespace Darkangel.Zip
         private static readonly UInt32 SignatureValue = 0x04034b50;
         /// <inheritdoc/>
         public override UInt32 Id => SignatureValue;
+        #region Фикисрованная часть
         /// <summary>
         /// <para>Минимальная версия API, необходимая для распаковки данных</para>
         /// </summary>
@@ -49,6 +51,8 @@ namespace Darkangel.Zip
         /// <para>Размер распакованных данных</para>
         /// </summary>
         public long UncompressedSize { get; protected set; }
+        #endregion Фикисрованная часть
+        #region Переменная часть
         /// <summary>
         /// <para>Имя файла</para>
         /// </summary>
@@ -57,22 +61,6 @@ namespace Darkangel.Zip
         /// <para>Дополнительная информация о файле</para>
         /// </summary>
         public ZipExtraFieldCollection ExtraFields { get; private set; } = new();
-        #region Фикисрованная часть
-        //private UInt16 _VersionNeededToExtract;
-        //private UInt16 _GeneralPurposeBitFlag;
-        //private UInt16 _CompressionMethod;
-        //private UInt16 _LastModFileTime;
-        //private UInt16 _LastModFileDate;
-        //private UInt32 _Сrc32;
-        //private UInt32 _CompressedSize;
-        //private UInt32 _UncompressedSize;
-        //private UInt16 _FileNameLength;
-        //private UInt16 _ExtraFieldLength;
-        #endregion Фикисрованная часть
-        #region Переменная часть
-        //private byte[] _FileName = new byte[_FileNameLength];
-        //private byte[] _ExtraFields = new byte[_ExtraFieldLength];
-        //private byte[] _CompressedData = new byte[_CompressedSize];
         #endregion Переменная часть
         /// <inheritdoc/>
         public override void Load(ZipFile file)
@@ -93,16 +81,26 @@ namespace Darkangel.Zip
             #region Переменная часть
             var nameBuf = file.Stream.ReadBytes(_FileNameLength);
             var f = new GeneralPurposeBitFlags(GeneralPurposeBitFlags, CompressionMethod);
-            if (f.IsUTF8Encoding)
-            {
-                FileName = GetString(nameBuf, encoding: Encoding.UTF8);
-            }
-            else
-            {
-                FileName = GetString(nameBuf, encoding: Encoding.ASCII);
-            }
+            var e = (f.IsUTF8Encoding) ? (Encoding.UTF8) : (Encoding.ASCII);
+            FileName = GetString(nameBuf, encoding: e);
             ExtraFields.Load(file, _ExtraFieldLength);
             #endregion Переменная часть
+        }
+        /// <summary>
+        /// <para>Распаковать данные в файл</para>
+        /// </summary>
+        /// <param name="fileName">Имя целевого файла</param>
+        public void ExtractTo(string fileName)
+        {
+
+        }
+        /// <summary>
+        /// <para>Распаковать данные в поток</para>
+        /// </summary>
+        /// <param name="outStream">Целевой поток</param>
+        public void ExtractTo(Stream outStream)
+        {
+
         }
     }
 }

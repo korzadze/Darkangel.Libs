@@ -1,7 +1,7 @@
 ﻿namespace Darkangel.Zip
 {
     /// <summary>
-    /// <para>Patch Descriptor</para>
+    /// <para>Описатель изменений</para>
     /// </summary>
     public class PatchDescriptor : BytestreamExtraField
     {

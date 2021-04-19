@@ -1,10 +1,7 @@
-﻿using Darkangel.IO;
-using System.IO;
-
-namespace Darkangel.Zip
+﻿namespace Darkangel.Zip
 {
     /// <summary>
-    /// <para>AV Info</para>
+    /// <para>PKWARE's authentication</para>
     /// </summary>
     public class AVInfo : BytestreamExtraField
     {

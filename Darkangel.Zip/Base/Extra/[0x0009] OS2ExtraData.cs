@@ -5,7 +5,7 @@ using System.IO;
 namespace Darkangel.Zip
 {
     /// <summary>
-    /// <para>OS/2 extra data</para>
+    /// <para>Дополнительная информация OS/2</para>
     /// </summary>
     public partial class OS2ExtraData : ZipExtraField
     {
@@ -15,9 +15,9 @@ namespace Darkangel.Zip
         public override long DataSize => 10 + (_Data?.LongLength ?? 0);
         private byte[] _Data;
         /// <summary>
-        /// <para>Compressed data</para>
+        /// <para>Прочитать данные записи</para>
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Данные записи в упакованном виде</returns>
         public byte[] GetData() =>
             (byte[])_Data.Clone();
         /// <inheritdoc/>
@@ -29,15 +29,15 @@ namespace Darkangel.Zip
             _Data = stream.ReadBytes(BSize);
         }
         /// <summary>
-        /// <para>Uncompressed Block Size</para>
+        /// <para>Размер распакованных данных</para>
         /// </summary>
         public long BSize { get; private set; }
         /// <summary>
-        /// <para>Compression type</para>
+        /// <para>Тип сжатия данных</para>
         /// </summary>
         public int CType { get; private set; }
         /// <summary>
-        /// <para>CRC value for uncompress block</para>
+        /// <para>Контрольная сумма распакованных данных</para>
         /// </summary>
         public long EACRC { get; private set; }
     }
