@@ -1,4 +1,4 @@
-﻿namespace Darkangel.DateTime
+﻿namespace Darkangel.DateTimeX
 {
     /// <summary>
     /// Утилиты для работы с форматами MS-DOS

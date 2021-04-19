@@ -4,12 +4,12 @@
         <name>Darkangel.DateTime</name>
     </assembly>
     <members>
-        <member name="T:Darkangel.DateTime.MsDos">
+        <member name="T:Darkangel.DateTimeX.MsDos">
             <summary>
             Утилиты для работы с форматами MS-DOS
             </summary>
         </member>
-        <member name="M:Darkangel.DateTime.MsDos.ToDateTime(System.UInt16,System.UInt16)">
+        <member name="M:Darkangel.DateTimeX.MsDos.ToDateTime(System.UInt16,System.UInt16)">
             <summary>
             <para>Преобразовать дату и время из формата MS-DOS в <see cref="T:System.DateTime"/></para>
             <para>date: YYYYYYYmmmmDDDDD<br/>

@@ -1,5 +1,6 @@
 ﻿using Darkangel.IntegerX;
 using Darkangel.IO;
+using Darkangel.DateTimeX;
 using System;
 using System.Text;
 
@@ -28,7 +29,7 @@ namespace Darkangel.Zip
         /// <summary>s
         /// <para>Дата и время последнего изменения файла</para>
         /// </summary>
-        public System.DateTime LastModFile { get; protected set; }
+        public DateTime LastModFile { get; protected set; }
         /// <summary>
         /// <para>Контрольная сумма</para>
         /// </summary>
@@ -76,7 +77,7 @@ namespace Darkangel.Zip
             CompressionMethod = (CompressionMethod)file.Stream.ReadUInt16(isLittleEndian: true);
             var _LastModFileTime = file.Stream.ReadUInt16(isLittleEndian: true);
             var _LastModFileDate = file.Stream.ReadUInt16(isLittleEndian: true);
-            LastModFile = DateTime.MsDos.ToDateTime(_LastModFileDate, _LastModFileTime);
+            LastModFile = MsDos.ToDateTime(_LastModFileDate, _LastModFileTime);
             Сrc32 = file.Stream.ReadUInt32(isLittleEndian: true);
             CompressedSize = file.Stream.ReadUInt32(isLittleEndian: true);
             UncompressedSize = file.Stream.ReadUInt32(isLittleEndian: true);
