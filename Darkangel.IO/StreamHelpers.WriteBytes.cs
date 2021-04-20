@@ -31,8 +31,9 @@ namespace Darkangel.IO
                 var chunkSize = (int)Math.Min(CHUNK_SIZE, dataSize);
                 for (var off = 0L; off < dataSize; off += chunkSize)
                 {
-                    Array.Copy(data, off, chunkBuf, 0, chunkSize);
-                    stream.Write(chunkBuf, 0, chunkSize);
+                    var cbWrite = Math.Min(dataSize - off, chunkSize);
+                    Array.Copy(data, off, chunkBuf, 0, cbWrite);
+                    stream.Write(chunkBuf, 0, (int)cbWrite);
                 }
                 return dataSize;
             }

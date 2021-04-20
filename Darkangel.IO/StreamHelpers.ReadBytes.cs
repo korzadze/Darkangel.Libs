@@ -37,7 +37,7 @@ namespace Darkangel.IO
                 // Если блок считан полностью
                 if (stream.Read(chunkBuf, 0, readSize) == readSize)
                 { // ..., то записываем считанное в буфер
-                    Array.Copy(res, off, chunkBuf, 0, readSize);
+                    Array.Copy(chunkBuf, 0, res, off, readSize);
                     off += readSize;
                 }
                 // Если же заказано больше, чем можно получить
