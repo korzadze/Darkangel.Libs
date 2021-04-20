@@ -209,7 +209,7 @@
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
         </member>
-        <member name="M:Darkangel.IntegerX.IntegerXHelpers.WriteInt8(System.IO.Stream,System.SByte,System.Boolean)">
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(System.IO.Stream,System.SByte,System.Boolean)">
             <summary>
             <para>Записать в поток значение <see cref="T:System.SByte"/></para>
             </summary>
@@ -227,7 +227,7 @@
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
         </member>
-        <member name="M:Darkangel.IntegerX.IntegerXHelpers.WriteUInt8(System.IO.Stream,System.Byte,System.Boolean)">
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(System.IO.Stream,System.Byte,System.Boolean)">
             <summary>
             <para>Записать в поток значение <see cref="T:System.Byte"/></para>
             </summary>
@@ -245,7 +245,7 @@
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
         </member>
-        <member name="M:Darkangel.IntegerX.IntegerXHelpers.WriteInt16(System.IO.Stream,System.Int16,System.Boolean)">
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(System.IO.Stream,System.Int16,System.Boolean)">
             <summary>
             <para>Записать в поток значение <see cref="T:System.Int16"/></para>
             </summary>
@@ -263,7 +263,7 @@
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
         </member>
-        <member name="M:Darkangel.IntegerX.IntegerXHelpers.WriteUInt16(System.IO.Stream,System.UInt16,System.Boolean)">
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(System.IO.Stream,System.UInt16,System.Boolean)">
             <summary>
             <para>Записать в поток значение <see cref="T:System.UInt16"/></para>
             </summary>
@@ -281,7 +281,7 @@
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
         </member>
-        <member name="M:Darkangel.IntegerX.IntegerXHelpers.WriteUInt24(System.IO.Stream,Darkangel.IntegerX.UInt24,System.Boolean)">
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(System.IO.Stream,Darkangel.IntegerX.UInt24,System.Boolean)">
             <summary>
             <para>Записать в поток значение <see cref="T:Darkangel.IntegerX.UInt24"/></para>
             </summary>

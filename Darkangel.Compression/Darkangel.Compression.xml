@@ -6,38 +6,47 @@
     <members>
         <member name="T:Darkangel.Compression.ICompressor">
             <summary>
-            <para></para>
+            <para>Интерфейс объекта для сжатия данных</para>
             </summary>
         </member>
-        <member name="M:Darkangel.Compression.ICompressor.Compress(System.Byte[])">
+        <member name="M:Darkangel.Compression.ICompressor.Compress(System.Byte[],System.Int64)">
             <summary>
-            <para></para>
+            <para>Упаковать поток байт</para>
             </summary>
-            <param name="data"></param>
-            <returns></returns>
+            <param name="data">Данные для упаковки</param>
+            <param name="start">Первый байт данных</param>
+            <returns>Упакованные данные</returns>
         </member>
-        <member name="M:Darkangel.Compression.ICompressor.Decompress(System.Byte[])">
+        <member name="M:Darkangel.Compression.ICompressor.Compress(System.IO.Stream,System.IO.Stream,System.Int64)">
             <summary>
-            <para></para>
+            <para>Упаковать данные из входного потока, и записать в выходной поток</para>
             </summary>
-            <param name="data"></param>
-            <returns></returns>
+            <param name="inStream">Входной поток</param>
+            <param name="outStream">Выходной поток</param>
+            <param name="count">Количество байт входного потока, которые необходимо упаковать</param>
+            <returns>Количество байт, записанных в выходной поток</returns>
         </member>
-        <member name="M:Darkangel.Compression.ICompressor.Compress(System.IO.Stream,System.IO.Stream)">
+        <member name="T:Darkangel.Compression.IDecompressor">
             <summary>
-            <para></para>
+            <para>Интерфейс объекта для распаковки данных</para>
             </summary>
-            <param name="inStream"></param>
-            <param name="outStream"></param>
-            <returns></returns>
         </member>
-        <member name="M:Darkangel.Compression.ICompressor.Decompress(System.IO.Stream,System.IO.Stream)">
+        <member name="M:Darkangel.Compression.IDecompressor.Decompress(System.Byte[],System.Int64)">
             <summary>
-            <para></para>
+            <para>Распаковать поток байт</para>
             </summary>
-            <param name="inStream"></param>
-            <param name="outStream"></param>
-            <returns></returns>
+            <param name="data">Данные для распаковки</param>
+            <param name="start">Первый байт упакованных данных</param>
+            <returns>Распакованные данные</returns>
+        </member>
+        <member name="M:Darkangel.Compression.IDecompressor.Decompress(System.IO.Stream,System.IO.Stream,System.Int64)">
+            <summary>
+            <para>Распаковать данные из входного потока, и записать в выходной поток</para>
+            </summary>
+            <param name="inStream">Входной поток</param>
+            <param name="outStream">Выходной поток</param>
+            <param name="count">Количество байт входного потока, которые необходимо распаковать</param>
+            <returns>Количество байт, записанных в выходной поток</returns>
         </member>
     </members>
 </doc>

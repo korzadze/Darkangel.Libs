@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Darkangel.Zip
 {
     /// <summary>
     /// <para>Файл ZIP-архива</para>
     /// </summary>
-    public class ZipFile: IDisposable
+    public class ZipFile//: IDisposable
     {
         private readonly Dictionary<long, ConstructorInfo> _RecordsFactory = new();
         private readonly Dictionary<int, ConstructorInfo> _ExtraDataFactory = new();

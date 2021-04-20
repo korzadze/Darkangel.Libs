@@ -165,6 +165,7 @@ namespace Darkangel.Zip
             {
 
             }
+            throw new NotImplementedException();
         }
         /// <summary>
         /// <para>Найти локальную запись файла для записи центрального каталога</para>
@@ -177,6 +178,7 @@ namespace Darkangel.Zip
                 return null;
             }
 
+            throw new NotImplementedException();
         }
     }
 }
