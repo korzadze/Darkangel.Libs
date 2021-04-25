@@ -29,6 +29,17 @@
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
         </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(System.SByte,System.Byte[],System.Int64,System.Boolean)">
+            <summary>
+            <para>Записать значение <see cref="T:System.SByte"/> в поток байт</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <param name="stream"></param>
+            <param name="offset">Смещение значения в потоке</param>
+            <param name="isLittleEndian">Порядок байт значения в потоке</param>
+            <returns>Количество записанных байт</returns>
+            <remarks>2021-04-25</remarks>
+        </member>
         <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetBytes(System.Byte,System.Boolean)">
             <summary>
             <para>Преобразовать значение <see cref="T:System.Byte"/> в поток байт</para>
@@ -47,6 +58,17 @@
             <param name="isLittleEndian">Порядок байтов значейния в потоке</param>
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(System.Byte,System.Byte[],System.Int64,System.Boolean)">
+            <summary>
+            <para>Записать значение <see cref="T:System.Byte"/> в поток байт</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <param name="stream"></param>
+            <param name="offset">Смещение значения в потоке</param>
+            <param name="isLittleEndian">Порядок байт значения в потоке</param>
+            <returns>Количество записанных байт</returns>
+            <remarks>2021-04-25</remarks>
         </member>
         <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetBytes(System.Int16,System.Boolean)">
             <summary>
@@ -67,6 +89,17 @@
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
         </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(System.Int16,System.Byte[],System.Int64,System.Boolean)">
+            <summary>
+            <para>Записать значение <see cref="T:System.Int16"/> в поток байт</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <param name="stream"></param>
+            <param name="offset">Смещение значения в потоке</param>
+            <param name="isLittleEndian">Порядок байт значения в потоке</param>
+            <returns>Количество записанных байт</returns>
+            <remarks>2021-04-25</remarks>
+        </member>
         <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetBytes(System.UInt16,System.Boolean)">
             <summary>
             <para>Преобразовать значение <see cref="T:System.Int16"/> в поток байт</para>
@@ -85,6 +118,17 @@
             <param name="isLittleEndian">Порядок байтов значейния в потоке</param>
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(System.UInt16,System.Byte[],System.Int64,System.Boolean)">
+            <summary>
+            <para>Записать значение <see cref="T:System.UInt16"/> в поток байт</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <param name="stream"></param>
+            <param name="offset">Смещение значения в потоке</param>
+            <param name="isLittleEndian">Порядок байт значения в потоке</param>
+            <returns>Количество записанных байт</returns>
+            <remarks>2021-04-25</remarks>
         </member>
         <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetBytes(Darkangel.IntegerX.UInt24,System.Boolean)">
             <summary>
@@ -105,6 +149,17 @@
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
         </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(Darkangel.IntegerX.UInt24,System.Byte[],System.Int64,System.Boolean)">
+            <summary>
+            <para>Записать значение <see cref="T:Darkangel.IntegerX.UInt24"/> в поток байт</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <param name="stream"></param>
+            <param name="offset">Смещение значения в потоке</param>
+            <param name="isLittleEndian">Порядок байт значения в потоке</param>
+            <returns>Количество записанных байт</returns>
+            <remarks>2021-04-25</remarks>
+        </member>
         <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetBytes(System.Int32,System.Boolean)">
             <summary>
             <para>Преобразовать значение <see cref="T:System.Int32"/> в поток байт</para>
@@ -123,6 +178,17 @@
             <param name="isLittleEndian">Порядок байтов значейния в потоке</param>
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(System.Int32,System.Byte[],System.Int64,System.Boolean)">
+            <summary>
+            <para>Записать значение <see cref="T:System.Int32"/> в поток байт</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <param name="stream"></param>
+            <param name="offset">Смещение значения в потоке</param>
+            <param name="isLittleEndian">Порядок байт значения в потоке</param>
+            <returns>Количество записанных байт</returns>
+            <remarks>2021-04-25</remarks>
         </member>
         <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetBytes(System.UInt32,System.Boolean)">
             <summary>
@@ -143,6 +209,17 @@
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
         </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(System.UInt32,System.Byte[],System.Int64,System.Boolean)">
+            <summary>
+            <para>Записать значение <see cref="T:System.UInt32"/> в поток байт</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <param name="stream"></param>
+            <param name="offset">Смещение значения в потоке</param>
+            <param name="isLittleEndian">Порядок байт значения в потоке</param>
+            <returns>Количество записанных байт</returns>
+            <remarks>2021-04-25</remarks>
+        </member>
         <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetBytes(Darkangel.IntegerX.UInt48,System.Boolean)">
             <summary>
             <para>Преобразовать значение <see cref="T:Darkangel.IntegerX.UInt48"/> в поток байт</para>
@@ -161,6 +238,17 @@
             <param name="isLittleEndian">Порядок байтов значейния в потоке</param>
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(Darkangel.IntegerX.UInt48,System.Byte[],System.Int64,System.Boolean)">
+            <summary>
+            <para>Записать значение <see cref="T:Darkangel.IntegerX.UInt48"/> в поток байт</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <param name="stream"></param>
+            <param name="offset">Смещение значения в потоке</param>
+            <param name="isLittleEndian">Порядок байт значения в потоке</param>
+            <returns>Количество записанных байт</returns>
+            <remarks>2021-04-25</remarks>
         </member>
         <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetBytes(System.Int64,System.Boolean)">
             <summary>
@@ -181,6 +269,17 @@
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
         </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(System.Int64,System.Byte[],System.Int64,System.Boolean)">
+            <summary>
+            <para>Записать значение <see cref="T:System.Int64"/> в поток байт</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <param name="stream"></param>
+            <param name="offset">Смещение значения в потоке</param>
+            <param name="isLittleEndian">Порядок байт значения в потоке</param>
+            <returns>Количество записанных байт</returns>
+            <remarks>2021-04-25</remarks>
+        </member>
         <member name="M:Darkangel.IntegerX.IntegerXHelpers.GetBytes(System.UInt64,System.Boolean)">
             <summary>
             <para>Преобразовать значение <see cref="T:System.UInt64"/> в поток байт</para>
@@ -199,6 +298,17 @@
             <param name="isLittleEndian">Порядок байтов значейния в потоке</param>
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
+        </member>
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(System.UInt64,System.Byte[],System.Int64,System.Boolean)">
+            <summary>
+            <para>Записать значение <see cref="T:System.UInt64"/> в поток байт</para>
+            </summary>
+            <param name="value">Исходное значение</param>
+            <param name="stream"></param>
+            <param name="offset">Смещение значения в потоке</param>
+            <param name="isLittleEndian">Порядок байт значения в потоке</param>
+            <returns>Количество записанных байт</returns>
+            <remarks>2021-04-25</remarks>
         </member>
         <member name="M:Darkangel.IntegerX.IntegerXHelpers.ReadInt8(System.IO.Stream,System.Boolean)">
             <summary>

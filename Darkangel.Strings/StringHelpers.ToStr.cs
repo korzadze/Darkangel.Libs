@@ -41,9 +41,9 @@ namespace Darkangel.Strings
             var sb = new StringBuilder();
             var val = value;
 
-            while (value > 0)
+            while (val > 0)
             {
-                var part = value % (uint)radix;
+                var part = val % (uint)radix;
                 val /= (uint)radix;
                 sb.Append(Digits[(int)part]);
             }

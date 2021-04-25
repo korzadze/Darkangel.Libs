@@ -37,6 +37,36 @@ namespace Darkangel.IntegerX
 
             return (SByte)data[start];
         }
+        /// <summary>
+        /// <para>Записать значение <see cref="SByte"/> в поток байт</para>
+        /// </summary>
+        /// <param name="value">Исходное значение</param>
+        /// <param name="stream"></param>
+        /// <param name="offset">Смещение значения в потоке</param>
+        /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
+        /// <returns>Количество записанных байт</returns>
+        /// <remarks>2021-04-25</remarks>
+        public static long Write(this SByte value, byte[] stream, long offset = 0, bool isLittleEndian = true)
+        {
+            const int ValueSize = Int8_ByteSize;
+            #region Проверка аргументов
+#if CHECK_ARGS
+            _ = stream ?? throw new ArgumentNullException(nameof(stream));
+            if (offset < 0 || (offset + ValueSize) > stream.LongLength)
+            {
+                throw new ArgumentOutOfRangeException(nameof(offset));
+            }
+#endif
+            #endregion Проверка аргументов
+
+#if USE_FULL
+            var buf = value.GetBytes(isLittleEndian);
+            Array.Copy(buf, 0, stream, offset, ValueSize);
+#else
+            stream[offset] = (byte)value;
+#endif
+            return ValueSize;
+        }
         #endregion Int8
         #region UInt8
         /// <summary>
@@ -71,6 +101,36 @@ namespace Darkangel.IntegerX
 
             return (Byte)data[start];
         }
+        /// <summary>
+        /// <para>Записать значение <see cref="Byte"/> в поток байт</para>
+        /// </summary>
+        /// <param name="value">Исходное значение</param>
+        /// <param name="stream"></param>
+        /// <param name="offset">Смещение значения в потоке</param>
+        /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
+        /// <returns>Количество записанных байт</returns>
+        /// <remarks>2021-04-25</remarks>
+        public static long Write(this Byte value, byte[] stream, long offset = 0, bool isLittleEndian = true)
+        {
+            const int ValueSize = UInt8_ByteSize;
+            #region Проверка аргументов
+#if CHECK_ARGS
+            _ = stream ?? throw new ArgumentNullException(nameof(stream));
+            if (offset < 0 || (offset + ValueSize) > stream.LongLength)
+            {
+                throw new ArgumentOutOfRangeException(nameof(offset));
+            }
+#endif
+            #endregion Проверка аргументов
+
+#if USE_FULL
+            var buf = value.GetBytes(isLittleEndian);
+            Array.Copy(buf, 0, stream, offset, ValueSize);
+#else
+            stream[offset] = value;
+#endif
+            return ValueSize;
+        }
         #endregion UInt8
         #region Int16
         /// <summary>
@@ -92,6 +152,32 @@ namespace Darkangel.IntegerX
         /// <remarks>2021-04-18</remarks>
         public static Int16 GetInt16(this byte[] data, long start = 0, bool isLittleEndian = true) =>
             unchecked((Int16)GetUInt16(data, start, isLittleEndian));
+        /// <summary>
+        /// <para>Записать значение <see cref="Int16"/> в поток байт</para>
+        /// </summary>
+        /// <param name="value">Исходное значение</param>
+        /// <param name="stream"></param>
+        /// <param name="offset">Смещение значения в потоке</param>
+        /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
+        /// <returns>Количество записанных байт</returns>
+        /// <remarks>2021-04-25</remarks>
+        public static long Write(this Int16 value, byte[] stream, long offset = 0, bool isLittleEndian = true)
+        {
+            const int ValueSize = Int16_ByteSize;
+            #region Проверка аргументов
+#if CHECK_ARGS
+            _ = stream ?? throw new ArgumentNullException(nameof(stream));
+            if (offset < 0 || (offset + ValueSize) > stream.LongLength)
+            {
+                throw new ArgumentOutOfRangeException(nameof(offset));
+            }
+#endif
+            #endregion Проверка аргументов
+
+            var buf = value.GetBytes(isLittleEndian);
+            Array.Copy(buf, 0, stream, offset, ValueSize);
+            return ValueSize;
+        }
         #endregion Int16
         #region UInt16
         /// <summary>
@@ -106,8 +192,8 @@ namespace Darkangel.IntegerX
             var buf = new byte[UInt16_ByteSize];
             if (isLittleEndian)
             {
-                buf[0]= (byte)((value >> 0) & 0xff);
-                buf[1] =(byte)((value >> 8) & 0xff);
+                buf[0] = (byte)((value >> 0) & 0xff);
+                buf[1] = (byte)((value >> 8) & 0xff);
             }
             else
             {
@@ -151,6 +237,32 @@ namespace Darkangel.IntegerX
                     );
             }
         }
+        /// <summary>
+        /// <para>Записать значение <see cref="UInt16"/> в поток байт</para>
+        /// </summary>
+        /// <param name="value">Исходное значение</param>
+        /// <param name="stream"></param>
+        /// <param name="offset">Смещение значения в потоке</param>
+        /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
+        /// <returns>Количество записанных байт</returns>
+        /// <remarks>2021-04-25</remarks>
+        public static long Write(this UInt16 value, byte[] stream, long offset = 0, bool isLittleEndian = true)
+        {
+            const int ValueSize = UInt16_ByteSize;
+            #region Проверка аргументов
+#if CHECK_ARGS
+            _ = stream ?? throw new ArgumentNullException(nameof(stream));
+            if (offset < 0 || (offset + ValueSize) > stream.LongLength)
+            {
+                throw new ArgumentOutOfRangeException(nameof(offset));
+            }
+#endif
+            #endregion Проверка аргументов
+
+            var buf = value.GetBytes(isLittleEndian);
+            Array.Copy(buf, 0, stream, offset, ValueSize);
+            return ValueSize;
+        }
         #endregion UInt16
         #region UInt24
         /// <summary>
@@ -172,6 +284,32 @@ namespace Darkangel.IntegerX
         /// <remarks>2021-04-18</remarks>
         public static UInt24 GetUInt24(this byte[] data, long start = 0, bool isLittleEndian = true) =>
             UInt24.FromBytes(data, start, isLittleEndian);
+        /// <summary>
+        /// <para>Записать значение <see cref="UInt24"/> в поток байт</para>
+        /// </summary>
+        /// <param name="value">Исходное значение</param>
+        /// <param name="stream"></param>
+        /// <param name="offset">Смещение значения в потоке</param>
+        /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
+        /// <returns>Количество записанных байт</returns>
+        /// <remarks>2021-04-25</remarks>
+        public static long Write(this UInt24 value, byte[] stream, long offset = 0, bool isLittleEndian = true)
+        {
+            const int ValueSize = UInt24_ByteSize;
+            #region Проверка аргументов
+#if CHECK_ARGS
+            _ = stream ?? throw new ArgumentNullException(nameof(stream));
+            if (offset < 0 || (offset + ValueSize) > stream.LongLength)
+            {
+                throw new ArgumentOutOfRangeException(nameof(offset));
+            }
+#endif
+            #endregion Проверка аргументов
+
+            var buf = value.GetBytes(isLittleEndian);
+            Array.Copy(buf, 0, stream, offset, ValueSize);
+            return ValueSize;
+        }
         #endregion UInt24
         #region Int32
         /// <summary>
@@ -193,6 +331,32 @@ namespace Darkangel.IntegerX
         /// <remarks>2021-04-18</remarks>
         public static Int32 GetInt32(this byte[] data, long start = 0, bool isLittleEndian = true) =>
             unchecked((Int32)GetUInt32(data, start, isLittleEndian));
+        /// <summary>
+        /// <para>Записать значение <see cref="Int32"/> в поток байт</para>
+        /// </summary>
+        /// <param name="value">Исходное значение</param>
+        /// <param name="stream"></param>
+        /// <param name="offset">Смещение значения в потоке</param>
+        /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
+        /// <returns>Количество записанных байт</returns>
+        /// <remarks>2021-04-25</remarks>
+        public static long Write(this Int32 value, byte[] stream, long offset = 0, bool isLittleEndian = true)
+        {
+            const int ValueSize = Int32_ByteSize;
+            #region Проверка аргументов
+#if CHECK_ARGS
+            _ = stream ?? throw new ArgumentNullException(nameof(stream));
+            if (offset < 0 || (offset + ValueSize) > stream.LongLength)
+            {
+                throw new ArgumentOutOfRangeException(nameof(offset));
+            }
+#endif
+            #endregion Проверка аргументов
+
+            var buf = value.GetBytes(isLittleEndian);
+            Array.Copy(buf, 0, stream, offset, ValueSize);
+            return ValueSize;
+        }
         #endregion Int32
         #region UInt32
         /// <summary>
@@ -207,15 +371,15 @@ namespace Darkangel.IntegerX
             var buf = new byte[UInt32_ByteSize];
             if (isLittleEndian)
             {
-                buf[0] = (byte)((value >>  0) & 0xff);
-                buf[1] = (byte)((value >>  8) & 0xff);
+                buf[0] = (byte)((value >> 0) & 0xff);
+                buf[1] = (byte)((value >> 8) & 0xff);
                 buf[2] = (byte)((value >> 16) & 0xff);
                 buf[3] = (byte)((value >> 24) & 0xff);
             }
             else
             {
-                buf[3] = (byte)((value >>  0) & 0xff);
-                buf[2] = (byte)((value >>  8) & 0xff);
+                buf[3] = (byte)((value >> 0) & 0xff);
+                buf[2] = (byte)((value >> 8) & 0xff);
                 buf[1] = (byte)((value >> 16) & 0xff);
                 buf[0] = (byte)((value >> 24) & 0xff);
             }
@@ -244,8 +408,8 @@ namespace Darkangel.IntegerX
             if (isLittleEndian)
             {
                 return (UInt32)(
-                    (data[start + 0] <<  0) |
-                    (data[start + 1] <<  8) |
+                    (data[start + 0] << 0) |
+                    (data[start + 1] << 8) |
                     (data[start + 2] << 16) |
                     (data[start + 3] << 24)
                     );
@@ -253,12 +417,38 @@ namespace Darkangel.IntegerX
             else
             {
                 return (UInt32)(
-                    (data[start + 3] <<  0) |
-                    (data[start + 2] <<  8) |
+                    (data[start + 3] << 0) |
+                    (data[start + 2] << 8) |
                     (data[start + 1] << 16) |
                     (data[start + 0] << 24)
                     );
             }
+        }
+        /// <summary>
+        /// <para>Записать значение <see cref="UInt32"/> в поток байт</para>
+        /// </summary>
+        /// <param name="value">Исходное значение</param>
+        /// <param name="stream"></param>
+        /// <param name="offset">Смещение значения в потоке</param>
+        /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
+        /// <returns>Количество записанных байт</returns>
+        /// <remarks>2021-04-25</remarks>
+        public static long Write(this UInt32 value, byte[] stream, long offset = 0, bool isLittleEndian = true)
+        {
+            const int ValueSize = UInt32_ByteSize;
+            #region Проверка аргументов
+#if CHECK_ARGS
+            _ = stream ?? throw new ArgumentNullException(nameof(stream));
+            if (offset < 0 || (offset + ValueSize) > stream.LongLength)
+            {
+                throw new ArgumentOutOfRangeException(nameof(offset));
+            }
+#endif
+            #endregion Проверка аргументов
+
+            var buf = value.GetBytes(isLittleEndian);
+            Array.Copy(buf, 0, stream, offset, ValueSize);
+            return ValueSize;
         }
         #endregion UInt32
         #region UInt48
@@ -281,6 +471,32 @@ namespace Darkangel.IntegerX
         /// <remarks>2021-04-18</remarks>
         public static UInt48 GetUInt48(this byte[] data, long start = 0, bool isLittleEndian = true) =>
             UInt48.FromBytes(data, start, isLittleEndian);
+        /// <summary>
+        /// <para>Записать значение <see cref="UInt48"/> в поток байт</para>
+        /// </summary>
+        /// <param name="value">Исходное значение</param>
+        /// <param name="stream"></param>
+        /// <param name="offset">Смещение значения в потоке</param>
+        /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
+        /// <returns>Количество записанных байт</returns>
+        /// <remarks>2021-04-25</remarks>
+        public static long Write(this UInt48 value, byte[] stream, long offset = 0, bool isLittleEndian = true)
+        {
+            const int ValueSize = UInt48_ByteSize;
+            #region Проверка аргументов
+#if CHECK_ARGS
+            _ = stream ?? throw new ArgumentNullException(nameof(stream));
+            if (offset < 0 || (offset + ValueSize) > stream.LongLength)
+            {
+                throw new ArgumentOutOfRangeException(nameof(offset));
+            }
+#endif
+            #endregion Проверка аргументов
+
+            var buf = value.GetBytes(isLittleEndian);
+            Array.Copy(buf, 0, stream, offset, ValueSize);
+            return ValueSize;
+        }
         #endregion UInt48
         #region Int64
         /// <summary>
@@ -302,6 +518,32 @@ namespace Darkangel.IntegerX
         /// <remarks>2021-04-18</remarks>
         public static Int64 GetInt64(this byte[] data, long start = 0, bool isLittleEndian = true) =>
             unchecked((Int64)GetUInt64(data, start, isLittleEndian));
+        /// <summary>
+        /// <para>Записать значение <see cref="Int64"/> в поток байт</para>
+        /// </summary>
+        /// <param name="value">Исходное значение</param>
+        /// <param name="stream"></param>
+        /// <param name="offset">Смещение значения в потоке</param>
+        /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
+        /// <returns>Количество записанных байт</returns>
+        /// <remarks>2021-04-25</remarks>
+        public static long Write(this Int64 value, byte[] stream, long offset = 0, bool isLittleEndian = true)
+        {
+            const int ValueSize = Int64_ByteSize;
+            #region Проверка аргументов
+#if CHECK_ARGS
+            _ = stream ?? throw new ArgumentNullException(nameof(stream));
+            if (offset < 0 || (offset + ValueSize) > stream.LongLength)
+            {
+                throw new ArgumentOutOfRangeException(nameof(offset));
+            }
+#endif
+            #endregion Проверка аргументов
+
+            var buf = value.GetBytes(isLittleEndian);
+            Array.Copy(buf, 0, stream, offset, ValueSize);
+            return ValueSize;
+        }
         #endregion Int64
         #region UInt64
         /// <summary>
@@ -361,8 +603,8 @@ namespace Darkangel.IntegerX
             if (isLittleEndian)
             {
                 return (UInt64)(
-                    (data[start + 0] <<  0) |
-                    (data[start + 1] <<  8) |
+                    (data[start + 0] << 0) |
+                    (data[start + 1] << 8) |
                     (data[start + 2] << 16) |
                     (data[start + 3] << 24) |
                     (data[start + 4] << 32) |
@@ -374,8 +616,8 @@ namespace Darkangel.IntegerX
             else
             {
                 return (UInt64)(
-                    (data[start + 7] <<  0) |
-                    (data[start + 6] <<  8) |
+                    (data[start + 7] << 0) |
+                    (data[start + 6] << 8) |
                     (data[start + 5] << 16) |
                     (data[start + 4] << 24) |
                     (data[start + 3] << 32) |
@@ -384,6 +626,32 @@ namespace Darkangel.IntegerX
                     (data[start + 0] << 56)
                     );
             }
+        }
+        /// <summary>
+        /// <para>Записать значение <see cref="UInt64"/> в поток байт</para>
+        /// </summary>
+        /// <param name="value">Исходное значение</param>
+        /// <param name="stream"></param>
+        /// <param name="offset">Смещение значения в потоке</param>
+        /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
+        /// <returns>Количество записанных байт</returns>
+        /// <remarks>2021-04-25</remarks>
+        public static long Write(this UInt64 value, byte[] stream, long offset = 0, bool isLittleEndian = true)
+        {
+            const int ValueSize = UInt64_ByteSize;
+            #region Проверка аргументов
+#if CHECK_ARGS
+            _ = stream ?? throw new ArgumentNullException(nameof(stream));
+            if (offset < 0 || (offset + ValueSize) > stream.LongLength)
+            {
+                throw new ArgumentOutOfRangeException(nameof(offset));
+            }
+#endif
+            #endregion Проверка аргументов
+
+            var buf = value.GetBytes(isLittleEndian);
+            Array.Copy(buf, 0, stream, offset, ValueSize);
+            return ValueSize;
         }
         #endregion UInt64
     }
