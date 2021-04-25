@@ -46,7 +46,7 @@ namespace Darkangel.IntegerX
         /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
         /// <returns>Количество записанных байт</returns>
         /// <remarks>2021-04-25</remarks>
-        public static long Write(this SByte value, byte[] stream, long offset = 0, bool isLittleEndian = true)
+        public static long WriteBuf(this SByte value, byte[] stream, long offset = 0, bool isLittleEndian = true)
         {
             const int ValueSize = Int8_ByteSize;
             #region Проверка аргументов
@@ -110,7 +110,7 @@ namespace Darkangel.IntegerX
         /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
         /// <returns>Количество записанных байт</returns>
         /// <remarks>2021-04-25</remarks>
-        public static long Write(this Byte value, byte[] stream, long offset = 0, bool isLittleEndian = true)
+        public static long WriteBuf(this Byte value, byte[] stream, long offset = 0, bool isLittleEndian = true)
         {
             const int ValueSize = UInt8_ByteSize;
             #region Проверка аргументов
@@ -161,7 +161,7 @@ namespace Darkangel.IntegerX
         /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
         /// <returns>Количество записанных байт</returns>
         /// <remarks>2021-04-25</remarks>
-        public static long Write(this Int16 value, byte[] stream, long offset = 0, bool isLittleEndian = true)
+        public static long WriteBuf(this Int16 value, byte[] stream, long offset = 0, bool isLittleEndian = true)
         {
             const int ValueSize = Int16_ByteSize;
             #region Проверка аргументов
@@ -246,7 +246,7 @@ namespace Darkangel.IntegerX
         /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
         /// <returns>Количество записанных байт</returns>
         /// <remarks>2021-04-25</remarks>
-        public static long Write(this UInt16 value, byte[] stream, long offset = 0, bool isLittleEndian = true)
+        public static long WriteBuf(this UInt16 value, byte[] stream, long offset = 0, bool isLittleEndian = true)
         {
             const int ValueSize = UInt16_ByteSize;
             #region Проверка аргументов
@@ -293,7 +293,7 @@ namespace Darkangel.IntegerX
         /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
         /// <returns>Количество записанных байт</returns>
         /// <remarks>2021-04-25</remarks>
-        public static long Write(this UInt24 value, byte[] stream, long offset = 0, bool isLittleEndian = true)
+        public static long WriteBuf(this UInt24 value, byte[] stream, long offset = 0, bool isLittleEndian = true)
         {
             const int ValueSize = UInt24_ByteSize;
             #region Проверка аргументов
@@ -340,7 +340,7 @@ namespace Darkangel.IntegerX
         /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
         /// <returns>Количество записанных байт</returns>
         /// <remarks>2021-04-25</remarks>
-        public static long Write(this Int32 value, byte[] stream, long offset = 0, bool isLittleEndian = true)
+        public static long WriteBuf(this Int32 value, byte[] stream, long offset = 0, bool isLittleEndian = true)
         {
             const int ValueSize = Int32_ByteSize;
             #region Проверка аргументов
@@ -433,7 +433,7 @@ namespace Darkangel.IntegerX
         /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
         /// <returns>Количество записанных байт</returns>
         /// <remarks>2021-04-25</remarks>
-        public static long Write(this UInt32 value, byte[] stream, long offset = 0, bool isLittleEndian = true)
+        public static long WriteBuf(this UInt32 value, byte[] stream, long offset = 0, bool isLittleEndian = true)
         {
             const int ValueSize = UInt32_ByteSize;
             #region Проверка аргументов
@@ -480,7 +480,7 @@ namespace Darkangel.IntegerX
         /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
         /// <returns>Количество записанных байт</returns>
         /// <remarks>2021-04-25</remarks>
-        public static long Write(this UInt48 value, byte[] stream, long offset = 0, bool isLittleEndian = true)
+        public static long WriteBuf(this UInt48 value, byte[] stream, long offset = 0, bool isLittleEndian = true)
         {
             const int ValueSize = UInt48_ByteSize;
             #region Проверка аргументов
@@ -527,7 +527,7 @@ namespace Darkangel.IntegerX
         /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
         /// <returns>Количество записанных байт</returns>
         /// <remarks>2021-04-25</remarks>
-        public static long Write(this Int64 value, byte[] stream, long offset = 0, bool isLittleEndian = true)
+        public static long WriteBuf(this Int64 value, byte[] stream, long offset = 0, bool isLittleEndian = true)
         {
             const int ValueSize = Int64_ByteSize;
             #region Проверка аргументов
@@ -636,7 +636,7 @@ namespace Darkangel.IntegerX
         /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
         /// <returns>Количество записанных байт</returns>
         /// <remarks>2021-04-25</remarks>
-        public static long Write(this UInt64 value, byte[] stream, long offset = 0, bool isLittleEndian = true)
+        public static long WriteBuf(this UInt64 value, byte[] stream, long offset = 0, bool isLittleEndian = true)
         {
             const int ValueSize = UInt64_ByteSize;
             #region Проверка аргументов

@@ -29,7 +29,7 @@
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
         </member>
-        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(System.SByte,System.Byte[],System.Int64,System.Boolean)">
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.WriteBuf(System.SByte,System.Byte[],System.Int64,System.Boolean)">
             <summary>
             <para>Записать значение <see cref="T:System.SByte"/> в поток байт</para>
             </summary>
@@ -59,7 +59,7 @@
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
         </member>
-        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(System.Byte,System.Byte[],System.Int64,System.Boolean)">
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.WriteBuf(System.Byte,System.Byte[],System.Int64,System.Boolean)">
             <summary>
             <para>Записать значение <see cref="T:System.Byte"/> в поток байт</para>
             </summary>
@@ -89,7 +89,7 @@
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
         </member>
-        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(System.Int16,System.Byte[],System.Int64,System.Boolean)">
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.WriteBuf(System.Int16,System.Byte[],System.Int64,System.Boolean)">
             <summary>
             <para>Записать значение <see cref="T:System.Int16"/> в поток байт</para>
             </summary>
@@ -119,7 +119,7 @@
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
         </member>
-        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(System.UInt16,System.Byte[],System.Int64,System.Boolean)">
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.WriteBuf(System.UInt16,System.Byte[],System.Int64,System.Boolean)">
             <summary>
             <para>Записать значение <see cref="T:System.UInt16"/> в поток байт</para>
             </summary>
@@ -149,7 +149,7 @@
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
         </member>
-        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(Darkangel.IntegerX.UInt24,System.Byte[],System.Int64,System.Boolean)">
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.WriteBuf(Darkangel.IntegerX.UInt24,System.Byte[],System.Int64,System.Boolean)">
             <summary>
             <para>Записать значение <see cref="T:Darkangel.IntegerX.UInt24"/> в поток байт</para>
             </summary>
@@ -179,7 +179,7 @@
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
         </member>
-        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(System.Int32,System.Byte[],System.Int64,System.Boolean)">
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.WriteBuf(System.Int32,System.Byte[],System.Int64,System.Boolean)">
             <summary>
             <para>Записать значение <see cref="T:System.Int32"/> в поток байт</para>
             </summary>
@@ -209,7 +209,7 @@
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
         </member>
-        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(System.UInt32,System.Byte[],System.Int64,System.Boolean)">
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.WriteBuf(System.UInt32,System.Byte[],System.Int64,System.Boolean)">
             <summary>
             <para>Записать значение <see cref="T:System.UInt32"/> в поток байт</para>
             </summary>
@@ -239,7 +239,7 @@
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
         </member>
-        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(Darkangel.IntegerX.UInt48,System.Byte[],System.Int64,System.Boolean)">
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.WriteBuf(Darkangel.IntegerX.UInt48,System.Byte[],System.Int64,System.Boolean)">
             <summary>
             <para>Записать значение <see cref="T:Darkangel.IntegerX.UInt48"/> в поток байт</para>
             </summary>
@@ -269,7 +269,7 @@
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
         </member>
-        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(System.Int64,System.Byte[],System.Int64,System.Boolean)">
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.WriteBuf(System.Int64,System.Byte[],System.Int64,System.Boolean)">
             <summary>
             <para>Записать значение <see cref="T:System.Int64"/> в поток байт</para>
             </summary>
@@ -299,7 +299,7 @@
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
         </member>
-        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(System.UInt64,System.Byte[],System.Int64,System.Boolean)">
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.WriteBuf(System.UInt64,System.Byte[],System.Int64,System.Boolean)">
             <summary>
             <para>Записать значение <see cref="T:System.UInt64"/> в поток байт</para>
             </summary>
