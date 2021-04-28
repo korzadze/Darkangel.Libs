@@ -1,0 +1,288 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Darkangel.CLib</name>
+    </assembly>
+    <members>
+        <member name="T:Darkangel.CLib.CPtr`1">
+            <summary>
+            <para>Указатель на область данных (C/C++)</para>
+            </summary>
+            <typeparam name="T">Тип значений вектора</typeparam>
+            <remarks>thread unsafe</remarks>
+        </member>
+        <member name="F:Darkangel.CLib.CPtr`1._Data">
+            <summary>
+            <para>Область данных</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.CLib.CPtr`1._Offset">
+            <summary>
+            <para>Смещение от начала данных</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.CLib.CPtr`1.Length">
+            <summary>
+            <para>Расстояние от указателя до окончания области данных</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.CLib.CPtr`1.Item(System.Int64)">
+            <summary>
+            <para>Доступ к элементу вектора по индексу</para>
+            </summary>
+            <param name="offset">Смещение элемента</param>
+            <returns>Значение элемента по указанному смещению</returns>
+        </member>
+        <member name="M:Darkangel.CLib.CPtr`1.#ctor">
+            <summary>
+            <para>Конструктор, предотвращающий создание пустого указателя</para>
+            </summary>
+            <remarks>Не использовать</remarks>
+        </member>
+        <member name="M:Darkangel.CLib.CPtr`1.#ctor(`0[],System.Int64)">
+            <summary>
+            <para>Конструктор экземпляра <see cref="T:Darkangel.CLib.CPtr`1"/></para>
+            </summary>
+            <param name="data">Исходный вектор значений</param>
+            <param name="offset">Смещение элемента вектора значений</param>
+            <exception cref="T:System.ArgumentNullException">Ссылка на данные не действительна</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Смещение выходит за пределы области данных</exception>
+        </member>
+        <member name="M:Darkangel.CLib.CPtr`1.#ctor(Darkangel.CLib.CPtr{`0},System.Int64)">
+            <summary>
+            <para>Конструктор экземпляра <see cref="T:Darkangel.CLib.CPtr`1"/></para>
+            </summary>
+            <param name="ptr">Указатель на вектор</param>
+            <param name="offset">Смещение элемента относительно исходного указателя</param>
+            <exception cref="T:System.ArgumentNullException">Исходный указатель не действителен</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Смещение выходит за пределы области данных</exception>
+        </member>
+        <member name="M:Darkangel.CLib.CPtr`1.op_Addition(Darkangel.CLib.CPtr{`0},System.Int64)">
+            <summary>
+            <para>Увеличить указатель на указанное значение</para>
+            </summary>
+            <param name="ptr">Исходный указатель</param>
+            <param name="increment">Приращение (количество элементов)</param>
+            <returns>Новый указательна вектор</returns>
+        </member>
+        <member name="M:Darkangel.CLib.CPtr`1.op_Subtraction(Darkangel.CLib.CPtr{`0},System.Int64)">
+            <summary>
+            <para>Уменьшить указатель на указанное значение</para>
+            </summary>
+            <param name="ptr">Исходный указатель</param>
+            <param name="decrement">Уменьшение (количество элементов)</param>
+            <returns>Новый указательна вектор</returns>
+        </member>
+        <member name="M:Darkangel.CLib.CPtr`1.op_Implicit(`0[])~Darkangel.CLib.CPtr{`0}">
+            <summary>
+            <para>Получить указатель на начало вектора</para>
+            </summary>
+            <param name="data">Вектор значений</param>
+            <returns>Указатель на вектор</returns>
+        </member>
+        <member name="M:Darkangel.CLib.CPtr`1.op_Subtraction(Darkangel.CLib.CPtr{`0},Darkangel.CLib.CPtr{`0})">
+            <summary>
+            <para>Получить разность указателей</para>
+            </summary>
+            <param name="ptr1"></param>
+            <param name="ptr2"></param>
+            <returns>Разность указателей</returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Darkangel.CLib.CPtr`1.op_Decrement(Darkangel.CLib.CPtr{`0})">
+            <summary>
+            <para>Уменьшить указатель на 1</para>
+            </summary>
+            <param name="ptr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Darkangel.CLib.CPtr`1.op_Increment(Darkangel.CLib.CPtr{`0})">
+            <summary>
+            <para>Увеличить указатель на 1</para>
+            </summary>
+            <param name="ptr">Указатель</param>
+            <returns></returns>
+        </member>
+        <member name="M:Darkangel.CLib.CPtr`1.Clone">
+            <summary>
+            <para>Создать копию объекта</para>
+            </summary>
+            <returns>Копия указателя</returns>
+        </member>
+        <member name="T:Darkangel.CLib.PByte">
+            <summary>
+            <para>Указатель на область байт (C/C++)</para>
+            </summary>
+            <remarks>thread unsafe</remarks>
+        </member>
+        <member name="M:Darkangel.CLib.PByte.#ctor(System.Byte[],System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.CLib.PByte.#ctor(Darkangel.CLib.CPtr{System.Byte},System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.CLib.PByte.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.CLib.PByte.op_Addition(Darkangel.CLib.PByte,System.Int64)">
+            <summary>
+            <para>Увеличить указатель на указанное значение</para>
+            </summary>
+            <param name="ptr">Исходный указатель</param>
+            <param name="increment">Приращение (количество элементов)</param>
+            <returns>Новый указательна вектор</returns>
+        </member>
+        <member name="M:Darkangel.CLib.PByte.op_Subtraction(Darkangel.CLib.PByte,System.Int64)">
+            <summary>
+            <para>Уменьшить указатель на указанное значение</para>
+            </summary>
+            <param name="ptr">Исходный указатель</param>
+            <param name="decrement">Уменьшение (количество элементов)</param>
+            <returns>Новый указательна вектор</returns>
+        </member>
+        <member name="M:Darkangel.CLib.PByte.op_Implicit(System.Byte[])~Darkangel.CLib.PByte">
+            <summary>
+            <para>Получить указатель на начало вектора</para>
+            </summary>
+            <param name="data">Вектор значений</param>
+            <returns>Указатель на вектор</returns>
+        </member>
+        <member name="M:Darkangel.CLib.PByte.op_Subtraction(Darkangel.CLib.PByte,Darkangel.CLib.PByte)">
+            <summary>
+            <para>Получить разность указателей</para>
+            </summary>
+            <param name="ptr1"></param>
+            <param name="ptr2"></param>
+            <returns>Разность указателей</returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Darkangel.CLib.PByte.op_Decrement(Darkangel.CLib.PByte)">
+            <summary>
+            <para>Уменьшить указатель на 1</para>
+            </summary>
+            <param name="ptr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Darkangel.CLib.PByte.op_Increment(Darkangel.CLib.PByte)">
+            <summary>
+            <para>Увеличить указатель на 1</para>
+            </summary>
+            <param name="ptr">Указатель</param>
+            <returns></returns>
+        </member>
+        <member name="M:Darkangel.CLib.PByte.Clone">
+            <summary>
+            <para>Создать копию объекта</para>
+            </summary>
+            <returns>Копия указателя</returns>
+        </member>
+        <member name="T:Darkangel.CLib.StdLib">
+            <summary>
+            <para>Функции из стандартой библиотеки C/C++</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.CLib.StdLib.MemCpy``1(Darkangel.CLib.CPtr{``0},Darkangel.CLib.CPtr{``0},System.Int64)">
+            <summary>
+            <para>Копировать блок данных заданного размера</para>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="mem1">Исходные вектор данных</param>
+            <param name="mem2">Целевой вектор</param>
+            <param name="length">Размер копируемого блока</param>
+        </member>
+        <member name="M:Darkangel.CLib.StdLib.MemCmp``1(Darkangel.CLib.CPtr{``0},Darkangel.CLib.CPtr{``0},System.Int64)">
+            <summary>
+            <para>Сравнение векторов</para>
+            </summary>
+            <typeparam name="T">Тип значения векторов</typeparam>
+            <param name="mem1">Первый вектор</param>
+            <param name="mem2">Второй вектор</param>
+            <param name="length">Размер сравниваемой области</param>
+            <returns>Результат сравения</returns>
+        </member>
+        <member name="M:Darkangel.CLib.StdLib.MemCmp(Darkangel.CLib.PByte,Darkangel.CLib.PByte,System.Int64)">
+            <summary>
+            <para>Сравнение векторов</para>
+            </summary>
+            <param name="mem1">Первый вектор</param>
+            <param name="mem2">Второй вектор</param>
+            <param name="length">Размер сравниваемой области</param>
+            <returns>Результат сравения</returns>
+        </member>
+        <member name="M:Darkangel.CLib.StdLib.MemCmp``1(``0[],System.Int64,``0[],System.Int64,System.Int64)">
+            <summary>
+            <para>Сравнение векторов</para>
+            </summary>
+            <typeparam name="T">Тип значения векторов</typeparam>
+            <param name="mem1">Первый вектор</param>
+            <param name="start1">Первый элемент вектора 1 для сравнения</param>
+            <param name="mem2">Второй вектор</param>
+            <param name="start2">Первый элемент вектора 2 для сравнения</param>
+            <param name="length">Размер сравниваемой области</param>
+            <returns>Результат сравения</returns>
+        </member>
+        <member name="M:Darkangel.CLib.StdLib.MemRMem``1(Darkangel.CLib.CPtr{``0},System.Int64,Darkangel.CLib.CPtr{``0},System.Int64)">
+            <summary>
+            <para>Поиск последнего вхождения субвектора в вектор</para>
+            </summary>
+            <typeparam name="T">Тип элемента векторов</typeparam>
+            <param name="mem1">Исходный вектор</param>
+            <param name="len1">Размер области вектора для поиска</param>
+            <param name="mem2">Субвектор</param>
+            <param name="len2">Размер искомой области субвектора</param>
+            <returns></returns>
+        </member>
+        <member name="M:Darkangel.CLib.StdLib.MemRMem(Darkangel.CLib.PByte,System.Int64,Darkangel.CLib.PByte,System.Int64)">
+            <summary>
+            <para>Поиск последнего вхождения субвектора в вектор</para>
+            </summary>
+            <param name="mem1">Исходный вектор</param>
+            <param name="len1">Размер области вектора для поиска</param>
+            <param name="mem2">Субвектор</param>
+            <param name="len2">Размер искомой области субвектора</param>
+            <returns></returns>
+        </member>
+        <member name="M:Darkangel.CLib.StdLib.MemRMem``1(``0[],System.Int64,System.Int64,``0[],System.Int64,System.Int64)">
+            <summary>
+            <para>Поиск последнего вхождения субвектора в вектор</para>
+            </summary>
+            <param name="mem1">Исходный вектор</param>
+            <param name="start1">Начало бласти поиска</param>
+            <param name="len1">Размер области поиска</param>
+            <param name="mem2">Субвектор</param>
+            <param name="start2">Начало субвектора</param>
+            <param name="len2">Размер субвектора</param>
+            <returns></returns>
+        </member>
+        <member name="M:Darkangel.CLib.StdLib.MemChr``1(Darkangel.CLib.CPtr{``0},``0,System.Int64)">
+            <summary>
+            <para>Поиск элемента в данных, адресуемых указателем</para>
+            </summary>
+            <typeparam name="T">Тип элемента данных</typeparam>
+            <param name="ptr">Указатель на данные</param>
+            <param name="elem">Искомый элемент</param>
+            <param name="length">Размер области данных, в которой производится поиск</param>
+            <returns>Указатель на позицию первого вхождения элемента в данных или null</returns>
+        </member>
+        <member name="M:Darkangel.CLib.StdLib.MemChr(Darkangel.CLib.PByte,System.Byte,System.Int64)">
+            <summary>
+            <para>Поиск элемента в данных, адресуемых указателем</para>
+            </summary>
+            <param name="ptr">Указатель на данные</param>
+            <param name="elem">Искомый элемент</param>
+            <param name="length">Размер области данных, в которой производится поиск</param>
+            <returns>Указатель на позицию первого вхождения элемента в данных или null</returns>
+        </member>
+        <member name="M:Darkangel.CLib.StdLib.MemChr``1(``0[],System.Int64,``0,System.Int64)">
+            <summary>
+            <para>Поиск элемента в данных, адресуемых указателем</para>
+            </summary>
+            <typeparam name="T">Тип элемента данных</typeparam>
+            <param name="data">Вектор данных</param>
+            <param name="start">Начало области поиска</param>
+            <param name="elem">Искомый элемент</param>
+            <param name="length">Размер области поиска</param>
+            <returns>Номер позиции искомого элемента или -1</returns>
+        </member>
+    </members>
+</doc>

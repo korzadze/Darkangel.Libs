@@ -3,7 +3,7 @@
 namespace Darkangel.Compare
 {
     /// <summary>
-    /// <para>Безопасный (с проверкой "пустых" значений) класс для сравниения значения с ключем</para>
+    /// <para>Безопасный (с проверкой "пустых" значений) класс для сравнения значения с ключем</para>
     /// </summary>
     /// <typeparam name="T">Тип значения</typeparam>
     /// <typeparam name="TKey">Тип ключа</typeparam>
