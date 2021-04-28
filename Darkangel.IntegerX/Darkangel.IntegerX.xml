@@ -554,6 +554,25 @@
             <returns>Результат перестановки</returns>
             <remarks>2021-04-18</remarks>
         </member>
+        <member name="T:Darkangel.IntegerX.Integer">
+            <summary>
+            <para>Вспомогательные утилиты для целочисленных операций</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.IntegerX.Integer.GetSize(System.Type)">
+            <summary>
+            <para>Получить размер целочисленного типа в терминах библиотеки</para>
+            </summary>
+            <param name="type">Целочисленный тип</param>
+            <returns>Размер значения типа или -1, для неизвестных типов</returns>
+        </member>
+        <member name="M:Darkangel.IntegerX.Integer.GetSize``1">
+            <summary>
+            <para>Получить размер целочисленного типа в терминах библиотеки</para>
+            </summary>
+            <typeparam name="T">Целочисленный тип</typeparam>
+            <returns>Размер значения типа или -1, для неизвестных типов</returns>
+        </member>
         <member name="T:Darkangel.IntegerX.UInt24">
             <summary>
             3-байтное беззнаковое целое

@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Darkangel.IntegerX
 {
     /// <summary>
     /// <para>Вспомогательные утилиты для целочисленных операций</para>
     /// </summary>
-    public static partial class IntegerX
+    public static partial class Integer
     {
         /// <summary>
         /// <para>Получить размер целочисленного типа в терминах библиотеки</para>

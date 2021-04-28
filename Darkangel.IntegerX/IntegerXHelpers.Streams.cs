@@ -14,6 +14,7 @@ namespace Darkangel.IntegerX
         /// <remarks>2021-04-18</remarks>
         public static SByte ReadInt8(this Stream stream, bool isLittleEndian = true) =>
             (SByte)stream.ReadByte();
+
         /// <summary>
         /// <para>Записать в поток значение <see cref="SByte"/></para>
         /// </summary>
@@ -21,7 +22,9 @@ namespace Darkangel.IntegerX
         /// <param name="value">Записываемое значение</param>
         /// <param name="isLittleEndian">Порядок следования байт значения в потоке</param>
         /// <remarks>2021-04-18</remarks>
+#pragma warning disable IDE0060 // Удалите неиспользуемый параметр
         public static void Write(this Stream stream, SByte value, bool isLittleEndian = true) =>
+#pragma warning restore IDE0060 // Удалите неиспользуемый параметр
             stream.WriteByte((byte)value);
         /// <summary>
         /// <para>Прочитать из потока значение <see cref="Byte"/></para>
@@ -30,8 +33,10 @@ namespace Darkangel.IntegerX
         /// <param name="isLittleEndian">Порядок следования байт значения в потоке</param>
         /// <returns>Считанное значение</returns>
         /// <remarks>2021-04-18</remarks>
+#pragma warning disable IDE0060 // Удалите неиспользуемый параметр
         public static Byte ReadUInt8(this Stream stream, bool isLittleEndian = true) =>
             (Byte)stream.ReadByte();
+#pragma warning restore IDE0060 // Удалите неиспользуемый параметр
         /// <summary>
         /// <para>Записать в поток значение <see cref="Byte"/></para>
         /// </summary>
