@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Darkangel.Compression.Dune92</name>
+    </assembly>
+    <members>
+        <member name="T:Darkangel.Compression.Dune92.SavegameCompressonSettings">
+            <summary>
+            <para>Настройки упаковки/распаковки данных файла сохраненной игры Dune (1992)</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Compression.Dune92.SavegameCompressonSettings.DefaultControlCode">
+            <summary>
+            <para>Контрольный код по-умолчанию</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Compression.Dune92.SavegameCompressonSettings.DefaultMaxUnrepeatedValueCount">
+            <summary>
+            <para>Максимальное количество последовательно-одинаковых значений, записываемых в поток без упаковки</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Compression.Dune92.SavegameCompressonSettings.ControlCode">
+            <summary>
+            <para>Код начала последовательности RLE</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Compression.Dune92.SavegameCompressonSettings.MaxUnRLEValueCount">
+            <summary>
+            <para>Максимальное количество последовательно-одинаковых значений, записываемых в поток без упаковки</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Compression.Dune92.SavegameCompressonSettings.#ctor">
+            <summary>
+            <para>Инициализация настроек по-умолчанию</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Compression.Dune92.SavegameCompressonSettings.#ctor(System.Byte,System.Byte)">
+            <summary>
+            <para>Инициализация настроек заданными значениями</para>
+            </summary>
+            <param name="code">Код начала последовательности RLE</param>
+            <param name="maxUnrepeated">Максимальное количество последовательно-одинаковых значений, записываемых в поток без упаковки</param>
+        </member>
+        <member name="T:Darkangel.Compression.Dune92.SavegameCompressor">
+            <summary>
+            <para>Функционал для упаковки/распаковки файлов сохраненной игры Dune (1992)</para>
+            </summary>
+            <remarks>
+            <para>thread unsafe</para>
+            <para>Формат сохраненной игры предполагает, что первые два байт содержат
+            временную метку сохранения, дальше идут данные об упаковке (4 байта) и
+            собственно, упакованные данные. Упаковщик о временной метке ничего не знает.
+            При упаковке/распаковке вызывающий код должен сам обрабатывать загрузку/сохранение
+            временной метки.</para>
+            </remarks>
+        </member>
+        <member name="M:Darkangel.Compression.Dune92.SavegameCompressor.Compress(System.IO.Stream,System.IO.Stream,System.Int64,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Compression.Dune92.SavegameCompressor.Decompress(System.IO.Stream,System.IO.Stream,System.Int64,System.Object)">
+            <inheritdoc/>
+            <remarks>decompressorSettings не используется. Настройки берутся из входного потока.</remarks>
+        </member>
+        <member name="M:Darkangel.Compression.Dune92.SavegameCompressor.InitDefaultCompressSettings">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Compression.Dune92.SavegameCompressor.InitDefaultDecompressSettings">
+            <inheritdoc/>
+            <remarks>Не используется. Настройки берутся из входного потока.</remarks>
+        </member>
+        <member name="M:Darkangel.Compression.Dune92.SavegameCompressor.Compress(System.Byte[],System.Int64,System.Int64,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Compression.Dune92.SavegameCompressor.WriteRLE(System.IO.Stream,System.Byte,System.Int32,Darkangel.Compression.Dune92.SavegameCompressonSettings)">
+            <summary>
+            <para>Записать упаковочную последовательность байт в поток</para>
+            </summary>
+            <param name="outStream">Целевой поток</param>
+            <param name="val">Значение</param>
+            <param name="count">Количество повторов</param>
+            <param name="settings">Параметры упаковки</param>
+        </member>
+        <member name="M:Darkangel.Compression.Dune92.SavegameCompressor.WritePackedSequence(System.IO.Stream,System.Byte,System.Int32,Darkangel.Compression.Dune92.SavegameCompressonSettings)">
+            <summary>
+            <para>Записать кодовую последовательность в поток</para>
+            </summary>
+            <param name="outStream">Целевой поток</param>
+            <param name="val">Значение</param>
+            <param name="count">Количество повторов</param>
+            <param name="settings">Параметры упаковки</param>
+        </member>
+        <member name="M:Darkangel.Compression.Dune92.SavegameCompressor.Decompress(System.Byte[],System.Int64,System.Int64,System.Object)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>
