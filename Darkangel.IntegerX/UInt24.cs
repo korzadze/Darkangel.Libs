@@ -226,52 +226,52 @@ namespace Darkangel.IntegerX
         public TypeCode GetTypeCode() =>
             Type.GetTypeCode(GetType());
         /// <inheritdoc/>
-        public bool ToBoolean(IFormatProvider provider) =>
+        public bool ToBoolean(IFormatProvider provider = null) =>
             ((IConvertible)_Value).ToBoolean(provider);
         /// <inheritdoc/>
-        public byte ToByte(IFormatProvider provider) =>
+        public byte ToByte(IFormatProvider provider = null) =>
             ((IConvertible)_Value).ToByte(provider);
         /// <inheritdoc/>
-        public char ToChar(IFormatProvider provider) =>
+        public char ToChar(IFormatProvider provider = null) =>
             ((IConvertible)_Value).ToChar(provider);
         /// <inheritdoc/>
-        public DateTime ToDateTime(IFormatProvider provider) =>
+        public DateTime ToDateTime(IFormatProvider provider = null) =>
             ((IConvertible)_Value).ToDateTime(provider);
         /// <inheritdoc/>
-        public decimal ToDecimal(IFormatProvider provider) =>
+        public decimal ToDecimal(IFormatProvider provider = null) =>
             ((IConvertible)_Value).ToDecimal(provider);
         /// <inheritdoc/>
-        public double ToDouble(IFormatProvider provider) =>
+        public double ToDouble(IFormatProvider provider = null) =>
             ((IConvertible)_Value).ToDouble(provider);
         /// <inheritdoc/>
-        public short ToInt16(IFormatProvider provider) =>
+        public short ToInt16(IFormatProvider provider = null) =>
             ((IConvertible)_Value).ToInt16(provider);
         /// <inheritdoc/>
-        public int ToInt32(IFormatProvider provider) =>
+        public int ToInt32(IFormatProvider provider = null) =>
             ((IConvertible)_Value).ToInt32(provider);
         /// <inheritdoc/>
-        public long ToInt64(IFormatProvider provider) =>
+        public long ToInt64(IFormatProvider provider = null) =>
             ((IConvertible)_Value).ToInt64(provider);
         /// <inheritdoc/>
-        public sbyte ToSByte(IFormatProvider provider) =>
+        public sbyte ToSByte(IFormatProvider provider = null) =>
             ((IConvertible)_Value).ToSByte(provider);
         /// <inheritdoc/>
-        public float ToSingle(IFormatProvider provider) =>
+        public float ToSingle(IFormatProvider provider = null) =>
             ((IConvertible)_Value).ToSingle(provider);
         /// <inheritdoc/>
-        public string ToString(IFormatProvider provider) =>
+        public string ToString(IFormatProvider provider = null) =>
             ((IConvertible)_Value).ToString(provider);
         /// <inheritdoc/>
-        public object ToType(Type conversionType, IFormatProvider provider) =>
+        public object ToType(Type conversionType, IFormatProvider provider = null) =>
             ((IConvertible)_Value).ToType(conversionType, provider);
         /// <inheritdoc/>
-        public ushort ToUInt16(IFormatProvider provider) =>
+        public ushort ToUInt16(IFormatProvider provider = null) =>
             ((IConvertible)_Value).ToUInt16(provider);
         /// <inheritdoc/>
-        public uint ToUInt32(IFormatProvider provider) =>
+        public uint ToUInt32(IFormatProvider provider = null) =>
             ((IConvertible)_Value).ToUInt32(provider);
         /// <inheritdoc/>
-        public ulong ToUInt64(IFormatProvider provider) =>
+        public ulong ToUInt64(IFormatProvider provider = null) =>
             ((IConvertible)_Value).ToUInt64(provider);
         #endregion IConvertible
         #region Equals operators
