@@ -8,10 +8,12 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>TRACE;CHECK_ARGS</DefineConstants>
-    <DocumentationFile>C:\Users\Александр\OneDrive\Development\Hobby\Darkangel.Libs\Darkangel.Compression\Darkangel.Compression.xml</DocumentationFile>
+    <DocumentationFile>C:\Users\Александр\OneDrive\Development\Hobby\Darkangel.Libs\Darkangel.Compression.Dune92\Darkangel.Compression.Dune92.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Darkangel.Compression\Darkangel.Compression.csproj" />
+    <ProjectReference Include="..\Darkangel.IntegerX\Darkangel.IntegerX.csproj" />
     <ProjectReference Include="..\Darkangel.IO\Darkangel.IO.csproj" />
   </ItemGroup>
 

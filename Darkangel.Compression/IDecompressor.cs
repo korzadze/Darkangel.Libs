@@ -8,19 +8,27 @@ namespace Darkangel.Compression
     public interface IDecompressor
     {
         /// <summary>
+        /// <para>Инициализировать настройки распаковки по-умолчанию</para>
+        /// </summary>
+        /// <returns>Настройки по-умолчанию</returns>
+        object InitDefaultDecompressSettings();
+        /// <summary>
         /// <para>Распаковать поток байт</para>
         /// </summary>
         /// <param name="data">Данные для распаковки</param>
         /// <param name="start">Первый байт упакованных данных</param>
+        /// <param name="count">Размер распаковываемого блока данных</param>
+        /// <param name="decompressorSettings">Дополнительные настройки для распаковки данных</param>
         /// <returns>Распакованные данные</returns>
-        public byte[] Decompress(byte[] data, long start);
+        byte[] Decompress(byte[] data, long start = 0, long count = -1, object decompressorSettings = null);
         /// <summary>
         /// <para>Распаковать данные из входного потока, и записать в выходной поток</para>
         /// </summary>
         /// <param name="inStream">Входной поток</param>
         /// <param name="outStream">Выходной поток</param>
-        /// <param name="count">Количество байт входного потока, которые необходимо распаковать</param>
+        /// <param name="count">Размер распаковываемого блока данных</param>
+        /// <param name="decompressorSettings">Дополнительные настройки для распаковки данных</param>
         /// <returns>Количество байт, записанных в выходной поток</returns>
-        public long Decompress(Stream inStream, Stream outStream, long count);
+        long Decompress(Stream inStream, Stream outStream, long count = -1, object decompressorSettings = null);
     }
 }
