@@ -8,16 +8,16 @@ namespace Darkangel.IO
     public interface IBinaryLoadable
     {
         /// <summary>
-        /// <para>Сохранить данные в двоичном потоке</para>
+        /// <para>Загрузить данные из двоичного потока</para>
         /// </summary>
-        /// <param name="stream">Целевой поток данных</param>
+        /// <param name="stream">Исходный поток данных</param>
         /// <param name="offset">Смещение в потоке</param>
-        /// <returns>Размер сохраненных данных</returns>
-        long Store(byte[] stream, long offset);
+        /// <returns>Размер загруженных данных</returns>
+        long Load(byte[] stream, long offset);
         /// <summary>
-        /// <para>Сохранить данные в двоичном потоке</para>
+        /// <para>Загрузить данные из двоичного потока</para>
         /// </summary>
-        /// <param name="stream">Целевой поток данных</param>
+        /// <param name="stream">Исходный поток данных</param>
         void Load(Stream stream);
     }
 }
