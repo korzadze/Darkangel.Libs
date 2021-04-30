@@ -99,6 +99,7 @@ namespace Darkangel.IntegerX
         }
         #endregion Потоковые преобразования
         #region Преобразования
+        #region To UInt48
         /// <summary>
         /// Преобразовать <see cref="Byte"/> в <see cref="UInt48"/>
         /// </summary>
@@ -147,6 +148,8 @@ namespace Darkangel.IntegerX
         /// <param name="value">Исходное значение</param>
         public static explicit operator UInt48(UInt64 value)
             => new(value);
+        #endregion To UInt48
+        #region From UInt48
         /// <summary>
         /// Преобразовать <see cref="UInt48"/> в <see cref="Byte"/>
         /// </summary>
@@ -195,6 +198,7 @@ namespace Darkangel.IntegerX
         /// <param name="value">Исходное значение</param>
         public static implicit operator Int64(UInt48 value)
             => (Int64)value._Value;
+        #region From UInt48
         #endregion Преобразования
         #region IComparable
         /// <inheritdoc/>

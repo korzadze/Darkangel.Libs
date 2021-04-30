@@ -88,6 +88,7 @@ namespace Darkangel.IntegerX
         }
         #endregion Потоковые преобразования
         #region Преобразования значений
+        #region To UInt24
         /// <summary>
         /// Преобразовать <see cref="Byte"/> в <see cref="UInt24"/>
         /// </summary>
@@ -142,6 +143,8 @@ namespace Darkangel.IntegerX
         /// <param name="value">Исходное значение</param>
         public static explicit operator UInt24(Int64 value)
             => new((UInt64)value);
+        #endregion To UInt24
+        #region From UInt24
         /// <summary>
         /// Преобразовать <see cref="UInt24"/> в <see cref="Byte"/>
         /// </summary>
@@ -161,17 +164,36 @@ namespace Darkangel.IntegerX
         public static explicit operator UInt16(UInt24 value)
             => (UInt16)value._Value;
         /// <summary>
+        /// Преобразовать <see cref="UInt24"/> в <see cref="Int16"/>
+        /// </summary>
+        /// <param name="value">Исходное значение</param>
+        public static explicit operator Int16(UInt24 value)
+            => (Int16)value._Value;
+        /// <summary>
         /// Преобразовать <see cref="UInt24"/> в <see cref="UInt32"/>
         /// </summary>
         /// <param name="value">Исходное значение</param>
         public static implicit operator UInt32(UInt24 value)
             => value._Value;
         /// <summary>
+        /// Преобразовать <see cref="UInt24"/> в <see cref="Int32"/>
+        /// </summary>
+        /// <param name="value">Исходное значение</param>
+        public static implicit operator Int32(UInt24 value)
+            => (Int32)value._Value;
+        /// <summary>
         /// Преобразовать <see cref="UInt24"/> в <see cref="UInt64"/>
         /// </summary>
         /// <param name="value">Исходное значение</param>
         public static implicit operator UInt64(UInt24 value)
             => value._Value;
+        /// <summary>
+        /// Преобразовать <see cref="UInt24"/> в <see cref="Int64"/>
+        /// </summary>
+        /// <param name="value">Исходное значение</param>
+        public static implicit operator Int64(UInt24 value)
+            => (Int64)value._Value;
+        #endregion From UInt24
         #endregion Преобразования значений
         #region IComparable
         /// <inheritdoc/>
