@@ -11,8 +11,4 @@
     <DocumentationFile>C:\Users\Александр\OneDrive\Development\Hobby\Darkangel.Libs\Darkangel.Compression\Darkangel.Compression.xml</DocumentationFile>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Darkangel.IO\Darkangel.IO.csproj" />
-  </ItemGroup>
-
 </Project>

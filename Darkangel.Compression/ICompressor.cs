@@ -16,7 +16,7 @@ namespace Darkangel.Compression
         /// <para>Упаковать поток байт</para>
         /// </summary>
         /// <param name="data">Данные для упаковки</param>
-        /// <param name="start">Первый байт данных</param>
+        /// <param name="start">Первый байт упаковываемых данных</param>
         /// <param name="count">Размер упаковываемого блока данных</param>
         /// <param name="compressorSettings">Дополнительные настройки для сжатия данных</param>
         /// <returns>Упакованные данные</returns>
