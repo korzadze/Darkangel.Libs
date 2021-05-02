@@ -387,5 +387,19 @@
               Ищет локализованную строку, похожую на Invalid symbol &apos;{0}&apos; in &apos;{1}&apos; for radix {2}..
             </summary>
         </member>
+        <member name="T:Darkangel.Strings.StrUtil">
+            <summary>
+            <para>Утилиты для работы со строками стандартной библиотеки C/C++</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Strings.StrUtil.StrLenA(System.Byte[],System.Int64)">
+            <summary>
+            <para>Определить длину строки по символу завершения ('\0')</para>
+            </summary>
+            <remarks>Аналог функции strlen библиотеки C/C++</remarks>
+            <param name="data"></param>
+            <param name="start"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>
