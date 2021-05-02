@@ -11,22 +11,12 @@
         /// <remarks>Аналог функции strlen библиотеки C/C++</remarks>
         /// <param name="data"></param>
         /// <param name="start"></param>
-        /// <returns></returns>
+        /// <returns>Длина строки</returns>
         public static long StrLenA(byte[] data, long start = 0)
         {
-            var res = 0L;
-            for (var i = start; i < data.LongLength; i++)
-            {
-                if (data[i] == 0)
-                {
-                    return res;
-                }
-                else
-                {
-                    res++;
-                }
-            }
-            return res;
+            var pos = start;
+            while ((pos < data.LongLength) && (data[pos] != 0)) pos++;
+            return pos - start;
         }
     }
 }

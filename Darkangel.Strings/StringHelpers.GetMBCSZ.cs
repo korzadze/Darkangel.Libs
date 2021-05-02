@@ -27,9 +27,7 @@ namespace Darkangel.Strings
             #endregion Check arguments
 
             encoding ??= Encoding.ASCII;
-            var end = start;
-            while ((buf[end] != 0) && (end < buf.LongLength)) end++;
-            var len = (end > start) ? ((end - start)) : (0);
+            var len = StrUtil.StrLenA(buf, start);
             var str = new byte[len];
             Array.Copy(buf, start, str, 0, len);
             return encoding.GetString(str);
