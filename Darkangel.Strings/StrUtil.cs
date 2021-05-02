@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Darkangel.Strings
+﻿namespace Darkangel.Strings
 {
     /// <summary>
     /// <para>Утилиты для работы со строками стандартной библиотеки C/C++</para>
