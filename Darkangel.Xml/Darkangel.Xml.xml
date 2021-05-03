@@ -109,6 +109,36 @@
             <returns><para>Добавленый дочерний элемент</para></returns>
             <remarks>2021-04-18</remarks>
         </member>
+        <member name="M:Darkangel.Xml.XmlHelpers.AddChild(System.Xml.XmlDocument,System.String)">
+            <summary>
+            <para>Добавить элемент к документу</para>
+            </summary>
+            <param name="doc"><para>XML документ</para></param>
+            <param name="childName"><para>Имя дочернего элемента</para></param>
+            <returns><para>Добавленый дочерний элемент</para></returns>
+            <remarks>2021-04-18</remarks>
+        </member>
+        <member name="M:Darkangel.Xml.XmlHelpers.AddChild(System.Xml.XmlDocument,System.String,System.String)">
+            <summary>
+            <para>Добавить элемент к документу</para>
+            </summary>
+            <param name="doc"><para>XML документ</para></param>
+            <param name="qualifiedName"><para>Полное имя элемента.</para><para>Если имя содержит двоеточие, свойство Prefix отражает часть имени, предшествующую ему, а свойство LocalName — ту часть, которая следует за двоеточием. Полное имя не может содержать префикс "xmlns".</para></param>
+            <param name="namespaceUri"><para>Универсальный код ресурса (URI) пространства имен элемента.</para></param>
+            <returns><para>Добавленый дочерний элемент</para></returns>
+            <remarks>2021-04-18</remarks>
+        </member>
+        <member name="M:Darkangel.Xml.XmlHelpers.AddChild(System.Xml.XmlDocument,System.String,System.String,System.String)">
+            <summary>
+            <para>Добавить элемент к документу</para>
+            </summary>
+            <param name="doc"><para>XML документ</para></param>
+            <param name="prefix">Префикс нового элемента (если имеется). String.Empty равнозначно значению null.</param>
+            <param name="localName">Локальное имя дочернего элемента.</param>
+            <param name="namespaceUri"><para>Универсальный код ресурса (URI) пространства имен элемента.</para></param>
+            <returns><para>Добавленый дочерний элемент</para></returns>
+            <remarks>2021-04-18</remarks>
+        </member>
         <member name="M:Darkangel.Xml.XmlHelpers.AddText(System.Xml.XmlElement,System.String)">
             <summary>
             <para>Добавить текстовый элемент к родительскому</para>
@@ -117,6 +147,16 @@
             <param name="text"><para>Текст</para></param>
             <returns><para>Родительский элемент</para></returns>
             <remarks>2021-04-18</remarks>
+        </member>
+        <member name="M:Darkangel.Xml.XmlHelpers.AddDeclaration(System.Xml.XmlDocument,System.String,System.String,System.String)">
+            <summary>
+            <para>Добавить описание к документу, если его нет</para>
+            </summary>
+            <param name="doc">XML документ</param>
+            <param name="version">Версия XML</param>
+            <param name="encoding">Кодировка</param>
+            <param name="standalone">Игнорировать правила markup DTD</param>
+            <returns>Исходный XML документ</returns>
         </member>
     </members>
 </doc>
