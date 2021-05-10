@@ -409,7 +409,7 @@
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
         </member>
-        <member name="M:Darkangel.IntegerX.IntegerXHelpers.WriteInt32(System.IO.Stream,System.Int32,System.Boolean)">
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(System.IO.Stream,System.Int32,System.Boolean)">
             <summary>
             <para>Записать в поток значение <see cref="T:System.Int32"/></para>
             </summary>
@@ -427,7 +427,7 @@
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
         </member>
-        <member name="M:Darkangel.IntegerX.IntegerXHelpers.WriteUInt32(System.IO.Stream,System.UInt32,System.Boolean)">
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(System.IO.Stream,System.UInt32,System.Boolean)">
             <summary>
             <para>Записать в поток значение <see cref="T:System.UInt32"/></para>
             </summary>
@@ -445,7 +445,7 @@
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
         </member>
-        <member name="M:Darkangel.IntegerX.IntegerXHelpers.WriteUInt48(System.IO.Stream,Darkangel.IntegerX.UInt48,System.Boolean)">
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(System.IO.Stream,Darkangel.IntegerX.UInt48,System.Boolean)">
             <summary>
             <para>Записать в поток значение <see cref="T:Darkangel.IntegerX.UInt48"/></para>
             </summary>
@@ -463,7 +463,7 @@
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
         </member>
-        <member name="M:Darkangel.IntegerX.IntegerXHelpers.WriteInt64(System.IO.Stream,System.Int64,System.Boolean)">
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(System.IO.Stream,System.Int64,System.Boolean)">
             <summary>
             <para>Записать в поток значение <see cref="T:System.Int64"/></para>
             </summary>
@@ -481,7 +481,7 @@
             <returns>Считанное значение</returns>
             <remarks>2021-04-18</remarks>
         </member>
-        <member name="M:Darkangel.IntegerX.IntegerXHelpers.WriteUInt64(System.IO.Stream,System.UInt64,System.Boolean)">
+        <member name="M:Darkangel.IntegerX.IntegerXHelpers.Write(System.IO.Stream,System.UInt64,System.Boolean)">
             <summary>
             <para>Записать в поток значение <see cref="T:System.UInt64"/></para>
             </summary>
@@ -672,15 +672,33 @@
             </summary>
             <param name="value">Исходное значение</param>
         </member>
+        <member name="M:Darkangel.IntegerX.UInt24.op_Explicit(Darkangel.IntegerX.UInt24)~System.Int16">
+            <summary>
+            Преобразовать <see cref="T:Darkangel.IntegerX.UInt24"/> в <see cref="T:System.Int16"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
         <member name="M:Darkangel.IntegerX.UInt24.op_Implicit(Darkangel.IntegerX.UInt24)~System.UInt32">
             <summary>
             Преобразовать <see cref="T:Darkangel.IntegerX.UInt24"/> в <see cref="T:System.UInt32"/>
             </summary>
             <param name="value">Исходное значение</param>
         </member>
+        <member name="M:Darkangel.IntegerX.UInt24.op_Implicit(Darkangel.IntegerX.UInt24)~System.Int32">
+            <summary>
+            Преобразовать <see cref="T:Darkangel.IntegerX.UInt24"/> в <see cref="T:System.Int32"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
         <member name="M:Darkangel.IntegerX.UInt24.op_Implicit(Darkangel.IntegerX.UInt24)~System.UInt64">
             <summary>
             Преобразовать <see cref="T:Darkangel.IntegerX.UInt24"/> в <see cref="T:System.UInt64"/>
+            </summary>
+            <param name="value">Исходное значение</param>
+        </member>
+        <member name="M:Darkangel.IntegerX.UInt24.op_Implicit(Darkangel.IntegerX.UInt24)~System.Int64">
+            <summary>
+            Преобразовать <see cref="T:Darkangel.IntegerX.UInt24"/> в <see cref="T:System.Int64"/>
             </summary>
             <param name="value">Исходное значение</param>
         </member>

@@ -153,7 +153,7 @@ namespace Darkangel.IntegerX
         /// <param name="value">Записываемое значение</param>
         /// <param name="isLittleEndian">Порядок следования байт значения в потоке</param>
         /// <remarks>2021-04-18</remarks>
-        public static void WriteInt32(this Stream stream, Int32 value, bool isLittleEndian = true)
+        public static void Write(this Stream stream, Int32 value, bool isLittleEndian = true)
         {
             var buf = value.GetBytes(isLittleEndian: isLittleEndian);
             stream.Write(buf, 0, buf.Length);
@@ -181,7 +181,7 @@ namespace Darkangel.IntegerX
         /// <param name="value">Записываемое значение</param>
         /// <param name="isLittleEndian">Порядок следования байт значения в потоке</param>
         /// <remarks>2021-04-18</remarks>
-        public static void WriteUInt32(this Stream stream, UInt32 value, bool isLittleEndian = true)
+        public static void Write(this Stream stream, UInt32 value, bool isLittleEndian = true)
         {
             var buf = value.GetBytes(isLittleEndian: isLittleEndian);
             stream.Write(buf, 0, buf.Length);
@@ -209,7 +209,7 @@ namespace Darkangel.IntegerX
         /// <param name="value">Записываемое значение</param>
         /// <param name="isLittleEndian">Порядок следования байт значения в потоке</param>
         /// <remarks>2021-04-18</remarks>
-        public static void WriteUInt48(this Stream stream, UInt48 value, bool isLittleEndian = true)
+        public static void Write(this Stream stream, UInt48 value, bool isLittleEndian = true)
         {
             var buf = value.GetBytes(isLittleEndian: isLittleEndian);
             stream.Write(buf, 0, buf.Length);
@@ -237,7 +237,7 @@ namespace Darkangel.IntegerX
         /// <param name="value">Записываемое значение</param>
         /// <param name="isLittleEndian">Порядок следования байт значения в потоке</param>
         /// <remarks>2021-04-18</remarks>
-        public static void WriteInt64(this Stream stream, Int64 value, bool isLittleEndian = true)
+        public static void Write(this Stream stream, Int64 value, bool isLittleEndian = true)
         {
             var buf = value.GetBytes(isLittleEndian: isLittleEndian);
             stream.Write(buf, 0, buf.Length);
@@ -265,7 +265,7 @@ namespace Darkangel.IntegerX
         /// <param name="value">Записываемое значение</param>
         /// <param name="isLittleEndian">Порядок следования байт значения в потоке</param>
         /// <remarks>2021-04-18</remarks>
-        public static void WriteUInt64(this Stream stream, UInt64 value, bool isLittleEndian = true)
+        public static void Write(this Stream stream, UInt64 value, bool isLittleEndian = true)
         {
             var buf = value.GetBytes(isLittleEndian: isLittleEndian);
             stream.Write(buf, 0, buf.Length);
