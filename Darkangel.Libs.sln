@@ -39,7 +39,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Darkangel.Xml", "Darkangel.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Darkangel.CLib", "Darkangel.CLib\Darkangel.CLib.csproj", "{FE4B48BB-1AF9-407D-965B-EC9808017E31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darkangel.Compression.Dune92", "Darkangel.Compression.Dune92\Darkangel.Compression.Dune92.csproj", "{2AB20AC3-85F8-4767-8ADA-0FD559B800A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Darkangel.Compression.Dune92", "Darkangel.Compression.Dune92\Darkangel.Compression.Dune92.csproj", "{2AB20AC3-85F8-4767-8ADA-0FD559B800A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darkangel.Shapes", "Darkangel.Shapes\Darkangel.Shapes.csproj", "{B0017CCF-D13B-4CAF-BF4D-0BFE387F13BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -123,6 +125,10 @@ Global
 		{2AB20AC3-85F8-4767-8ADA-0FD559B800A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AB20AC3-85F8-4767-8ADA-0FD559B800A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AB20AC3-85F8-4767-8ADA-0FD559B800A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0017CCF-D13B-4CAF-BF4D-0BFE387F13BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0017CCF-D13B-4CAF-BF4D-0BFE387F13BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0017CCF-D13B-4CAF-BF4D-0BFE387F13BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0017CCF-D13B-4CAF-BF4D-0BFE387F13BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
