@@ -399,7 +399,7 @@
             <remarks>Аналог функции strlen библиотеки C/C++</remarks>
             <param name="data"></param>
             <param name="start"></param>
-            <returns></returns>
+            <returns>Длина строки</returns>
         </member>
     </members>
 </doc>

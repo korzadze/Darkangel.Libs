@@ -3,65 +3,99 @@ using System.Collections.Generic;
 
 namespace Darkangel.Shapes
 {
-    using TOrd = UInt32;
+    using TOrd = Int32;
 
-    public class Point: IComparable<Point>, IEquatable<Point>
+    /// <summary>
+    /// <para>Точка координатной сетки</para>
+    /// </summary>
+    public abstract class Point<TOrd> : IComparable<Point<TOrd>>, IEquatable<Point<TOrd>>
+        where TOrd: struct, IComparable<TOrd>
     {
-        public readonly TOrd X;
-        public readonly TOrd Y;
+        /// <summary>
+        /// <para>Индекс координаты X</para>
+        /// </summary>
+        public const int OrdX = 0;
+        /// <summary>
+        /// <para>Индекс координаты Y</para>
+        /// </summary>
+        public const int OrdY = 1;
+        /// <summary>
+        /// <para>Индекс координаты Z</para>
+        /// </summary>
+        public const int OrdZ = 2;
 
-        public Point(TOrd x, TOrd y)
+        private readonly TOrd[] _Values;
+        /// <summary>
+        /// <para>Количество измерений координатной сетки</para>
+        /// </summary>
+        public long Dimensions => _Values?.LongLength ?? 0;
+        /// <summary>
+        /// <para>Координата X</para>
+        /// </summary>
+        /// <remarks>
+        /// <para>Упрощение для базовой 3-хмерной сетки</para>
+        /// </remarks>
+        public TOrd X => (Dimensions > OrdX) ? (_Values[OrdX]) : (default);
+        /// <summary>
+        /// <para>Координата Y</para>
+        /// </summary>
+        /// <remarks>
+        /// <para>Упрощение для базовой 3-хмерной сетки</para>
+        /// </remarks>
+        public TOrd Y => (Dimensions > OrdY) ? (_Values[OrdY]) : (default);
+        /// <summary>
+        /// <para>Координата Z</para>
+        /// </summary>
+        /// <remarks>
+        /// <para>Упрощение для базовой 3-хмерной сетки</para>
+        /// </remarks>
+        public TOrd Z => (Dimensions > OrdZ) ? (_Values[OrdZ]) : (default);
+        /// <summary>
+        /// <para>Получить значение ординаты для указанного измерения</para>
+        /// </summary>
+        /// <param name="dim">Измерение (0 =&gt; ордината X, 1 =&gt; Y и т.д.)</param>
+        /// <returns>Значение ординаты</returns>
+        public TOrd this[long dim]
         {
-            X = x;
-            Y = y;
+            get
+            {
+                if (dim < 0) throw new ArgumentOutOfRangeException(nameof(dim));
+                if (dim < Dimensions)
+                {
+                    return _Values[dim];
+                }
+                return default;
+            }
         }
-
-        public int CompareTo(Point other)
-        {
-            if (other is null) return 1;
-            var l1 = (X * X + Y * Y);
-            var l2 = (other.X * other.X + other.Y * other.Y);
-            return l1.CompareTo(l2);
-        }
-        public bool Equals(Point other)
+        /// <inheritdoc/>
+        public bool Equals(Point<TOrd> other)
         {
             if (other is null) return false;
-            return (X == other.X) && (Y == other.Y);
+            return CompareTo(other) == 0;
         }
-        public static Point operator +(Point point, TOrd val) =>
-            new(point.X + val, point.Y + val);
-        public static Point operator +(TOrd val, Point point) =>
-            new(point.X + val, point.Y + val);
-        public static Point operator -(Point point, TOrd val) =>
-            new(point.X - val, point.Y - val);
-        public static Point operator *(Point point, TOrd val) =>
-            new(point.X * val, point.Y * val);
-        public static Point operator /(Point point, TOrd val) =>
-            new(point.X / val, point.Y / val);
+        /// <inheritdoc/>
+        public int CompareTo(Point<TOrd> other)
+        {
+            throw new NotImplementedException();
+        }
+        /// <inheritdoc/>
+        public override bool Equals(object obj)
+        {
+            if (obj is Point<TOrd> p)
+                return CompareTo(p) == 0;
+            else
+                return false; ;
+        }
 
-        public static bool operator ==(Point p1, Point p2)
+        public override int GetHashCode()
         {
-            return p1.Equals(p2);
-        }
-        public static bool operator !=(Point p1, Point p2)
-        {
-            return !p1.Equals(p2);
-        }
-        public static bool operator >=(Point p1, Point p2)
-        {
-            return p1.CompareTo(p2) >= 0;
-        }
-        public static bool operator <=(Point p1, Point p2)
-        {
-            return p1.CompareTo(p2) <= 0;
-        }
-        public static bool operator >(Point p1, Point p2)
-        {
-            return p1.CompareTo(p2) > 0;
-        }
-        public static bool operator <(Point p1, Point p2)
-        {
-            return p1.CompareTo(p2) < 0;
+            var res = 0;
+            foreach(var ord in _Values)
+            {
+                res *= 33;
+                res ^= ord.GetHashCode();
+            }
+            return res;
         }
     }
 }
