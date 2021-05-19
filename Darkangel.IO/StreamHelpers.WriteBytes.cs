@@ -14,29 +14,43 @@ namespace Darkangel.IO
         /// <remarks>2021-04-18</remarks>
         public static long WriteBytes(this Stream stream, byte[] data)
         {
+            return stream.Write(data, 0, data.LongLength);
+        }
+        /// <summary>
+        /// <para>Записать вектор байт в поток</para>
+        /// </summary>
+        /// <param name="stream">Целевой поток</param>
+        /// <param name="data">Исходные данные</param>
+        /// <param name="start">Начало записываемового блока в векторе</param>
+        /// <param name="length">Размер записываемого блока</param>
+        /// <returns>Количество записанных в поток байт</returns>
+        public static long Write(this Stream stream, byte[] data, long start, long length)
+        {
             #region Check arguments
 #if CHECK_ARGS
-            _ = data ?? throw new ArgumentNullException(nameof(data));
+            if (data is null)
+            {
+                throw new ArgumentNullException(nameof(data));
+            }
+            if (start < 0 || start >= data.LongLength)
+            {
+                throw new ArgumentOutOfRangeException(nameof(start));
+            }
+            if (length < 0 || (length + start) > data.LongLength)
+            {
+                throw new ArgumentOutOfRangeException(nameof(length));
+            }
 #endif
             #endregion
-            var dataSize = data.LongLength;
-            if(dataSize < int.MaxValue)
+
+            var chunkBuf = new byte[CHUNK_SIZE];
+            for (var off = 0L; off < length; off += CHUNK_SIZE)
             {
-                stream.Write(data, 0, (int)dataSize);
-                return dataSize;
+                var chunkSize = Math.Min(length - off, CHUNK_SIZE);
+                Array.Copy(data, off, chunkBuf, 0, chunkSize);
+                stream.Write(chunkBuf, 0, (int)chunkSize);
             }
-            else
-            {
-                var chunkBuf = new byte[CHUNK_SIZE];
-                var chunkSize = (int)Math.Min(CHUNK_SIZE, dataSize);
-                for (var off = 0L; off < dataSize; off += chunkSize)
-                {
-                    var cbWrite = Math.Min(dataSize - off, chunkSize);
-                    Array.Copy(data, off, chunkBuf, 0, cbWrite);
-                    stream.Write(chunkBuf, 0, (int)cbWrite);
-                }
-                return dataSize;
-            }
+            return length;
         }
     }
 }
