@@ -42,24 +42,36 @@ namespace LibsTesting
         }
 
         [Theory]
-        [InlineData(new byte[] { 1, 2, 3 }, 1)]
-        [InlineData(new byte[] { 1, 2, 3, 4 }, 0)]
-        [InlineData(new byte[] { 1, 2, 3, 4, 5 }, -1)]
-        public void ArrayHelper_Compare_Test(byte[] data, int res)
-        {
-            byte[] Value1234 = new byte[] { 1, 2, 3, 4 };
-
-            Assert.Equal(Value1234.CompareWith(data), res);
-        }
-        [Theory]
         [InlineData(new byte[] { 1, 2, 3 }, 3, 0)]
         [InlineData(new byte[] { 1, 2, 3, 4 }, 4, 0)]
         [InlineData(new byte[] { 1, 2, 3, 4, 5 }, 4, 0)]
-        public void ArrayHelper_ComparePart_Test(byte[] data, long lenght,int res)
+        public void ArrayHelper_CompareWith_Test(byte[] data, long lenght, int res)
         {
             byte[] Value1234 = new byte[] { 1, 2, 3, 4 };
 
             Assert.Equal(Value1234.CompareWith(data, lenght), res);
+        }
+
+        [Theory]
+        [InlineData(
+            new byte[] { 0x43, 0x49, 0x56, 0x49, 0x4C, 0x49, 0x5A, 0x45, 0x00, 0x1A, 0, 0, 0, 0 },
+            0, true)]
+        [InlineData(
+            new byte[] { 0, 0, 0x43, 0x49, 0x56, 0x49, 0x4C, 0x49, 0x5A, 0x45, 0x00, 0x1A, 0, 0 },
+            0, false)]
+        [InlineData(
+            new byte[] { 0, 0, 0x43, 0x49, 0x56, 0x49, 0x4C, 0x49, 0x5A, 0x45, 0x00, 0x1A, 0, 0 },
+            2, true)]
+        [InlineData(
+            new byte[] { 0x43, 0x49, 0x56, 0x49, 0x4C, 0x49, 0x5A, 0x45, 0x00, 0x1A, 0, 0, 0, 0 },
+            2, false)]
+        public void ArrayHelper_SignatureCheck(byte[] data, long sign_off, bool result)
+        {
+            var sign = new byte[]
+            {
+                0x43, 0x49, 0x56, 0x49, 0x4C, 0x49, 0x5A, 0x45, 0x00, 0x1A
+            };
+            Assert.Equal(result, data.SignatureCheck(sign, sign_off));
         }
     }
 }

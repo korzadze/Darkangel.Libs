@@ -8,21 +8,6 @@ namespace Darkangel.Arrays
     public static partial class ArrayHelper
     {
         /// <summary>
-        /// <para>Сравнение двух одномерных массивов</para>
-        /// </summary>
-        /// <typeparam name="T">Тип элементов массивов</typeparam>
-        /// <param name="left">Первый сравниваемый массив</param>
-        /// <param name="right">Второй сравниваемый массив</param>
-        /// <param name="fullCompare"><para>Сравнивать массивы полностью или только минимальную область [0..Min(left.Length, right.Length)].</para>
-        /// <para>При совпадении минимальной области и полном сравнении, больше тот массив, который имет больший размер.</para></param>
-        /// <returns>Результат сравнения</returns>
-        /// <exception cref="ArgumentNullException">Один из массивов не определен</exception>
-        /// <remarks>v.2021.04.18</remarks>
-        public static int CompareWith<T>(this T[] left, T[] right, bool fullCompare = true)
-            where T : IComparable<T>
-            =>
-            CompareWith(left, 0, right, 0, -1, fullCompare);
-        /// <summary>
         /// <para>Частичное сравнение двух одномерных массивов</para>
         /// </summary>
         /// <typeparam name="T">Тип элементов массивов</typeparam>
@@ -42,16 +27,15 @@ namespace Darkangel.Arrays
         /// </summary>
         /// <typeparam name="T">Тип элементов массивов</typeparam>
         /// <param name="left">Первый сравниваемый массив</param>
-        /// <param name="start1">Начало области сравнения в первом массиве</param>
+        /// <param name="startLeft">Начало области сравнения в первом массиве</param>
         /// <param name="right">Второй сравниваемый массив</param>
-        /// <param name="start2">Начало области сравнения во втором массиве</param>
+        /// <param name="startRight">Начало области сравнения во втором массиве</param>
         /// <param name="length">Размер сравниваемой области</param>
-        /// <param name="fullCompare">Сравнивать области массивов полностью или только минимальную область [0..Min(length, left.Length - start1, right.Length - start2)]. При совпадении минимальной части и полном сравнении, большим считается тот массив, размер части которого больше.</param>
         /// <returns>Результат сравнения</returns>
         /// <exception cref="ArgumentNullException">Один из массивов не определен</exception>
         /// <exception cref="ArgumentOutOfRangeException">Одно из значений start1, start2, (start1+length) или (start2+length) выходит за пределы массивов</exception>
         /// <remarks>v.2021.04.18</remarks>
-        public static int CompareWith<T>(this T[] left, long start1, T[] right, long start2 = 0, long length = -1, bool fullCompare = true)
+        public static int CompareWith<T>(this T[] left, long startLeft, T[] right, long startRight, long length)
             where T : IComparable<T>
         {
             #region Check arguments
@@ -59,49 +43,26 @@ namespace Darkangel.Arrays
             _ = left ?? throw new ArgumentNullException(nameof(left));
             _ = right ?? throw new ArgumentNullException(nameof(right));
 
-            if (start1 < 0 || start1 >= left.LongLength)
-                throw new ArgumentOutOfRangeException(nameof(start1));
+            if (startLeft < 0 || startLeft >= left.LongLength)
+                throw new ArgumentOutOfRangeException(nameof(startLeft));
 
-            if (start2 < 0 || start2 >= right.LongLength)
-                throw new ArgumentOutOfRangeException(nameof(start2));
+            if (startRight < 0 || startRight >= right.LongLength)
+                throw new ArgumentOutOfRangeException(nameof(startRight));
+
+            if ((length < 0) ||
+                (length > (left.LongLength - startLeft)) ||
+                (length > (right.LongLength - startRight)))
+                throw new ArgumentOutOfRangeException(nameof(length));
 #endif
             #endregion Check arguments
 
-            var len1 = left.LongLength - start1;
-            var len2 = right.LongLength - start2;
-            var minLen = length;
-
-            if (length == 0) // Нет смысла сравнивать: пустые массивы равны
+            for (var i = 0; i < length; i++)
             {
-                return 0;
-            }
-            if (length > 0) // Размер области сравнения задан
-            {
-                if (length > len1) // Выход за пределы первого массива
-                {
-                    throw new ArgumentOutOfRangeException("start1 + length", start1 + length, " > left.Length");
-                }
-                else if (length > len2) // Выход за пределы второго массива
-                {
-                    throw new ArgumentOutOfRangeException("start2 + length", start2 + length, " > right.Length");
-                }
-                else // Область вписывается в оба массива
-                {
-                    len1 = len2 = length;
-                }
-            }
-            else //Автоопределение
-            {
-                minLen = Math.Min(len1, len2);
-            }
-
-            for (var i = 0; i < minLen; i++)
-            {
-                var rc = left[i].CompareTo(right[i]);
+                var rc = left[startLeft + i].CompareTo(right[startRight + i]);
                 if (rc != 0) return rc;
             }
 
-            return (fullCompare) ? (len1.CompareTo(len2)) : (0);
+            return 0;
         }
     }
 }

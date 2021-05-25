@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Darkangel.Shapes</name>
+    </assembly>
+    <members>
+        <member name="T:Darkangel.Shapes.Point`1">
+            <summary>
+            <para>Точка координатной сетки</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Shapes.Point`1.OrdX">
+            <summary>
+            <para>Индекс координаты X</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Shapes.Point`1.OrdY">
+            <summary>
+            <para>Индекс координаты Y</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Shapes.Point`1.OrdZ">
+            <summary>
+            <para>Индекс координаты Z</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Shapes.Point`1.Dimensions">
+            <summary>
+            <para>Количество измерений координатной сетки</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Shapes.Point`1.X">
+            <summary>
+            <para>Координата X</para>
+            </summary>
+            <remarks>
+            <para>Упрощение для базовой 3-хмерной сетки</para>
+            </remarks>
+        </member>
+        <member name="P:Darkangel.Shapes.Point`1.Y">
+            <summary>
+            <para>Координата Y</para>
+            </summary>
+            <remarks>
+            <para>Упрощение для базовой 3-хмерной сетки</para>
+            </remarks>
+        </member>
+        <member name="P:Darkangel.Shapes.Point`1.Z">
+            <summary>
+            <para>Координата Z</para>
+            </summary>
+            <remarks>
+            <para>Упрощение для базовой 3-хмерной сетки</para>
+            </remarks>
+        </member>
+        <member name="P:Darkangel.Shapes.Point`1.Item(System.Int64)">
+            <summary>
+            <para>Получить значение ординаты для указанного измерения</para>
+            </summary>
+            <param name="dim">Измерение (0 =&gt; ордината X, 1 =&gt; Y и т.д.)</param>
+            <returns>Значение ординаты</returns>
+        </member>
+        <member name="M:Darkangel.Shapes.Point`1.Equals(Darkangel.Shapes.Point{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Shapes.Point`1.CompareTo(Darkangel.Shapes.Point{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Shapes.Point`1.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

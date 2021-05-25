@@ -22,7 +22,7 @@ namespace LibsTesting
         [InlineData(new byte[] { 0, 0, 0, 0x80 }, 0x80000000U)]
         public void IntegerX_GetBytesUInt32_Test(byte[] data, UInt32 value)
         {
-            Assert.True(data.CompareWith(value.GetBytes(isLittleEndian: true)) == 0);
+            Assert.True(data.CompareWith(0, value.GetBytes(isLittleEndian: true), 0, data.Length) == 0);
         }
         [Theory]
         [InlineData(0x01020304U, 0x04030201U)]

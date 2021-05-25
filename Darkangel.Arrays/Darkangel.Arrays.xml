@@ -9,19 +9,6 @@
             <para>Утилиты для работы с массивами</para>
             </summary>
         </member>
-        <member name="M:Darkangel.Arrays.ArrayHelper.CompareWith``1(``0[],``0[],System.Boolean)">
-            <summary>
-            <para>Сравнение двух одномерных массивов</para>
-            </summary>
-            <typeparam name="T">Тип элементов массивов</typeparam>
-            <param name="left">Первый сравниваемый массив</param>
-            <param name="right">Второй сравниваемый массив</param>
-            <param name="fullCompare"><para>Сравнивать массивы полностью или только минимальную область [0..Min(left.Length, right.Length)].</para>
-            <para>При совпадении минимальной области и полном сравнении, больше тот массив, который имет больший размер.</para></param>
-            <returns>Результат сравнения</returns>
-            <exception cref="T:System.ArgumentNullException">Один из массивов не определен</exception>
-            <remarks>v.2021.04.18</remarks>
-        </member>
         <member name="M:Darkangel.Arrays.ArrayHelper.CompareWith``1(``0[],``0[],System.Int64)">
             <summary>
             <para>Частичное сравнение двух одномерных массивов</para>
@@ -35,17 +22,16 @@
             <exception cref="T:System.ArgumentOutOfRangeException">length выходит за пределы одного из массивов</exception>
             <remarks>v.2021.04.18</remarks>
         </member>
-        <member name="M:Darkangel.Arrays.ArrayHelper.CompareWith``1(``0[],System.Int64,``0[],System.Int64,System.Int64,System.Boolean)">
+        <member name="M:Darkangel.Arrays.ArrayHelper.CompareWith``1(``0[],System.Int64,``0[],System.Int64,System.Int64)">
             <summary>
             <para>Частичное сравнение двух одномерных массивов</para>
             </summary>
             <typeparam name="T">Тип элементов массивов</typeparam>
             <param name="left">Первый сравниваемый массив</param>
-            <param name="start1">Начало области сравнения в первом массиве</param>
+            <param name="startLeft">Начало области сравнения в первом массиве</param>
             <param name="right">Второй сравниваемый массив</param>
-            <param name="start2">Начало области сравнения во втором массиве</param>
+            <param name="startRight">Начало области сравнения во втором массиве</param>
             <param name="length">Размер сравниваемой области</param>
-            <param name="fullCompare">Сравнивать области массивов полностью или только минимальную область [0..Min(length, left.Length - start1, right.Length - start2)]. При совпадении минимальной части и полном сравнении, большим считается тот массив, размер части которого больше.</param>
             <returns>Результат сравнения</returns>
             <exception cref="T:System.ArgumentNullException">Один из массивов не определен</exception>
             <exception cref="T:System.ArgumentOutOfRangeException">Одно из значений start1, start2, (start1+length) или (start2+length) выходит за пределы массивов</exception>
@@ -100,7 +86,7 @@
             </summary>
             <param name="data">Исходные данные</param>
             <param name="signature">Сигнатура данных</param>
-            <param name="start">Первый байт сигнатуры в данных</param>
+            <param name="signatureOffset">Первый байт сигнатуры в данных</param>
             <returns>Результат проверки подписи</returns>
             <remarks>v.2021.04.18</remarks>
         </member>
