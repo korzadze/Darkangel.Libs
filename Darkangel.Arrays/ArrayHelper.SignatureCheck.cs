@@ -18,7 +18,7 @@ namespace Darkangel.Arrays
 #if CHECK_ARGS
             _ = data ?? throw new ArgumentNullException(nameof(data));
             _ = signature ?? throw new ArgumentNullException(nameof(signature));
-            if (start < 0 || (start + signature.LongLength) >= data.LongLength)
+            if (start < 0 || (start + signature.LongLength) > data.LongLength)
             {
                 throw new ArgumentOutOfRangeException(nameof(start));
             }
