@@ -4,23 +4,41 @@ using System.Runtime.InteropServices;
 namespace Darkangel.IntegerX
 {
     /// <summary>
-    /// 6-байтное беззнаковое целое
+    /// <para>6-байтное беззнаковое целое</para>
     /// </summary>
     /// <remarks>2021-04-18</remarks>
     [Serializable]
     [ComVisible(false)]
     public struct UInt48 : IComparable, IComparable<UInt48>, IEquatable<UInt48>, IFormattable, IConvertible
     {
+        #region Внутренние значения
         private const UInt64 ValueMask = 0xffffffffffffUL;
-        private readonly UInt64 _Value;
+        internal readonly UInt64 _Value;
+        #endregion Внутренние значения
+        #region Статические поля
         /// <summary>
         /// <para>Размер значения <see cref="UInt48"/> в байтах</para>
         /// </summary>
         public const int Size = 6;
-
+        /// <summary>
+        /// <para>Минимальное значение типа <see cref="UInt48"/></para>
+        /// </summary>
+        public static UInt48 MinValue => new(0U);
+        /// <summary>
+        /// <para>Максимальное значение типа <see cref="UInt48"/></para>
+        /// </summary>
+        public static UInt48 MaxValue => new(ValueMask);
+        #endregion Статические поля
+        #region Получить размер значения
+        /// <summary>
+        /// <para>Получить размер переменной типа</para>
+        /// </summary>
+        /// <returns>Размер переменной типа</returns>
+        public int GetSize() => Size;
+        #endregion Получить размер значения
         #region Конструкторы
         private UInt48(UInt64 val)
-            => _Value = (UInt64)val & ValueMask;
+            => _Value = unchecked((UInt64)val & ValueMask);
         private UInt48(UInt32 val)
             => _Value = val;
         private UInt48(UInt16 val)
@@ -36,7 +54,7 @@ namespace Darkangel.IntegerX
         /// <param name="start">Начало значения в потоке</param>
         /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
         /// <returns>Считанное значение</returns>
-        internal static UInt48 FromBytes(byte[] data, long start = 0, bool isLittleEndian = true)
+        internal static UInt48 FromBytes_int(byte[] data, long start = 0, bool isLittleEndian = true)
         {
             #region Check arguments
 #if CHECK_ARGS
@@ -49,7 +67,7 @@ namespace Darkangel.IntegerX
             #endregion Check arguments
 
             return (isLittleEndian) ?
-                new UInt48((UInt64)
+                new UInt48(unchecked((UInt64)
                     (
                     (data[start + 0] <<  0) |
                     (data[start + 1] <<  8) |
@@ -57,8 +75,8 @@ namespace Darkangel.IntegerX
                     (data[start + 3] << 24) |
                     (data[start + 4] << 32) |
                     (data[start + 5] << 40)
-                    )) :
-                new UInt48((UInt32)
+                    ))) :
+                new UInt48(unchecked((UInt32)
                     (
                     (data[start + 5] <<  0) |
                     (data[start + 4] <<  8) |
@@ -66,40 +84,41 @@ namespace Darkangel.IntegerX
                     (data[start + 2] << 24) |
                     (data[start + 1] << 32) |
                     (data[start + 0] << 40)
-                    ));
+                    )));
         }
         /// <summary>
         /// <para>Преобразовать значение <see cref="UInt48"/> в поток байт</para>
         /// </summary>
         /// <param name="isLittleEndian">Порядок байтов значения в потоке</param>
         /// <returns>Результирующий поток</returns>
-        internal byte[] GetBytes(bool isLittleEndian = true)
+        internal byte[] GetBytes_int(bool isLittleEndian = true)
         {
             var res = new byte[Size];
 
             if (isLittleEndian)
             {
-                res[0] = (byte)((_Value >>  0) & 0xff);
-                res[1] = (byte)((_Value >>  8) & 0xff);
-                res[2] = (byte)((_Value >> 16) & 0xff);
-                res[3] = (byte)((_Value >> 24) & 0xff);
-                res[4] = (byte)((_Value >> 32) & 0xff);
-                res[5] = (byte)((_Value >> 40) & 0xff);
+                res[0] = unchecked((byte)((_Value >>  0) & 0xff));
+                res[1] = unchecked((byte)((_Value >>  8) & 0xff));
+                res[2] = unchecked((byte)((_Value >> 16) & 0xff));
+                res[3] = unchecked((byte)((_Value >> 24) & 0xff));
+                res[4] = unchecked((byte)((_Value >> 32) & 0xff));
+                res[5] = unchecked((byte)((_Value >> 40) & 0xff));
             }
             else
             {
-                res[5] = (byte)((_Value >>  0) & 0xff);
-                res[4] = (byte)((_Value >>  8) & 0xff);
-                res[3] = (byte)((_Value >> 16) & 0xff);
-                res[2] = (byte)((_Value >> 24) & 0xff);
-                res[1] = (byte)((_Value >> 32) & 0xff);
-                res[0] = (byte)((_Value >> 40) & 0xff);
+                res[5] = unchecked((byte)((_Value >>  0) & 0xff));
+                res[4] = unchecked((byte)((_Value >>  8) & 0xff));
+                res[3] = unchecked((byte)((_Value >> 16) & 0xff));
+                res[2] = unchecked((byte)((_Value >> 24) & 0xff));
+                res[1] = unchecked((byte)((_Value >> 32) & 0xff));
+                res[0] = unchecked((byte)((_Value >> 40) & 0xff));
             }
             return res;
         }
         #endregion Потоковые преобразования
         #region Преобразования
         #region To UInt48
+        #region 1 byte
         /// <summary>
         /// Преобразовать <see cref="Byte"/> в <see cref="UInt48"/>
         /// </summary>
@@ -110,8 +129,10 @@ namespace Darkangel.IntegerX
         /// Преобразовать <see cref="SByte"/> в <see cref="UInt48"/>
         /// </summary>
         /// <param name="value">Исходное значение</param>
-        public static implicit operator UInt48(SByte value)
-            => new((Byte)value);
+        public static explicit operator UInt48(SByte value)
+            => new(unchecked((Byte)value));
+        #endregion 1 byte
+        #region 2 byte
         /// <summary>
         /// Преобразовать <see cref="UInt16"/> в <see cref="UInt48"/>
         /// </summary>
@@ -122,14 +143,24 @@ namespace Darkangel.IntegerX
         /// Преобразовать <see cref="Int16"/> в <see cref="UInt48"/>
         /// </summary>
         /// <param name="value">Исходное значение</param>
-        public static implicit operator UInt48(Int16 value)
-            => new((UInt16)value);
+        public static explicit operator UInt48(Int16 value)
+            => new(unchecked((UInt16)value));
+        #endregion 2 byte
+        #region 3 byte
         /// <summary>
         /// Преобразовать <see cref="UInt24"/> в <see cref="UInt48"/>
         /// </summary>
         /// <param name="value">Исходное значение</param>
         public static implicit operator UInt48(UInt24 value)
             => new(value);
+        /// <summary>
+        /// Преобразовать <see cref="Int24"/> в <see cref="UInt48"/>
+        /// </summary>
+        /// <param name="value">Исходное значение</param>
+        public static explicit operator UInt48(Int24 value)
+            => new(unchecked((UInt32)value._Value));
+        #endregion 3 byte
+        #region 4 byte
         /// <summary>
         /// Преобразовать <see cref="UInt32"/> в <see cref="UInt48"/>
         /// </summary>
@@ -140,52 +171,83 @@ namespace Darkangel.IntegerX
         /// Преобразовать <see cref="Int32"/> в <see cref="UInt48"/>
         /// </summary>
         /// <param name="value">Исходное значение</param>
-        public static implicit operator UInt48(Int32 value)
-            => new((UInt32)value);
+        public static explicit operator UInt48(Int32 value)
+            => new(unchecked((UInt32)value));
+        #endregion 4 byte
+        #region 6 byte
+        /// <summary>
+        /// Преобразовать <see cref="Int48"/> в <see cref="UInt48"/>
+        /// </summary>
+        /// <param name="value">Исходное значение</param>
+        public static explicit operator UInt48(Int48 value)
+            => new(unchecked((UInt64)value._Value));
+        #endregion 6 byte
+        #region 8 byte
         /// <summary>
         /// Преобразовать <see cref="UInt64"/> в <see cref="UInt48"/>
         /// </summary>
         /// <param name="value">Исходное значение</param>
         public static explicit operator UInt48(UInt64 value)
             => new(value);
+        /// <summary>
+        /// Преобразовать <see cref="Int64"/> в <see cref="UInt48"/>
+        /// </summary>
+        /// <param name="value">Исходное значение</param>
+        public static explicit operator UInt48(Int64 value)
+            => new(unchecked((UInt64)value));
+        #endregion 8 byte
         #endregion To UInt48
         #region From UInt48
+        #region 1 byte
         /// <summary>
         /// Преобразовать <see cref="UInt48"/> в <see cref="Byte"/>
         /// </summary>
         /// <param name="value">Исходное значение</param>
         public static explicit operator Byte(UInt48 value)
-            => (Byte)value._Value;
+            => unchecked((Byte)value._Value);
         /// <summary>
         /// Преобразовать <see cref="UInt48"/> в <see cref="SByte"/>
         /// </summary>
         /// <param name="value">Исходное значение</param>
         public static explicit operator SByte(UInt48 value)
-            => (SByte)value._Value;
+            => unchecked((SByte)value._Value);
+        #endregion 1 byte
+        #region 2 byte
         /// <summary>
         /// Преобразовать <see cref="UInt48"/> в <see cref="UInt16"/>
         /// </summary>
         /// <param name="value">Исходное значение</param>
         public static explicit operator UInt16(UInt48 value)
-            => (UInt16)value._Value;
+            => unchecked((UInt16)value._Value);
         /// <summary>
         /// Преобразовать <see cref="UInt48"/> в <see cref="Int16"/>
         /// </summary>
         /// <param name="value">Исходное значение</param>
         public static explicit operator Int16(UInt48 value)
-            => (Int16)value._Value;
+            => unchecked((Int16)value._Value);
+        #endregion 2 byte
+        #region 3 byte
+        // UInt24
+        // Int24
+        #endregion 3 byte
+        #region 4 byte
         /// <summary>
         /// Преобразовать <see cref="UInt48"/> в <see cref="UInt32"/>
         /// </summary>
         /// <param name="value">Исходное значение</param>
         public static explicit operator UInt32(UInt48 value)
-            => (UInt32)value._Value;
+            => unchecked((UInt32)value._Value);
         /// <summary>
         /// Преобразовать <see cref="UInt48"/> в <see cref="Int32"/>
         /// </summary>
         /// <param name="value">Исходное значение</param>
         public static explicit operator Int32(UInt48 value)
-            => (Int32)value._Value;
+            => unchecked((Int32)value._Value);
+        #endregion 4 byte
+        #region 6 byte
+        // Int48
+        #endregion 6 byte
+        #region 8 byte
         /// <summary>
         /// Преобразовать <see cref="UInt48"/> в <see cref="UInt64"/>
         /// </summary>
@@ -197,7 +259,8 @@ namespace Darkangel.IntegerX
         /// </summary>
         /// <param name="value">Исходное значение</param>
         public static implicit operator Int64(UInt48 value)
-            => (Int64)value._Value;
+            => unchecked((Int64)value._Value);
+        #endregion 8 byte
         #endregion From UInt48
         #endregion Преобразования
         #region IComparable
@@ -215,8 +278,17 @@ namespace Darkangel.IntegerX
         public bool Equals(UInt48 other) =>
             _Value.Equals(other._Value);
         /// <inheritdoc/>
-        public override bool Equals(object obj) =>
-            obj.Equals(this);
+        public override bool Equals(object obj)
+        {
+            if (obj is UInt48 v)
+            {
+                return _Value.Equals(v._Value);
+            }
+            else
+            {
+                return _Value.Equals(obj);
+            }
+        }
         /// <inheritdoc/>
         public override int GetHashCode() =>
             _Value.GetHashCode();

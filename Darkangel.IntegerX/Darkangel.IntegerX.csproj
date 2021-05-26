@@ -16,4 +16,8 @@
     <DocumentationFile>C:\Users\Александр\OneDrive\Development\Hobby\Darkangel.Libs\Darkangel.IntegerX\Darkangel.IntegerX.xml</DocumentationFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Darkangel.IO\Darkangel.IO.csproj" />
+  </ItemGroup>
+
 </Project>
