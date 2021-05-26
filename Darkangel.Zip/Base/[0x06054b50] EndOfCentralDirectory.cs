@@ -50,12 +50,12 @@ namespace Darkangel.Zip
         public override void Load(ZipFile file)
         {
             base.Load(file);
-            DiskNumber = file.Stream.ReadUInt16(isLittleEndian: true);
-            CDRStartDiskNumber = file.Stream.ReadUInt16(isLittleEndian: true);
-            CDREntriesCountOnDisk = file.Stream.ReadUInt16(isLittleEndian: true);
-            CDREntriesTotalCount = file.Stream.ReadUInt16(isLittleEndian: true);
-            CDRSize = file.Stream.ReadUInt32(isLittleEndian: true);
-            var CommentSize = file.Stream.ReadUInt16(isLittleEndian: true);
+            DiskNumber = file.Stream.LoadUInt16(isLittleEndian: true);
+            CDRStartDiskNumber = file.Stream.LoadUInt16(isLittleEndian: true);
+            CDREntriesCountOnDisk = file.Stream.LoadUInt16(isLittleEndian: true);
+            CDREntriesTotalCount = file.Stream.LoadUInt16(isLittleEndian: true);
+            CDRSize = file.Stream.LoadUInt32(isLittleEndian: true);
+            var CommentSize = file.Stream.LoadUInt16(isLittleEndian: true);
             var nameBuf = file.Stream.ReadBytes(CommentSize);
             Comment = ZipRecord.GetString(nameBuf, encoding: Encoding.ASCII);
         }

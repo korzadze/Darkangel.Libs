@@ -17,7 +17,7 @@ namespace Darkangel.Zip
         public override void Load(ZipFile file)
         {
             base.Load(file);
-            _Signature = file.Stream.ReadUInt32(isLittleEndian: true);
+            _Signature = file.Stream.LoadUInt32(isLittleEndian: true);
         }
     }
 }

@@ -69,5 +69,8 @@
         <member name="M:Darkangel.Shapes.Point`1.Equals(System.Object)">
             <inheritdoc/>
         </member>
+        <member name="M:Darkangel.Shapes.Point`1.GetHashCode">
+            <inheritdoc/>
+        </member>
     </members>
 </doc>

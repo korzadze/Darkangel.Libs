@@ -39,8 +39,8 @@ namespace Darkangel.Zip
             {
                 var chunkSize = 0;
                 var pos = file.Stream.Position;
-                var id = file.Stream.ReadUInt16(); chunkSize += 2;
-                var fieldSize = file.Stream.ReadUInt16(); chunkSize += 2;
+                var id = file.Stream.LoadUInt16(); chunkSize += 2;
+                var fieldSize = file.Stream.LoadUInt16(); chunkSize += 2;
                 ZipExtraField fl = file.CreateExtraDataById(id);
                 fl.Load(file.Stream, fieldSize); chunkSize += fieldSize;
                 _Fields.Add(fl);

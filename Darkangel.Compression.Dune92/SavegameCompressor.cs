@@ -87,9 +87,9 @@ namespace Darkangel.Compression.Dune92
             var res = new MemoryStream();
             #endregion Инициализация
             #region Зарезервируем место для заголовка
-            res.Write(setting.ControlCode, isLittleEndian: true);
-            res.Write(setting.MaxUnRLEValueCount, isLittleEndian: true);
-            res.Write((UInt16)0, isLittleEndian: true);
+            res.Store(setting.ControlCode, true);
+            res.Store(setting.MaxUnRLEValueCount, true);
+            res.Store((UInt16)0, true);
             #endregion Зарезервируем место для заголовка
             #region Упаковка данных
             var rcount = 0;
@@ -111,7 +111,7 @@ namespace Darkangel.Compression.Dune92
             #endregion Упаковка данных
             #region Записываем размер данных
             res.Position = CompressedSizeOffset;
-            res.Write((UInt16)res.Length, isLittleEndian: true);
+            res.Store((UInt16)res.Length, true);
             #endregion Записываем размер данных
             return res.ToArray();
         }
@@ -193,7 +193,7 @@ namespace Darkangel.Compression.Dune92
             var last = (count < 0) ? (data.LongLength) : (start + count);
             var pos = start;
             var settings = new SavegameCompressonSettings(data[start], data[start + 1]);
-            int size = data.GetUInt16(isLittleEndian: true);
+            int size = data.LoadUInt16(start + 2, isLittleEndian: true);
             var res = new MemoryStream();
             #endregion Инициализация
             #region Распаковка

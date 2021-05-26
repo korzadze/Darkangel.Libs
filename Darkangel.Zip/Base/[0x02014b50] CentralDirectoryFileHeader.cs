@@ -120,22 +120,22 @@ namespace Darkangel.Zip
         {
             base.Load(file);
             #region Фикисрованная часть
-            VersionMadeBy = file.Stream.ReadUInt16(isLittleEndian: true);
-            VersionNeededToExtract = file.Stream.ReadUInt16(isLittleEndian: true);
-            GeneralPurposeBitFlags = file.Stream.ReadUInt16(isLittleEndian: true);
-            CompressionMethod = (CompressionMethod)file.Stream.ReadUInt16(isLittleEndian: true);
-            LastFileModTime = file.Stream.ReadUInt16(isLittleEndian: true);
-            LastFileModDate = file.Stream.ReadUInt16(isLittleEndian: true);
-            Crc32 = file.Stream.ReadUInt32(isLittleEndian: true);
-            CompressedSize = file.Stream.ReadUInt32(isLittleEndian: true);
-            UncompressedSize = file.Stream.ReadUInt32(isLittleEndian: true);
-            _FileNameLength = file.Stream.ReadUInt16(isLittleEndian: true);
-            _ExtraFieldLength = file.Stream.ReadUInt16(isLittleEndian: true);
-            _FileCommentLength = file.Stream.ReadUInt16(isLittleEndian: true);
-            StartDiskNumber = file.Stream.ReadUInt16(isLittleEndian: true);
-            InternalFileAttributes = file.Stream.ReadUInt16(isLittleEndian: true);
-            ExternalFileAttributes = file.Stream.ReadUInt32(isLittleEndian: true);
-            RelativeOffsetOfLocalHeader = file.Stream.ReadUInt32(isLittleEndian: true);
+            VersionMadeBy = file.Stream.LoadUInt16(isLittleEndian: true);
+            VersionNeededToExtract = file.Stream.LoadUInt16(isLittleEndian: true);
+            GeneralPurposeBitFlags = file.Stream.LoadUInt16(isLittleEndian: true);
+            CompressionMethod = (CompressionMethod)file.Stream.LoadUInt16(isLittleEndian: true);
+            LastFileModTime = file.Stream.LoadUInt16(isLittleEndian: true);
+            LastFileModDate = file.Stream.LoadUInt16(isLittleEndian: true);
+            Crc32 = file.Stream.LoadUInt32(isLittleEndian: true);
+            CompressedSize = file.Stream.LoadUInt32(isLittleEndian: true);
+            UncompressedSize = file.Stream.LoadUInt32(isLittleEndian: true);
+            _FileNameLength = file.Stream.LoadUInt16(isLittleEndian: true);
+            _ExtraFieldLength = file.Stream.LoadUInt16(isLittleEndian: true);
+            _FileCommentLength = file.Stream.LoadUInt16(isLittleEndian: true);
+            StartDiskNumber = file.Stream.LoadUInt16(isLittleEndian: true);
+            InternalFileAttributes = file.Stream.LoadUInt16(isLittleEndian: true);
+            ExternalFileAttributes = file.Stream.LoadUInt32(isLittleEndian: true);
+            RelativeOffsetOfLocalHeader = file.Stream.LoadUInt32(isLittleEndian: true);
             #endregion Фикисрованная часть
             #region Переменная часть
             var f = new GeneralPurposeBitFlags(GeneralPurposeBitFlags, CompressionMethod);
@@ -163,7 +163,7 @@ namespace Darkangel.Zip
             LocalFileHeader lfh = GetFile();
             if (lfh != null)
             {
-
+                lfh.ExtractTo(outStream);
             }
             throw new NotImplementedException();
         }

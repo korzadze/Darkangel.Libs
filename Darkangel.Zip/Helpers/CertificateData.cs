@@ -29,9 +29,9 @@ namespace Darkangel.Zip
         public PublicKeyHashList SRList { get; private set; } = new();
         internal void Load(Stream stream)
         {
-            RCount = stream.ReadUInt32(isLittleEndian: true);
-            HashAlg = stream.ReadUInt16(isLittleEndian: true);
-            HSize = stream.ReadUInt16(isLittleEndian: true);
+            RCount = stream.LoadUInt32(isLittleEndian: true);
+            HashAlg = stream.LoadUInt16(isLittleEndian: true);
+            HSize = stream.LoadUInt16(isLittleEndian: true);
             SRList.Load(stream, RCount, HSize);
         }
     }

@@ -37,10 +37,10 @@ namespace Darkangel.Zip
         /// <inheritdoc/>
         public override void Load(Stream stream, int size)
         {
-            Format = stream.ReadUInt16(isLittleEndian: true);
-            AlgID = stream.ReadUInt16(isLittleEndian: true);
-            Bitlen = stream.ReadUInt16(isLittleEndian: true);
-            Flags = stream.ReadUInt16(isLittleEndian: true);
+            Format = stream.LoadUInt16(isLittleEndian: true);
+            AlgID = stream.LoadUInt16(isLittleEndian: true);
+            Bitlen = stream.LoadUInt16(isLittleEndian: true);
+            Flags = stream.LoadUInt16(isLittleEndian: true);
             CertData.Load(stream);
         }
     }

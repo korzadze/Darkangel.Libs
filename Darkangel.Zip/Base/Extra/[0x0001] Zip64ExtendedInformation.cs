@@ -21,10 +21,10 @@ namespace Darkangel.Zip
             {
                 throw new InvalidZipExtraDataSizeException(size, _DataSize);
             }
-            OriginalSize = stream.ReadUInt64(isLittleEndian: true);
-            CompressedSize = stream.ReadUInt64(isLittleEndian: true);
-            RelativeHeaderOffset = stream.ReadUInt64(isLittleEndian: true);
-            StartDiskNumber = stream.ReadUInt32(isLittleEndian: true);
+            OriginalSize = stream.LoadUInt64(isLittleEndian: true);
+            CompressedSize = stream.LoadUInt64(isLittleEndian: true);
+            RelativeHeaderOffset = stream.LoadUInt64(isLittleEndian: true);
+            StartDiskNumber = stream.LoadUInt32(isLittleEndian: true);
         }
         /// <summary>
         /// <para>Размер неупакованных данных.</para>

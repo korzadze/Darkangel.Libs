@@ -23,9 +23,9 @@ namespace Darkangel.Zip
         /// <inheritdoc/>
         public override void Load(Stream stream, int size)
         {
-            BSize = stream.ReadUInt32(isLittleEndian: true);
-            CType = stream.ReadUInt16(isLittleEndian: true);
-            EACRC = stream.ReadUInt32(isLittleEndian: true);
+            BSize = stream.LoadUInt32(isLittleEndian: true);
+            CType = stream.LoadUInt16(isLittleEndian: true);
+            EACRC = stream.LoadUInt32(isLittleEndian: true);
             _Data = stream.ReadBytes(BSize);
         }
         /// <summary>

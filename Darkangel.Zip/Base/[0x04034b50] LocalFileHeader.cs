@@ -67,16 +67,16 @@ namespace Darkangel.Zip
         {
             base.Load(file);
             #region Фикисрованная часть
-            VersionNeededToExtract = file.Stream.ReadUInt16(isLittleEndian: true);
-            GeneralPurposeBitFlags = file.Stream.ReadUInt16(isLittleEndian: true);
-            CompressionMethod = (CompressionMethod)file.Stream.ReadUInt16(isLittleEndian: true);
-            LastModFileTime = file.Stream.ReadUInt16(isLittleEndian: true);
-            LastModFileDate = file.Stream.ReadUInt16(isLittleEndian: true);
-            Сrc32 = file.Stream.ReadUInt32(isLittleEndian: true);
-            CompressedSize = file.Stream.ReadUInt32(isLittleEndian: true);
-            UncompressedSize = file.Stream.ReadUInt32(isLittleEndian: true);
-            var _FileNameLength = file.Stream.ReadUInt16(isLittleEndian: true);
-            var _ExtraFieldLength = file.Stream.ReadUInt16(isLittleEndian: true);
+            VersionNeededToExtract = file.Stream.LoadUInt16(isLittleEndian: true);
+            GeneralPurposeBitFlags = file.Stream.LoadUInt16(isLittleEndian: true);
+            CompressionMethod = (CompressionMethod)file.Stream.LoadUInt16(isLittleEndian: true);
+            LastModFileTime = file.Stream.LoadUInt16(isLittleEndian: true);
+            LastModFileDate = file.Stream.LoadUInt16(isLittleEndian: true);
+            Сrc32 = file.Stream.LoadUInt32(isLittleEndian: true);
+            CompressedSize = file.Stream.LoadUInt32(isLittleEndian: true);
+            UncompressedSize = file.Stream.LoadUInt32(isLittleEndian: true);
+            var _FileNameLength = file.Stream.LoadUInt16(isLittleEndian: true);
+            var _ExtraFieldLength = file.Stream.LoadUInt16(isLittleEndian: true);
             #endregion Фикисрованная часть
             #region Переменная часть
             var nameBuf = file.Stream.ReadBytes(_FileNameLength);
@@ -92,7 +92,7 @@ namespace Darkangel.Zip
         /// <param name="fileName">Имя целевого файла</param>
         public void ExtractTo(string fileName)
         {
-
+            throw new NotImplementedException();
         }
         /// <summary>
         /// <para>Распаковать данные в поток</para>
@@ -100,7 +100,7 @@ namespace Darkangel.Zip
         /// <param name="outStream">Целевой поток</param>
         public void ExtractTo(Stream outStream)
         {
-
+            throw new NotImplementedException();
         }
     }
 }

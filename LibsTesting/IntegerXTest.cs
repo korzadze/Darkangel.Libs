@@ -14,7 +14,7 @@ namespace LibsTesting
         [InlineData(new byte[] { 0, 0, 0, 0x80 }, 0x80000000U)]
         public void IntegerX_GetUInt32_Test(byte[] data, UInt32 value)
         {
-            Assert.Equal(data.GetUInt32(isLittleEndian: true), value);
+            Assert.Equal(data.LoadUInt32(isLittleEndian: true), value);
         }
         [Theory]
         [InlineData(new byte[] { 1, 2, 3, 4 }, 0x04030201U)]
@@ -40,7 +40,7 @@ namespace LibsTesting
         public void IntegerX_Read_Test(byte[] data, int res)
         {
             using MemoryStream rd = new(data);
-            Assert.Equal(res, rd.ReadUInt16(isLittleEndian: true));
+            Assert.Equal(res, rd.LoadUInt16(isLittleEndian: true));
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Darkangel.Shapes
         /// </summary>
         public const int OrdZ = 2;
 
-        private readonly TOrd[] _Values;
+        private readonly TOrd[] _Values = Array.Empty<TOrd>();
         /// <summary>
         /// <para>Количество измерений координатной сетки</para>
         /// </summary>
@@ -86,7 +86,7 @@ namespace Darkangel.Shapes
             else
                 return false; ;
         }
-
+        /// <inheritdoc/>
         public override int GetHashCode()
         {
             var res = 0;

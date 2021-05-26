@@ -30,9 +30,9 @@ namespace Darkangel.Zip
         public override void Load(ZipFile file)
         {
             base.Load(file);
-            Crc32 = file.Stream.ReadUInt32(isLittleEndian: true);
-            CompressedSize = file.Stream.ReadUInt64(isLittleEndian: true);
-            UncompressedSize = file.Stream.ReadUInt64(isLittleEndian: true);
+            Crc32 = file.Stream.LoadUInt32(isLittleEndian: true);
+            CompressedSize = file.Stream.LoadUInt64(isLittleEndian: true);
+            UncompressedSize = file.Stream.LoadUInt64(isLittleEndian: true);
         }
     }
 }
