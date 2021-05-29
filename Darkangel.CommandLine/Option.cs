@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Darkangel
+namespace Darkangel.CommandLine
 {
     /// <summary>
     /// <para>Опция коммандной строки</para>

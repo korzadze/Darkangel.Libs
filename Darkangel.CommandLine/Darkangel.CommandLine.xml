@@ -4,50 +4,174 @@
         <name>Darkangel.CommandLine</name>
     </assembly>
     <members>
-        <member name="T:Darkangel.Argument">
+        <member name="T:Darkangel.CommandLine.Argument">
             <summary>
             <para>Аргумент командной строки</para>
             </summary>
         </member>
-        <member name="F:Darkangel.Argument.Option">
+        <member name="F:Darkangel.CommandLine.Argument.Option">
             <summary>
             <para>Исходная опция командной строки или null, если аргумент не является опцией</para>
             </summary>
         </member>
-        <member name="P:Darkangel.Argument.IsOption">
+        <member name="P:Darkangel.CommandLine.Argument.IsOption">
             <summary>
             <para>Является ли аргумент опцией или это просто необработанное значение</para>
             </summary>
         </member>
-        <member name="F:Darkangel.Argument.Value">
+        <member name="F:Darkangel.CommandLine.Argument.Value">
             <summary>
             <para>Значение аргумента</para>
             </summary>
         </member>
-        <member name="P:Darkangel.Argument.HasValue">
+        <member name="P:Darkangel.CommandLine.Argument.HasValue">
             <summary>
             <para>Имеется ли значение</para>
             </summary>
         </member>
-        <member name="T:Darkangel.ArgumentCollection">
+        <member name="T:Darkangel.CommandLine.ArgumentCollection">
             <summary>
             <para>Список аргументов командной строки</para>
             </summary>
         </member>
-        <member name="M:Darkangel.ArgumentCollection.GetEnumerator">
+        <member name="M:Darkangel.CommandLine.ArgumentCollection.GetEnumerator">
             <inheritdoc/>
         </member>
-        <member name="P:Darkangel.ArgumentCollection.Count">
+        <member name="P:Darkangel.CommandLine.ArgumentCollection.Count">
             <summary>
             <para>Количество аргументов в списке</para>
             </summary>
         </member>
-        <member name="P:Darkangel.ArgumentCollection.Item(System.Int32)">
+        <member name="P:Darkangel.CommandLine.ArgumentCollection.Item(System.Int32)">
             <summary>
             <para>Получить значение аргумента по индексу</para>
             </summary>
             <param name="index">Индекс аргумента в списке</param>
             <returns></returns>
+        </member>
+        <member name="T:Darkangel.CommandLine.Option">
+            <summary>
+            <para>Опция коммандной строки</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.CommandLine.Option.ShortName">
+            <summary>
+            <para>Короткое имя опции (-o [value])</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.CommandLine.Option.LongName">
+            <summary>
+            <para>Длинное имя опции (--opt[=value])</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.CommandLine.Option.Mode">
+            <summary>
+            <para>Наличие значения у опции</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.CommandLine.Option.Tag">
+            <summary>
+            <para>Тэг опции (для упрощения выбора через switch)</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.CommandLine.Option.Help">
+            <summary>
+            <para>Подсказка для опции</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.CommandLine.Option.#ctor(System.Char,Darkangel.CommandLine.OptionValueMode,System.Object,System.String)">
+            <summary>
+            <para>Конструктор экземпляра класса</para>
+            </summary>
+            <param name="shortName">Короткое имя опции</param>
+            <param name="mode">Флаги опции</param>
+            <param name="tag">Тэг опции</param>
+            <param name="help">Подсказка для опции</param>
+        </member>
+        <member name="M:Darkangel.CommandLine.Option.#ctor(System.String,Darkangel.CommandLine.OptionValueMode,System.Object,System.String)">
+            <summary>
+            <para>Конструктор экземпляра класса</para>
+            </summary>
+            <param name="longName">Длинное имя опции</param>
+            <param name="mode">Флаги опции</param>
+            <param name="tag">Тэг опции</param>
+            <param name="help">Подсказка для опции</param>
+        </member>
+        <member name="M:Darkangel.CommandLine.Option.#ctor(System.Nullable{System.Char},System.String,Darkangel.CommandLine.OptionValueMode,System.Object,System.String)">
+            <summary>
+            <para>Конструктор экземпляра класса</para>
+            </summary>
+            <param name="shortName">Короткое имя опции</param>
+            <param name="longName">Длинное имя опции</param>
+            <param name="mode">Флаги опции</param>
+            <param name="tag">Тэг опции</param>
+            <param name="help">Подсказка для опции</param>
+        </member>
+        <member name="M:Darkangel.CommandLine.Option.op_Addition(Darkangel.CommandLine.Option,Darkangel.CommandLine.Option)">
+            <summary>
+            <para>Добавить опции в список</para>
+            </summary>
+            <param name="opt1">Опция командной строки</param>
+            <param name="opt2">Опция командной строки</param>
+            <returns>Список опций командной строки</returns>
+        </member>
+        <member name="T:Darkangel.CommandLine.OptionCollection">
+            <summary>
+            <para>Список опций командной строки</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.CommandLine.OptionCollection.GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.CommandLine.OptionCollection.Append(Darkangel.CommandLine.Option)">
+            <summary>
+            <para>Добавить опцию к списку</para>
+            </summary>
+            <param name="option">Опция командной строки</param>
+            <returns>Список опций командной строки</returns>
+        </member>
+        <member name="M:Darkangel.CommandLine.OptionCollection.op_Addition(Darkangel.CommandLine.OptionCollection,Darkangel.CommandLine.Option)">
+            <summary>
+            <para>Добавить опцию в список</para>
+            </summary>
+            <param name="list">Список опций</param>
+            <param name="opt">Опция командной строки</param>
+            <returns>Список опций командной строки</returns>
+        </member>
+        <member name="M:Darkangel.CommandLine.OptionCollection.Parse(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            <para>Обработать аргументы командной сторки</para>
+            </summary>
+            <param name="args">Аргументы командной строки</param>
+            <returns>Список обработанных аргументов командной строки</returns>
+        </member>
+        <member name="M:Darkangel.CommandLine.OptionCollection.Parse(System.String[])">
+            <summary>
+            <para>Обработать аргументы командной сторки</para>
+            </summary>
+            <param name="args">Аргументы командной строки</param>
+            <returns>Список обработанных аргументов командной строки</returns>
+        </member>
+        <member name="T:Darkangel.CommandLine.OptionValueMode">
+            <summary>
+            <para>Допустимость наличия значения для опции</para>
+            </summary>
+            <remarks>release</remarks>
+        </member>
+        <member name="F:Darkangel.CommandLine.OptionValueMode.ValueDenied">
+            <summary>
+            <para>Значение не допустимо</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.CommandLine.OptionValueMode.ValueRequired">
+            <summary>
+            <para>Значение обязательно</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.CommandLine.OptionValueMode.ValueOptional">
+            <summary>
+            <para>Значение допустимо</para>
+            </summary>
         </member>
         <member name="T:Darkangel.CommandLineException">
             <summary>
@@ -150,7 +274,7 @@
         </member>
         <member name="T:Darkangel.OptionValueException">
             <summary>
-            <para>Несоответствие <see cref="F:Darkangel.Option.Mode"/> и наличия/отсутствия значения</para>
+            <para>Несоответствие <see cref="!:Option.Mode"/> и наличия/отсутствия значения</para>
             </summary>
         </member>
         <member name="M:Darkangel.OptionValueException.#ctor">
@@ -181,130 +305,6 @@
         </member>
         <member name="M:Darkangel.UnknownOptionException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
             <inheritdoc/>
-        </member>
-        <member name="T:Darkangel.Option">
-            <summary>
-            <para>Опция коммандной строки</para>
-            </summary>
-        </member>
-        <member name="F:Darkangel.Option.ShortName">
-            <summary>
-            <para>Короткое имя опции (-o [value])</para>
-            </summary>
-        </member>
-        <member name="F:Darkangel.Option.LongName">
-            <summary>
-            <para>Длинное имя опции (--opt[=value])</para>
-            </summary>
-        </member>
-        <member name="F:Darkangel.Option.Mode">
-            <summary>
-            <para>Наличие значения у опции</para>
-            </summary>
-        </member>
-        <member name="F:Darkangel.Option.Tag">
-            <summary>
-            <para>Тэг опции (для упрощения выбора через switch)</para>
-            </summary>
-        </member>
-        <member name="F:Darkangel.Option.Help">
-            <summary>
-            <para>Подсказка для опции</para>
-            </summary>
-        </member>
-        <member name="M:Darkangel.Option.#ctor(System.Char,Darkangel.OptionValueMode,System.Object,System.String)">
-            <summary>
-            <para>Конструктор экземпляра класса</para>
-            </summary>
-            <param name="shortName">Короткое имя опции</param>
-            <param name="mode">Флаги опции</param>
-            <param name="tag">Тэг опции</param>
-            <param name="help">Подсказка для опции</param>
-        </member>
-        <member name="M:Darkangel.Option.#ctor(System.String,Darkangel.OptionValueMode,System.Object,System.String)">
-            <summary>
-            <para>Конструктор экземпляра класса</para>
-            </summary>
-            <param name="longName">Длинное имя опции</param>
-            <param name="mode">Флаги опции</param>
-            <param name="tag">Тэг опции</param>
-            <param name="help">Подсказка для опции</param>
-        </member>
-        <member name="M:Darkangel.Option.#ctor(System.Nullable{System.Char},System.String,Darkangel.OptionValueMode,System.Object,System.String)">
-            <summary>
-            <para>Конструктор экземпляра класса</para>
-            </summary>
-            <param name="shortName">Короткое имя опции</param>
-            <param name="longName">Длинное имя опции</param>
-            <param name="mode">Флаги опции</param>
-            <param name="tag">Тэг опции</param>
-            <param name="help">Подсказка для опции</param>
-        </member>
-        <member name="M:Darkangel.Option.op_Addition(Darkangel.Option,Darkangel.Option)">
-            <summary>
-            <para>Добавить опции в список</para>
-            </summary>
-            <param name="opt1">Опция командной строки</param>
-            <param name="opt2">Опция командной строки</param>
-            <returns>Список опций командной строки</returns>
-        </member>
-        <member name="T:Darkangel.OptionCollection">
-            <summary>
-            <para>Список опций командной строки</para>
-            </summary>
-        </member>
-        <member name="M:Darkangel.OptionCollection.GetEnumerator">
-            <inheritdoc/>
-        </member>
-        <member name="M:Darkangel.OptionCollection.Append(Darkangel.Option)">
-            <summary>
-            <para>Добавить опцию к списку</para>
-            </summary>
-            <param name="option">Опция командной строки</param>
-            <returns>Список опций командной строки</returns>
-        </member>
-        <member name="M:Darkangel.OptionCollection.op_Addition(Darkangel.OptionCollection,Darkangel.Option)">
-            <summary>
-            <para>Добавить опцию в список</para>
-            </summary>
-            <param name="list">Список опций</param>
-            <param name="opt">Опция командной строки</param>
-            <returns>Список опций командной строки</returns>
-        </member>
-        <member name="M:Darkangel.OptionCollection.Parse(System.Collections.Generic.IEnumerable{System.String})">
-            <summary>
-            <para>Обработать аргументы командной сторки</para>
-            </summary>
-            <param name="args">Аргументы командной строки</param>
-            <returns>Список обработанных аргументов командной строки</returns>
-        </member>
-        <member name="M:Darkangel.OptionCollection.Parse(System.String[])">
-            <summary>
-            <para>Обработать аргументы командной сторки</para>
-            </summary>
-            <param name="args">Аргументы командной строки</param>
-            <returns>Список обработанных аргументов командной строки</returns>
-        </member>
-        <member name="T:Darkangel.OptionValueMode">
-            <summary>
-            <para>Допустимость наличия значения для опции</para>
-            </summary>
-            <remarks>release</remarks>
-        </member>
-        <member name="F:Darkangel.OptionValueMode.ValueDenied">
-            <summary>
-            <para>Значение не допустимо</para>
-            </summary>
-        </member>
-        <member name="F:Darkangel.OptionValueMode.ValueRequired">
-            <summary>
-            <para>Значение обязательно</para>
-            </summary>
-        </member>
-        <member name="F:Darkangel.OptionValueMode.ValueOptional">
-            <summary>
-            <para>Значение допустимо</para>
-            </summary>
         </member>
     </members>
 </doc>

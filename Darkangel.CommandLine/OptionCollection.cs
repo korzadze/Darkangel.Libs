@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace Darkangel
+namespace Darkangel.CommandLine
 {
     /// <summary>
     /// <para>Список опций командной строки</para>

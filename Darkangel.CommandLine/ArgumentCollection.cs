@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace Darkangel
+namespace Darkangel.CommandLine
 {
     /// <summary>
     /// <para>Список аргументов командной строки</para>

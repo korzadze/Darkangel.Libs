@@ -1,4 +1,4 @@
-﻿namespace Darkangel
+﻿namespace Darkangel.CommandLine
 {
     /// <summary>
     /// <para>Аргумент командной строки</para>

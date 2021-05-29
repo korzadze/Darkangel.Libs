@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Darkangel
+﻿namespace Darkangel.CommandLine
 {
     /// <summary>
     /// <para>Допустимость наличия значения для опции</para>
