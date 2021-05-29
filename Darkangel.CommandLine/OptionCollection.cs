@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -60,6 +61,8 @@ namespace Darkangel.CommandLine
         private const string OptionName = "name";
         private const string OptionValue = "value";
         private const char OptionPrefix = '-';
+        internal const string ShortOptionPrefix = "-";
+        internal const string LongOptionPrefix = "--";
         private static readonly Regex reLongOpt = new($"^\\-\\-(?<{OptionName}>[A-Za-z0-9][A-Za-z0-9-_@]*[A-Za-z0-9])(\\=(?<{OptionValue}>.+))?$", RegexOptions.Singleline | RegexOptions.Compiled);
         private static readonly Regex reShortOpt = new($"^\\-(?<{OptionName}>[A-Za-z0-9])$", RegexOptions.Singleline | RegexOptions.Compiled);
         /// <summary>
@@ -225,6 +228,20 @@ namespace Darkangel.CommandLine
             }
             #endregion
             return res;
+        }
+        /// <summary>
+        /// <para>Вывести подсказку по использованию приложения</para>
+        /// </summary>
+        /// <param name="wr">Устройство вывода</param>
+        /// <param name="appName">Имя приложения</param>
+        public void Usage(TextWriter wr, string appName)
+        {
+            wr.WriteLine("usage appName <options>");
+            wr.WriteLine("\twhere:");
+            foreach(var opt in _Items)
+            {
+                wr.WriteLine("\t{0}", opt.GetUsage());
+            }
         }
     }
 }

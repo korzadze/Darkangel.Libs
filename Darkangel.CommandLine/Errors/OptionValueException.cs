@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Darkangel
+namespace Darkangel.CommandLine
 {
     /// <summary>
     /// <para>Несоответствие <see cref="Option.Mode"/> и наличия/отсутствия значения</para>

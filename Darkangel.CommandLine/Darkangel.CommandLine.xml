@@ -49,6 +49,139 @@
             <param name="index">Индекс аргумента в списке</param>
             <returns></returns>
         </member>
+        <member name="T:Darkangel.CommandLine.CommandLineException">
+            <summary>
+            <para>Ошибка командной строки</para>
+            <para>Базовое исключение библиотеки</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.CommandLine.CommandLineException.#ctor">
+            <summary>
+            <para>Создает новый экземпляр класса</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.CommandLine.CommandLineException.#ctor(System.String)">
+            <summary>
+            <para>Создает новый экземпляр класса с указанным сообщением об ошибке.</para>
+            </summary>
+            <param name="message">Сообщение, описывающее ошибку.</param>
+        </member>
+        <member name="M:Darkangel.CommandLine.CommandLineException.#ctor(System.String,System.Exception)">
+            <summary>
+            <para>Создает новый экземпляр класса с указанным сообщением об ошибке и ссылкой на внутреннее исключение, вызвавшее данное исключение.</para>
+            </summary>
+            <param name="message">Сообщение, описывающее ошибку.</param>
+            <param name="innerException">Исключение, вызвавшее текущее исключение, или пустая ссылка, если внутреннее исключение не задано.</param>
+        </member>
+        <member name="M:Darkangel.CommandLine.CommandLineException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            <para>Создает новый экземпляр класса с сериализованными данными.</para>
+            </summary>
+            <param name="info">Объект <see cref="T:System.Runtime.Serialization.SerializationInfo"/>, хранящий сериализованные данные объекта, относящиеся к выдаваемому исключению.</param>
+            <param name="context">Объект <see cref="T:System.Runtime.Serialization.StreamingContext"/>, содержащий контекстные сведения об источнике или назначении.</param>
+        </member>
+        <member name="T:Darkangel.CommandLine.CommandLineInitException">
+            <summary>
+            <para>Ошибка инициализации списка опций</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.CommandLine.CommandLineInitException.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.CommandLine.CommandLineInitException.#ctor(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.CommandLine.CommandLineInitException.#ctor(System.String,System.Exception)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.CommandLine.CommandLineInitException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.CommandLine.CommandlineParseException">
+            <summary>
+            <para>Ошибка обработки аргументов командной строки</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.CommandLine.CommandlineParseException.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.CommandLine.CommandlineParseException.#ctor(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.CommandLine.CommandlineParseException.#ctor(System.String,System.Exception)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.CommandLine.CommandlineParseException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.CommandLine.InvalidOptionNameException">
+            <summary>
+            <para>Недопустимое имя опции</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.CommandLine.InvalidOptionNameException.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.CommandLine.InvalidOptionNameException.#ctor(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.CommandLine.InvalidOptionNameException.#ctor(System.String,System.Exception)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.CommandLine.InvalidOptionNameException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.CommandLine.OptionRequiredValueException">
+            <summary>
+            <para>Опция должна содержать значение</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.CommandLine.OptionRequiredValueException.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.CommandLine.OptionRequiredValueException.#ctor(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.CommandLine.OptionRequiredValueException.#ctor(System.String,System.Exception)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.CommandLine.OptionRequiredValueException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.CommandLine.OptionValueException">
+            <summary>
+            <para>Несоответствие <see cref="F:Darkangel.CommandLine.Option.Mode"/> и наличия/отсутствия значения</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.CommandLine.OptionValueException.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.CommandLine.OptionValueException.#ctor(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.CommandLine.OptionValueException.#ctor(System.String,System.Exception)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.CommandLine.OptionValueException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.CommandLine.UnknownOptionException">
+            <summary>
+            <para>Неизвестная опция</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.CommandLine.UnknownOptionException.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.CommandLine.UnknownOptionException.#ctor(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.CommandLine.UnknownOptionException.#ctor(System.String,System.Exception)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.CommandLine.UnknownOptionException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc/>
+        </member>
         <member name="T:Darkangel.CommandLine.Option">
             <summary>
             <para>Опция коммандной строки</para>
@@ -115,6 +248,12 @@
             <param name="opt2">Опция командной строки</param>
             <returns>Список опций командной строки</returns>
         </member>
+        <member name="M:Darkangel.CommandLine.Option.GetUsage">
+            <summary>
+            <para>Получить описание опции</para>
+            </summary>
+            <returns>Описание использования опции</returns>
+        </member>
         <member name="T:Darkangel.CommandLine.OptionCollection">
             <summary>
             <para>Список опций командной строки</para>
@@ -152,6 +291,13 @@
             <param name="args">Аргументы командной строки</param>
             <returns>Список обработанных аргументов командной строки</returns>
         </member>
+        <member name="M:Darkangel.CommandLine.OptionCollection.Usage(System.IO.TextWriter,System.String)">
+            <summary>
+            <para>Вывести подсказку по использованию приложения</para>
+            </summary>
+            <param name="wr">Устройство вывода</param>
+            <param name="appName">Имя приложения</param>
+        </member>
         <member name="T:Darkangel.CommandLine.OptionValueMode">
             <summary>
             <para>Допустимость наличия значения для опции</para>
@@ -172,139 +318,6 @@
             <summary>
             <para>Значение допустимо</para>
             </summary>
-        </member>
-        <member name="T:Darkangel.CommandLineException">
-            <summary>
-            <para>Ошибка командной строки</para>
-            <para>Базовое исключение библиотеки</para>
-            </summary>
-        </member>
-        <member name="M:Darkangel.CommandLineException.#ctor">
-            <summary>
-            <para>Создает новый экземпляр класса</para>
-            </summary>
-        </member>
-        <member name="M:Darkangel.CommandLineException.#ctor(System.String)">
-            <summary>
-            <para>Создает новый экземпляр класса с указанным сообщением об ошибке.</para>
-            </summary>
-            <param name="message">Сообщение, описывающее ошибку.</param>
-        </member>
-        <member name="M:Darkangel.CommandLineException.#ctor(System.String,System.Exception)">
-            <summary>
-            <para>Создает новый экземпляр класса с указанным сообщением об ошибке и ссылкой на внутреннее исключение, вызвавшее данное исключение.</para>
-            </summary>
-            <param name="message">Сообщение, описывающее ошибку.</param>
-            <param name="innerException">Исключение, вызвавшее текущее исключение, или пустая ссылка, если внутреннее исключение не задано.</param>
-        </member>
-        <member name="M:Darkangel.CommandLineException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-            <summary>
-            <para>Создает новый экземпляр класса с сериализованными данными.</para>
-            </summary>
-            <param name="info">Объект <see cref="T:System.Runtime.Serialization.SerializationInfo"/>, хранящий сериализованные данные объекта, относящиеся к выдаваемому исключению.</param>
-            <param name="context">Объект <see cref="T:System.Runtime.Serialization.StreamingContext"/>, содержащий контекстные сведения об источнике или назначении.</param>
-        </member>
-        <member name="T:Darkangel.CommandLineInitException">
-            <summary>
-            <para>Ошибка инициализации списка опций</para>
-            </summary>
-        </member>
-        <member name="M:Darkangel.CommandLineInitException.#ctor">
-            <inheritdoc/>
-        </member>
-        <member name="M:Darkangel.CommandLineInitException.#ctor(System.String)">
-            <inheritdoc/>
-        </member>
-        <member name="M:Darkangel.CommandLineInitException.#ctor(System.String,System.Exception)">
-            <inheritdoc/>
-        </member>
-        <member name="M:Darkangel.CommandLineInitException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-            <inheritdoc/>
-        </member>
-        <member name="T:Darkangel.CommandlineParseException">
-            <summary>
-            <para>Ошибка обработки аргументов командной строки</para>
-            </summary>
-        </member>
-        <member name="M:Darkangel.CommandlineParseException.#ctor">
-            <inheritdoc/>
-        </member>
-        <member name="M:Darkangel.CommandlineParseException.#ctor(System.String)">
-            <inheritdoc/>
-        </member>
-        <member name="M:Darkangel.CommandlineParseException.#ctor(System.String,System.Exception)">
-            <inheritdoc/>
-        </member>
-        <member name="M:Darkangel.CommandlineParseException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-            <inheritdoc/>
-        </member>
-        <member name="T:Darkangel.InvalidOptionNameException">
-            <summary>
-            <para>Недопустимое имя опции</para>
-            </summary>
-        </member>
-        <member name="M:Darkangel.InvalidOptionNameException.#ctor">
-            <inheritdoc/>
-        </member>
-        <member name="M:Darkangel.InvalidOptionNameException.#ctor(System.String)">
-            <inheritdoc/>
-        </member>
-        <member name="M:Darkangel.InvalidOptionNameException.#ctor(System.String,System.Exception)">
-            <inheritdoc/>
-        </member>
-        <member name="M:Darkangel.InvalidOptionNameException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-            <inheritdoc/>
-        </member>
-        <member name="T:Darkangel.OptionRequiredValueException">
-            <summary>
-            <para>Опция должна содержать значение</para>
-            </summary>
-        </member>
-        <member name="M:Darkangel.OptionRequiredValueException.#ctor">
-            <inheritdoc/>
-        </member>
-        <member name="M:Darkangel.OptionRequiredValueException.#ctor(System.String)">
-            <inheritdoc/>
-        </member>
-        <member name="M:Darkangel.OptionRequiredValueException.#ctor(System.String,System.Exception)">
-            <inheritdoc/>
-        </member>
-        <member name="M:Darkangel.OptionRequiredValueException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-            <inheritdoc/>
-        </member>
-        <member name="T:Darkangel.OptionValueException">
-            <summary>
-            <para>Несоответствие <see cref="!:Option.Mode"/> и наличия/отсутствия значения</para>
-            </summary>
-        </member>
-        <member name="M:Darkangel.OptionValueException.#ctor">
-            <inheritdoc/>
-        </member>
-        <member name="M:Darkangel.OptionValueException.#ctor(System.String)">
-            <inheritdoc/>
-        </member>
-        <member name="M:Darkangel.OptionValueException.#ctor(System.String,System.Exception)">
-            <inheritdoc/>
-        </member>
-        <member name="M:Darkangel.OptionValueException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-            <inheritdoc/>
-        </member>
-        <member name="T:Darkangel.UnknownOptionException">
-            <summary>
-            <para>Неизвестная опция</para>
-            </summary>
-        </member>
-        <member name="M:Darkangel.UnknownOptionException.#ctor">
-            <inheritdoc/>
-        </member>
-        <member name="M:Darkangel.UnknownOptionException.#ctor(System.String)">
-            <inheritdoc/>
-        </member>
-        <member name="M:Darkangel.UnknownOptionException.#ctor(System.String,System.Exception)">
-            <inheritdoc/>
-        </member>
-        <member name="M:Darkangel.UnknownOptionException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-            <inheritdoc/>
         </member>
     </members>
 </doc>

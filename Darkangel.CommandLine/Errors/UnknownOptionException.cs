@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Darkangel
+namespace Darkangel.CommandLine
 {
     /// <summary>
     /// <para>Неизвестная опция</para>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Darkangel.CommandLine
 {
@@ -78,6 +79,53 @@ namespace Darkangel.CommandLine
         /// <returns>Список опций командной строки</returns>
         public static OptionCollection operator +(Option opt1, Option opt2) =>
             new OptionCollection() + opt1 + opt2;
+        /// <summary>
+        /// <para>Получить описание опции</para>
+        /// </summary>
+        /// <returns>Описание использования опции</returns>
+        public string GetUsage()
+        {
+            var res = new List<string>();
+            if (ShortName != null)
+            {
+                var opt = OptionCollection.ShortOptionPrefix + ShortName;
+                switch(Mode)
+                {
+                    case OptionValueMode.ValueRequired:
+                        opt += " <value>";
+                        break;
+                    case OptionValueMode.ValueOptional:
+                        opt += "[ <value>]";
+                        break;
+                }
+                res.Add(opt);
 
+            }
+            if (LongName is null)
+            {
+                var opt = OptionCollection.LongOptionPrefix + LongName;
+                switch (Mode)
+                {
+                    case OptionValueMode.ValueRequired:
+                        opt += "=<value>";
+                        break;
+                    case OptionValueMode.ValueOptional:
+                        opt += "[=<value>]";
+                        break;
+                }
+                res.Add(opt);
+            }
+            if (res.Count < 1)
+            {
+                throw new InvalidProgramException();
+            }
+            var optUsage = string.Join(", ", res);
+            if (Help != null)
+            {
+                optUsage += '\t';
+                optUsage += Help;
+            }
+            return optUsage;
+        }
     }
 }
