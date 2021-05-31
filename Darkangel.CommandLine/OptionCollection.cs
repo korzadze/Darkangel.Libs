@@ -25,7 +25,7 @@ namespace Darkangel.CommandLine
         /// </summary>
         /// <param name="option">Опция командной строки</param>
         /// <returns>Список опций командной строки</returns>
-        public OptionCollection Append(Option option)
+        public OptionCollection Add(Option option)
         {
             #region Проверка аргументов
 #if CHECK_ARGS
@@ -44,13 +44,46 @@ namespace Darkangel.CommandLine
             return this;
         }
         /// <summary>
+        /// <para>Добавить опции к списку</para>
+        /// </summary>
+        /// <param name="options">Добавляемые опции</param>
+        /// <returns>Результирующий список</returns>
+        public OptionCollection AddRange(params Option[] options) =>
+            AddRange(options as IEnumerable<Option>);
+        /// <summary>
+        /// <para>Добавить опции к списку</para>
+        /// </summary>
+        /// <param name="options">Добавляемые опции</param>
+        /// <returns>Результирующий список</returns>
+        public OptionCollection AddRange(IEnumerable<Option> options)
+        {
+            #region Проверка аргументов
+#if CHECK_ARGS
+            _ = options ?? throw new ArgumentNullException(nameof(options));
+#endif
+            #endregion Проверка аргументов
+            foreach (var opt in options)
+            {
+                _Items.Add(opt);
+            }
+            return this;
+        }
+        /// <summary>
         /// <para>Добавить опцию в список</para>
         /// </summary>
         /// <param name="list">Список опций</param>
         /// <param name="opt">Опция командной строки</param>
         /// <returns>Список опций командной строки</returns>
         public static OptionCollection operator +(OptionCollection list, Option opt) =>
-            list.Append(opt);
+            list.Add(opt);
+        /// <summary>
+        /// <para>Добавить опции к списку</para>
+        /// </summary>
+        /// <param name="list">Целевой список опций</param>
+        /// <param name="opts">Добавляемые опции</param>
+        /// <returns></returns>
+        public static OptionCollection operator +(OptionCollection list, IEnumerable<Option> opts) =>
+            list.AddRange(opts);
         /// <summary>
         /// <para>Обработать аргументы командной сторки</para>
         /// </summary>

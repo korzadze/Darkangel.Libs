@@ -262,12 +262,26 @@
         <member name="M:Darkangel.CommandLine.OptionCollection.GetEnumerator">
             <inheritdoc/>
         </member>
-        <member name="M:Darkangel.CommandLine.OptionCollection.Append(Darkangel.CommandLine.Option)">
+        <member name="M:Darkangel.CommandLine.OptionCollection.Add(Darkangel.CommandLine.Option)">
             <summary>
             <para>Добавить опцию к списку</para>
             </summary>
             <param name="option">Опция командной строки</param>
             <returns>Список опций командной строки</returns>
+        </member>
+        <member name="M:Darkangel.CommandLine.OptionCollection.AddRange(Darkangel.CommandLine.Option[])">
+            <summary>
+            <para>Добавить опции к списку</para>
+            </summary>
+            <param name="options">Добавляемые опции</param>
+            <returns>Результирующий список</returns>
+        </member>
+        <member name="M:Darkangel.CommandLine.OptionCollection.AddRange(System.Collections.Generic.IEnumerable{Darkangel.CommandLine.Option})">
+            <summary>
+            <para>Добавить опции к списку</para>
+            </summary>
+            <param name="options">Добавляемые опции</param>
+            <returns>Результирующий список</returns>
         </member>
         <member name="M:Darkangel.CommandLine.OptionCollection.op_Addition(Darkangel.CommandLine.OptionCollection,Darkangel.CommandLine.Option)">
             <summary>
@@ -276,6 +290,14 @@
             <param name="list">Список опций</param>
             <param name="opt">Опция командной строки</param>
             <returns>Список опций командной строки</returns>
+        </member>
+        <member name="M:Darkangel.CommandLine.OptionCollection.op_Addition(Darkangel.CommandLine.OptionCollection,System.Collections.Generic.IEnumerable{Darkangel.CommandLine.Option})">
+            <summary>
+            <para>Добавить опции к списку</para>
+            </summary>
+            <param name="list">Целевой список опций</param>
+            <param name="opts">Добавляемые опции</param>
+            <returns></returns>
         </member>
         <member name="M:Darkangel.CommandLine.OptionCollection.Parse(System.Collections.Generic.IEnumerable{System.String})">
             <summary>
