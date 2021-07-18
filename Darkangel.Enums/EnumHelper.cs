@@ -2,7 +2,6 @@
 using System.Reflection;
 using System.Globalization;
 using System.Linq;
-using System.Linq.Expressions;
 
 namespace Darkangel.Enums
 {
@@ -58,20 +57,6 @@ namespace Darkangel.Enums
         public static bool IsBitsetEnum(this Enum val) =>
             IsBitsetEnum(val.GetType());
 
-        internal static class EnumConverter<T>
-            where T : Enum
-        {
-            public static readonly Func<ulong, T> Convert = GenerateConverter();
-
-            public static Func<ulong, T> GenerateConverter()
-            {
-                var parameter = Expression.Parameter(typeof(ulong));
-                var dynamicMethod = Expression.Lambda<Func<ulong, T>>(
-                    Expression.Convert(parameter, typeof(T)),
-                    parameter);
-                return dynamicMethod.Compile();
-            }
-        }
         /// <summary>
         /// <para>Проверить установку всех указанных флагов в значении</para>
         /// </summary>

@@ -4,6 +4,17 @@
         <name>Darkangel.Enums</name>
     </assembly>
     <members>
+        <member name="T:Darkangel.Enums.EnumConverter`1">
+            <summary>
+            <para>Класс для конвертации шаблонных перечислений</para>
+            </summary>
+            <typeparam name="T">Тип перечисления</typeparam>
+        </member>
+        <member name="F:Darkangel.Enums.EnumConverter`1.Convert">
+            <summary>
+            <para>Функция преобразования целочисленных значений в шаблонныое перечисление</para>
+            </summary>
+        </member>
         <member name="T:Darkangel.Enums.EnumHelper">
             <summary>
             <para>Утилиты для работы с перечислениями</para>

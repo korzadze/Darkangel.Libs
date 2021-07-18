@@ -17,6 +17,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="EnumConverter.cs~RF6cdf66.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="StringResources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
