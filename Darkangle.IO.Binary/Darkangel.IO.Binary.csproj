@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>darkangel2021.snk</AssemblyOriginatorKeyFile>
+    <AssemblyName>Darkangel.IO.Binary</AssemblyName>
+    <RootNamespace>Darkangel.IO</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\Александр\OneDrive\Development\Hobby\Darkangel.Libs\Darkangle.IO.Binary\Darkangle.IO.Binary.xml</DocumentationFile>
+  </PropertyGroup>
+
+</Project>

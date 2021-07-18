@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Darkangel.IO.Binary</name>
+    </assembly>
+    <members>
+        <member name="T:Darkangel.IO.FloatStoreFormat">
+            <summary>
+            <para>Формат хранения чисел с плавающей точкой</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.IO.FloatStoreFormat.IEEE754">
+            <summary>
+            <para>IEEE 754 — 1985, 2008</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.IO.FloatStoreFormat.MSBinary">
+            <summary>
+            <para>Microsoft Binary Format (MBF)</para>
+            </summary>
+        </member>
+        <member name="T:Darkangel.IO.IBinaryContext">
+            <summary>
+            <para>Контекст хранения данных в двоичном потоке</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.IO.IBinaryContext.IsLittleEndian">
+            <summary>
+            <para>Порядок хранения байт в потоке</para>
+            <list type="table">
+            <item>True: от младшего к старшему</item>
+            <item>False: от старшего к младшему</item>
+            </list>
+            </summary>
+        </member>
+        <member name="P:Darkangel.IO.IBinaryContext.Integer">
+            <summary>
+            <para>Описание хранения целочисленных значений в двоичном потоке</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.IO.IBinaryContext.Float">
+            <summary>
+            <para>Описание хранения значений с плавающей точкой в двоичном потоке</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.IO.IBinaryContext.String">
+            <summary>
+            <para>Описание хранения строковых значений в двоичном потоке</para>
+            </summary>
+        </member>
+        <member name="T:Darkangel.IO.IBinaryLoadable">
+            <summary>
+            <para>Интерфейс объекта, хранящего свои данные в двоичном потоке</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.IO.IBinaryLoadable.Load(Darkangel.IO.IBinaryContext,System.Byte[],System.Int64)">
+            <summary>
+            <para>Загрузить данные из двоичного потока</para>
+            </summary>
+            <param name="context">Контекст хранения двоичных данных в потоке</param>
+            <param name="stream">Исходный поток данных</param>
+            <param name="offset">Смещение в потоке</param>
+            <returns>Размер загруженных данных</returns>
+        </member>
+        <member name="M:Darkangel.IO.IBinaryLoadable.Load(Darkangel.IO.IBinaryContext,System.IO.Stream)">
+            <summary>
+            <para>Загрузить данные из двоичного потока</para>
+            </summary>
+            <param name="context">Контекст хранения двоичных данных в потоке</param>
+            <param name="stream">Исходный поток данных</param>
+        </member>
+        <member name="M:Darkangel.IO.IBinaryLoadable.LoadAsync(Darkangel.IO.IBinaryContext,System.IO.Stream)">
+            <summary>
+            <para>Загрузить данные из двоичного потока</para>
+            </summary>
+            <param name="context">Контекст хранения двоичных данных в потоке</param>
+            <param name="stream">Исходный поток данных</param>
+        </member>
+        <member name="T:Darkangel.IO.IBinaryStorable">
+            <summary>
+            <para>Интерфейс объекта, сохраняющего свои данные в двоичном потоке</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.IO.IBinaryStorable.Store(Darkangel.IO.IBinaryContext,System.Byte[],System.Int64)">
+            <summary>
+            <para>Сохранить данные в двоичном потоке</para>
+            </summary>
+            <param name="context">Контекст хранения двоичных данных в потоке</param>
+            <param name="stream">Целевой поток данных</param>
+            <param name="offset">Смещение в потоке</param>
+            <returns>Размер сохраненных данных</returns>
+        </member>
+        <member name="M:Darkangel.IO.IBinaryStorable.Store(Darkangel.IO.IBinaryContext,System.IO.Stream)">
+            <summary>
+            <para>Сохранить данные в двоичном потоке</para>
+            </summary>
+            <param name="context">Контекст хранения двоичных данных в потоке</param>
+            <param name="stream">Целевой поток данных</param>
+        </member>
+        <member name="M:Darkangel.IO.IBinaryStorable.StoreAsync(Darkangel.IO.IBinaryContext,System.IO.Stream)">
+            <summary>
+            <para>Сохранить данные в двоичном потоке</para>
+            </summary>
+            <param name="context">Контекст хранения двоичных данных в потоке</param>
+            <param name="stream">Целевой поток данных</param>
+        </member>
+        <member name="T:Darkangel.IO.IBinaryObject">
+            <summary>
+            <para>Интерфейс объекта, с возможностью загрузки и сохранения данных
+            в двоичных потоках</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.IO.IBinaryObject.GetSize(Darkangel.IO.IBinaryContext)">
+            <summary>
+            <para>Получить размер объекта в потоке</para>
+            </summary>
+            <param name="context">Контекст хранения двоичных данных в потоке</param>
+            <returns>Размер объекта в потоке</returns>
+        </member>
+        <member name="M:Darkangel.IO.IBinaryObject.GetSizeAsync(Darkangel.IO.IBinaryContext)">
+            <summary>
+            <para>Получить размер объекта в потоке</para>
+            </summary>
+            <param name="context">Контекст хранения двоичных данных в потоке</param>
+            <returns>Размер объекта в потоке</returns>
+        </member>
+        <member name="T:Darkangel.IO.IFloatContext">
+            <summary>
+            <para>Описание хранения значений с плавающей точкой в двоичном потоке</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.IO.IFloatContext.StoreFormat">
+            <summary>
+            <para>Формат хранения значений с плавающей точкой</para>
+            </summary>
+        </member>
+        <member name="T:Darkangel.IO.IInetegerContext">
+            <summary>
+            <para>Описание хранения целочисленных значений в двоичном потоке</para>
+            </summary>
+        </member>
+        <member name="T:Darkangel.IO.IStringContext">
+            <summary>
+            <para>Описание формата хранения строк в двоичном потоке</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.IO.IStringContext.PreffixSize">
+            <summary>
+            <para>Если больше 0, то описывает размер префикса размера строки</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.IO.IStringContext.Terminator">
+            <summary>
+            <para>Символ окончания строки в потоке</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.IO.IStringContext.PaddingChar">
+            <summary>
+            <para>Символ дополнения строки до максимального размера</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.IO.IStringContext.Encoding">
+            <summary>
+            <para>Кодировка текстовых данных</para>
+            </summary>
+        </member>
+    </members>
+</doc>
