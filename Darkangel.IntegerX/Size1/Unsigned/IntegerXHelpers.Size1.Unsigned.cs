@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace Darkangel.IntegerX
 {
@@ -104,6 +105,16 @@ namespace Darkangel.IntegerX
         {
             return unchecked((Byte)stream.ReadByte());
         }
+        /// <summary>
+        /// <para>Прочитать значение <see cref="Byte"/> из потока</para>
+        /// </summary>
+        /// <param name="stream">Исходный поток</param>
+        /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
+        /// <returns>Результирующее значение</returns>
+        public static async Task<Byte> LoadByteAsync(this Stream stream, bool isLittleEndian = true)
+        {
+            return unchecked((Byte)await Task.Run(() => stream.ReadByte()));
+        }
         #endregion Load
         #region Store
         /// <summary>
@@ -116,6 +127,18 @@ namespace Darkangel.IntegerX
         public static long Store(this Stream stream, Byte value, bool isLittleEndian = true)
         {
             stream.WriteByte(value);
+            return Byte_Size;
+        }
+        /// <summary>
+        /// <para>Записать значение <see cref="Byte"/> в поток</para>
+        /// </summary>
+        /// <param name="stream">Целевой поток</param>
+        /// <param name="value">Исходное значение</param>
+        /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
+        /// <returns>Количество записанных байт</returns>
+        public static async Task<long> StoreAsync(this Stream stream, Byte value, bool isLittleEndian = true)
+        {
+            await Task.Run(() => stream.WriteByte(value));
             return Byte_Size;
         }
         #endregion Store

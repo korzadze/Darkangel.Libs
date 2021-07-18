@@ -1,6 +1,7 @@
 ﻿using Darkangel.IO;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace Darkangel.IntegerX
 {
@@ -76,7 +77,7 @@ namespace Darkangel.IntegerX
         #endregion Write
         #endregion Buffered
         #region Streamble
-        #region Read
+        #region Load
         /// <summary>
         /// <para>Прочитать значение <see cref="Int24"/> из потока</para>
         /// </summary>
@@ -86,9 +87,8 @@ namespace Darkangel.IntegerX
         /// <returns>Количество считанных байт</returns>
         public static long Load(this Stream stream, out Int24 value, bool isLittleEndian = true)
         {
-            var buf = stream.ReadBytes(Int24_Size);
-            value = Int24.FromBytes_int(buf, 0, isLittleEndian);
-            return buf.LongLength;
+            value = LoadInt24(stream, isLittleEndian);
+            return Int24_Size;
         }
         /// <summary>
         /// <para>Прочитать значение <see cref="Int24"/> из потока</para>
@@ -98,7 +98,21 @@ namespace Darkangel.IntegerX
         /// <returns>Результирующее значение</returns>
         public static Int24 LoadInt24(this Stream stream, bool isLittleEndian = true)
         {
-            return Int24.FromBytes_int(stream.ReadBytes(Int24_Size), 0, isLittleEndian);
+            var t = Task.Run(() => LoadInt24Async(stream, isLittleEndian));
+            t.Wait();
+            return t.Result;
+        }
+        /// <summary>
+        /// <para>Прочитать значение <see cref="Int24"/> из потока</para>
+        /// </summary>
+        /// <param name="stream">Исходный поток</param>
+        /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
+        /// <returns>Результирующее значение</returns>
+        public static async Task<Int24> LoadInt24Async(this Stream stream, bool isLittleEndian = true)
+        {
+            var buf = await stream.ReadBytesAsync(Int24_Size);
+            Load(buf, out Int24 value, 0, isLittleEndian);
+            return value;
         }
         #endregion Load
         #region Store
@@ -111,8 +125,21 @@ namespace Darkangel.IntegerX
         /// <returns>Количество записанных байт</returns>
         public static long Store(this Stream stream, Int24 value, bool isLittleEndian = true)
         {
-            var buf = value.GetBytes_int(isLittleEndian);
-            stream.WriteBytes(buf);
+            var t = Task.Run(() => StoreAsync(stream, value, isLittleEndian));
+            t.Wait();
+            return t.Result;
+        }
+        /// <summary>
+        /// <para>Записать значение <see cref="Int24"/> в поток</para>
+        /// </summary>
+        /// <param name="stream">Целевой поток</param>
+        /// <param name="value">Исходное значение</param>
+        /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
+        /// <returns>Количество записанных байт</returns>
+        public static async Task<long> StoreAsync(this Stream stream, Int24 value, bool isLittleEndian = true)
+        {
+            var buf = GetBytes(value, isLittleEndian);
+            await stream.WriteBytesAsync(buf);
             return buf.LongLength;
         }
         #endregion Store

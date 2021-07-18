@@ -1,16 +1,19 @@
-﻿using System;
+﻿using Darkangel.IO;
+using System;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace Darkangel.IntegerX
 {
     public static partial class IntegerXHelpers
     {
+        private const int Int32_Size = 4;
         #region Получить размер значения
         /// <summary>
         /// <para>Получить размер переменной типа</para>
         /// </summary>
         /// <returns>Размер переменной типа</returns>
-        public static int GetSize(this Int32 value) => UInt32_Size;
+        public static int GetSize(this Int32 value) => Int32_Size;
         #endregion Получить размер значения
         #region Get buffer
         /// <summary>
@@ -80,7 +83,7 @@ namespace Darkangel.IntegerX
         #endregion Write
         #endregion Buffered
         #region Streamble
-        #region Read
+        #region Load
         /// <summary>
         /// <para>Прочитать значение <see cref="Int32"/> из потока</para>
         /// </summary>
@@ -90,9 +93,8 @@ namespace Darkangel.IntegerX
         /// <returns>Количество считанных байт</returns>
         public static long Load(this Stream stream, out Int32 value, bool isLittleEndian = true)
         {
-            var res = Load(stream, out UInt32 uval, isLittleEndian);
-            value = unchecked((Int32)uval);
-            return res;
+            value = LoadInt32(stream, isLittleEndian);
+            return Int32_Size;
         }
         /// <summary>
         /// <para>Прочитать значение <see cref="Int32"/> из потока</para>
@@ -102,7 +104,21 @@ namespace Darkangel.IntegerX
         /// <returns>Результирующее значение</returns>
         public static Int32 LoadInt32(this Stream stream, bool isLittleEndian = true)
         {
-            return unchecked((Int32)LoadUInt32(stream, isLittleEndian));
+            var t = Task.Run(() => LoadInt32Async(stream, isLittleEndian));
+            t.Wait();
+            return t.Result;
+        }
+        /// <summary>
+        /// <para>Прочитать значение <see cref="Int32"/> из потока</para>
+        /// </summary>
+        /// <param name="stream">Исходный поток</param>
+        /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
+        /// <returns>Результирующее значение</returns>
+        public static async Task<Int32> LoadInt32Async(this Stream stream, bool isLittleEndian = true)
+        {
+            var buf = await stream.ReadBytesAsync(Int32_Size);
+            Load(buf, out UInt16 value, 0, isLittleEndian);
+            return value;
         }
         #endregion Load
         #region Store
@@ -115,7 +131,22 @@ namespace Darkangel.IntegerX
         /// <returns>Количество записанных байт</returns>
         public static long Store(this Stream stream, Int32 value, bool isLittleEndian = true)
         {
-            return Store(stream, unchecked((UInt32)value), isLittleEndian);
+            var t = Task.Run(() => StoreAsync(stream, value, isLittleEndian));
+            t.Wait();
+            return t.Result;
+        }
+        /// <summary>
+        /// <para>Записать значение <see cref="Int32"/> в поток</para>
+        /// </summary>
+        /// <param name="stream">Целевой поток</param>
+        /// <param name="value">Исходное значение</param>
+        /// <param name="isLittleEndian">Порядок байт значения в потоке</param>
+        /// <returns>Количество записанных байт</returns>
+        public static async Task<long> StoreAsync(this Stream stream, Int32 value, bool isLittleEndian = true)
+        {
+            var buf = GetBytes(value, isLittleEndian);
+            await stream.WriteBytesAsync(buf);
+            return buf.LongLength;
         }
         #endregion Store
         #endregion Streamble

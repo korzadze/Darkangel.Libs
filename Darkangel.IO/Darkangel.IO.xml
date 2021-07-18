@@ -17,7 +17,21 @@
             <param name="offset">Смещение в потоке</param>
             <returns>Размер загруженных данных</returns>
         </member>
+        <member name="M:Darkangel.IO.IBinaryLoadable.LoadAsync(System.Byte[],System.Int64)">
+            <summary>
+            <para>Загрузить данные из двоичного потока</para>
+            </summary>
+            <param name="stream">Исходный поток данных</param>
+            <param name="offset">Смещение в потоке</param>
+            <returns>Размер загруженных данных</returns>
+        </member>
         <member name="M:Darkangel.IO.IBinaryLoadable.Load(System.IO.Stream)">
+            <summary>
+            <para>Загрузить данные из двоичного потока</para>
+            </summary>
+            <param name="stream">Исходный поток данных</param>
+        </member>
+        <member name="M:Darkangel.IO.IBinaryLoadable.LoadAsync(System.IO.Stream)">
             <summary>
             <para>Загрузить данные из двоичного потока</para>
             </summary>
@@ -36,17 +50,43 @@
             <param name="offset">Смещение в потоке</param>
             <returns>Размер сохраненных данных</returns>
         </member>
+        <member name="M:Darkangel.IO.IBinaryStorable.StoreAsync(System.Byte[],System.Int64)">
+            <summary>
+            <para>Сохранить данные в двоичном потоке</para>
+            </summary>
+            <param name="stream">Целевой поток данных</param>
+            <param name="offset">Смещение в потоке</param>
+            <returns>Размер сохраненных данных</returns>
+        </member>
         <member name="M:Darkangel.IO.IBinaryStorable.Store(System.IO.Stream)">
             <summary>
             <para>Сохранить данные в двоичном потоке</para>
             </summary>
             <param name="stream">Целевой поток данных</param>
         </member>
-        <member name="T:Darkangel.IO.IBinaryStorableObject">
+        <member name="M:Darkangel.IO.IBinaryStorable.StoreAsync(System.IO.Stream)">
+            <summary>
+            <para>Сохранить данные в двоичном потоке</para>
+            </summary>
+            <param name="stream">Целевой поток данных</param>
+        </member>
+        <member name="T:Darkangel.IO.IBinaryObject">
             <summary>
             <para>Интерфейс объекта, с возможностью загрузки и сохранения данных
             в двоичных потоках</para>
             </summary>
+        </member>
+        <member name="M:Darkangel.IO.IBinaryObject.GetSize">
+            <summary>
+            <para>Получить размер объекта в потоке</para>
+            </summary>
+            <returns>Размер объекта в потоке</returns>
+        </member>
+        <member name="M:Darkangel.IO.IBinaryObject.GetSizeAsync">
+            <summary>
+            <para>Получить размер объекта в потоке</para>
+            </summary>
+            <returns>Размер объекта в потоке</returns>
         </member>
         <member name="T:Darkangel.IO.StreamHelpers">
             <summary>
@@ -69,7 +109,28 @@
             <remarks>2021-04-18</remarks>
             <exception cref="T:System.IO.EndOfStreamException"/>
         </member>
+        <member name="M:Darkangel.IO.StreamHelpers.ReadBytesAsync(System.IO.Stream,System.Int64)">
+            <summary>
+            <para>Считать цепочку байт из потока</para>
+            <para>К сожалению, базовая библиотека не умеет читать кусками больше, чем <see cref="F:System.Int32.MaxValue"/></para>
+            </summary>
+            <param name="stream">Входной поток</param>
+            <param name="length">Количество байт, считываемых из потока</param>
+            <returns>Цепочка байт, считанных из потока</returns>
+            <remarks>2021-04-18</remarks>
+            <exception cref="T:System.IO.EndOfStreamException"/>
+        </member>
         <member name="M:Darkangel.IO.StreamHelpers.Read(System.IO.Stream,System.Byte[],System.Int64,System.Int64)">
+            <summary>
+            <para>Прочитать из потока вектор байт</para>
+            </summary>
+            <param name="stream">Исходный поток</param>
+            <param name="data">Буфер для считываемых данных</param>
+            <param name="start">Начало считываемых данных в буфере</param>
+            <param name="length">Размер считываемых данных</param>
+            <returns>Размер считанных данных</returns>
+        </member>
+        <member name="M:Darkangel.IO.StreamHelpers.ReadAsync(System.IO.Stream,System.Byte[],System.Int64,System.Int64)">
             <summary>
             <para>Прочитать из потока вектор байт</para>
             </summary>
@@ -88,7 +149,25 @@
             <returns>Экземпляр структуры</returns>
             <remarks>2021-04-18</remarks>
         </member>
+        <member name="M:Darkangel.IO.StreamHelpers.ReadStructAsync``1(System.IO.Stream)">
+            <summary>
+            <para>Прочитать структуру из двоичного потока</para>
+            </summary>
+            <typeparam name="T">Тип структуры</typeparam>
+            <param name="rd">Двоичный поток</param>
+            <returns>Экземпляр структуры</returns>
+            <remarks>2021-04-18</remarks>
+        </member>
         <member name="M:Darkangel.IO.StreamHelpers.WriteStruct``1(System.IO.Stream,``0)">
+            <summary>
+            <para>Записать структуру в двоичных поток</para>
+            </summary>
+            <typeparam name="T">Тип структуры</typeparam>
+            <param name="wr">Двоичный поток</param>
+            <param name="data">Экземпляр структуры</param>
+            <remarks>2021-04-18</remarks>
+        </member>
+        <member name="M:Darkangel.IO.StreamHelpers.WriteStructAsync``1(System.IO.Stream,``0)">
             <summary>
             <para>Записать структуру в двоичных поток</para>
             </summary>
@@ -106,7 +185,26 @@
             <returns>Количество записанных байт</returns>
             <remarks>2021-04-18</remarks>
         </member>
+        <member name="M:Darkangel.IO.StreamHelpers.WriteBytesAsync(System.IO.Stream,System.Byte[])">
+            <summary>
+            <para>Записать вектор байт в поток</para>
+            </summary>
+            <param name="stream">Целевой поток</param>
+            <param name="data">Исходный вектор</param>
+            <returns>Количество записанных байт</returns>
+            <remarks>2021-04-18</remarks>
+        </member>
         <member name="M:Darkangel.IO.StreamHelpers.Write(System.IO.Stream,System.Byte[],System.Int64,System.Int64)">
+            <summary>
+            <para>Записать вектор байт в поток</para>
+            </summary>
+            <param name="stream">Целевой поток</param>
+            <param name="data">Исходные данные</param>
+            <param name="start">Начало записываемового блока в векторе</param>
+            <param name="length">Размер записываемого блока</param>
+            <returns>Количество записанных в поток байт</returns>
+        </member>
+        <member name="M:Darkangel.IO.StreamHelpers.WriteAsync(System.IO.Stream,System.Byte[],System.Int64,System.Int64)">
             <summary>
             <para>Записать вектор байт в поток</para>
             </summary>
