@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace Darkangel.IO
+﻿namespace Darkangel.IO
 {
     /// <summary>
     /// <para>Интерфейс объекта, с возможностью загрузки и сохранения данных

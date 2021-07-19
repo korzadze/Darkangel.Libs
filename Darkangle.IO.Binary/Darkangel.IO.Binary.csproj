@@ -12,4 +12,13 @@
     <DocumentationFile>C:\Users\Александр\OneDrive\Development\Hobby\Darkangel.Libs\Darkangle.IO.Binary\Darkangle.IO.Binary.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\Александр\OneDrive\Development\Hobby\Darkangel.Libs\Darkangle.IO.Binary\Darkangel.IO.Binary.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Darkangel.IntegerX\Darkangel.IntegerX.csproj" />
+    <ProjectReference Include="..\Darkangel.IO\Darkangel.IO.csproj" />
+  </ItemGroup>
+
 </Project>

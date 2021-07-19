@@ -13,14 +13,6 @@ namespace Darkangel.IO
         /// </summary>
         /// <param name="context">Контекст хранения двоичных данных в потоке</param>
         /// <param name="stream">Целевой поток данных</param>
-        /// <param name="offset">Смещение в потоке</param>
-        /// <returns>Размер сохраненных данных</returns>
-        long Store(IBinaryContext context, byte[] stream, long offset);
-        /// <summary>
-        /// <para>Сохранить данные в двоичном потоке</para>
-        /// </summary>
-        /// <param name="context">Контекст хранения двоичных данных в потоке</param>
-        /// <param name="stream">Целевой поток данных</param>
         void Store(IBinaryContext context, Stream stream);
         /// <summary>
         /// <para>Сохранить данные в двоичном потоке</para>

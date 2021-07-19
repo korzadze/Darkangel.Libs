@@ -13,14 +13,6 @@ namespace Darkangel.IO
         /// </summary>
         /// <param name="context">Контекст хранения двоичных данных в потоке</param>
         /// <param name="stream">Исходный поток данных</param>
-        /// <param name="offset">Смещение в потоке</param>
-        /// <returns>Размер загруженных данных</returns>
-        long Load(IBinaryContext context, byte[] stream, long offset);
-        /// <summary>
-        /// <para>Загрузить данные из двоичного потока</para>
-        /// </summary>
-        /// <param name="context">Контекст хранения двоичных данных в потоке</param>
-        /// <param name="stream">Исходный поток данных</param>
         void Load(IBinaryContext context, Stream stream);
         /// <summary>
         /// <para>Загрузить данные из двоичного потока</para>
